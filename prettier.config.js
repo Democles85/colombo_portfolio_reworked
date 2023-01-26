@@ -1,0 +1,32 @@
+// {
+//   "$schema": "http://json.schemastore.org/prettierrc",
+//   "useTabs": false,
+//   "singleQuote": true,
+//   "trailingComma": "es5",
+//   "printWidth": 80,
+//   "arrowParens": "avoid",
+//   "bracketSpacing": true,
+//   "quoteProps": "as-needed",
+//   "semi": true,
+//   "tabWidth": 2,
+//   "jsxBracketSameLine": false,
+//   "jsxSingleQuote": false,
+//   "endOfLine": "lf",
+//   "htmlWhitespaceSensitivity": "ignore"
+// }
+
+module.exports = {
+  useTabs: false,
+  singleQuote: true,
+  trailingComma: 'es5',
+  printWidth: 80,
+  arrowParens: 'avoid',
+  bracketSpacing: true,
+  quoteProps: 'as-needed',
+  semi: true,
+  tabWidth: 2,
+  jsxBracketSameLine: false,
+  jsxSingleQuote: false,
+  endOfLine: 'lf',
+  htmlWhitespaceSensitivity: 'ignore',
+}

@@ -1,0 +1,112 @@
+.text-gradient {
+  position: relative;
+  --bg-size: 400%;
+  background: linear-gradient(
+      111.3deg,
+      rgba(255, 175, 58, 1) 25%,
+      rgba(204, 101, 0, 1) 50%,
+      rgba(255, 175, 58, 1) 75%
+    )
+    0 0 / var(--bg-size) 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(
+      111.3deg,
+      rgba(255, 175, 58, 1) 25%,
+      rgba(204, 101, 0, 1) 50%,
+      rgba(255, 175, 58, 1) 75%
+    )
+    0 0 / var(--bg-size) 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .text-gradient::before,
+  .text-gradient {
+    animation: gradient 8s linear infinite;
+  }
+  @keyframes gradient {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+}
+
+.scroll-element::before,
+.scroll-element::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 2px;
+  border-top: transparent;
+  border-left: transparent;
+  animation: scroll 2s ease-in-out infinite;
+}
+
+.scroll-element::after {
+  top: 80%;
+  animation-delay: 1s;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.5);
+  }
+}
+
+/* .hidden:nth-child(even) {
+  opacity: 0;
+  transform: translateX(-20%);
+  transition: all 1s ease-in-out;
+}
+
+.hidden:nth-child(odd) {
+  opacity: 0;
+  transform: translateX(20%);
+  transition: all 1s ease-in-out;
+}
+
+.show:nth-child(even) {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.show:nth-child(odd) {
+  opacity: 1;
+  transform: translateX(0);
+} */
+
+.hidden {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 1s ease-in-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
