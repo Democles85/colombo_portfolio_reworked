@@ -58,45 +58,47 @@ const FileInput = (props: any) => {
             cursor: 'pointer',
           }}
         >
-          {isDragActive ? (
-            <p className={'my-2'}>Drop the file here ...</p>
-          ) : (
-            <p className={'my-2'}>
-              Drag 'n' drop the file here, or click to select file
-            </p>
-          )}
+          <Box>
+            {isDragActive ? (
+              <p className={'my-2'}>Drop the file here ...</p>
+            ) : (
+              <p className={'my-2'}>
+                Drag 'n' drop the file here, or click to select file
+              </p>
+            )}
+            {file.length > 0 && (
+              <Box className="m-2">
+                {file.map((file: any) => (
+                  <Box
+                    key={file.name}
+                    display={'flex'}
+                    flexDir={'column'}
+                    alignItems={'center'}
+                  >
+                    <Box>
+                      <Image
+                        src={file.preview}
+                        alt={''}
+                        style={{
+                          width: '100px',
+                          height: '100%',
+                          borderRadius: '5px',
+                        }}
+                      />
+                    </Box>
+                    <Box>
+                      <span className="font-medium">{file.name}</span>{' '}
+                      <Badge colorScheme={'green'}>
+                        {(file.size / 1048576).toPrecision(3)} MB
+                      </Badge>
+                    </Box>
+                  </Box>
+                ))}
+              </Box>
+            )}
+          </Box>
         </Box>
       </Box>
-      {file.length > 0 && (
-        <Box className="mt-2">
-          {file.map((file: any) => (
-            <Box
-              key={file.name}
-              display={'flex'}
-              flexDir={'column'}
-              alignItems={'center'}
-            >
-              <Box>
-                <Image
-                  src={file.preview}
-                  alt={''}
-                  style={{
-                    width: '100px',
-                    height: '100%',
-                    borderRadius: '5px',
-                  }}
-                />
-              </Box>
-              <Box>
-                <span className="font-medium">{file.name}</span>{' '}
-                <Badge colorScheme={'green'}>
-                  {(file.size / 1048576).toPrecision(3)} MB
-                </Badge>
-              </Box>
-            </Box>
-          ))}
-        </Box>
-      )}
     </>
   );
 };

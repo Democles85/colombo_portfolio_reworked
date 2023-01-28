@@ -27,6 +27,9 @@ import { RichText } from '@graphcms/rich-text-react-renderer';
 import FormData from 'form-data';
 import { FormProvider, useForm } from 'react-hook-form';
 
+// React Hot Toast
+import toast, { Toaster } from 'react-hot-toast';
+
 // Carousel
 import Carousel from 'react-multi-carousel';
 
@@ -61,11 +64,11 @@ const customLeftArrow = (
 
   <Box
     position={'absolute'}
-    left={0}
+    left={{ base: '-0.2rem', md: '0' }}
     cursor={'pointer'}
     bg={'rgba(23, 23, 23, 0.8)'}
     // border={'1px solid rgba(255, 255, 255, 0.5)'}
-    p={{ base: 2, md: 3 }}
+    p={{ base: 1, md: 3 }}
     rounded={'full'}
     className={'arrow-btn'}
   >
@@ -89,11 +92,11 @@ const customLeftArrow = (
 const customRightArrow = (
   <Box
     position={'absolute'}
-    right={'0'}
+    right={{ base: '-0.2rem', md: '0' }}
     cursor={'pointer'}
     bg={'rgba(23, 23, 23, 0.8)'}
     // border={'1px solid rgba(255, 255, 255, 0.5)'}
-    p={{ base: 2, md: 3 }}
+    p={{ base: 1, md: 3 }}
     rounded={'full'}
     className={'arrow-btn'}
   >
@@ -122,9 +125,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const [showFillAllMessage, setShowFillAllMessage] = useState(false);
-
-  console.log(testimonials.map((t: any) => t.node.testimonial.raw.children));
+  // console.log(testimonials.map((t: any) => t.node.testimonial.raw.children));
 
   const accept = {
     'image/png': ['.png'],
@@ -132,33 +133,43 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
   };
 
   const handleSubmit = methods.handleSubmit((data: any) => {
-    setLoading(true);
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
-
     const { name, email, images, message } = data;
 
     const form = new FormData();
-    form.append('file_1', images[0]);
+    if (images) form.append('file_1', images[0]);
+    else form.append('file_1', '');
     form.append('name', name);
     form.append('email', email);
     form.append('message', message);
 
-    submitTestimonial(form)
-      .then(res => {
-        setSubmitted(true);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.log(err);
-        setLoading(false);
-      });
+    toast.promise(
+      submitTestimonial(form),
+      {
+        loading: 'Submitting Testimonial',
+        success: () => {
+          setSubmitted(true);
+          return 'Testimonial Submitted';
+        },
+        error: err => {
+          console.log(err);
+          return 'Error Submitting Testimonial';
+        },
+      },
+      {
+        style: {
+          minWidth: '300px',
+          borderRadius: '10px',
+          background: '#333',
+          color: '#fff',
+          borderColor: 'orange',
+        },
+      }
+    );
   });
 
   return (
     <Box pt={'4rem'}>
+      <Toaster position={'top-right'} reverseOrder={false} />
       <Section>
         <Container maxW={'container.lg'} display={'flex'} flexDir={'column'}>
           <Box textAlign={'center'} py={'4rem'}>
@@ -214,13 +225,17 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                           <Heading as={'h3'} fontSize={'1.75rem'}>
                             {testimonial.node.name}
                             <Badge
-                              ml={{ base: 1, md: 3 }}
+                              ml={{ base: 0, md: 3 }}
                               colorScheme={'orange'}
                               mt={'0.1rem'}
                             >
                               {testimonial.node.experience}
                             </Badge>
-                            <Badge ml={1} colorScheme={'green'} mt={'0.1rem'}>
+                            <Badge
+                              ml={{ base: 1, md: 2 }}
+                              colorScheme={'green'}
+                              mt={'0.1rem'}
+                            >
                               {testimonial.node.country}
                             </Badge>
                           </Heading>
@@ -228,16 +243,12 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                         <RichText
                           content={testimonial.node.testimonial.raw.children}
                           renderers={{
-                            p: ({ children }) => (
-                              <Text
-                                fontSize={'1rem'}
-                                textAlign={'justify'}
-                                px={'1rem'}
-                              >
+                            p: ({ children }: any) => (
+                              <Text fontSize={'1rem'} textAlign={'justify'}>
                                 {children}
                               </Text>
                             ),
-                            code_block: ({ children }) => (
+                            code_block: ({ children }: any) => (
                               <Code colorScheme={'orange'}>{children}</Code>
                             ),
                           }}
@@ -265,12 +276,24 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
               <form onSubmit={handleSubmit}>
                 <FormControl>
                   <Box display={'flex'} width={'100%'} flexDir={'column'}>
-                    <Box py={'1rem'}>
-                      <FormLabel htmlFor={'images'}>Profile Image</FormLabel>
+                    <Box py={'0.5rem'}>
+                      <FormLabel htmlFor={'images'}>
+                        Profile Image
+                        <Text
+                          fontSize={'0.75rem'}
+                          fontWeight={'light'}
+                          fontStyle={'italic'}
+                          color={'rgba(255, 255, 255, 0.5)'}
+                        >
+                          Put any image that you want to be displayed on the
+                          site.
+                        </Text>
+                      </FormLabel>
+
                       <FileInput accept={accept} name={'images'} />
                     </Box>
 
-                    <Box py={'1rem'}>
+                    <Box py={'0.5rem'}>
                       <FormLabel htmlFor={'name'}>Name / Nickname</FormLabel>
                       <Input
                         {...methods.register('name', {
@@ -282,9 +305,11 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                         id={'name'}
                         placeholder={'John Doe'}
                         isInvalid={errors.name ? true : false}
+                        _hover={{ borderColor: 'orange' }}
+                        focusBorderColor={'#FFAF3A'}
                       />
                       {errors.name?.type === 'required' && (
-                        <FormHelperText color={'red'}>
+                        <FormHelperText color={'red.300'}>
                           This field is required
                         </FormHelperText>
                       )}
@@ -295,7 +320,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                       )}
                     </Box>
 
-                    <Box py={'1rem'}>
+                    <Box py={'0.5rem'}>
                       <FormLabel htmlFor={'email'}>Email</FormLabel>
                       <Input
                         {...methods.register('email', {
@@ -308,9 +333,11 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                         id={'email'}
                         placeholder={'Email'}
                         isInvalid={errors.email ? true : false}
+                        _hover={{ borderColor: 'orange' }}
+                        focusBorderColor={'#FFAF3A'}
                       />
                       {errors.email?.type === 'required' && (
-                        <FormHelperText color={'red'}>
+                        <FormHelperText color={'red.300'}>
                           This field is required
                         </FormHelperText>
                       )}
@@ -335,7 +362,15 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                         name={'message'}
                         id={'message'}
                         placeholder={'Your Testimonial'}
+                        isInvalid={errors.message ? true : false}
+                        _hover={{ borderColor: 'orange' }}
+                        focusBorderColor={'#FFAF3A'}
                       />
+                      {errors.message?.type === 'required' && (
+                        <FormHelperText color={'red.300'}>
+                          This field is required
+                        </FormHelperText>
+                      )}
                     </Box>
 
                     <Box py={'1rem'}>

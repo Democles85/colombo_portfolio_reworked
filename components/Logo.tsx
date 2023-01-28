@@ -5,7 +5,7 @@ import { Divider, Text, useColorModeValue, Image } from '@chakra-ui/react';
 // Font
 import { Roboto } from '@next/font/google';
 
-const roboto = Roboto({ weight: ['300', '400'] });
+const roboto = Roboto({ weight: ['300', '400'], subsets: ['latin'] });
 
 const LogoBox = styled.div`
   display: inline-flex;
