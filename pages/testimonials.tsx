@@ -12,10 +12,14 @@ import {
   Input,
   Text,
   Textarea,
+  Tooltip,
 } from '@chakra-ui/react';
-import React, { useState, useRef } from 'react';
+import React, { useState, useMemo } from 'react';
 import Section from '../components/Section';
 import FileInput from '../components/Dropzone';
+
+// Chakra React Select
+import { Select, OptionBase } from 'chakra-react-select';
 
 // GraphQL Imports
 import { getTestimonials, submitTestimonial } from '../services';
@@ -39,6 +43,14 @@ import TestimonialTypes from '../lib/types';
 // Styles
 import styles from '../styles/Home.module.css';
 import 'react-multi-carousel/lib/styles.css';
+
+// Country List
+import countryList from 'react-select-country-list';
+
+interface CountryOptions extends OptionBase {
+  label: string;
+  value: string;
+}
 
 const responsive = {
   superLargeDesktop: {
@@ -125,6 +137,19 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  const [country, setCountry] = useState<CountryOptions>({
+    label: 'Select Country',
+    value: '',
+  });
+
+  const countries = useMemo(() => countryList().getData(), []);
+
+  const handleCountryChange = (value: any) => {
+    setCountry(value);
+  };
+
+  const emailFormat: RegExp = /^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/;
+
   // console.log(testimonials.map((t: any) => t.node.testimonial.raw.children));
 
   const accept = {
@@ -134,10 +159,11 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
 
   const handleSubmit = methods.handleSubmit((data: any) => {
     const { name, email, images, message } = data;
+    const countryLabel: string = country.label;
 
     const form = new FormData();
-    if (images) form.append('file_1', images[0]);
-    else form.append('file_1', '');
+    form.append('file_1', images[0]);
+    form.append('country', countryLabel);
     form.append('name', name);
     form.append('email', email);
     form.append('message', message);
@@ -229,7 +255,20 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                               colorScheme={'orange'}
                               mt={'0.1rem'}
                             >
-                              {testimonial.node.experience}
+                              {/* Make it responsive for long one liner */}
+                              {testimonial.node.experience.length > 30 ? (
+                                <Tooltip
+                                  label={testimonial.node.experience}
+                                  aria-label="A tooltip"
+                                >
+                                  <span>
+                                    {testimonial.node.experience.slice(0, 30)}
+                                    ...
+                                  </span>
+                                </Tooltip>
+                              ) : (
+                                testimonial.node.experience
+                              )}
                             </Badge>
                             <Badge
                               ml={{ base: 1, md: 2 }}
@@ -278,7 +317,8 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                   <Box display={'flex'} width={'100%'} flexDir={'column'}>
                     <Box py={'0.5rem'}>
                       <FormLabel htmlFor={'images'}>
-                        Profile Image
+                        Profile Image{' '}
+                        <span style={{ color: 'rgb(215, 112, 112)' }}>*</span>
                         <Text
                           fontSize={'0.75rem'}
                           fontWeight={'light'}
@@ -294,7 +334,10 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                     </Box>
 
                     <Box py={'0.5rem'}>
-                      <FormLabel htmlFor={'name'}>Name / Nickname</FormLabel>
+                      <FormLabel htmlFor={'name'}>
+                        Name / Nickname{' '}
+                        <span style={{ color: 'rgb(215, 112, 112)' }}>*</span>
+                      </FormLabel>
                       <Input
                         {...methods.register('name', {
                           required: true,
@@ -321,12 +364,15 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                     </Box>
 
                     <Box py={'0.5rem'}>
-                      <FormLabel htmlFor={'email'}>Email</FormLabel>
+                      <FormLabel htmlFor={'email'}>
+                        Email{' '}
+                        <span style={{ color: 'rgb(215, 112, 112)' }}>*</span>
+                      </FormLabel>
                       <Input
                         {...methods.register('email', {
                           required: true,
                           maxLength: 80,
-                          pattern: /^\S+@\S+$/i,
+                          pattern: emailFormat,
                         })}
                         type={'email'}
                         name={'email'}
@@ -351,6 +397,21 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                           Invalid email
                         </FormHelperText>
                       )}
+                    </Box>
+
+                    <Box py={'0.5rem'}>
+                      <FormLabel htmlFor={'country'}>
+                        Country of Residence
+                      </FormLabel>
+                      <Select
+                        options={countries}
+                        name={'country'}
+                        placeholder={'Select Country'}
+                        selectedOptionColor={'#FFAF3A'}
+                        isClearable
+                        isSearchable
+                        onChange={e => handleCountryChange(e)}
+                      />
                     </Box>
 
                     <Box py={'1rem'}>

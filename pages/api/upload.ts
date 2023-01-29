@@ -37,12 +37,13 @@ export default async function handler(req: any, res: any) {
     body: form,
   }).then(res => res.json());
 
-  const { name, email, message } = req.body;
+  const { name, email, message, country } = req.body;
   let id = upload.id;
   const testimonialObject = {
     name,
     email,
     message,
+    country,
     id,
   };
 
@@ -53,6 +54,7 @@ export default async function handler(req: any, res: any) {
       $name: String!
       $email: String!
       $message: String!
+      $country: String!
       $id: ID!
     ) {
       createTestimonial(
@@ -60,6 +62,7 @@ export default async function handler(req: any, res: any) {
           name: $name
           email: $email
           message: $message
+          country: $country
           profilePicture: { connect: { id: $id } }
         }
       ) {

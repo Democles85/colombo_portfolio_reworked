@@ -56,6 +56,7 @@ const FileInput = (props: any) => {
           }
           _hover={{
             cursor: 'pointer',
+            borderColor: '#FFA500',
           }}
         >
           <Box>
