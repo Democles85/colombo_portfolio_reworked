@@ -72,13 +72,11 @@ const responsive = {
 };
 
 const customLeftArrow = (
-  // <div className="absolute arrow-btn left-0 text-center py-3 cursor-pointer bg-pink-600 rounded-full">
-
   <Box
     position={'absolute'}
-    left={{ base: '-0.2rem', md: '0' }}
+    left={{ base: '-0.2rem', md: '-0.5rem' }}
     cursor={'pointer'}
-    bg={'rgba(23, 23, 23, 0.8)'}
+    bg={'rgba(23, 23, 23, 1)'}
     // border={'1px solid rgba(255, 255, 255, 0.5)'}
     p={{ base: 1, md: 3 }}
     rounded={'full'}
@@ -89,7 +87,7 @@ const customLeftArrow = (
       className="h-6 text-white w-full"
       fill="none"
       viewBox="0 0 24 24"
-      stroke="currentColor"
+      stroke="#FFAF3A"
     >
       <path
         strokeLinecap="round"
@@ -104,9 +102,9 @@ const customLeftArrow = (
 const customRightArrow = (
   <Box
     position={'absolute'}
-    right={{ base: '-0.2rem', md: '0' }}
+    right={{ base: '-0.2rem', md: '-0.5rem' }}
     cursor={'pointer'}
-    bg={'rgba(23, 23, 23, 0.8)'}
+    bg={'rgba(23, 23, 23, 1)'}
     // border={'1px solid rgba(255, 255, 255, 0.5)'}
     p={{ base: 1, md: 3 }}
     rounded={'full'}
@@ -117,7 +115,7 @@ const customRightArrow = (
       className="h-6 text-white w-full"
       fill="none"
       viewBox="0 0 24 24"
-      stroke="currentColor"
+      stroke="#FFAF3A"
     >
       <path
         strokeLinecap="round"
@@ -208,96 +206,94 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
           </Box>
 
           <Box>
-            <Box>
-              <Carousel
-                responsive={responsive}
-                infinite={true}
-                customLeftArrow={customLeftArrow}
-                customRightArrow={customRightArrow}
-                itemClass={'px-4'}
-                keyBoardControl={true}
-              >
-                {testimonials.map(testimonial => {
-                  return (
+            <Carousel
+              responsive={responsive}
+              infinite={true}
+              customLeftArrow={customLeftArrow}
+              customRightArrow={customRightArrow}
+              itemClass={'px-4'}
+              keyBoardControl={true}
+            >
+              {testimonials.map(testimonial => {
+                return (
+                  <Box
+                    py={'4rem'}
+                    key={testimonial.node.id}
+                    position={'relative'}
+                  >
                     <Box
-                      py={'4rem'}
-                      key={testimonial.node.id}
-                      position={'relative'}
+                      py={'2rem'}
+                      px={{ base: '1rem', md: '2rem' }}
+                      border={'1px solid rgba(255, 175, 58, 1)'}
+                      // border={'1px solid rgba(255, 255, 255, 0.5)'}
+                      bg={'#202023'}
+                      borderRadius={'10px'}
                     >
+                      <Avatar
+                        name={testimonial.node.name}
+                        size={'xl'}
+                        src={testimonial.node.profilePicture.url}
+                        position={'absolute'}
+                        top={'.9rem'}
+                        bg={'rgba(255, 255, 255, .5)'}
+                        border={'1px solid rgba(255, 255, 255, .5)'}
+                        left={'calc(50% - 3rem)'}
+                        boxShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}
+                      />
                       <Box
-                        py={'2rem'}
-                        px={{ base: '1rem', md: '2rem' }}
-                        border={'1px solid rgba(255, 175, 58, 1)'}
-                        // border={'1px solid rgba(255, 255, 255, 0.5)'}
-                        bg={'#202023'}
-                        borderRadius={'10px'}
+                        display={'flex'}
+                        justifyContent={'space-between'}
+                        py={'1rem'}
                       >
-                        <Avatar
-                          name={testimonial.node.name}
-                          size={'xl'}
-                          src={testimonial.node.profilePicture.url}
-                          position={'absolute'}
-                          top={'.9rem'}
-                          bg={'rgba(255, 255, 255, .5)'}
-                          border={'1px solid rgba(255, 255, 255, .5)'}
-                          left={'calc(50% - 3rem)'}
-                          boxShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}
-                        />
-                        <Box
-                          display={'flex'}
-                          justifyContent={'space-between'}
-                          py={'1rem'}
-                        >
-                          <Heading as={'h3'} fontSize={'1.75rem'}>
-                            {testimonial.node.name}
-                            <Badge
-                              ml={{ base: 0, md: 3 }}
-                              colorScheme={'orange'}
-                              mt={'0.1rem'}
-                            >
-                              {/* Make it responsive for long one liner */}
-                              {testimonial.node.experience.length > 30 ? (
-                                <Tooltip
-                                  label={testimonial.node.experience}
-                                  aria-label="A tooltip"
-                                >
-                                  <span>
-                                    {testimonial.node.experience.slice(0, 30)}
-                                    ...
-                                  </span>
-                                </Tooltip>
-                              ) : (
-                                testimonial.node.experience
-                              )}
-                            </Badge>
-                            <Badge
-                              ml={{ base: 1, md: 2 }}
-                              colorScheme={'green'}
-                              mt={'0.1rem'}
-                            >
-                              {testimonial.node.country}
-                            </Badge>
-                          </Heading>
-                        </Box>
-                        <RichText
-                          content={testimonial.node.testimonial.raw.children}
-                          renderers={{
-                            p: ({ children }: any) => (
-                              <Text fontSize={'1rem'} textAlign={'justify'}>
-                                {children}
-                              </Text>
-                            ),
-                            code_block: ({ children }: any) => (
-                              <Code colorScheme={'orange'}>{children}</Code>
-                            ),
-                          }}
-                        />
+                        <Heading as={'h3'} fontSize={'1.75rem'}>
+                          {testimonial.node.name}
+                          <Badge
+                            ml={{ base: 0, md: 3 }}
+                            colorScheme={'orange'}
+                            mt={'0.1rem'}
+                          >
+                            {/* Make it responsive for long one liner */}
+                            {testimonial.node.experience.length > 30 ? (
+                              <Tooltip
+                                label={testimonial.node.experience}
+                                aria-label="A tooltip"
+                              >
+                                <span>
+                                  {testimonial.node.experience.slice(0, 30)}
+                                  ...
+                                </span>
+                              </Tooltip>
+                            ) : (
+                              testimonial.node.experience
+                            )}
+                          </Badge>
+                          <Badge
+                            ml={{ base: 1, md: 2 }}
+                            colorScheme={'green'}
+                            mt={'0.1rem'}
+                          >
+                            {testimonial.node.country}
+                          </Badge>
+                        </Heading>
                       </Box>
+                      <RichText
+                        content={testimonial.node.testimonial.raw.children}
+                        renderers={{
+                          p: ({ children }: any) => (
+                            <Text fontSize={'1rem'} textAlign={'justify'}>
+                              {children}
+                            </Text>
+                          ),
+                          code_block: ({ children }: any) => (
+                            <Code colorScheme={'orange'}>{children}</Code>
+                          ),
+                        }}
+                      />
                     </Box>
-                  );
-                })}
-              </Carousel>
-            </Box>
+                  </Box>
+                );
+              })}
+            </Carousel>
           </Box>
         </Container>
       </Section>
@@ -412,6 +408,10 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                         isSearchable
                         onChange={e => handleCountryChange(e)}
                       />
+                    </Box>
+
+                    <Box py={'0.5rem'}>
+                      <FormLabel htmlFor={'experience'}></FormLabel>
                     </Box>
 
                     <Box py={'1rem'}>

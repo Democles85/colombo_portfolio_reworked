@@ -1,4 +1,5 @@
 import { request, gql } from 'graphql-request';
+import axios from 'axios';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_COLOMBO_API_ENDPOINT;
 
@@ -34,10 +35,12 @@ export const getTestimonials = async () => {
 };
 
 export const submitTestimonial = async (object: any) => {
-  const result = await fetch('/api/upload', {
-    method: 'POST',
-    body: object,
-  });
+  // const result = await fetch('/api/upload', {
+  //   method: 'POST',
+  //   body: object,
+  // });
 
-  return result.json();
+  const result = await axios.post('/api/upload', object);
+
+  return result;
 };

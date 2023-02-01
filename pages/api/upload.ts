@@ -1,7 +1,8 @@
 import FormData from 'form-data';
 import fs from 'fs';
 import { gql, GraphQLClient } from 'graphql-request';
-import { NextApiRequest } from 'next';
+import axios from 'axios';
+
 import initMiddleware from '../../middleware/init-middleware';
 import parseMultipartForm from '../../middleware/multipartParser';
 
@@ -28,14 +29,23 @@ export default async function handler(req: any, res: any) {
   const { file_1 } = req.files;
   const form = new FormData();
   form.append('fileUpload', fs.createReadStream(file_1.filepath));
-  const upload = await fetch(`${graphqlAPI}/upload`, {
-    method: 'POST',
-    headers: {
-      authorization: `Bearer ${graphqlToken}`,
-    },
-    // @ts-ignore
-    body: form,
-  }).then(res => res.json());
+  // const upload = await fetch(`${graphqlAPI}/upload`, {
+  //   method: 'POST',
+  //   headers: {
+  //     authorization: `Bearer ${graphqlToken}`,
+  //   },
+  //   // @ts-ignore
+  //   body: form,
+  // }).then(res => res.json());
+
+  const upload = await axios
+    .post(`${graphqlAPI}/upload`, form, {
+      headers: {
+        authorization: `Bearer ${graphqlToken}`,
+        ...form.getHeaders(),
+      },
+    })
+    .then(res => res.data);
 
   const { name, email, message, country } = req.body;
   let id = upload.id;
