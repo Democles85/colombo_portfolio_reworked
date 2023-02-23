@@ -1,4 +1,4 @@
-import { Badge, Box, Image } from '@chakra-ui/react';
+import { Badge, Box, Image, useColorModeValue } from '@chakra-ui/react';
 import React, { useCallback, useEffect, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useFormContext } from 'react-hook-form';
@@ -54,6 +54,7 @@ const FileInput = (props: any) => {
             'w-full border rounded-lg flex justify-center border-dashed border-gray-300 p-2' +
             (isDragActive ? 'bg-gray-400' : 'bg-gray-800')
           }
+          borderColor={useColorModeValue('gray.700', 'whiteAlpha.500')}
           _hover={{
             cursor: 'pointer',
             borderColor: '#FFA500',

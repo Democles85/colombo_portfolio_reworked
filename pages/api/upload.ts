@@ -29,14 +29,6 @@ export default async function handler(req: any, res: any) {
   const { file_1 } = req.files;
   const form = new FormData();
   form.append('fileUpload', fs.createReadStream(file_1.filepath));
-  // const upload = await fetch(`${graphqlAPI}/upload`, {
-  //   method: 'POST',
-  //   headers: {
-  //     authorization: `Bearer ${graphqlToken}`,
-  //   },
-  //   // @ts-ignore
-  //   body: form,
-  // }).then(res => res.json());
 
   const upload = await axios
     .post(`${graphqlAPI}/upload`, form, {
@@ -57,7 +49,7 @@ export default async function handler(req: any, res: any) {
     id,
   };
 
-  console.log(testimonialObject);
+  console.log(testimonialObject + file_1);
 
   const query = gql`
     mutation CreateTestimonial(

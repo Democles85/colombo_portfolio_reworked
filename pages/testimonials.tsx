@@ -13,8 +13,9 @@ import {
   Text,
   Textarea,
   Tooltip,
+  useColorModeValue,
 } from '@chakra-ui/react';
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import Section from '../components/Section';
 import FileInput from '../components/Dropzone';
 
@@ -47,7 +48,11 @@ import 'react-multi-carousel/lib/styles.css';
 // Country List
 import countryList from 'react-select-country-list';
 
-interface CountryOptions extends OptionBase {
+// Functions
+import getWindowSize from '../lib/getWindowSize';
+
+interface SelectOptions extends OptionBase {
+  [x: string]: any;
   label: string;
   value: string;
 }
@@ -76,7 +81,7 @@ const customLeftArrow = (
     position={'absolute'}
     left={{ base: '-0.2rem', md: '-0.5rem' }}
     cursor={'pointer'}
-    bg={'rgba(23, 23, 23, 1)'}
+    // bg={'rgba(23, 23, 23, 1)'}
     // border={'1px solid rgba(255, 255, 255, 0.5)'}
     p={{ base: 1, md: 3 }}
     rounded={'full'}
@@ -87,7 +92,7 @@ const customLeftArrow = (
       className="h-6 text-white w-full"
       fill="none"
       viewBox="0 0 24 24"
-      stroke="#FFAF3A"
+      stroke="rgba(255, 175, 58, 1)"
     >
       <path
         strokeLinecap="round"
@@ -102,9 +107,9 @@ const customLeftArrow = (
 const customRightArrow = (
   <Box
     position={'absolute'}
-    right={{ base: '-0.2rem', md: '-0.5rem' }}
+    right={{ base: '-0.2rem', md: '0.5rem' }}
     cursor={'pointer'}
-    bg={'rgba(23, 23, 23, 1)'}
+    // bg={'rgba(23, 23, 23, 1)'}
     // border={'1px solid rgba(255, 255, 255, 0.5)'}
     p={{ base: 1, md: 3 }}
     rounded={'full'}
@@ -115,7 +120,7 @@ const customRightArrow = (
       className="h-6 text-white w-full"
       fill="none"
       viewBox="0 0 24 24"
-      stroke="#FFAF3A"
+      stroke="rgba(255, 175, 58, 1)"
     >
       <path
         strokeLinecap="round"
@@ -128,6 +133,34 @@ const customRightArrow = (
 );
 
 const Testimonials = ({ testimonials }: TestimonialTypes) => {
+  const size = getWindowSize();
+  const countries = useMemo(() => countryList().getData(), []);
+  const services = useMemo(() => {
+    return [
+      { label: 'Authentic Bodywork', value: 'Authentic Bodywork' },
+      { label: 'Prana Bodywork', value: 'Prana Bodywork' },
+      { label: 'Spiritual Bodywork', value: 'Spiritual Bodywork' },
+      { label: 'Sound Healing', value: 'Sound Healing' },
+      { label: 'Reiki', value: 'Reiki' },
+      { label: 'Trasidental Hypnotherapy', value: 'Trasidental Hypnotherapy' },
+    ];
+  }, []);
+
+  const [country, setCountry] = useState<SelectOptions>({
+    label: 'Select Country',
+    value: '',
+  });
+
+  const [service, setService] = useState<SelectOptions>({
+    label: 'Select Package',
+    value: '',
+  });
+
+  console.log(
+    '🚀 ~ file: testimonials.tsx ~ line 136 ~ Testimonials ~ service',
+    service
+  );
+
   const methods = useForm({ mode: 'onBlur' });
   const {
     formState: { errors },
@@ -135,20 +168,15 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const [country, setCountry] = useState<CountryOptions>({
-    label: 'Select Country',
-    value: '',
-  });
-
-  const countries = useMemo(() => countryList().getData(), []);
-
   const handleCountryChange = (value: any) => {
     setCountry(value);
   };
 
-  const emailFormat: RegExp = /^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/;
+  const handlePackageChange = (value: any) => {
+    setService(value);
+  };
 
-  // console.log(testimonials.map((t: any) => t.node.testimonial.raw.children));
+  const emailFormat: RegExp = /^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/;
 
   const accept = {
     'image/png': ['.png'],
@@ -156,8 +184,30 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
   };
 
   const handleSubmit = methods.handleSubmit((data: any) => {
-    const { name, email, images, message } = data;
+    const { name, email, images = [], message } = data;
     const countryLabel: string = country.label;
+
+    if (images.length === 0) {
+      toast.error('Please upload an image');
+      return;
+    } else if (countryLabel === 'Select Country') {
+      toast.error('Please select a country');
+      return;
+    } else if (!emailFormat.test(email)) {
+      toast.error('Please enter a valid email');
+      return;
+    } else if (message.length < 10) {
+      toast.error('Please enter a message of at least 10 characters');
+      return;
+    } else if (name.length < 3) {
+      toast.error('Please enter a name of at least 3 characters');
+      return;
+    } else if (name.length > 30) {
+      toast.error('Please enter a name of less than 30 characters');
+      return;
+    }
+
+    console.log(images[0]);
 
     const form = new FormData();
     form.append('file_1', images[0]);
@@ -195,7 +245,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
     <Box pt={'4rem'}>
       <Toaster position={'top-right'} reverseOrder={false} />
       <Section>
-        <Container maxW={'container.lg'} display={'flex'} flexDir={'column'}>
+        <Container maxW={'container.xl'} display={'flex'} flexDir={'column'}>
           <Box textAlign={'center'} py={'4rem'}>
             <Heading as={'h1'}>
               What people feel about{' '}
@@ -211,7 +261,8 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
               infinite={true}
               customLeftArrow={customLeftArrow}
               customRightArrow={customRightArrow}
-              itemClass={'px-4'}
+              // @ts-ignore
+              itemClass={size.width > 768 ? 'px-20' : 'px-2'}
               keyBoardControl={true}
             >
               {testimonials.map(testimonial => {
@@ -226,7 +277,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                       px={{ base: '1rem', md: '2rem' }}
                       border={'1px solid rgba(255, 175, 58, 1)'}
                       // border={'1px solid rgba(255, 255, 255, 0.5)'}
-                      bg={'#202023'}
+                      bg={useColorModeValue('white', '#202023')}
                       borderRadius={'10px'}
                     >
                       <Avatar
@@ -329,6 +380,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                       <FileInput accept={accept} name={'images'} />
                     </Box>
 
+                    {/* Name / Nickname */}
                     <Box py={'0.5rem'}>
                       <FormLabel htmlFor={'name'}>
                         Name / Nickname{' '}
@@ -345,6 +397,10 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                         placeholder={'John Doe'}
                         isInvalid={errors.name ? true : false}
                         _hover={{ borderColor: 'orange' }}
+                        borderColor={useColorModeValue(
+                          'gray.700',
+                          'whiteAlpha.500'
+                        )}
                         focusBorderColor={'#FFAF3A'}
                       />
                       {errors.name?.type === 'required' && (
@@ -359,6 +415,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                       )}
                     </Box>
 
+                    {/* Email */}
                     <Box py={'0.5rem'}>
                       <FormLabel htmlFor={'email'}>
                         Email{' '}
@@ -376,6 +433,10 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                         placeholder={'Email'}
                         isInvalid={errors.email ? true : false}
                         _hover={{ borderColor: 'orange' }}
+                        borderColor={useColorModeValue(
+                          'gray.700',
+                          'whiteAlpha.500'
+                        )}
                         focusBorderColor={'#FFAF3A'}
                       />
                       {errors.email?.type === 'required' && (
@@ -395,6 +456,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                       )}
                     </Box>
 
+                    {/* Country */}
                     <Box py={'0.5rem'}>
                       <FormLabel htmlFor={'country'}>
                         Country of Residence
@@ -403,17 +465,151 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                         options={countries}
                         name={'country'}
                         placeholder={'Select Country'}
-                        selectedOptionColor={'#FFAF3A'}
+                        focusBorderColor={'#FFAF3A'}
                         isClearable
                         isSearchable
                         onChange={e => handleCountryChange(e)}
+                        chakraStyles={{
+                          control: (prev, { isFocused }) => ({
+                            ...prev,
+                            borderColor: isFocused
+                              ? '#FFAF3A'
+                              : useColorModeValue('gray.700', 'whiteAlpha.500'),
+                            ':hover': {
+                              borderColor: '#FFAF3A',
+                            },
+                          }),
+                          dropdownIndicator: (
+                            prev,
+                            { selectProps: { menuIsOpen } }
+                          ) => ({
+                            ...prev,
+                            backgroundColor: useColorModeValue(
+                              'whiteAlpha.800',
+                              'rgb(55, 55, 55)'
+                            ),
+                            '> svg': {
+                              transitionDuration: 'normal',
+                              transform: `rotate(${menuIsOpen ? 180 : 0}deg)`,
+                            },
+                          }),
+                          option: (prev, { isFocused, isSelected }) => ({
+                            ...prev,
+                            backgroundColor: isFocused
+                              ? '#FFAF3A'
+                              : isSelected
+                              ? '#FFAF3A'
+                              : useColorModeValue(
+                                  'whiteAlpha.800',
+                                  'rgba(0,0,0,0.8)'
+                                ),
+                            color: isFocused
+                              ? useColorModeValue('#202023', '#FFF')
+                              : undefined,
+                            ':active': {
+                              backgroundColor: '#FFAF3A',
+                            },
+                          }),
+                          menu: prev => ({
+                            ...prev,
+                            backgroundColor: useColorModeValue(
+                              'whiteAlpha.800',
+                              'rgba(0,0,0,0.8)'
+                            ),
+                            borderRadius: 'lg',
+                            border: '1px solid #FFAF3A',
+                            boxShadow: 'none',
+                            outline: 'none',
+                          }),
+                          menuList: prev => ({
+                            ...prev,
+                            padding: '0',
+                            backgroundColor: useColorModeValue(
+                              'whiteAlpha.800',
+                              'rgba(0,0,0,0.8)'
+                            ),
+                          }),
+                        }}
                       />
                     </Box>
 
+                    {/* Package */}
                     <Box py={'0.5rem'}>
-                      <FormLabel htmlFor={'experience'}></FormLabel>
+                      <FormLabel htmlFor={'experience'}>Package</FormLabel>
+                      <Select
+                        options={services}
+                        name={'experience'}
+                        placeholder={'Select Package'}
+                        focusBorderColor={'#FFAF3A'}
+                        isClearable
+                        isSearchable
+                        isMulti
+                        onChange={e => handlePackageChange(e)}
+                        chakraStyles={{
+                          control: (prev, { isFocused }) => ({
+                            ...prev,
+                            borderColor: isFocused
+                              ? '#FFAF3A'
+                              : useColorModeValue('gray.700', 'whiteAlpha.500'),
+                            ':hover': {
+                              borderColor: '#FFAF3A',
+                            },
+                          }),
+                          dropdownIndicator: (
+                            prev,
+                            { selectProps: { menuIsOpen } }
+                          ) => ({
+                            ...prev,
+                            backgroundColor: useColorModeValue(
+                              'whiteAlpha.800',
+                              'rgb(55, 55, 55)'
+                            ),
+                            '> svg': {
+                              transitionDuration: 'normal',
+                              transform: `rotate(${menuIsOpen ? 180 : 0}deg)`,
+                            },
+                          }),
+                          option: (prev, { isFocused, isSelected }) => ({
+                            ...prev,
+                            backgroundColor: isFocused
+                              ? '#FFAF3A'
+                              : isSelected
+                              ? '#FFAF3A'
+                              : useColorModeValue(
+                                  'whiteAlpha.800',
+                                  'rgba(0,0,0,0.8)'
+                                ),
+                            color: isFocused
+                              ? useColorModeValue('#202023', '#FFF')
+                              : undefined,
+                            ':active': {
+                              backgroundColor: '#FFAF3A',
+                            },
+                          }),
+                          menu: prev => ({
+                            ...prev,
+                            backgroundColor: useColorModeValue(
+                              'whiteAlpha.800',
+                              'rgba(0,0,0,0.8)'
+                            ),
+                            borderRadius: 'lg',
+                            border: '1px solid #FFAF3A',
+                            boxShadow: 'none',
+                            outline: 'none',
+                          }),
+                          menuList: prev => ({
+                            ...prev,
+                            padding: '0',
+                            backgroundColor: useColorModeValue(
+                              'whiteAlpha.800',
+                              'rgba(0,0,0,0.8)'
+                            ),
+                          }),
+                        }}
+                      />
                     </Box>
 
+                    {/* Testimonial */}
                     <Box py={'1rem'}>
                       <FormLabel htmlFor={'message'}>Testimonial</FormLabel>
                       <Textarea
@@ -425,6 +621,10 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                         placeholder={'Your Testimonial'}
                         isInvalid={errors.message ? true : false}
                         _hover={{ borderColor: 'orange' }}
+                        borderColor={useColorModeValue(
+                          'gray.700',
+                          'whiteAlpha.500'
+                        )}
                         focusBorderColor={'#FFAF3A'}
                       />
                       {errors.message?.type === 'required' && (
