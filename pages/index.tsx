@@ -151,6 +151,20 @@ const Home: NextPage = () => {
                 including physical, emotional, mental, and spiritual level,
                 where everything is connected as a single body.
               </Paragraph>
+              <Paragraph>
+                The base is{' '}
+                <span
+                  style={{
+                    color: 'rgba(250, 175, 58, 1)',
+                  }}
+                >
+                  Bodywork De Armoring, Authentic Massage, Trauma Release,
+                  Emotional Release, Breathwork and Sound Healing{' '}
+                </span>
+                .as a key that helps to unlock bodies ours.The sessions vary
+                from person to person.Every session is adapted to the
+                individual.We work with your rhythm by being ourselves heal.
+              </Paragraph>
             </Box>
             <Divider
               my={'2rem'}

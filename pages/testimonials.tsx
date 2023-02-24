@@ -534,7 +534,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                     </Box>
 
                     {/* Package */}
-                    <Box py={'0.5rem'}>
+                    {/* <Box py={'0.5rem'}>
                       <FormLabel htmlFor={'experience'}>Package</FormLabel>
                       <Select
                         options={services}
@@ -607,7 +607,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                           }),
                         }}
                       />
-                    </Box>
+                    </Box> */}
 
                     {/* Testimonial */}
                     <Box py={'1rem'}>
