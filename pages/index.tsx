@@ -8,6 +8,7 @@ import {
   List,
   ListIcon,
   ListItem,
+  Text,
 } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import React, { useEffect, useState } from 'react';
@@ -20,9 +21,14 @@ import { useParallax } from 'react-scroll-parallax';
 
 // Typewriter
 import Typewriter from 'typewriter-effect';
+
+// Components
 import IntroImage from '../components/IntroImage';
 import Paragraph from '../components/Paragraph';
 import Section from '../components/Section';
+
+// Data
+import data from '../util/modalities.json';
 
 // Styles
 import styles from '../styles/Home.module.css';
@@ -52,21 +58,6 @@ const Home: NextPage = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const modalities = [
-    'Self Awareness',
-    'Bodywork',
-    'De-Armouring',
-    'Breathwork',
-    'Shadows',
-    'Prana',
-    'Reiki',
-    'Emotional Release',
-    'Trauma Release',
-    'Duality & Non Duality',
-    'Feminine & Masculine Polarity',
-    'Sound Healing',
-  ];
-
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -80,6 +71,8 @@ const Home: NextPage = () => {
       observer.observe(element);
     });
   });
+
+  const modalities = data.$modalities;
 
   return (
     <Box pt={'4rem'}>
@@ -137,21 +130,27 @@ const Home: NextPage = () => {
             flexDir={'column'}
           >
             <Box maxW={'540px'}>
-              <Paragraph>
+              <Text
+                textAlign={['left', 'justify']}
+                textIndent={'1em'}
+                fontSize={'1.2rem'}
+              >
                 Resonate with Yourself is based on a{' '}
                 <span
                   style={{
-                    textDecoration: 'underline',
-                    textDecorationColor: 'rgba(250, 175, 58, 1)',
-                    textUnderlineOffset: '0.2rem',
+                    color: 'rgba(250, 175, 58, 1)',
                   }}
                 >
                   Holistic Therapy
                 </span>{' '}
                 including physical, emotional, mental, and spiritual level,
                 where everything is connected as a single body.
-              </Paragraph>
-              <Paragraph>
+              </Text>
+              <Text
+                textAlign={['left', 'justify']}
+                textIndent={'1em'}
+                fontSize={'1.2rem'}
+              >
                 The base is{' '}
                 <span
                   style={{
@@ -164,7 +163,7 @@ const Home: NextPage = () => {
                 .as a key that helps to unlock bodies ours.The sessions vary
                 from person to person.Every session is adapted to the
                 individual.We work with your rhythm by being ourselves heal.
-              </Paragraph>
+              </Text>
             </Box>
             <Divider
               my={'2rem'}
@@ -194,7 +193,7 @@ const Home: NextPage = () => {
                           as={VscCircleFilled}
                           color={'rgba(250, 175, 58, 1)'}
                         />
-                        {modality}
+                        {modality.name}
                       </ListItem>
                     </List>
                   </Box>
@@ -202,7 +201,7 @@ const Home: NextPage = () => {
               </Box>
             </Box>
 
-            <Box className={styles.hidden} py={'2rem'}>
+            <Box py={'2rem'}>
               <Link href={'/about'} _hover={{ textDecoration: 'none' }}>
                 <Button
                   variant={'outline'}

@@ -55,12 +55,12 @@
   border-radius: 2px;
   border-top: transparent;
   border-left: transparent;
-  animation: scroll 2s ease-in-out infinite;
+  animation: scroll 4s ease-in-out infinite;
 }
 
 .scroll-element::after {
   top: 80%;
-  animation-delay: 1s;
+  animation-delay: 2s;
 }
 
 @keyframes scroll {
@@ -102,7 +102,7 @@
 
 .hidden {
   opacity: 0;
-  transform: translateY(100px);
+  transform: translateY(50px);
   transition: all 1s ease-in-out;
 }
 
