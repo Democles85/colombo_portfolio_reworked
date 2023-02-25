@@ -12,10 +12,10 @@ import IntroImage from '../components/IntroImage';
 import Section from '../components/Section';
 
 // Data
-import data from '../util/about.json';
+import data from '../util/about';
 
 const About = () => {
-  const about = data.$about;
+  const about = data.about;
 
   return (
     <Box pt={'4rem'}>
