@@ -39,9 +39,6 @@ const Home: NextPage = () => {
   const { ref } = useParallax<HTMLDivElement>({
     speed: 30,
   });
-  const { ref: ref2 } = useParallax<HTMLDivElement>({
-    speed: 20,
-  });
 
   const windowWidth = getWindowSize().width;
 
@@ -67,25 +64,7 @@ const Home: NextPage = () => {
     <Layout title={'Home'}>
       <Box pt={'4rem'}>
         <Section>
-          <Header thumbnail={'works/home_thumbnail.jpg'}>
-            <Heading
-              paddingX={{ base: '0.3rem' }}
-              fontSize={{ base: '1.75rem', md: '2rem', lg: '2.5rem' }}
-              ref={ref}
-              textShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}
-              color={'rgba(255, 255, 255, 0.9)'}
-            >
-              <Typewriter
-                onInit={typewriter => {
-                  typewriter
-                    .typeString(
-                      'It is all a consciousness that you must experience!'
-                    )
-                    .start();
-                }}
-              />
-            </Heading>
-          </Header>
+          <Header thumbnail={'works/home_thumbnail.jpg'} children={undefined} />
         </Section>
 
         <Container
@@ -97,7 +76,7 @@ const Home: NextPage = () => {
           overflow={'hidden'}
         >
           <Box
-            ref={ref2}
+            ref={ref}
             display={'flex'}
             flexDir={'column'}
             alignItems={'center'}
