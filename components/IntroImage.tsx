@@ -28,7 +28,7 @@ export default function IntroImage({ children, thumbnail }: IntroImageProps) {
     >
       {/* Make it responsive for mobile browsers knowing the navigation bar */}
       <Box
-        height={`calc(${windowHeight}px - 4rem)`}
+        height={`calc(${windowHeight}px - 64px)`}
         minH={'-webkit-fill-available'}
         className={styles['intro-image']}
         display={'flex'}
