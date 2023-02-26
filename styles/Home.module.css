@@ -110,3 +110,11 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+.intro-image {
+  min-height: calc(100vh - 4rem);
+  min-height: -webkit-calc(100vh - 4rem);
+  min-height: -moz-calc(100vh - 4rem);
+  min-height: -o-calc(100vh - 4rem);
+  min-height: -ms-calc(100vh - 4rem);
+}

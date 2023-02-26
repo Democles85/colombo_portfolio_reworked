@@ -22,12 +22,11 @@ export default function IntroImage({ children, thumbnail }: IntroImageProps) {
       position={'relative'}
     >
       <Box
+        className={styles['intro-image']}
         display={'flex'}
         justifyContent={'center'}
         alignItems={'center'}
         flexDir={'column'}
-        height={'calc(100vh - 4rem)'}
-        maxHeight={'100%'}
         backdropFilter={'blur(5px)'}
       >
         {children}
