@@ -33,6 +33,7 @@ import data from '../util/modalities.json';
 import styles from '../styles/Home.module.css';
 import Layout from '../components/layouts/title';
 import { getWindowSize, getWindowSizeStatic } from '../lib/getWindowSize';
+import Header from '../components/Header';
 
 const Home: NextPage = () => {
   const { ref } = useParallax<HTMLDivElement>({
@@ -66,52 +67,25 @@ const Home: NextPage = () => {
     <Layout title={'Home'}>
       <Box pt={'4rem'}>
         <Section>
-          <Box
-            background={`url(/works/home_thumbnail.jpg)`}
-            backgroundSize={'cover'}
-            backgroundPosition={'center'}
-            backgroundRepeat={'no-repeat'}
-            position={'relative'}
-          >
-            <Box
-              height={{
-                base: `calc(${height}px - 4rem)`,
-                md: 'calc(100vh - 4rem)',
-              }}
-              className={styles['intro-image']}
-              display={'flex'}
-              justifyContent={'center'}
-              alignItems={'center'}
-              flexDir={'column'}
-              backdropFilter={'blur(5px)'}
+          <Header thumbnail={'works/home_thumbnail.jpg'}>
+            <Heading
+              paddingX={{ base: '0.3rem' }}
+              fontSize={{ base: '1.75rem', md: '2rem', lg: '2.5rem' }}
+              ref={ref}
+              textShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}
+              color={'rgba(255, 255, 255, 0.9)'}
             >
-              <Heading
-                paddingX={{ base: '0.3rem' }}
-                fontSize={{ base: '1.75rem', md: '2rem', lg: '2.5rem' }}
-                ref={ref}
-                textShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}
-                color={'rgba(255, 255, 255, 0.9)'}
-              >
-                <Typewriter
-                  onInit={typewriter => {
-                    typewriter
-                      .typeString(
-                        'It is all a consciousness that you must experience!'
-                      )
-                      .start();
-                  }}
-                />
-              </Heading>
-            </Box>
-            <Box
-              className={styles['scroll-element']}
-              position={'absolute'}
-              bottom={'0'}
-              left={'50%'}
-              transform={'translateX(-50%)'}
-              mb={'2rem'}
-            />
-          </Box>
+              <Typewriter
+                onInit={typewriter => {
+                  typewriter
+                    .typeString(
+                      'It is all a consciousness that you must experience!'
+                    )
+                    .start();
+                }}
+              />
+            </Heading>
+          </Header>
         </Section>
 
         <Container
@@ -151,7 +125,7 @@ const Home: NextPage = () => {
             >
               <Box maxW={'540px'}>
                 <Text
-                  textAlign={['left', 'justify']}
+                  textAlign={'justify'}
                   textIndent={'1em'}
                   fontSize={'1.2rem'}
                 >
@@ -159,6 +133,7 @@ const Home: NextPage = () => {
                   <span
                     style={{
                       color: 'rgba(250, 175, 58, 1)',
+                      fontWeight: 'bold',
                     }}
                   >
                     Holistic Therapy
@@ -167,7 +142,7 @@ const Home: NextPage = () => {
                   where everything is connected as a single body.
                 </Text>
                 <Text
-                  textAlign={['left', 'justify']}
+                  textAlign={'justify'}
                   textIndent={'1em'}
                   fontSize={'1.2rem'}
                 >
@@ -175,14 +150,15 @@ const Home: NextPage = () => {
                   <span
                     style={{
                       color: 'rgba(250, 175, 58, 1)',
+                      fontWeight: 'bold',
                     }}
                   >
                     Bodywork De Armoring, Authentic Massage, Trauma Release,
                     Emotional Release, Breathwork and Sound Healing{' '}
                   </span>
-                  .as a key that helps to unlock bodies ours.The sessions vary
-                  from person to person.Every session is adapted to the
-                  individual.We work with your rhythm by being ourselves heal.
+                  are techniques used to unlock the body's potential. Each
+                  session is tailored to the individual, working with their
+                  unique rhythm to facilitate healing.
                 </Text>
               </Box>
               <Divider

@@ -49,7 +49,11 @@ const About = () => {
               backdropFilter={'blur(5px)'}
             >
               <Section delay={0.5}>
-                <Heading color={'#fff'} textAlign={'center'}>
+                <Heading
+                  color={'#fff'}
+                  textAlign={'center'}
+                  fontSize={{ base: '2rem', md: '3rem', lg: '4rem' }}
+                >
                   Hello, my name is{' '}
                   <span className={styles['text-gradient']}>Colombo</span>.
                 </Heading>
@@ -96,6 +100,7 @@ const About = () => {
                 as={'h3'}
                 variant={'section-title'}
                 letterSpacing={'wider'}
+                fontSize={'2rem'}
                 // fontFamily={"'Silkscreen', cursive"}
               >
                 My Journey

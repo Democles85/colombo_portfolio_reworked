@@ -545,13 +545,25 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                       )}
                     </Box>
 
-                    <Box py={'1rem'}>
+                    <Box
+                      py={'1rem'}
+                      display={'flex'}
+                      alignItems={'center'}
+                      justifyContent={'center'}
+                    >
                       <Button
                         type={'submit'}
-                        colorScheme={'orange'}
-                        variant={'solid'}
-                        size={'lg'}
-                        width={'100%'}
+                        bg={'#ffc46c'}
+                        color={'#202023'}
+                        _hover={{
+                          bg: '#ff9900',
+                          color: '#202023',
+                        }}
+                        _active={{
+                          bg: '#FFAF3A',
+                          color: '#202023',
+                        }}
+                        w={{ base: '60%', md: '50%', lg: '40%' }}
                       >
                         Submit
                       </Button>
