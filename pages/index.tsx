@@ -64,7 +64,34 @@ const Home: NextPage = () => {
     <Layout title={'Home'}>
       <Box pt={'4rem'}>
         <Section>
-          <Header thumbnail={'works/home_thumbnail.jpg'} children={undefined} />
+          <Box
+            background={`url(/works/home_thumbnail.jpg)`}
+            backgroundSize={'cover'}
+            backgroundPosition={'center'}
+            backgroundRepeat={'no-repeat'}
+            position={'relative'}
+          >
+            {/* Make it responsive for mobile browsers knowing the navigation bar */}
+            <Box
+              height={{
+                base: `calc(${height}px - 4rem)`,
+                md: 'calc(100vh - 4rem)',
+              }}
+              className={styles['intro-image']}
+              display={'flex'}
+              justifyContent={'center'}
+              alignItems={'center'}
+              flexDir={'column'}
+            />
+            <Box
+              className={styles['scroll-element']}
+              position={'absolute'}
+              bottom={'0'}
+              left={'50%'}
+              transform={'translateX(-50%)'}
+              mb={'2rem'}
+            />
+          </Box>
         </Section>
 
         <Container
