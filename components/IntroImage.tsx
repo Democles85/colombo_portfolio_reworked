@@ -28,8 +28,8 @@ export default function IntroImage({ children, thumbnail }: IntroImageProps) {
     >
       {/* Make it responsive for mobile browsers knowing the navigation bar */}
       <Box
-        height={`calc(${windowHeight}px - 64px)`}
-        minH={'-webkit-fill-available'}
+        height={`calc(${windowHeight}px - 4rem)`}
+        minH={`calc(${windowHeight}px - 4rem)`}
         className={styles['intro-image']}
         display={'flex'}
         justifyContent={'center'}

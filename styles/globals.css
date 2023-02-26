@@ -12,8 +12,15 @@
   color: #000;
 }
 
-html,
 body {
+  min-height: 100vh;
+  min-height: fill-available;
+  min-height: -webkit-fill-available;
   padding: 0;
   margin: 0;
+}
+
+html {
+  height: fill-available;
+  height: -webkit-fill-available;
 }
