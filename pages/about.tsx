@@ -23,6 +23,8 @@ import { getWindowSizeStatic } from '../lib/getWindowSize';
 const About = () => {
   const about = data.about;
 
+  const height = getWindowSizeStatic();
+
   return (
     <Layout title={'About Me'}>
       <Box pt={'4rem'}>
@@ -36,7 +38,7 @@ const About = () => {
           >
             <Box
               minHeight={{
-                base: 'calc(var(--vh, 1vh) * 100 - 4rem)',
+                base: `calc(${height} - 4rem)`,
                 md: 'calc(100vh - 4rem)',
               }}
               className={styles['intro-image']}

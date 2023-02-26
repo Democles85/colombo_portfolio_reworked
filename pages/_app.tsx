@@ -9,11 +9,7 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import theme from '../lib/theme';
 import { AnimatePresence } from 'framer-motion';
 
-import useVH from 'react-viewport-height';
-
 function MyApp({ Component, pageProps, router }: AppProps) {
-  useVH();
-
   return (
     <ChakraProvider theme={theme}>
       <ParallaxProvider>

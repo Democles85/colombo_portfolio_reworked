@@ -60,6 +60,8 @@ const Home: NextPage = () => {
 
   const modalities = data.$modalities;
 
+  const height = getWindowSizeStatic();
+
   return (
     <Layout title={'Home'}>
       <Box pt={'4rem'}>
@@ -73,7 +75,7 @@ const Home: NextPage = () => {
           >
             <Box
               minHeight={{
-                base: 'calc(var(--vh, 1vh) * 100 - 4rem)',
+                base: `calc(${height} - 4rem)`,
                 md: 'calc(100vh - 4rem)',
               }}
               className={styles['intro-image']}
