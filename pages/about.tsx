@@ -100,7 +100,7 @@ const About = () => {
                 as={'h3'}
                 variant={'section-title'}
                 letterSpacing={'wider'}
-                fontSize={'2rem'}
+                fontSize={{ base: '1.75rem', md: '2rem' }}
                 // fontFamily={"'Silkscreen', cursive"}
               >
                 My Journey
