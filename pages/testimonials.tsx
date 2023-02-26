@@ -49,7 +49,7 @@ import 'react-multi-carousel/lib/styles.css';
 import countryList from 'react-select-country-list';
 
 // Functions
-import getWindowSize from '../lib/getWindowSize';
+import { getWindowSize } from '../lib/getWindowSize';
 import CircularBackground from '../components/CircularBackground';
 
 interface SelectOptions extends OptionBase {
@@ -136,16 +136,6 @@ const customRightArrow = (
 const Testimonials = ({ testimonials }: TestimonialTypes) => {
   const size = getWindowSize();
   const countries = useMemo(() => countryList().getData(), []);
-  const services = useMemo(() => {
-    return [
-      { label: 'Authentic Bodywork', value: 'Authentic Bodywork' },
-      { label: 'Prana Bodywork', value: 'Prana Bodywork' },
-      { label: 'Spiritual Bodywork', value: 'Spiritual Bodywork' },
-      { label: 'Sound Healing', value: 'Sound Healing' },
-      { label: 'Reiki', value: 'Reiki' },
-      { label: 'Trasidental Hypnotherapy', value: 'Trasidental Hypnotherapy' },
-    ];
-  }, []);
 
   const [country, setCountry] = useState<SelectOptions>({
     label: 'Select Country',
@@ -156,11 +146,6 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
     label: 'Select Package',
     value: '',
   });
-
-  console.log(
-    '🚀 ~ file: testimonials.tsx ~ line 136 ~ Testimonials ~ service',
-    service
-  );
 
   const methods = useForm({ mode: 'onBlur' });
   const {

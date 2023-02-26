@@ -29,6 +29,7 @@
     "react-multi-carousel": "^2.8.2",
     "react-scroll-parallax": "^3.3.2",
     "react-select-country-list": "^2.2.3",
+    "react-viewport-height": "^1.2.1",
     "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {

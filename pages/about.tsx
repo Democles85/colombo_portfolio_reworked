@@ -19,6 +19,7 @@ import Layout from '../components/layouts/title';
 
 // Data
 import data from '../util/about';
+import { getWindowSizeStatic } from '../lib/getWindowSize';
 
 const About = () => {
   const about = data.about;

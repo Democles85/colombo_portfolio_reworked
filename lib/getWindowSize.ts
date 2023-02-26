@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
-export default function getWindowSize() {
+export function getWindowSize() {
   const [windowSize, setWindowSize] = useState({
-    width: undefined as undefined | number,
-    height: undefined as undefined | number,
+    width: 0 as number,
+    height: 0 as number,
   });
 
   useEffect(() => {
@@ -27,4 +27,14 @@ export default function getWindowSize() {
     return () => window.removeEventListener('resize', handleResize);
   }, []); // Empty array ensures that effect is only run on mount
   return windowSize;
+}
+
+export function getWindowSizeStatic() {
+  const windowHeight = useRef(0);
+
+  useEffect(() => {
+    windowHeight.current = window.innerHeight;
+  }, []);
+
+  return windowHeight;
 }

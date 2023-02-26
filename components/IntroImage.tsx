@@ -13,15 +13,6 @@ interface IntroImageProps {
 }
 
 export default function IntroImage({ children, thumbnail }: IntroImageProps) {
-  const windowHeight = useRef(0);
-
-  useEffect(() => {
-    // Get the initial window height
-    windowHeight.current = window.innerHeight;
-  }, []);
-
-  console.log(windowHeight.current);
-
   return (
     <Box
       background={`url(/works/${thumbnail})`}
@@ -32,8 +23,10 @@ export default function IntroImage({ children, thumbnail }: IntroImageProps) {
     >
       {/* Make it responsive for mobile browsers knowing the navigation bar */}
       <Box
-        height={`calc(${windowHeight.current}px - 4rem)`}
-        minH={'-webkit-fill-available'}
+        minHeight={{
+          base: 'calc(var(--vh, 1vh) * 100 - 4rem)',
+          md: 'calc(100vh - 4rem)',
+        }}
         className={styles['intro-image']}
         display={'flex'}
         justifyContent={'center'}
