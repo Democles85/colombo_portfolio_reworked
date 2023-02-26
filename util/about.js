@@ -7,7 +7,7 @@ const data = {
             In my path of healing
           </span>
           , as a seeker of knowledge, I found nothing more sacred than the
-          subconscious and spiritual touch of my body, full of divine love. I
+          subconscious and spiritual touch of the body, full of divine love. I
           understood that healing comes through the body, as that is where all
           the history is written. The world is tired of healing philosophies, so
           it needs something alive that rocks us, makes us sensitive, and gives
