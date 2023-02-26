@@ -2,8 +2,7 @@
 import { Box } from '@chakra-ui/react';
 
 // React Imports
-import React from 'react';
-import getWindowSize from '../lib/getWindowSize';
+import React, { useEffect, useRef } from 'react';
 
 // Styles
 import styles from '../styles/Home.module.css';
@@ -14,9 +13,14 @@ interface IntroImageProps {
 }
 
 export default function IntroImage({ children, thumbnail }: IntroImageProps) {
-  const windowHeight = getWindowSize().height;
+  const windowHeight = useRef(0);
 
-  console.log(windowHeight);
+  useEffect(() => {
+    // Get the initial window height
+    windowHeight.current = window.innerHeight;
+  }, []);
+
+  console.log(windowHeight.current);
 
   return (
     <Box
@@ -28,7 +32,7 @@ export default function IntroImage({ children, thumbnail }: IntroImageProps) {
     >
       {/* Make it responsive for mobile browsers knowing the navigation bar */}
       <Box
-        height={`calc(${windowHeight}px - 4rem)`}
+        height={`calc(${windowHeight.current}px - 4rem)`}
         minH={'-webkit-fill-available'}
         className={styles['intro-image']}
         display={'flex'}
