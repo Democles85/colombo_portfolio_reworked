@@ -56,6 +56,7 @@ const Packages = () => {
                     borderRadius={'lg'}
                     display={'flex'}
                     flexDir={'column'}
+                    minH={'526px'}
                     transition={'all 0.2s ease-in-out'}
                     _hover={{
                       boxShadow: '0px 0px 10px #FFAF36',

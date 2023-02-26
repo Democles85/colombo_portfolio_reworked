@@ -18,12 +18,12 @@ import Layout from '../components/layouts/title';
 
 // Data
 import data from '../util/about';
-import { getWindowSizeStatic } from '../lib/getWindowSize';
+import { getWindowSize } from '../lib/getWindowSize';
 
 const About = () => {
   const about = data.about;
 
-  const height = getWindowSizeStatic();
+  const height = getWindowSize().height;
 
   return (
     <Layout title={'About Me'}>
@@ -38,7 +38,7 @@ const About = () => {
           >
             <Box
               minHeight={{
-                base: `calc(${height} - 4rem)`,
+                base: `calc(${height}px - 4rem)`,
                 md: 'calc(100vh - 4rem)',
               }}
               className={styles['intro-image']}
