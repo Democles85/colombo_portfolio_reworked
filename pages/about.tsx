@@ -54,7 +54,7 @@ const About = () => {
                   textAlign={'center'}
                   fontSize={{ base: '2rem', md: '3rem', lg: '4rem' }}
                 >
-                  About Me
+                  About <span className={styles['text-gradient']}>Me</span>
                 </Heading>
               </Section>
             </Box>

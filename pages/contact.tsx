@@ -12,10 +12,17 @@ import {
 } from '@chakra-ui/react';
 import { Select } from 'chakra-react-select';
 import React, { useMemo } from 'react';
+
+// Country List
 import countryList from 'react-select-country-list';
+
+// Components
 import Header from '../components/Header';
 import Layout from '../components/layouts/title';
 import Section from '../components/Section';
+
+// Styles
+import styles from '../styles/Contact.module.css';
 
 const Contact = () => {
   const countries = useMemo(() => countryList().getData(), []);
@@ -32,7 +39,7 @@ const Contact = () => {
                 fontWeight={'bold'}
                 textAlign={'center'}
               >
-                Contact Me
+                Contact <span className={styles['text-gradient']}>Me</span>
               </Text>
             </Section>
           </Header>

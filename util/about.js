@@ -6,12 +6,12 @@ const data = {
           <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>
             In my path of healing
           </span>
-          , as a seeker of knowledge, I found nothing more sacred than the
-          subconscious and spiritual touch of the body, full of divine love. I
-          understood that healing comes through the body, as that is where all
-          the history is written. The world is tired of healing philosophies, so
-          it needs something alive that rocks us, makes us sensitive, and gives
-          us life.
+          , as a seeker of knowledge, I found nothing more sacred than
+          consciously touching the body in a divine way, full of energy and
+          love. I understood that healing comes through the body, as our entire
+          story is within our bodies. The world is tired of healing
+          philosophies, so there is a great need for something alive to shake
+          us, make us feel and give us life.
         </>
       ),
     },
@@ -38,8 +38,8 @@ const data = {
           , my affinity for fine energies was enriched, as I had managed to
           connect with my higher self. Not long after, living like that became
           the new normal, and I started to understand myself, reality, and
-          everything surrounding me. The deeper I went with my gift, the more
-          miracles happened.
+          everything that surrounded me. The more I familiarized myself with
+          this gift, the more wonders I saw.
         </>
       ),
     },
@@ -50,10 +50,10 @@ const data = {
             In my spiritual development
           </span>
           , this feeling deepened, making me able to sense even finer energies,
-          such as hidden traumas, understanding them on a spiritual level. I
-          created portfolios of a kind, which I dubbed “energy passports” for
-          everyone I met; who that person was, what their divine gifts were, and
-          what aspects of themselves should they work on.
+          such as hidden traumas or shadows, understanding them on a spiritual
+          level. I created portfolios of a kind, which I dubbed “energy
+          passports” for everyone I met; who that person was, what their divine
+          gifts were, and what aspects of themselves should they work on.
         </>
       ),
     },
