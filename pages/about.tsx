@@ -8,7 +8,6 @@ import {
 import React from 'react';
 
 // Components
-import IntroImage from '../components/IntroImage';
 import Section from '../components/Section';
 
 // Styles
@@ -28,14 +27,41 @@ const About = () => {
     <Layout title={'About Me'}>
       <Box pt={'4rem'}>
         <Section>
-          <IntroImage thumbnail="colombo.png">
-            <Section delay={0.5}>
-              <Heading color={'#fff'} textAlign={'center'}>
-                Hello, my name is{' '}
-                <span className={styles['text-gradient']}>Colombo</span>.
-              </Heading>
-            </Section>
-          </IntroImage>
+          <Box
+            background={`url(/works/colombo.png)`}
+            backgroundSize={'cover'}
+            backgroundPosition={'center'}
+            backgroundRepeat={'no-repeat'}
+            position={'relative'}
+          >
+            <Box
+              minHeight={{
+                base: 'calc(var(--vh, 1vh) * 100 - 4rem)',
+                md: 'calc(100vh - 4rem)',
+              }}
+              className={styles['intro-image']}
+              display={'flex'}
+              justifyContent={'center'}
+              alignItems={'center'}
+              flexDir={'column'}
+              backdropFilter={'blur(5px)'}
+            >
+              <Section delay={0.5}>
+                <Heading color={'#fff'} textAlign={'center'}>
+                  Hello, my name is{' '}
+                  <span className={styles['text-gradient']}>Colombo</span>.
+                </Heading>
+              </Section>
+            </Box>
+            <Box
+              className={styles['scroll-element']}
+              position={'absolute'}
+              bottom={'0'}
+              left={'50%'}
+              transform={'translateX(-50%)'}
+              mb={'2rem'}
+            />
+          </Box>
         </Section>
         <Section>
           <Container

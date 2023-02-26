@@ -23,7 +23,6 @@ import { useParallax } from 'react-scroll-parallax';
 import Typewriter from 'typewriter-effect';
 
 // Components
-import IntroImage from '../components/IntroImage';
 import Paragraph from '../components/Paragraph';
 import Section from '../components/Section';
 
@@ -65,25 +64,52 @@ const Home: NextPage = () => {
     <Layout title={'Home'}>
       <Box pt={'4rem'}>
         <Section>
-          <IntroImage thumbnail="home_thumbnail.jpg">
-            <Heading
-              paddingX={{ base: '0.3rem' }}
-              fontSize={{ base: '1.75rem', md: '2rem', lg: '2.5rem' }}
-              ref={ref}
-              textShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}
-              color={'rgba(255, 255, 255, 0.9)'}
+          <Box
+            background={`url(/works/home_thumbnail.jpg)`}
+            backgroundSize={'cover'}
+            backgroundPosition={'center'}
+            backgroundRepeat={'no-repeat'}
+            position={'relative'}
+          >
+            <Box
+              minHeight={{
+                base: 'calc(var(--vh, 1vh) * 100 - 4rem)',
+                md: 'calc(100vh - 4rem)',
+              }}
+              className={styles['intro-image']}
+              display={'flex'}
+              justifyContent={'center'}
+              alignItems={'center'}
+              flexDir={'column'}
+              backdropFilter={'blur(5px)'}
             >
-              <Typewriter
-                onInit={typewriter => {
-                  typewriter
-                    .typeString(
-                      'It is all a consciousness that you must experience!'
-                    )
-                    .start();
-                }}
-              />
-            </Heading>
-          </IntroImage>
+              <Heading
+                paddingX={{ base: '0.3rem' }}
+                fontSize={{ base: '1.75rem', md: '2rem', lg: '2.5rem' }}
+                ref={ref}
+                textShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}
+                color={'rgba(255, 255, 255, 0.9)'}
+              >
+                <Typewriter
+                  onInit={typewriter => {
+                    typewriter
+                      .typeString(
+                        'It is all a consciousness that you must experience!'
+                      )
+                      .start();
+                  }}
+                />
+              </Heading>
+            </Box>
+            <Box
+              className={styles['scroll-element']}
+              position={'absolute'}
+              bottom={'0'}
+              left={'50%'}
+              transform={'translateX(-50%)'}
+              mb={'2rem'}
+            />
+          </Box>
         </Section>
 
         <Container
