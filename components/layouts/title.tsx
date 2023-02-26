@@ -24,7 +24,7 @@ const Layout = ({ children, title }: LayoutProps) => (
     <>
       {title && (
         <Head>
-          <title>{title} - R.w.Y.</title>
+          <title>{title} - Resonate with Yourself</title>
           <meta name="description" content={title} />
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={title} />

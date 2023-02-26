@@ -208,7 +208,7 @@ const Home: NextPage = () => {
                   minW={'240px'}
                   borderColor={'rgba(250, 175, 58, 1)'}
                 >
-                  Learn More
+                  Connect with me
                 </Button>
               </Link>
             </Box>

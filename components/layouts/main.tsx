@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { Box } from '@chakra-ui/react';
 import Navbar from '../Navbar';
+import Footer from '../Footer';
 
 type MainProps = {
   children: React.ReactNode;
@@ -19,6 +20,8 @@ const Main = ({ children, router }: MainProps) => {
         <meta name="keywords" content="Colombo, Therapist, Vlora, Therapy" />
         <meta name="author" content="Sixhei Tartari" />
         <meta name="author" content="sixhei tartari" />
+        {/* Favicon */}
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -55,6 +58,7 @@ const Main = ({ children, router }: MainProps) => {
       <Box maxWidth="full" minH={'100vh'}>
         {children}
       </Box>
+      <Footer />
     </Box>
   );
 };

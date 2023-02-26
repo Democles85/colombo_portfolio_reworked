@@ -50,6 +50,7 @@ import countryList from 'react-select-country-list';
 
 // Functions
 import getWindowSize from '../lib/getWindowSize';
+import CircularBackground from '../components/CircularBackground';
 
 interface SelectOptions extends OptionBase {
   [x: string]: any;
@@ -243,6 +244,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
 
   return (
     <Box pt={'4rem'}>
+      <CircularBackground />
       <Toaster position={'top-right'} reverseOrder={false} />
       <Section>
         <Container maxW={'container.xl'} display={'flex'} flexDir={'column'}>
@@ -430,7 +432,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                         type={'email'}
                         name={'email'}
                         id={'email'}
-                        placeholder={'Email'}
+                        placeholder={'johndoe@gmail.com'}
                         isInvalid={errors.email ? true : false}
                         _hover={{ borderColor: 'orange' }}
                         borderColor={useColorModeValue(
@@ -532,82 +534,6 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                         }}
                       />
                     </Box>
-
-                    {/* Package */}
-                    {/* <Box py={'0.5rem'}>
-                      <FormLabel htmlFor={'experience'}>Package</FormLabel>
-                      <Select
-                        options={services}
-                        name={'experience'}
-                        placeholder={'Select Package'}
-                        focusBorderColor={'#FFAF3A'}
-                        isClearable
-                        isSearchable
-                        isMulti
-                        onChange={e => handlePackageChange(e)}
-                        chakraStyles={{
-                          control: (prev, { isFocused }) => ({
-                            ...prev,
-                            borderColor: isFocused
-                              ? '#FFAF3A'
-                              : useColorModeValue('gray.700', 'whiteAlpha.500'),
-                            ':hover': {
-                              borderColor: '#FFAF3A',
-                            },
-                          }),
-                          dropdownIndicator: (
-                            prev,
-                            { selectProps: { menuIsOpen } }
-                          ) => ({
-                            ...prev,
-                            backgroundColor: useColorModeValue(
-                              'whiteAlpha.800',
-                              'rgb(55, 55, 55)'
-                            ),
-                            '> svg': {
-                              transitionDuration: 'normal',
-                              transform: `rotate(${menuIsOpen ? 180 : 0}deg)`,
-                            },
-                          }),
-                          option: (prev, { isFocused, isSelected }) => ({
-                            ...prev,
-                            backgroundColor: isFocused
-                              ? '#FFAF3A'
-                              : isSelected
-                              ? '#FFAF3A'
-                              : useColorModeValue(
-                                  'whiteAlpha.800',
-                                  'rgba(0,0,0,0.8)'
-                                ),
-                            color: isFocused
-                              ? useColorModeValue('#202023', '#FFF')
-                              : undefined,
-                            ':active': {
-                              backgroundColor: '#FFAF3A',
-                            },
-                          }),
-                          menu: prev => ({
-                            ...prev,
-                            backgroundColor: useColorModeValue(
-                              'whiteAlpha.800',
-                              'rgba(0,0,0,0.8)'
-                            ),
-                            borderRadius: 'lg',
-                            border: '1px solid #FFAF3A',
-                            boxShadow: 'none',
-                            outline: 'none',
-                          }),
-                          menuList: prev => ({
-                            ...prev,
-                            padding: '0',
-                            backgroundColor: useColorModeValue(
-                              'whiteAlpha.800',
-                              'rgba(0,0,0,0.8)'
-                            ),
-                          }),
-                        }}
-                      />
-                    </Box> */}
 
                     {/* Testimonial */}
                     <Box py={'1rem'}>

@@ -7,6 +7,11 @@
   scroll-behavior: smooth;
 }
 
+::selection {
+  background: #ffaf36;
+  color: #000;
+}
+
 html,
 body {
   padding: 0;

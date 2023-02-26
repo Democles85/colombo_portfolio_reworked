@@ -51,19 +51,26 @@ const LinkItem = ({
       <Text
         position={'relative'}
         className={active ? styles['text-gradient'] : undefined}
+        _after={{
+          content: '""',
+          position: 'absolute',
+          width: '120%',
+          top: '100%',
+          transform: 'scaleX(0)',
+          height: '2px',
+          bottom: 0,
+          left: '-10%',
+          background:
+            'linear-gradient(90deg,rgba(255, 175, 58, 1) 25%,rgba(204, 101, 0, 1) 50%,rgba(255, 165, 0, 1) 75%) 0 0 / 400% 100%',
+          transformOrigin: 'left center',
+          animation: 'gradient 4s linear infinite',
+          transition: 'transform 0.25s ease-out',
+        }}
         _hover={{
           cursor: 'pointer',
-          _before: {
-            content: '""',
-            position: 'absolute',
-            top: '100%',
-            width: '120%',
-            left: '-10%',
-            height: '2px',
-            borderRadius: '2px',
-            background:
-              'linear-gradient(90deg,rgba(255, 175, 58, 1) 25%,rgba(204, 101, 0, 1) 50%,rgba(255, 165, 0, 1) 75%) 0 0 / 400% 100%',
-            animation: 'gradient 4s linear infinite',
+          _after: {
+            transform: 'scaleX(1)',
+            transformOrigin: 'right center',
 
             '@keyframes gradient': {
               to: {
@@ -72,6 +79,27 @@ const LinkItem = ({
             },
           },
         }}
+        // _hover={{
+        //   cursor: 'pointer',
+        //   _before: {
+        //     content: '""',
+        //     position: 'absolute',
+        //     top: '100%',
+        //     width: '120%',
+        //     left: '-10%',
+        //     height: '2px',
+        //     borderRadius: '2px',
+        //     background:
+        //       'linear-gradient(90deg,rgba(255, 175, 58, 1) 25%,rgba(204, 101, 0, 1) 50%,rgba(255, 165, 0, 1) 75%) 0 0 / 400% 100%',
+        //     animation: 'gradient 4s linear infinite',
+
+        //     '@keyframes gradient': {
+        //       to: {
+        //         backgroundPosition: '400% 0',
+        //       },
+        //     },
+        //   },
+        // }}
       >
         {children}
       </Text>
@@ -120,8 +148,8 @@ const Navbar = (props: any) => {
           <LinkItem href="/about" path={path} _target={''}>
             About
           </LinkItem>
-          <LinkItem href="/services" path={path} _target={''}>
-            Services
+          <LinkItem href="/packages" path={path} _target={''}>
+            Packages
           </LinkItem>
           <LinkItem href="/testimonials" path={path} _target={''}>
             Testimonials
@@ -171,13 +199,13 @@ const Navbar = (props: any) => {
                     About
                   </MenuItem>
                 </NextLink>
-                <NextLink href={'/services'} passHref>
+                <NextLink href={'/packages'} passHref>
                   <MenuItem
                     style={{
                       background: useColorModeValue('#ffffff', '#111111'),
                     }}
                   >
-                    Services
+                    Packages
                   </MenuItem>
                 </NextLink>
                 <NextLink href={'/testimonials'} passHref>
