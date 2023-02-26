@@ -78,59 +78,61 @@ const responsive = {
 };
 
 const customLeftArrow = (
-  <Box
-    position={'absolute'}
-    left={{ base: '-0.2rem', md: '-0.5rem' }}
-    cursor={'pointer'}
-    // bg={'rgba(23, 23, 23, 1)'}
-    // border={'1px solid rgba(255, 255, 255, 0.5)'}
-    p={{ base: 1, md: 3 }}
-    rounded={'full'}
-    className={'arrow-btn'}
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-6 text-white w-full"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="rgba(255, 175, 58, 1)"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M10 19l-7-7m0 0l7-7m-7 7h18"
-      />
-    </svg>
-  </Box>
+  // <Box
+  //   position={'absolute'}
+  //   left={{ base: '-0.2rem', md: '-0.5rem' }}
+  //   cursor={'pointer'}
+  //   // bg={'rgba(23, 23, 23, 1)'}
+  //   // border={'1px solid rgba(255, 255, 255, 0.5)'}
+  //   p={{ base: 1, md: 3 }}
+  //   rounded={'full'}
+  //   className={'arrow-btn'}
+  // >
+  //   <svg
+  //     xmlns="http://www.w3.org/2000/svg"
+  //     className="h-6 text-white w-full"
+  //     fill="none"
+  //     viewBox="0 0 24 24"
+  //     stroke="rgba(255, 255, 255, 1)"
+  //   >
+  //     <path
+  //       strokeLinecap="round"
+  //       strokeLinejoin="round"
+  //       strokeWidth="2"
+  //       d="M10 19l-7-7m0 0l7-7m-7 7h18"
+  //     />
+  //   </svg>
+  // </Box>
+  <Box></Box>
 );
 
 const customRightArrow = (
-  <Box
-    position={'absolute'}
-    right={{ base: '-0.2rem', md: '0.5rem' }}
-    cursor={'pointer'}
-    // bg={'rgba(23, 23, 23, 1)'}
-    // border={'1px solid rgba(255, 255, 255, 0.5)'}
-    p={{ base: 1, md: 3 }}
-    rounded={'full'}
-    className={'arrow-btn'}
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      className="h-6 text-white w-full"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="rgba(255, 175, 58, 1)"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        d="M14 5l7 7m0 0l-7 7m7-7H3"
-      />
-    </svg>
-  </Box>
+  // <Box
+  //   position={'absolute'}
+  //   right={{ base: '-0.2rem', md: '0.5rem' }}
+  //   cursor={'pointer'}
+  //   // bg={'rgba(23, 23, 23, 1)'}
+  //   // border={'1px solid rgba(255, 255, 255, 0.5)'}
+  //   p={{ base: 1, md: 3 }}
+  //   rounded={'full'}
+  //   className={'arrow-btn'}
+  // >
+  //   <svg
+  //     xmlns="http://www.w3.org/2000/svg"
+  //     className="h-6 text-white w-full"
+  //     fill="none"
+  //     viewBox="0 0 24 24"
+  //     stroke="rgba(255, 255, 255, 1)"
+  //   >
+  //     <path
+  //       strokeLinecap="round"
+  //       strokeLinejoin="round"
+  //       strokeWidth="2"
+  //       d="M14 5l7 7m0 0l-7 7m7-7H3"
+  //     />
+  //   </svg>
+  // </Box>
+  <Box></Box>
 );
 
 const Testimonials = ({ testimonials }: TestimonialTypes) => {
@@ -229,10 +231,15 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
 
   return (
     <Box pt={'4rem'}>
-      <CircularBackground />
+      {/* <CircularBackground /> */}
       <Toaster position={'top-right'} reverseOrder={false} />
       <Section>
-        <Container maxW={'container.xl'} display={'flex'} flexDir={'column'}>
+        <Container
+          maxW={'container.xl'}
+          display={'flex'}
+          flexDir={'column'}
+          bg={'rgba(255, 175, 54, 0.2)'}
+        >
           <Box textAlign={'center'} py={'4rem'}>
             <Heading as={'h1'}>
               What people feel about{' '}
@@ -246,8 +253,8 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
             <Carousel
               responsive={responsive}
               infinite={true}
-              customLeftArrow={customLeftArrow}
-              customRightArrow={customRightArrow}
+              customLeftArrow={size.width > 768 ? null : customLeftArrow}
+              customRightArrow={size.width > 768 ? null : customRightArrow}
               // @ts-ignore
               itemClass={size.width > 768 ? 'px-20' : 'px-2'}
               keyBoardControl={true}
@@ -262,9 +269,9 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                     <Box
                       py={'2rem'}
                       px={{ base: '1rem', md: '2rem' }}
-                      border={'1px solid rgba(255, 175, 58, 1)'}
+                      // border={'1px solid rgba(255, 175, 58, 1)'}
                       // border={'1px solid rgba(255, 255, 255, 0.5)'}
-                      bg={useColorModeValue('white', '#202023')}
+                      // bg={useColorModeValue('white', '#202023')}
                       borderRadius={'10px'}
                     >
                       <Avatar
