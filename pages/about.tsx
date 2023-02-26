@@ -54,8 +54,7 @@ const About = () => {
                   textAlign={'center'}
                   fontSize={{ base: '2rem', md: '3rem', lg: '4rem' }}
                 >
-                  Hello, my name is{' '}
-                  <span className={styles['text-gradient']}>Colombo</span>.
+                  About Me
                 </Heading>
               </Section>
             </Box>
