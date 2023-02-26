@@ -127,7 +127,7 @@ const Home: NextPage = () => {
                 <Text
                   textAlign={'justify'}
                   textIndent={'1em'}
-                  fontSize={'1.2rem'}
+                  fontSize={{ base: '1rem', md: '1.2rem' }}
                 >
                   Resonate with Yourself is based on a{' '}
                   <span
@@ -144,7 +144,7 @@ const Home: NextPage = () => {
                 <Text
                   textAlign={'justify'}
                   textIndent={'1em'}
-                  fontSize={'1.2rem'}
+                  fontSize={{ base: '1rem', md: '1.2rem' }}
                 >
                   The base is{' '}
                   <span
@@ -184,7 +184,10 @@ const Home: NextPage = () => {
                   {modalities.map((modality, index) => (
                     <Box key={index} className={styles.hidden} display={'flex'}>
                       <List>
-                        <ListItem fontSize={'1.2rem'} textIndent={'1rem'}>
+                        <ListItem
+                          fontSize={{ base: '1rem', md: '1.2rem' }}
+                          textIndent={'1rem'}
+                        >
                           <ListIcon
                             as={VscCircleFilled}
                             color={'rgba(250, 175, 58, 1)'}

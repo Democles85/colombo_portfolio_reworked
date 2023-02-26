@@ -124,7 +124,12 @@ const About = () => {
                         left={'-0.3rem'}
                       />
                     </Box>
-                    <Text py={'0.5rem'}>{data.paragraph}</Text>
+                    <Text
+                      py={'0.5rem'}
+                      fontSize={{ base: '1rem', md: '1.2rem' }}
+                    >
+                      {data.paragraph}
+                    </Text>
                   </Box>
                 ))}
               </Container>
