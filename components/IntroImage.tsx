@@ -27,7 +27,7 @@ export default function IntroImage({ children, thumbnail }: IntroImageProps) {
         alignItems={'center'}
         flexDir={'column'}
         height={'calc(100vh - 4rem)'}
-        minH={'-webkit-fill-available'}
+        maxHeight={'100%'}
         backdropFilter={'blur(5px)'}
       >
         {children}
