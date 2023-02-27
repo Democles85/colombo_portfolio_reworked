@@ -146,7 +146,7 @@ const About = () => {
                     color: '#FFAF36',
                   }}
                 >
-                  The definition here is that there is no definition,
+                  The definition is that there is no definition,
                 </span>{' '}
                 you simply experience what the universe is. It is not you, but
                 it is the universe itself that will flow through you.
