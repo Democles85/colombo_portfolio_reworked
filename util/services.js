@@ -17,7 +17,7 @@ const data = {
       slug: 'bodywork',
       thumbnail: 'works/thumb_1.jpeg',
       description:
-        'Bodywork is a therapeutic approach that involves physical manipulation of the body to promote healing.',
+        'Bodywork is a collective term that refers to alternative medical practices involving hands-on manipulation of the body...',
       content: [
         {
           paragraph: (
@@ -51,7 +51,7 @@ const data = {
       slug: 'de-armoring',
       thumbnail: 'works/thumb_2.jpeg',
       description:
-        'De Armoring is a technique used in bodywork to release physical and emotional tension held in the body.',
+        'De armouring is a way to release jams, stagnant energy, emotions and tension from the body...',
       content: [
         {
           paragraph: (
@@ -185,8 +185,7 @@ const data = {
       title: 'Authentic Tantra',
       slug: 'authentic-tantra',
       thumbnail: 'works/thumb_3.jpeg',
-      description:
-        'Authentic Tantra is a spiritual practice that aims to unite the body, mind, and spirit for transformation and awakening.',
+      description: '',
       content: [
         {
           paragraph: (
@@ -332,7 +331,7 @@ const data = {
       slug: 'sound-healing',
       thumbnail: 'works/thumb_6.jpeg',
       description:
-        'Sound healing is a form of vibrational medicine that uses sound to help you relax, heal, and restore balance to your body, mind, and spirit.',
+        'Sound has the ability to activate parts of the subconscious brain, which can give access to unconscious memories...',
       content: [
         {
           paragraph: (
@@ -407,8 +406,7 @@ const data = {
       title: 'Advanced Energetic Bodywork',
       slug: 'advanced-energetic-bodywork',
       thumbnail: 'works/thumb_5.jpeg',
-      description:
-        'Advanced Energetic Bodywork is a form of bodywork that uses the principles of energy medicine to help you relax, heal, and restore balance to your body, mind, and spirit.',
+      description: '',
       content: [
         {
           paragraph: (
