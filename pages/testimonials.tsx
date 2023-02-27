@@ -223,6 +223,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                   infinite={true}
                   customLeftArrow={customLeftArrow}
                   customRightArrow={customRightArrow}
+                  showDots
                   // @ts-ignore
                   itemClass={size.width > 768 ? 'px-20' : 'px-2'}
                   keyBoardControl={true}
