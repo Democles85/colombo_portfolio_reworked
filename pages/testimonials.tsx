@@ -14,6 +14,8 @@ import {
   Textarea,
   Tooltip,
   useColorModeValue,
+  Icon,
+  Image,
 } from '@chakra-ui/react';
 import React, { useState, useMemo, useEffect } from 'react';
 import Section from '../components/Section';
@@ -51,6 +53,7 @@ import countryList from 'react-select-country-list';
 // Functions
 import { getWindowSize } from '../lib/getWindowSize';
 import CircularBackground from '../components/CircularBackground';
+import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 
 interface SelectOptions extends OptionBase {
   [x: string]: any;
@@ -78,61 +81,24 @@ const responsive = {
 };
 
 const customLeftArrow = (
-  // <Box
-  //   position={'absolute'}
-  //   left={{ base: '-0.2rem', md: '-0.5rem' }}
-  //   cursor={'pointer'}
-  //   // bg={'rgba(23, 23, 23, 1)'}
-  //   // border={'1px solid rgba(255, 255, 255, 0.5)'}
-  //   p={{ base: 1, md: 3 }}
-  //   rounded={'full'}
-  //   className={'arrow-btn'}
-  // >
-  //   <svg
-  //     xmlns="http://www.w3.org/2000/svg"
-  //     className="h-6 text-white w-full"
-  //     fill="none"
-  //     viewBox="0 0 24 24"
-  //     stroke="rgba(255, 255, 255, 1)"
-  //   >
-  //     <path
-  //       strokeLinecap="round"
-  //       strokeLinejoin="round"
-  //       strokeWidth="2"
-  //       d="M10 19l-7-7m0 0l7-7m-7 7h18"
-  //     />
-  //   </svg>
-  // </Box>
-  <Box></Box>
+  // Create a simple arrow component
+  <Box
+    position={'absolute'}
+    left={{ base: '-0.2rem', md: '0.5rem' }}
+    cursor={'pointer'}
+  >
+    <Icon as={ChevronLeftIcon} w={6} h={6} />
+  </Box>
 );
 
 const customRightArrow = (
-  // <Box
-  //   position={'absolute'}
-  //   right={{ base: '-0.2rem', md: '0.5rem' }}
-  //   cursor={'pointer'}
-  //   // bg={'rgba(23, 23, 23, 1)'}
-  //   // border={'1px solid rgba(255, 255, 255, 0.5)'}
-  //   p={{ base: 1, md: 3 }}
-  //   rounded={'full'}
-  //   className={'arrow-btn'}
-  // >
-  //   <svg
-  //     xmlns="http://www.w3.org/2000/svg"
-  //     className="h-6 text-white w-full"
-  //     fill="none"
-  //     viewBox="0 0 24 24"
-  //     stroke="rgba(255, 255, 255, 1)"
-  //   >
-  //     <path
-  //       strokeLinecap="round"
-  //       strokeLinejoin="round"
-  //       strokeWidth="2"
-  //       d="M14 5l7 7m0 0l-7 7m7-7H3"
-  //     />
-  //   </svg>
-  // </Box>
-  <Box></Box>
+  <Box
+    position={'absolute'}
+    right={{ base: '-0.2rem', md: '0.5rem' }}
+    cursor={'pointer'}
+  >
+    <Icon as={ChevronRightIcon} w={6} h={6} />
+  </Box>
 );
 
 const Testimonials = ({ testimonials }: TestimonialTypes) => {
@@ -234,113 +200,113 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
       {/* <CircularBackground /> */}
       <Toaster position={'top-right'} reverseOrder={false} />
       <Section>
-        <Container
-          maxW={'container.xl'}
-          display={'flex'}
-          flexDir={'column'}
-          bg={'rgba(255, 175, 54, 0.2)'}
-        >
-          <Box textAlign={'center'} py={'4rem'}>
-            <Heading as={'h1'}>
-              What people feel about{' '}
-              <span className={styles['text-gradient']}>
-                Resonate with Yourself.
-              </span>
-            </Heading>
-          </Box>
+        <Box bg={'rgba(255, 175, 54, 0.2)'}>
+          <Container maxW={'container.xl'} display={'flex'} flexDir={'column'}>
+            <Box textAlign={'center'} py={'4rem'}>
+              <Heading as={'h1'}>
+                What people feel about{' '}
+                <span className={styles['text-gradient']}>
+                  Resonate with Yourself.
+                </span>
+              </Heading>
+            </Box>
 
-          <Box>
-            <Carousel
-              responsive={responsive}
-              infinite={true}
-              customLeftArrow={size.width > 768 ? null : customLeftArrow}
-              customRightArrow={size.width > 768 ? null : customRightArrow}
-              // @ts-ignore
-              itemClass={size.width > 768 ? 'px-20' : 'px-2'}
-              keyBoardControl={true}
-            >
-              {testimonials.map(testimonial => {
-                return (
-                  <Box
-                    py={'4rem'}
-                    key={testimonial.node.id}
-                    position={'relative'}
-                  >
+            <Box>
+              <Carousel
+                responsive={responsive}
+                infinite={true}
+                autoPlay={true}
+                autoPlaySpeed={5000}
+                customLeftArrow={customLeftArrow}
+                customRightArrow={customRightArrow}
+                // @ts-ignore
+                itemClass={size.width > 768 ? 'px-20' : 'px-2'}
+                keyBoardControl={true}
+              >
+                {testimonials.map(testimonial => {
+                  return (
                     <Box
-                      py={'2rem'}
-                      px={{ base: '1rem', md: '2rem' }}
-                      // border={'1px solid rgba(255, 175, 58, 1)'}
-                      // border={'1px solid rgba(255, 255, 255, 0.5)'}
-                      // bg={useColorModeValue('white', '#202023')}
-                      borderRadius={'10px'}
+                      py={'4rem'}
+                      key={testimonial.node.id}
+                      position={'relative'}
                     >
-                      <Avatar
-                        name={testimonial.node.name}
-                        size={'xl'}
-                        src={testimonial.node.profilePicture.url}
-                        position={'absolute'}
-                        top={'.9rem'}
-                        bg={'rgba(255, 255, 255, .5)'}
-                        border={'1px solid rgba(255, 255, 255, .5)'}
-                        left={'calc(50% - 3rem)'}
-                        boxShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}
-                      />
                       <Box
-                        display={'flex'}
-                        justifyContent={'space-between'}
-                        py={'1rem'}
+                        py={'2rem'}
+                        px={{ base: '1rem', md: '2rem' }}
+                        // border={'1px solid rgba(255, 175, 58, 1)'}
+                        // border={'1px solid rgba(255, 255, 255, 0.5)'}
+                        // bg={useColorModeValue('white', '#202023')}
+                        borderRadius={'10px'}
                       >
-                        <Heading as={'h3'} fontSize={'1.75rem'}>
-                          {testimonial.node.name}
-                          <Badge
-                            ml={{ base: 0, md: 3 }}
-                            colorScheme={'orange'}
-                            mt={'0.1rem'}
-                          >
-                            {/* Make it responsive for long one liner */}
-                            {testimonial.node.experience.length > 30 ? (
-                              <Tooltip
-                                label={testimonial.node.experience}
-                                aria-label="A tooltip"
-                              >
-                                <span>
-                                  {testimonial.node.experience.slice(0, 30)}
-                                  ...
-                                </span>
-                              </Tooltip>
-                            ) : (
-                              testimonial.node.experience
-                            )}
-                          </Badge>
-                          <Badge
-                            ml={{ base: 1, md: 2 }}
-                            colorScheme={'green'}
-                            mt={'0.1rem'}
-                          >
-                            {testimonial.node.country}
-                          </Badge>
-                        </Heading>
+                        <Avatar
+                          name={testimonial.node.name}
+                          size={'xl'}
+                          src={testimonial.node.profilePicture.url}
+                          position={'absolute'}
+                          top={'.9rem'}
+                          bg={'rgba(255, 255, 255, .5)'}
+                          border={'1px solid rgba(255, 255, 255, .5)'}
+                          left={'calc(50% - 3rem)'}
+                          boxShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}
+                        />
+                        <Box
+                          display={'flex'}
+                          justifyContent={'space-between'}
+                          py={'1rem'}
+                        >
+                          <Heading as={'h3'} fontSize={'1.75rem'}>
+                            {testimonial.node.name} {size.width < 768 && <br />}
+                            <Badge colorScheme={'orange'} mt={'0.1rem'}>
+                              {/* Make it responsive for long one liner */}
+                              {testimonial.node.experience.length > 30 ? (
+                                <Tooltip
+                                  label={testimonial.node.experience}
+                                  aria-label="A tooltip"
+                                >
+                                  <span>
+                                    {testimonial.node.experience.slice(0, 30)}
+                                    ...
+                                  </span>
+                                </Tooltip>
+                              ) : (
+                                testimonial.node.experience
+                              )}
+                            </Badge>
+                            {size.width < 768 && <br />}
+                            <Badge
+                              ml={size.width > 768 ? 1 : 0}
+                              colorScheme={'green'}
+                              mt={'0.1rem'}
+                            >
+                              {testimonial.node.country}
+                            </Badge>
+                          </Heading>
+                        </Box>
+                        <RichText
+                          content={testimonial.node.testimonial.raw.children}
+                          renderers={{
+                            p: ({ children }: any) => (
+                              <Text fontSize={'1rem'} textAlign={'justify'}>
+                                {children}
+                              </Text>
+                            ),
+                            code_block: ({ children }: any) => (
+                              <Code colorScheme={'orange'}>{children}</Code>
+                            ),
+                          }}
+                        />
                       </Box>
-                      <RichText
-                        content={testimonial.node.testimonial.raw.children}
-                        renderers={{
-                          p: ({ children }: any) => (
-                            <Text fontSize={'1rem'} textAlign={'justify'}>
-                              {children}
-                            </Text>
-                          ),
-                          code_block: ({ children }: any) => (
-                            <Code colorScheme={'orange'}>{children}</Code>
-                          ),
-                        }}
-                      />
                     </Box>
-                  </Box>
-                );
-              })}
-            </Carousel>
-          </Box>
-        </Container>
+                  );
+                })}
+              </Carousel>
+            </Box>
+          </Container>
+        </Box>
+        <Box>
+          {/* Import an svg from public folder */}
+          <Image src={'/SVG/wave.svg'} alt={'quote'} />
+        </Box>
       </Section>
 
       <Section>
