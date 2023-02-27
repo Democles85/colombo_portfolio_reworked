@@ -221,8 +221,6 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                 <Carousel
                   responsive={responsive}
                   infinite={true}
-                  autoPlay={true}
-                  autoPlaySpeed={5000}
                   customLeftArrow={customLeftArrow}
                   customRightArrow={customRightArrow}
                   // @ts-ignore
