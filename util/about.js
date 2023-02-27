@@ -83,12 +83,14 @@ const data = {
       paragraph: (
         <>
           <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>
-            I then moved to Italy
+            Later, I moved to Italy{' '}
           </span>
-          , where I had an intimate experience with the universe, and from then
-          on, I have had many mystical experiences. What is all of this about my
-          heart, you may ask. It is nothing more than me chasing it and letting
-          the universe do its work.
+          where I experienced an intimate encounter with the universe. As a
+          divine experience that requires dedication, humility, and respect, I
+          will dedicate a book to my entire spiritual experience. What does this
+          all mean to my heart, you may ask me? It's nothing more than me
+          following my heart in an authentic way, while letting the universe
+          flow.
         </>
       ),
     },
@@ -99,9 +101,10 @@ const data = {
             After everything that happened to me
           </span>
           , I felt and understood what it means to understand and work on
-          energy. I understood that on all of the Bodywork sessions, everyone is
-          prone to transformation, they just need a self-consciousness to
-          support themselves.
+          energy. I felt and understood what it means to understand energy. I
+          realized that in all Bodywork sessions, everyone is prone for
+          transformation, there is only a need for someone with a supporting
+          consciousness.
         </>
       ),
     },
