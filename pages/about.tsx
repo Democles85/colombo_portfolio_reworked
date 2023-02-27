@@ -82,17 +82,23 @@ const About = () => {
                 justifyContent={'center'}
               >
                 <Box
-                  // width={{ base: '80%', md: '50%' }}
-                  w={'fit-content'}
-                  borderRadius={'lg'}
-                  mb={6}
-                  p={3}
-                  textAlign={'center'}
+                  textStyle="h1"
+                  borderRadius="lg"
+                  p={5}
+                  // bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+                  background="rgba(245,166,35,0.25)"
+                  boxShadow="0 8px 32px 0 rgba(245,166,35, 0.15)"
+                  border="1px solid rgba(255,255,255, 0.18)"
                   fontStyle={'italic'}
-                  bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
                 >
-                  "It is a sea of consciousness to be experienced with an open
-                  heart, and for this we need to inform everyone."
+                  <Text
+                    fontWeight={'medium'}
+                    fontSize={[18, null, 20]}
+                    letterSpacing="tight"
+                  >
+                    "It is a sea of consciousness to be experienced with an open
+                    heart, and for this we all need to be enlightened."
+                  </Text>
                 </Box>
               </Box>
               <Heading
