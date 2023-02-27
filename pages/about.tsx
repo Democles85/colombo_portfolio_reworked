@@ -91,8 +91,8 @@ const About = () => {
                   fontStyle={'italic'}
                   bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
                 >
-                  "It is a sea of consciousness to experience with an open heart
-                  and we must all take note of it."
+                  "It is a sea of consciousness to be experienced with an open
+                  heart, and for this we need to inform everyone."
                 </Box>
               </Box>
               <Heading
