@@ -532,6 +532,10 @@ const data = {
         },
         {
           paragraph:
+            'Advanced Energetic Bodywork is an advanced session that requires preparation with several bodywork sessions. This is not a requirement but a help to prepare the body before working with more advanced energy. Generally, the body needs 5 to 7 sessions, some bodies need more while some are naturally open and slip into it in the first or second session, depending on your energy.',
+        },
+        {
+          paragraph:
             'In a session I work with a variety of techniques, from different modalities including:',
         },
         {
