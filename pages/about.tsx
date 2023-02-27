@@ -140,11 +140,10 @@ const About = () => {
                     color: '#FFAF36',
                   }}
                 >
-                  The definition here is that there is no definition;
+                  The definition here is that there is no definition,
                 </span>{' '}
-                you just experience that which the universe is allowing to
-                transform. It is not you, rather the universe flowing through
-                you.
+                you simply experience what the universe is. It is not you, but
+                it is the universe itself that will flow through you.
               </Box>
             </Box>
           </Container>
