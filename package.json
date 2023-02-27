@@ -13,6 +13,7 @@
     "@graphcms/rich-text-react-renderer": "^0.6.1",
     "@graphcms/rich-text-types": "^0.5.0",
     "@next/font": "^13.1.6",
+    "@sendgrid/mail": "^7.7.0",
     "axios": "^1.2.5",
     "chakra-react-select": "^4.4.3",
     "formidable": "^2.1.1",

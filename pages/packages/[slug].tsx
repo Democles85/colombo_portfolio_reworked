@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, Spinner } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 import React from 'react';
 import Layout from '../../components/layouts/title';
@@ -14,7 +14,22 @@ const PackagePage = () => {
   if (!packages)
     return (
       <Layout title={'Packages'}>
-        <Box pt={'4rem'}>Loading...</Box>
+        <Box pt={'4rem'}>
+          <Box
+            minH={'calc(100vh - 4rem)'}
+            display={'flex'}
+            alignItems={'center'}
+            justifyContent={'center'}
+          >
+            <Spinner
+              thickness={'4px'}
+              speed={'0.65s'}
+              emptyColor={'gray.200'}
+              color={'#FFAF36'}
+              size={'xl'}
+            />
+          </Box>
+        </Box>
       </Layout>
     );
 

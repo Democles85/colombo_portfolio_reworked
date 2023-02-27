@@ -1,17 +1,28 @@
 import {
+  AspectRatio,
   Box,
   Button,
   Container,
   FormControl,
   FormHelperText,
   FormLabel,
+  Heading,
   Input,
+  List,
+  ListItem,
   Text,
   Textarea,
   useColorModeValue,
+  Icon,
 } from '@chakra-ui/react';
-import { Select } from 'chakra-react-select';
+import axios from 'axios';
+import { OptionBase, Select } from 'chakra-react-select';
+import Link from 'next/link';
 import React, { useMemo } from 'react';
+import { toast, Toaster } from 'react-hot-toast';
+
+import { AiOutlineWhatsApp } from 'react-icons/ai';
+import { MdMail } from 'react-icons/md';
 
 // Country List
 import countryList from 'react-select-country-list';
@@ -24,12 +35,176 @@ import Section from '../components/Section';
 // Styles
 import styles from '../styles/Contact.module.css';
 
+// Interface
+interface SelectOptions extends OptionBase {
+  [x: string]: any;
+  label: string;
+  value: string;
+}
+
 const Contact = () => {
   const countries = useMemo(() => countryList().getData(), []);
+  const genders = [
+    { value: 'female', label: 'Female' },
+    { value: 'male', label: 'Male' },
+  ];
+
+  const emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const phoneFormat = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
+
+  const [firstName, setFirstName] = React.useState('');
+  const [lastName, setLastName] = React.useState('');
+  const [subject, setSubject] = React.useState('');
+  const [email, setEmail] = React.useState('');
+  const [phone, setPhone] = React.useState('');
+  const [country, setCountry] = React.useState<SelectOptions>({
+    value: '',
+    label: '',
+  });
+  const [gender, setGender] = React.useState<SelectOptions>({
+    value: '',
+    label: '',
+  });
+  const [message, setMessage] = React.useState('');
+
+  const [errors, setErrors] = React.useState({}) as any;
+  const [buttonText, setButtonText] = React.useState('Send Message');
+
+  const countryHandler = (value: any) => {
+    setCountry(value);
+  };
+
+  const genderHandler = (value: any) => {
+    setGender(value);
+  };
+
+  const validate = (): boolean => {
+    let errors: any = {};
+    let isValid = true;
+
+    if (firstName.length <= 0) {
+      isValid = false;
+      errors['firstName'] = true;
+    } else if (firstName.length >= 20) {
+      isValid = false;
+      errors['firstNameLength'] = true;
+    }
+
+    if (lastName.length <= 0) {
+      isValid = false;
+      errors['lastName'] = true;
+    } else if (lastName.length >= 20) {
+      isValid = false;
+      errors['lastNameLength'] = true;
+    }
+
+    if (subject.length <= 0) {
+      isValid = false;
+      errors['subject'] = true;
+    } else if (subject.length >= 70) {
+      isValid = false;
+      errors['subjectLength'] = true;
+    }
+
+    if (email.length <= 0) {
+      isValid = false;
+      errors['email'] = true;
+    } else if (!email.match(emailFormat)) {
+      isValid = false;
+      errors['emailFormat'] = true;
+    } else if (email.length >= 50) {
+      isValid = false;
+      errors['emailLength'] = true;
+    }
+
+    if (phone.length <= 0) {
+      isValid = false;
+      errors['phone'] = true;
+    } else if (!phone.match(phoneFormat)) {
+      isValid = false;
+      errors['phoneFormat'] = true;
+    } else if (phone.length >= 20) {
+      isValid = false;
+      errors['phoneLength'] = true;
+    }
+
+    if (country.value.length <= 0) {
+      isValid = false;
+      errors['country'] = true;
+    }
+
+    if (gender.value.length <= 0) {
+      isValid = false;
+      errors['gender'] = true;
+    }
+
+    if (message.length <= 0) {
+      isValid = false;
+      errors['message'] = true;
+    } else if (message.length >= 500) {
+      isValid = false;
+      errors['messageLength'] = true;
+    }
+
+    setErrors({ ...errors });
+
+    return isValid;
+  };
+
+  const submitHandler = async (e: any) => {
+    e.preventDefault();
+
+    let isValidForm = validate();
+
+    if (isValidForm) {
+      setButtonText('Sending...');
+
+      const data = {
+        firstName,
+        lastName,
+        subject,
+        email,
+        phone,
+        country: country.label,
+        message,
+      };
+
+      const res = await axios.post('/api/contact', data);
+
+      const { error } = await res.data;
+
+      if (error) {
+        toast.error(error);
+        setButtonText('Send Message');
+
+        return;
+      }
+
+      toast.success('Message Sent Successfully');
+      setButtonText('Send Message');
+
+      // Reset Form
+      setFirstName('');
+      setLastName('');
+      setEmail('');
+      setPhone('');
+      setCountry({ value: '', label: '' });
+      setGender({ value: '', label: '' });
+      setMessage('');
+
+      return;
+    } else {
+      toast.error('Please fill all the fields');
+      setButtonText('Send Message');
+
+      return;
+    }
+  };
 
   return (
     <Layout title={'Contact Me'}>
       <Box pt={'4rem'}>
+        <Toaster position={'bottom-right'} reverseOrder={false} />
         <Section>
           <Header thumbnail={'works/contact_thumbnail.jpg'}>
             <Section delay={0.5}>
@@ -53,8 +228,15 @@ const Contact = () => {
           }}
           py={'4rem'}
         >
+          <Text
+            fontSize={{ base: '2rem', md: '3rem', lg: '4rem' }}
+            fontWeight={'bold'}
+            textAlign={'center'}
+          >
+            Write Your <span className={styles['text-gradient']}>Message</span>
+          </Text>
           <Section>
-            <form>
+            <form onSubmit={submitHandler}>
               <FormControl>
                 <Box
                   display={'flex'}
@@ -73,19 +255,31 @@ const Contact = () => {
                       _hover={{ borderColor: '#FFAF36' }}
                       focusBorderColor={'#FFAF36'}
                       placeholder={'Sound'}
-                      // value={firstName}
-                      // onChange={e => setFirstName(e.target.value)}
-                      // isInvalid={errors['firstName'] || errors['longFirstName']}
+                      value={firstName}
+                      onChange={e => setFirstName(e.target.value)}
+                      isInvalid={
+                        errors['firstName'] || errors['firstNameLength']
+                      }
                     />
-                    {/* {errors['firstName'] ? (
-                  <FormHelperText color={'rgba(255, 255, 255, 0.5)'}>
-                    Ju lutem shkruani emrin tuaj.
-                    </FormHelperText>
-                ) : errors['longFirstName'] ? (
-                  <FormHelperText color={'rgba(255, 255, 255, 0.5)'}>
-                  Emri juaj nuk mund të jetë më i gjatë se 20 karaktere.
-                  </FormHelperText>
-                ) : null} */}
+                    {errors['firstName'] ? (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Please enter your name.
+                      </FormHelperText>
+                    ) : errors['firstNameLength'] ? (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Your name is too long.
+                      </FormHelperText>
+                    ) : null}
                   </Box>
                   <Box w={'inherit'} px={5} py={{ base: 2, md: 3, lg: 3 }}>
                     <FormLabel htmlFor={'lastName'} fontSize={'1.25rem'}>
@@ -99,19 +293,29 @@ const Contact = () => {
                       _hover={{ borderColor: '#FFAF36' }}
                       focusBorderColor={'#FFAF36'}
                       placeholder={'Me'}
-                      // value={lastName}
-                      // onChange={e => setLastName(e.target.value)}
-                      // isInvalid={errors['lastName'] || errors['longLastName']}
+                      value={lastName}
+                      onChange={e => setLastName(e.target.value)}
+                      isInvalid={errors['lastName'] || errors['longLastName']}
                     />
-                    {/* {errors['lastName'] ? (
-                  <FormHelperText color={'rgba(255, 255, 255, 0.5)'}>
-                    Ju lutem shkruani mbiemrin tuaj.
-                    </FormHelperText>
-                ) : errors['longLastName'] ? (
-                  <FormHelperText color={'rgba(255, 255, 255, 0.5)'}>
-                  Mbiemri juaj nuk mund të jetë më i gjatë se 20 karaktere.
-                  </FormHelperText>
-                ) : null} */}
+                    {errors['lastName'] ? (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Please enter your surname.
+                      </FormHelperText>
+                    ) : errors['longLastName'] ? (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Your surname is too long.
+                      </FormHelperText>
+                    ) : null}
                   </Box>
                 </Box>
                 <Box w={'100%'} display={'flex'} flexDir={'column'}>
@@ -127,16 +331,29 @@ const Contact = () => {
                       _hover={{ borderColor: '#FFAF36' }}
                       focusBorderColor={'#FFAF36'}
                       placeholder={'Subject you want to talk about'}
-                      // value={subject}
-                      // onChange={e => setSubject(e.target.value)}
-                      // isInvalid={errors['subject']}
+                      value={subject}
+                      onChange={e => setSubject(e.target.value)}
+                      isInvalid={errors['subject'] || errors['subjectLength']}
                     />
-                    {/* {errors['subject'] && (
-                    <FormHelperText color={'rgba(255, 255, 255, 0.5)'}>
-                    Please enter a subject.
-                    </FormHelperText>
-                    )}
-                  */}
+                    {errors['subject'] ? (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Please enter a subject.
+                      </FormHelperText>
+                    ) : errors['subjectLength'] ? (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Your subject is too long.
+                      </FormHelperText>
+                    ) : null}
                   </Box>
 
                   <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
@@ -151,20 +368,92 @@ const Contact = () => {
                       _hover={{ borderColor: '#FFAF36' }}
                       focusBorderColor={'#FFAF36'}
                       placeholder={'johndoe@gmail.com'}
-                      // value={email}
-                      // onChange={e => setEmail(e.target.value)}
-                      // isInvalid={errors['email']}
+                      value={email}
+                      onChange={e => setEmail(e.target.value)}
+                      isInvalid={
+                        errors['email'] ||
+                        errors['emailFormat'] ||
+                        errors['emailLength']
+                      }
                     />
-                    {/* {errors['email'] && (
-                  <FormHelperText color={'rgba(255, 255, 255, 0.5)'}>
-                  Please enter your email.
-                  </FormHelperText>
-                  )}
-                  {errors['correctEmail'] && (
-                    <FormHelperText color={'rgba(255, 255, 255, 0.5)'}>
-                    Please enter a valid email.
-                    </FormHelperText>
-                  )} */}
+                    {errors['email'] ? (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Please enter your email.
+                      </FormHelperText>
+                    ) : errors['emailFormat'] ? (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Please enter a valid email.
+                      </FormHelperText>
+                    ) : errors['emailLength'] ? (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Your email is too long.
+                      </FormHelperText>
+                    ) : null}
+                  </Box>
+
+                  <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
+                    <FormLabel htmlFor={'phone'} fontSize={'1.25rem'}>
+                      Phone: <span style={{ color: 'red' }}>*</span>
+                    </FormLabel>
+                    <Input
+                      borderColor={useColorModeValue(
+                        'gray.700',
+                        'whiteAlpha.500'
+                      )}
+                      _hover={{ borderColor: '#FFAF36' }}
+                      focusBorderColor={'#FFAF36'}
+                      placeholder={'+(123)-456-7890'}
+                      value={phone}
+                      onChange={e => setPhone(e.target.value)}
+                      isInvalid={
+                        errors['phone'] ||
+                        errors['phoneFormat'] ||
+                        errors['phoneLength']
+                      }
+                    />
+                    {errors['phone'] ? (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Please enter your phone number.
+                      </FormHelperText>
+                    ) : errors['phoneFormat'] ? (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Please enter a valid phone number.
+                      </FormHelperText>
+                    ) : errors['phoneLength'] ? (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Your phone number is too long.
+                      </FormHelperText>
+                    ) : null}
                   </Box>
 
                   <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
@@ -173,13 +462,14 @@ const Contact = () => {
                     </FormLabel>
                     <Select
                       options={countries}
-                      // isInvalid={errors['country']}
+                      isInvalid={errors['country']}
                       focusBorderColor={useColorModeValue('#fcb03b', '#fcb03b')}
                       id={'country'}
-                      placeholder={'Country'}
+                      placeholder={'Select country'}
+                      isSearchable={true}
+                      isClearable={true}
                       selectedOptionColor={'orange'}
-                      // value={country}
-                      // onChange={countryHandler}
+                      onChange={countryHandler}
                       chakraStyles={{
                         control: (prev, { isFocused }) => ({
                           ...prev,
@@ -240,13 +530,25 @@ const Contact = () => {
                             'rgba(0,0,0,0.8)'
                           ),
                         }),
+                        placeholder: prev => ({
+                          ...prev,
+                          color: useColorModeValue(
+                            'gray.400',
+                            'whiteAlpha.700'
+                          ),
+                        }),
                       }}
                     />
-                    {/* {errors?.country && (
-                      <FormHelperText color={errorColor}>
-                        Please select a country.
+                    {errors['country'] && (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Please select your country.
                       </FormHelperText>
-                    )} */}
+                    )}
                   </Box>
 
                   <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
@@ -254,14 +556,15 @@ const Contact = () => {
                       Gender <span style={{ color: 'red' }}>*</span>
                     </FormLabel>
                     <Select
-                      options={countries}
-                      // isInvalid={errors['gender']}
+                      options={genders}
+                      isInvalid={errors['gender']}
                       focusBorderColor={useColorModeValue('#fcb03b', '#fcb03b')}
                       id={'gender'}
                       placeholder={'Gender'}
+                      isSearchable={true}
+                      isClearable={true}
                       selectedOptionColor={'orange'}
-                      // value={gender}
-                      // onChange={genderHandler}
+                      onChange={genderHandler}
                       chakraStyles={{
                         control: (prev, { isFocused }) => ({
                           ...prev,
@@ -322,13 +625,25 @@ const Contact = () => {
                             'rgba(0,0,0,0.8)'
                           ),
                         }),
+                        placeholder: prev => ({
+                          ...prev,
+                          color: useColorModeValue(
+                            'gray.400',
+                            'whiteAlpha.700'
+                          ),
+                        }),
                       }}
                     />
-                    {/* {errors?.country && (
-                      <FormHelperText color={errorColor}>
-                        Please select a country.
+                    {errors['gender'] && (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Please select a gender.
                       </FormHelperText>
-                    )} */}
+                    )}
                   </Box>
 
                   <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
@@ -336,11 +651,15 @@ const Contact = () => {
                       Message <span style={{ color: 'red' }}>*</span>
                     </FormLabel>
                     <Textarea
+                      borderColor={useColorModeValue(
+                        'gray.700',
+                        'whiteAlpha.500'
+                      )}
                       id={'message'}
                       placeholder={'Message'}
-                      // value={message}
-                      // onChange={messageHandler}
-                      // isInvalid={errors['message']}
+                      value={message}
+                      onChange={e => setMessage(e.target.value)}
+                      isInvalid={errors['message']}
                       focusBorderColor={useColorModeValue('#fcb03b', '#fcb03b')}
                       _hover={{
                         borderColor: '#FFAF3A',
@@ -349,11 +668,25 @@ const Contact = () => {
                         borderColor: '#FFAF3A',
                       }}
                     />
-                    {/* {errors?.message && (
-                      <FormHelperText color={errorColor}>
+                    {errors['message'] ? (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
                         Please enter a message.
                       </FormHelperText>
-                    )} */}
+                    ) : errors['messageLength'] ? (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Message must be less than 500 characters.
+                      </FormHelperText>
+                    ) : null}
                   </Box>
 
                   <Box
@@ -377,13 +710,76 @@ const Contact = () => {
                       w={{ base: '60%', md: '50%', lg: '40%' }}
                       type={'submit'}
                     >
-                      Submit
+                      {buttonText}
                     </Button>
                   </Box>
                 </Box>
               </FormControl>
             </form>
           </Section>
+
+          <Box py={'3rem'}>
+            <Section delay={0.4}>
+              <Box>
+                <Heading as="h3" variant="section-title">
+                  Contact Me Via Email:
+                </Heading>
+                <List>
+                  <ListItem>
+                    <Link
+                      href="mailto:resonatewithyourself@gmail.com"
+                      target="_blank"
+                    >
+                      <Button
+                        variant="ghost"
+                        colorScheme="orange"
+                        leftIcon={<Icon as={MdMail} />}
+                      >
+                        @ResonateWithYourself
+                      </Button>
+                    </Link>
+                  </ListItem>
+                </List>
+              </Box>
+            </Section>
+            <Section delay={0.6}>
+              <Box>
+                <Heading as="h3" variant="section-title">
+                  Contact Me Via WhatsApp:
+                </Heading>
+                <List>
+                  <ListItem>
+                    <Link href="https://wa.me/34671145400" target="_blank">
+                      <Button
+                        variant="ghost"
+                        colorScheme="orange"
+                        leftIcon={<Icon as={AiOutlineWhatsApp} />}
+                      >
+                        +34 671 145 400
+                      </Button>
+                    </Link>
+                  </ListItem>
+                </List>
+              </Box>
+            </Section>
+            <Section delay={0.8}>
+              <Box>
+                <Heading as="h3" variant="section-title" pb={4}>
+                  Location:
+                </Heading>
+                <AspectRatio ratio={16 / 9}>
+                  <Box as={AspectRatio} borderRadius={'lg'}>
+                    <iframe
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3036.5676191075245!2d19.497305006125178!3d40.440572210146094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x134533ce11900875%3A0x31ce3c1972c2d94c!2sResonate%20With%20Yourself%20(%20Holistic%20Therapy%20%2F%20Bodywork%20%2F%20Massage%20)!5e0!3m2!1sen!2s!4v1651527787510!5m2!1sen!2s"
+                      allowFullScreen
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
+                  </Box>
+                </AspectRatio>
+              </Box>
+            </Section>
+          </Box>
         </Container>
       </Box>
     </Layout>

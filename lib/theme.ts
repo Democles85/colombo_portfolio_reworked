@@ -45,7 +45,7 @@ const components = {
   },
   Link: {
     baseStyle: (props: Dict<any> | StyleFunctionProps) => ({
-      color: mode('#3d7aed', '#de8e14')(props),
+      color: mode('#ffaf36', '#ffc670')(props),
       textUnderlineOffset: 3,
     }),
   },

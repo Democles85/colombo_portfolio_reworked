@@ -67,7 +67,7 @@ const Services = () => {
                       {/* <Divider my={'0.5rem'} /> */}
                       <Box>
                         <Image
-                          src={`/works/${service.thumbnail}`}
+                          src={`/${service.thumbnail}`}
                           alt={`${service.title} thumbnail`}
                           borderRadius={'lg'}
                           boxShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}

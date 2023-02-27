@@ -36,7 +36,7 @@ const LinkItem = ({
   children,
   ...props
 }: LinkItemProps) => {
-  const active = path === href;
+  const active = path === href || path.includes(href + '/');
   const inactiveColor = useColorModeValue('gray.800', 'whiteAlpha.900');
 
   return (

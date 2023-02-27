@@ -54,6 +54,7 @@ import countryList from 'react-select-country-list';
 import { getWindowSize } from '../lib/getWindowSize';
 import CircularBackground from '../components/CircularBackground';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
+import Layout from '../components/layouts/title';
 
 interface SelectOptions extends OptionBase {
   [x: string]: any;
@@ -106,12 +107,12 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
   const countries = useMemo(() => countryList().getData(), []);
 
   const [country, setCountry] = useState<SelectOptions>({
-    label: 'Select Country',
+    label: '',
     value: '',
   });
 
   const [service, setService] = useState<SelectOptions>({
-    label: 'Select Package',
+    label: '',
     value: '',
   });
 
@@ -144,7 +145,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
     if (images.length === 0) {
       toast.error('Please upload an image');
       return;
-    } else if (countryLabel === 'Select Country') {
+    } else if (country.value.length === 0) {
       toast.error('Please select a country');
       return;
     } else if (!emailFormat.test(email)) {
@@ -196,355 +197,367 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
   });
 
   return (
-    <Box pt={'4rem'}>
-      {/* <CircularBackground /> */}
-      <Toaster position={'top-right'} reverseOrder={false} />
-      <Section>
-        <Box bg={'rgba(255, 175, 54, 0.2)'}>
-          <Container maxW={'container.xl'} display={'flex'} flexDir={'column'}>
-            <Box textAlign={'center'} py={'4rem'}>
-              <Heading as={'h1'}>
-                What people feel about{' '}
-                <span className={styles['text-gradient']}>
-                  Resonate with Yourself.
-                </span>
+    <Layout title={'Testimonials'}>
+      <Box pt={'4rem'}>
+        {/* <CircularBackground /> */}
+        <Toaster position={'bottom-right'} reverseOrder={false} />
+        <Section>
+          <Box bg={'rgba(255, 175, 54, 0.2)'}>
+            <Container
+              maxW={'container.xl'}
+              display={'flex'}
+              flexDir={'column'}
+            >
+              <Box textAlign={'center'} py={'4rem'}>
+                <Heading as={'h1'}>
+                  What people feel about{' '}
+                  <span className={styles['text-gradient']}>
+                    Resonate with Yourself.
+                  </span>
+                </Heading>
+              </Box>
+
+              <Box>
+                <Carousel
+                  responsive={responsive}
+                  infinite={true}
+                  autoPlay={true}
+                  autoPlaySpeed={5000}
+                  customLeftArrow={customLeftArrow}
+                  customRightArrow={customRightArrow}
+                  // @ts-ignore
+                  itemClass={size.width > 768 ? 'px-20' : 'px-2'}
+                  keyBoardControl={true}
+                >
+                  {testimonials.map(testimonial => {
+                    return (
+                      <Box
+                        py={'4rem'}
+                        key={testimonial.node.id}
+                        position={'relative'}
+                      >
+                        <Box
+                          py={'2rem'}
+                          px={{ base: '1rem', md: '2rem' }}
+                          // border={'1px solid rgba(255, 175, 58, 1)'}
+                          // border={'1px solid rgba(255, 255, 255, 0.5)'}
+                          // bg={useColorModeValue('white', '#202023')}
+                          borderRadius={'10px'}
+                        >
+                          <Avatar
+                            name={testimonial.node.name}
+                            size={'xl'}
+                            src={testimonial.node.profilePicture.url}
+                            position={'absolute'}
+                            top={'.9rem'}
+                            bg={'rgba(255, 255, 255, .5)'}
+                            border={'1px solid rgba(255, 255, 255, .5)'}
+                            left={'calc(50% - 3rem)'}
+                            boxShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}
+                          />
+                          <Box
+                            display={'flex'}
+                            justifyContent={'space-between'}
+                            py={'1rem'}
+                          >
+                            <Heading as={'h3'} fontSize={'1.75rem'}>
+                              {testimonial.node.name}{' '}
+                              {size.width < 768 && <br />}
+                              <Badge colorScheme={'orange'} mt={'0.1rem'}>
+                                {/* Make it responsive for long one liner */}
+                                {testimonial.node.experience.length > 30 ? (
+                                  <Tooltip
+                                    label={testimonial.node.experience}
+                                    aria-label="A tooltip"
+                                  >
+                                    <span>
+                                      {testimonial.node.experience.slice(0, 30)}
+                                      ...
+                                    </span>
+                                  </Tooltip>
+                                ) : (
+                                  testimonial.node.experience
+                                )}
+                              </Badge>
+                              {size.width < 768 && <br />}
+                              <Badge
+                                ml={size.width > 768 ? 1 : 0}
+                                colorScheme={'green'}
+                                mt={'0.1rem'}
+                              >
+                                {testimonial.node.country}
+                              </Badge>
+                            </Heading>
+                          </Box>
+                          <RichText
+                            content={testimonial.node.testimonial.raw.children}
+                            renderers={{
+                              p: ({ children }: any) => (
+                                <Text fontSize={'1rem'} textAlign={'justify'}>
+                                  {children}
+                                </Text>
+                              ),
+                              code_block: ({ children }: any) => (
+                                <Code colorScheme={'orange'}>{children}</Code>
+                              ),
+                            }}
+                          />
+                        </Box>
+                      </Box>
+                    );
+                  })}
+                </Carousel>
+              </Box>
+            </Container>
+          </Box>
+        </Section>
+
+        <Section>
+          <Container maxW={'container.lg'}>
+            <Box py={'1rem'}>
+              <Heading as={'h1'} textAlign={'center'}>
+                Share your experience with us.
               </Heading>
             </Box>
 
-            <Box>
-              <Carousel
-                responsive={responsive}
-                infinite={true}
-                autoPlay={true}
-                autoPlaySpeed={5000}
-                customLeftArrow={customLeftArrow}
-                customRightArrow={customRightArrow}
-                // @ts-ignore
-                itemClass={size.width > 768 ? 'px-20' : 'px-2'}
-                keyBoardControl={true}
-              >
-                {testimonials.map(testimonial => {
-                  return (
-                    <Box
-                      py={'4rem'}
-                      key={testimonial.node.id}
-                      position={'relative'}
-                    >
-                      <Box
-                        py={'2rem'}
-                        px={{ base: '1rem', md: '2rem' }}
-                        // border={'1px solid rgba(255, 175, 58, 1)'}
-                        // border={'1px solid rgba(255, 255, 255, 0.5)'}
-                        // bg={useColorModeValue('white', '#202023')}
-                        borderRadius={'10px'}
-                      >
-                        <Avatar
-                          name={testimonial.node.name}
-                          size={'xl'}
-                          src={testimonial.node.profilePicture.url}
-                          position={'absolute'}
-                          top={'.9rem'}
-                          bg={'rgba(255, 255, 255, .5)'}
-                          border={'1px solid rgba(255, 255, 255, .5)'}
-                          left={'calc(50% - 3rem)'}
-                          boxShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}
+            <Box py={'2rem'}>
+              <FormProvider {...methods}>
+                <form onSubmit={handleSubmit}>
+                  <FormControl>
+                    <Box display={'flex'} width={'100%'} flexDir={'column'}>
+                      <Box py={'0.5rem'}>
+                        <FormLabel htmlFor={'images'}>
+                          Profile Image{' '}
+                          <span style={{ color: 'rgb(215, 112, 112)' }}>*</span>
+                          <Text
+                            fontSize={'0.75rem'}
+                            fontWeight={'light'}
+                            fontStyle={'italic'}
+                            color={'rgba(255, 255, 255, 0.5)'}
+                          >
+                            Put any image that you want to be displayed on the
+                            site.
+                          </Text>
+                        </FormLabel>
+
+                        <FileInput accept={accept} name={'images'} />
+                      </Box>
+
+                      {/* Name / Nickname */}
+                      <Box py={'0.5rem'}>
+                        <FormLabel htmlFor={'name'}>
+                          Name / Nickname{' '}
+                          <span style={{ color: 'rgb(215, 112, 112)' }}>*</span>
+                        </FormLabel>
+                        <Input
+                          {...methods.register('name', {
+                            required: true,
+                            maxLength: 20,
+                          })}
+                          type={'text'}
+                          name={'name'}
+                          id={'name'}
+                          placeholder={'John Doe'}
+                          isInvalid={errors.name ? true : false}
+                          _hover={{ borderColor: 'orange' }}
+                          borderColor={useColorModeValue(
+                            'gray.700',
+                            'whiteAlpha.500'
+                          )}
+                          focusBorderColor={'#FFAF3A'}
                         />
-                        <Box
-                          display={'flex'}
-                          justifyContent={'space-between'}
-                          py={'1rem'}
-                        >
-                          <Heading as={'h3'} fontSize={'1.75rem'}>
-                            {testimonial.node.name} {size.width < 768 && <br />}
-                            <Badge colorScheme={'orange'} mt={'0.1rem'}>
-                              {/* Make it responsive for long one liner */}
-                              {testimonial.node.experience.length > 30 ? (
-                                <Tooltip
-                                  label={testimonial.node.experience}
-                                  aria-label="A tooltip"
-                                >
-                                  <span>
-                                    {testimonial.node.experience.slice(0, 30)}
-                                    ...
-                                  </span>
-                                </Tooltip>
-                              ) : (
-                                testimonial.node.experience
-                              )}
-                            </Badge>
-                            {size.width < 768 && <br />}
-                            <Badge
-                              ml={size.width > 768 ? 1 : 0}
-                              colorScheme={'green'}
-                              mt={'0.1rem'}
-                            >
-                              {testimonial.node.country}
-                            </Badge>
-                          </Heading>
-                        </Box>
-                        <RichText
-                          content={testimonial.node.testimonial.raw.children}
-                          renderers={{
-                            p: ({ children }: any) => (
-                              <Text fontSize={'1rem'} textAlign={'justify'}>
-                                {children}
-                              </Text>
-                            ),
-                            code_block: ({ children }: any) => (
-                              <Code colorScheme={'orange'}>{children}</Code>
-                            ),
+                        {errors.name?.type === 'required' && (
+                          <FormHelperText color={'red.300'}>
+                            This field is required
+                          </FormHelperText>
+                        )}
+                        {errors.name?.type === 'maxLength' && (
+                          <FormHelperText color={'orange'}>
+                            Max length is 20
+                          </FormHelperText>
+                        )}
+                      </Box>
+
+                      {/* Email */}
+                      <Box py={'0.5rem'}>
+                        <FormLabel htmlFor={'email'}>
+                          Email{' '}
+                          <span style={{ color: 'rgb(215, 112, 112)' }}>*</span>
+                        </FormLabel>
+                        <Input
+                          {...methods.register('email', {
+                            required: true,
+                            maxLength: 80,
+                            pattern: emailFormat,
+                          })}
+                          type={'email'}
+                          name={'email'}
+                          id={'email'}
+                          placeholder={'johndoe@gmail.com'}
+                          isInvalid={errors.email ? true : false}
+                          _hover={{ borderColor: 'orange' }}
+                          borderColor={useColorModeValue(
+                            'gray.700',
+                            'whiteAlpha.500'
+                          )}
+                          focusBorderColor={'#FFAF3A'}
+                        />
+                        {errors.email?.type === 'required' && (
+                          <FormHelperText color={'red.300'}>
+                            This field is required
+                          </FormHelperText>
+                        )}
+                        {errors.email?.type === 'maxLength' && (
+                          <FormHelperText color={'orange'}>
+                            Max length is 80
+                          </FormHelperText>
+                        )}
+                        {errors.email?.type === 'pattern' && (
+                          <FormHelperText color={'orange'}>
+                            Invalid email
+                          </FormHelperText>
+                        )}
+                      </Box>
+
+                      {/* Country */}
+                      <Box py={'0.5rem'}>
+                        <FormLabel htmlFor={'country'}>
+                          Country of Residence{' '}
+                          <span style={{ color: 'rgb(215, 112, 112)' }}>*</span>
+                        </FormLabel>
+                        <Select
+                          options={countries}
+                          name={'country'}
+                          placeholder={'Select Country'}
+                          focusBorderColor={'#FFAF3A'}
+                          isInvalid={errors.country ? true : false}
+                          isClearable
+                          isSearchable
+                          onChange={e => handleCountryChange(e)}
+                          chakraStyles={{
+                            control: (prev, { isFocused }) => ({
+                              ...prev,
+                              borderColor: isFocused
+                                ? '#FFAF3A'
+                                : useColorModeValue(
+                                    'gray.700',
+                                    'whiteAlpha.500'
+                                  ),
+                              ':hover': {
+                                borderColor: '#FFAF3A',
+                              },
+                            }),
+                            dropdownIndicator: (
+                              prev,
+                              { selectProps: { menuIsOpen } }
+                            ) => ({
+                              ...prev,
+                              backgroundColor: useColorModeValue(
+                                'whiteAlpha.800',
+                                'rgb(55, 55, 55)'
+                              ),
+                              '> svg': {
+                                transitionDuration: 'normal',
+                                transform: `rotate(${menuIsOpen ? 180 : 0}deg)`,
+                              },
+                            }),
+                            option: (prev, { isFocused, isSelected }) => ({
+                              ...prev,
+                              backgroundColor: isFocused
+                                ? '#FFAF3A'
+                                : isSelected
+                                ? '#FFAF3A'
+                                : useColorModeValue(
+                                    'whiteAlpha.800',
+                                    'rgba(0,0,0,0.8)'
+                                  ),
+                              color: isFocused
+                                ? useColorModeValue('#202023', '#FFF')
+                                : undefined,
+                              ':active': {
+                                backgroundColor: '#FFAF3A',
+                              },
+                            }),
+                            menu: prev => ({
+                              ...prev,
+                              backgroundColor: useColorModeValue(
+                                'whiteAlpha.800',
+                                'rgba(0,0,0,0.8)'
+                              ),
+                              borderRadius: 'lg',
+                              border: '1px solid #FFAF3A',
+                              boxShadow: 'none',
+                              outline: 'none',
+                            }),
+                            menuList: prev => ({
+                              ...prev,
+                              padding: '0',
+                              backgroundColor: useColorModeValue(
+                                'whiteAlpha.800',
+                                'rgba(0,0,0,0.8)'
+                              ),
+                            }),
                           }}
                         />
                       </Box>
+
+                      {/* Testimonial */}
+                      <Box py={'1rem'}>
+                        <FormLabel htmlFor={'message'}>Testimonial</FormLabel>
+                        <Textarea
+                          {...methods.register('message', {
+                            required: true,
+                          })}
+                          name={'message'}
+                          id={'message'}
+                          placeholder={'Your Testimonial'}
+                          isInvalid={errors.message ? true : false}
+                          _hover={{ borderColor: 'orange' }}
+                          borderColor={useColorModeValue(
+                            'gray.700',
+                            'whiteAlpha.500'
+                          )}
+                          focusBorderColor={'#FFAF3A'}
+                        />
+                        {errors.message?.type === 'required' && (
+                          <FormHelperText color={'red.300'}>
+                            This field is required
+                          </FormHelperText>
+                        )}
+                      </Box>
+
+                      <Box
+                        py={'1rem'}
+                        display={'flex'}
+                        alignItems={'center'}
+                        justifyContent={'center'}
+                      >
+                        <Button
+                          type={'submit'}
+                          bg={'#ffc46c'}
+                          color={'#202023'}
+                          _hover={{
+                            bg: '#ff9900',
+                            color: '#202023',
+                          }}
+                          _active={{
+                            bg: '#FFAF3A',
+                            color: '#202023',
+                          }}
+                          w={{ base: '60%', md: '50%', lg: '40%' }}
+                        >
+                          Submit
+                        </Button>
+                      </Box>
                     </Box>
-                  );
-                })}
-              </Carousel>
+                  </FormControl>
+                </form>
+              </FormProvider>
             </Box>
           </Container>
-        </Box>
-      </Section>
-
-      <Section>
-        <Container maxW={'container.lg'}>
-          <Box py={'1rem'}>
-            <Heading as={'h1'} textAlign={'center'}>
-              Share your experience with us.
-            </Heading>
-          </Box>
-
-          <Box py={'2rem'}>
-            <FormProvider {...methods}>
-              <form onSubmit={handleSubmit}>
-                <FormControl>
-                  <Box display={'flex'} width={'100%'} flexDir={'column'}>
-                    <Box py={'0.5rem'}>
-                      <FormLabel htmlFor={'images'}>
-                        Profile Image{' '}
-                        <span style={{ color: 'rgb(215, 112, 112)' }}>*</span>
-                        <Text
-                          fontSize={'0.75rem'}
-                          fontWeight={'light'}
-                          fontStyle={'italic'}
-                          color={'rgba(255, 255, 255, 0.5)'}
-                        >
-                          Put any image that you want to be displayed on the
-                          site.
-                        </Text>
-                      </FormLabel>
-
-                      <FileInput accept={accept} name={'images'} />
-                    </Box>
-
-                    {/* Name / Nickname */}
-                    <Box py={'0.5rem'}>
-                      <FormLabel htmlFor={'name'}>
-                        Name / Nickname{' '}
-                        <span style={{ color: 'rgb(215, 112, 112)' }}>*</span>
-                      </FormLabel>
-                      <Input
-                        {...methods.register('name', {
-                          required: true,
-                          maxLength: 20,
-                        })}
-                        type={'text'}
-                        name={'name'}
-                        id={'name'}
-                        placeholder={'John Doe'}
-                        isInvalid={errors.name ? true : false}
-                        _hover={{ borderColor: 'orange' }}
-                        borderColor={useColorModeValue(
-                          'gray.700',
-                          'whiteAlpha.500'
-                        )}
-                        focusBorderColor={'#FFAF3A'}
-                      />
-                      {errors.name?.type === 'required' && (
-                        <FormHelperText color={'red.300'}>
-                          This field is required
-                        </FormHelperText>
-                      )}
-                      {errors.name?.type === 'maxLength' && (
-                        <FormHelperText color={'orange'}>
-                          Max length is 20
-                        </FormHelperText>
-                      )}
-                    </Box>
-
-                    {/* Email */}
-                    <Box py={'0.5rem'}>
-                      <FormLabel htmlFor={'email'}>
-                        Email{' '}
-                        <span style={{ color: 'rgb(215, 112, 112)' }}>*</span>
-                      </FormLabel>
-                      <Input
-                        {...methods.register('email', {
-                          required: true,
-                          maxLength: 80,
-                          pattern: emailFormat,
-                        })}
-                        type={'email'}
-                        name={'email'}
-                        id={'email'}
-                        placeholder={'johndoe@gmail.com'}
-                        isInvalid={errors.email ? true : false}
-                        _hover={{ borderColor: 'orange' }}
-                        borderColor={useColorModeValue(
-                          'gray.700',
-                          'whiteAlpha.500'
-                        )}
-                        focusBorderColor={'#FFAF3A'}
-                      />
-                      {errors.email?.type === 'required' && (
-                        <FormHelperText color={'red.300'}>
-                          This field is required
-                        </FormHelperText>
-                      )}
-                      {errors.email?.type === 'maxLength' && (
-                        <FormHelperText color={'orange'}>
-                          Max length is 80
-                        </FormHelperText>
-                      )}
-                      {errors.email?.type === 'pattern' && (
-                        <FormHelperText color={'orange'}>
-                          Invalid email
-                        </FormHelperText>
-                      )}
-                    </Box>
-
-                    {/* Country */}
-                    <Box py={'0.5rem'}>
-                      <FormLabel htmlFor={'country'}>
-                        Country of Residence
-                      </FormLabel>
-                      <Select
-                        options={countries}
-                        name={'country'}
-                        placeholder={'Select Country'}
-                        focusBorderColor={'#FFAF3A'}
-                        isClearable
-                        isSearchable
-                        onChange={e => handleCountryChange(e)}
-                        chakraStyles={{
-                          control: (prev, { isFocused }) => ({
-                            ...prev,
-                            borderColor: isFocused
-                              ? '#FFAF3A'
-                              : useColorModeValue('gray.700', 'whiteAlpha.500'),
-                            ':hover': {
-                              borderColor: '#FFAF3A',
-                            },
-                          }),
-                          dropdownIndicator: (
-                            prev,
-                            { selectProps: { menuIsOpen } }
-                          ) => ({
-                            ...prev,
-                            backgroundColor: useColorModeValue(
-                              'whiteAlpha.800',
-                              'rgb(55, 55, 55)'
-                            ),
-                            '> svg': {
-                              transitionDuration: 'normal',
-                              transform: `rotate(${menuIsOpen ? 180 : 0}deg)`,
-                            },
-                          }),
-                          option: (prev, { isFocused, isSelected }) => ({
-                            ...prev,
-                            backgroundColor: isFocused
-                              ? '#FFAF3A'
-                              : isSelected
-                              ? '#FFAF3A'
-                              : useColorModeValue(
-                                  'whiteAlpha.800',
-                                  'rgba(0,0,0,0.8)'
-                                ),
-                            color: isFocused
-                              ? useColorModeValue('#202023', '#FFF')
-                              : undefined,
-                            ':active': {
-                              backgroundColor: '#FFAF3A',
-                            },
-                          }),
-                          menu: prev => ({
-                            ...prev,
-                            backgroundColor: useColorModeValue(
-                              'whiteAlpha.800',
-                              'rgba(0,0,0,0.8)'
-                            ),
-                            borderRadius: 'lg',
-                            border: '1px solid #FFAF3A',
-                            boxShadow: 'none',
-                            outline: 'none',
-                          }),
-                          menuList: prev => ({
-                            ...prev,
-                            padding: '0',
-                            backgroundColor: useColorModeValue(
-                              'whiteAlpha.800',
-                              'rgba(0,0,0,0.8)'
-                            ),
-                          }),
-                        }}
-                      />
-                    </Box>
-
-                    {/* Testimonial */}
-                    <Box py={'1rem'}>
-                      <FormLabel htmlFor={'message'}>Testimonial</FormLabel>
-                      <Textarea
-                        {...methods.register('message', {
-                          required: true,
-                        })}
-                        name={'message'}
-                        id={'message'}
-                        placeholder={'Your Testimonial'}
-                        isInvalid={errors.message ? true : false}
-                        _hover={{ borderColor: 'orange' }}
-                        borderColor={useColorModeValue(
-                          'gray.700',
-                          'whiteAlpha.500'
-                        )}
-                        focusBorderColor={'#FFAF3A'}
-                      />
-                      {errors.message?.type === 'required' && (
-                        <FormHelperText color={'red.300'}>
-                          This field is required
-                        </FormHelperText>
-                      )}
-                    </Box>
-
-                    <Box
-                      py={'1rem'}
-                      display={'flex'}
-                      alignItems={'center'}
-                      justifyContent={'center'}
-                    >
-                      <Button
-                        type={'submit'}
-                        bg={'#ffc46c'}
-                        color={'#202023'}
-                        _hover={{
-                          bg: '#ff9900',
-                          color: '#202023',
-                        }}
-                        _active={{
-                          bg: '#FFAF3A',
-                          color: '#202023',
-                        }}
-                        w={{ base: '60%', md: '50%', lg: '40%' }}
-                      >
-                        Submit
-                      </Button>
-                    </Box>
-                  </Box>
-                </FormControl>
-              </form>
-            </FormProvider>
-          </Box>
-        </Container>
-      </Section>
-    </Box>
+        </Section>
+      </Box>
+    </Layout>
   );
 };
 
