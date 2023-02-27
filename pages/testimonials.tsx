@@ -356,7 +356,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                           type={'text'}
                           name={'name'}
                           id={'name'}
-                          placeholder={'John Doe'}
+                          placeholder={'Your Name'}
                           isInvalid={errors.name ? true : false}
                           _hover={{ borderColor: 'orange' }}
                           borderColor={useColorModeValue(
@@ -392,7 +392,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                           type={'email'}
                           name={'email'}
                           id={'email'}
-                          placeholder={'johndoe@gmail.com'}
+                          placeholder={'Your Email'}
                           isInvalid={errors.email ? true : false}
                           _hover={{ borderColor: 'orange' }}
                           borderColor={useColorModeValue(
@@ -509,7 +509,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                           })}
                           name={'message'}
                           id={'message'}
-                          placeholder={'Your Testimonial'}
+                          placeholder={'Type your testimonial here...'}
                           isInvalid={errors.message ? true : false}
                           _hover={{ borderColor: 'orange' }}
                           borderColor={useColorModeValue(
