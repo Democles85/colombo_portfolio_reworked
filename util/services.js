@@ -5,6 +5,7 @@ import {
   Box,
   ListIcon,
   List,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { BsFillCircleFill } from 'react-icons/bs';
 
@@ -19,6 +20,34 @@ const data = {
       description:
         'Bodywork is a collective term that refers to alternative medical practices involving hands-on manipulation of the body...',
       content: [
+        {
+          paragraph: (
+            <Box
+              textStyle="h1"
+              borderRadius="lg"
+              p={5}
+              // bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              background="rgba(245,166,35,0.25)"
+              boxShadow="0 8px 32px 0 rgba(245,166,35, 0.15)"
+              border="1px solid rgba(255,255,255, 0.18)"
+            >
+              <Text
+                fontWeight={'medium'}
+                fontSize={[18, null, 20]}
+                letterSpacing="tight"
+              >
+                “If we are simply an extension of the universe then surely we
+                also pulsate, contract and expand. Not long after our birth /
+                contraction (or expansion depending how you see it) our muscles
+                begin holding memory of our traumas and create muscular
+                rigidities that soon design our personal &lsquo;suit of
+                armour&lsquo;. This suit of armor interrupts our pulsation /
+                energetic flow reducing our true expression of Self and blocking
+                or hindering our creative and (life-force).”{' '}
+              </Text>
+            </Box>
+          ),
+        },
         {
           paragraph: (
             <>
@@ -53,6 +82,34 @@ const data = {
       description:
         'De armouring is a way to release jams, stagnant energy, emotions and tension from the body...',
       content: [
+        {
+          paragraph: (
+            <Box
+              textStyle="h1"
+              borderRadius="lg"
+              p={5}
+              // bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              background="rgba(245,166,35,0.25)"
+              boxShadow="0 8px 32px 0 rgba(245,166,35, 0.15)"
+              border="1px solid rgba(255,255,255, 0.18)"
+            >
+              <Text
+                fontWeight={'medium'}
+                fontSize={[18, null, 20]}
+                letterSpacing="tight"
+              >
+                “If we are simply an extension of the universe then surely we
+                also pulsate, contract and expand. Not long after our birth /
+                contraction (or expansion depending how you see it) our muscles
+                begin holding memory of our traumas and create muscular
+                rigidities that soon design our personal &lsquo;suit of
+                armour&lsquo;. This suit of armor interrupts our pulsation /
+                energetic flow reducing our true expression of Self and blocking
+                or hindering our creative and (life-force).”{' '}
+              </Text>
+            </Box>
+          ),
+        },
         {
           paragraph: (
             <>
@@ -187,6 +244,29 @@ const data = {
       thumbnail: 'works/thumb_3.jpeg',
       description: '',
       content: [
+        {
+          paragraph: (
+            <Box
+              textStyle="h1"
+              borderRadius="lg"
+              p={5}
+              // bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              background="rgba(245,166,35,0.25)"
+              boxShadow="0 8px 32px 0 rgba(245,166,35, 0.15)"
+              border="1px solid rgba(255,255,255, 0.18)"
+            >
+              <Text
+                fontWeight={'medium'}
+                fontSize={[18, null, 20]}
+                letterSpacing="tight"
+              >
+                “Tantra Massage is an energy form of massage first and foremost.
+                Key energy channels are purified, energy centers are activated
+                and innate energy sources are channeled in a specific way.”
+              </Text>
+            </Box>
+          ),
+        },
         {
           paragraph: (
             <>
@@ -333,6 +413,35 @@ const data = {
       description:
         'Sound has the ability to activate parts of the subconscious brain, which can give access to unconscious memories...',
       content: [
+        {
+          paragraph: (
+            <Box
+              textStyle="h1"
+              borderRadius="lg"
+              p={5}
+              // bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              background="rgba(245,166,35,0.25)"
+              boxShadow="0 8px 32px 0 rgba(245,166,35, 0.15)"
+              border="1px solid rgba(255,255,255, 0.18)"
+            >
+              <Text
+                fontWeight={['medium', null, 'bold']}
+                fontSize={[18, null, 24]}
+                letterSpacing="tight"
+              >
+                “Sound is the medicine of the future.”{' '}
+                <Text
+                  fontSize="lg"
+                  fontFamily="M PLUS Rounded 1c, sans-serif"
+                  fontWeight="light"
+                  textAlign="right"
+                >
+                  – Edgar Cayce
+                </Text>
+              </Text>
+            </Box>
+          ),
+        },
         {
           paragraph: (
             <>

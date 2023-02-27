@@ -28,7 +28,6 @@ const Services = () => {
 
   return (
     <Layout title="Services">
-      <CircularBackground />
       <Box pt={'4rem'}>
         <Section>
           <Container maxW={'container.lg'}>

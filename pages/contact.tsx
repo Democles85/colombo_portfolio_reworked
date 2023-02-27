@@ -254,7 +254,7 @@ const Contact = () => {
                       )}
                       _hover={{ borderColor: '#FFAF36' }}
                       focusBorderColor={'#FFAF36'}
-                      placeholder={'Sound'}
+                      placeholder={'Your Name'}
                       value={firstName}
                       onChange={e => setFirstName(e.target.value)}
                       isInvalid={
@@ -292,7 +292,7 @@ const Contact = () => {
                       )}
                       _hover={{ borderColor: '#FFAF36' }}
                       focusBorderColor={'#FFAF36'}
-                      placeholder={'Me'}
+                      placeholder={'Your Surname'}
                       value={lastName}
                       onChange={e => setLastName(e.target.value)}
                       isInvalid={errors['lastName'] || errors['longLastName']}
@@ -367,7 +367,7 @@ const Contact = () => {
                       )}
                       _hover={{ borderColor: '#FFAF36' }}
                       focusBorderColor={'#FFAF36'}
-                      placeholder={'johndoe@gmail.com'}
+                      placeholder={'Your Email'}
                       value={email}
                       onChange={e => setEmail(e.target.value)}
                       isInvalid={
@@ -465,7 +465,7 @@ const Contact = () => {
                       isInvalid={errors['country']}
                       focusBorderColor={useColorModeValue('#fcb03b', '#fcb03b')}
                       id={'country'}
-                      placeholder={'Select country'}
+                      placeholder={'Select Your Country'}
                       isSearchable={true}
                       isClearable={true}
                       selectedOptionColor={'orange'}
@@ -560,7 +560,7 @@ const Contact = () => {
                       isInvalid={errors['gender']}
                       focusBorderColor={useColorModeValue('#fcb03b', '#fcb03b')}
                       id={'gender'}
-                      placeholder={'Gender'}
+                      placeholder={'Select Your Gender'}
                       isSearchable={true}
                       isClearable={true}
                       selectedOptionColor={'orange'}
@@ -656,7 +656,7 @@ const Contact = () => {
                         'whiteAlpha.500'
                       )}
                       id={'message'}
-                      placeholder={'Message'}
+                      placeholder={'Enter your message here...'}
                       value={message}
                       onChange={e => setMessage(e.target.value)}
                       isInvalid={errors['message']}

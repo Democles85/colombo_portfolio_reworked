@@ -35,7 +35,6 @@ const Packages = () => {
 
   return (
     <Layout title={'Packages'}>
-      <CircularBackground />
       <Box pt={'4rem'}>
         <Section>
           <Container maxW={'container.lg'}>
