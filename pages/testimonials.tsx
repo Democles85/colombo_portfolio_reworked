@@ -303,10 +303,6 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
             </Box>
           </Container>
         </Box>
-        <Box>
-          {/* Import an svg from public folder */}
-          <Image src={'/SVG/wave.svg'} alt={'quote'} />
-        </Box>
       </Section>
 
       <Section>

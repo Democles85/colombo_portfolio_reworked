@@ -1,0 +1,35 @@
+.text-gradient {
+  position: relative;
+  --bg-size: 400%;
+  background: linear-gradient(
+      111.3deg,
+      rgba(255, 175, 58, 1) 25%,
+      rgba(204, 101, 0, 1) 50%,
+      rgba(255, 175, 58, 1) 75%
+    )
+    0 0 / var(--bg-size) 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .text-gradient::before,
+  .text-gradient {
+    animation: gradient 8s linear infinite;
+  }
+  @keyframes gradient {
+    to {
+      background-position: var(--bg-size) 0;
+    }
+  }
+}
+
+.card > .card-content > div > img {
+  margin: 1rem 0;
+  transition: 0.2s ease-in-out;
+}
+
+.card:hover > .card-content > div > img {
+  transform: translateY(-10px);
+}
