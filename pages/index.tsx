@@ -162,9 +162,10 @@ const Home: NextPage = () => {
                     Bodywork De Armoring, Authentic Massage, Trauma Release,
                     Emotional Release, Breathwork and Sound Healing{' '}
                   </span>
-                  are techniques used to unlock the body's potential. Each
-                  session is tailored to the individual, working with their
-                  unique rhythm to facilitate healing.
+                  are techniques used to unlock the body's potential. Sessions
+                  vary from person to person. Each session is adapted to the
+                  individual. We work with your rhythm, allowing you to selfheal
+                  naturally.
                 </Text>
               </Box>
               <Divider

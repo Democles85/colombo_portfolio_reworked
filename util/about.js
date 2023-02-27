@@ -100,11 +100,9 @@ const data = {
           <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>
             After everything that happened to me
           </span>
-          , I felt and understood what it means to understand and work on
-          energy. I felt and understood what it means to understand energy. I
-          realized that in all Bodywork sessions, everyone is prone for
-          transformation, there is only a need for someone with a supporting
-          consciousness.
+          , I felt and understood what it means to understand energy. I realized
+          that in all Bodywork sessions, everyone is prone for transformation,
+          there is only a need for someone with a supporting consciousness.
         </>
       ),
     },

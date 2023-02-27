@@ -97,7 +97,7 @@ const About = () => {
                     letterSpacing="tight"
                   >
                     "It is a sea of consciousness to be experienced with an open
-                    heart, and for this we all need to be enlightened."
+                    heart, and for this we need to inform everyone."
                   </Text>
                 </Box>
               </Box>
