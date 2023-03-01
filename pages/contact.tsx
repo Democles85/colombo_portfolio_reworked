@@ -50,13 +50,13 @@ const Contact = () => {
   ];
 
   const emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-  const phoneFormat = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
+  // const phoneFormat = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
 
   const [firstName, setFirstName] = React.useState('');
   const [lastName, setLastName] = React.useState('');
   const [subject, setSubject] = React.useState('');
   const [email, setEmail] = React.useState('');
-  const [phone, setPhone] = React.useState('');
+  // const [phone, setPhone] = React.useState('');
   const [country, setCountry] = React.useState<SelectOptions>({
     value: '',
     label: '',
@@ -117,16 +117,16 @@ const Contact = () => {
       errors['emailLength'] = true;
     }
 
-    if (phone.length <= 0) {
-      isValid = false;
-      errors['phone'] = true;
-    } else if (!phone.match(phoneFormat)) {
-      isValid = false;
-      errors['phoneFormat'] = true;
-    } else if (phone.length >= 20) {
-      isValid = false;
-      errors['phoneLength'] = true;
-    }
+    // if (phone.length <= 0) {
+    //   isValid = false;
+    //   errors['phone'] = true;
+    // } else if (!phone.match(phoneFormat)) {
+    //   isValid = false;
+    //   errors['phoneFormat'] = true;
+    // } else if (phone.length >= 20) {
+    //   isValid = false;
+    //   errors['phoneLength'] = true;
+    // }
 
     if (country.value.length <= 0) {
       isValid = false;
@@ -164,7 +164,7 @@ const Contact = () => {
         lastName,
         subject,
         email,
-        phone,
+        // phone
         country: country.label,
         message,
       };
@@ -187,7 +187,7 @@ const Contact = () => {
       setFirstName('');
       setLastName('');
       setEmail('');
-      setPhone('');
+      // setPhone('');
       setCountry({ value: '', label: '' });
       setGender({ value: '', label: '' });
       setMessage('');
@@ -406,7 +406,7 @@ const Contact = () => {
                     ) : null}
                   </Box>
 
-                  <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
+                  {/* <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
                     <FormLabel htmlFor={'phone'} fontSize={'1.25rem'}>
                       Phone: <span style={{ color: 'red' }}>*</span>
                     </FormLabel>
@@ -454,7 +454,7 @@ const Contact = () => {
                         Your phone number is too long.
                       </FormHelperText>
                     ) : null}
-                  </Box>
+                  </Box> */}
 
                   <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
                     <FormLabel htmlFor="country">

@@ -48,69 +48,66 @@ const Packages = () => {
             </Box>
             <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
               {packages.map((packageItem, _index) => (
-                <Link href={`/packages/${packageItem.slug}`}>
+                <Box
+                  bg={useColorModeValue('white', '#202023')}
+                  border={'1px solid #FFAF36'}
+                  borderRadius={'lg'}
+                  display={'flex'}
+                  flexDir={'column'}
+                  transition={'all 0.2s ease-in-out'}
+                  _hover={{
+                    boxShadow: '0px 0px 10px #FFAF36',
+                    cursor: 'default',
+                  }}
+                  className={styles.card}
+                >
                   <Box
-                    bg={useColorModeValue('white', '#202023')}
-                    border={'1px solid #FFAF36'}
-                    borderRadius={'lg'}
-                    display={'flex'}
-                    flexDir={'column'}
-                    transition={'all 0.2s ease-in-out'}
-                    _hover={{
-                      boxShadow: '0px 0px 10px #FFAF36',
-                      cursor: 'default',
-                    }}
-                    className={styles.card}
+                    key={_index}
+                    p={'1rem'}
+                    textAlign={'center'}
+                    className={styles['card-content']}
                   >
-                    <Box
-                      key={_index}
-                      p={'1rem'}
-                      textAlign={'center'}
-                      className={styles['card-content']}
-                    >
-                      <Text fontSize={'1.5rem'}>{packageItem.title}</Text>
-                      {/* <Divider my={'0.5rem'} /> */}
-                      <Image
-                        src={`/works/${packageItem.thumbnail}`}
-                        alt={`${packageItem.title} thumbnail`}
-                        borderRadius={'lg'}
-                        boxShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}
-                      />
-                      {packageItem.package.map(
-                        (item, _index) =>
-                          // Only show the first price in the list of packages
-                          _index === 0 && (
-                            <Text
+                    {/* <Divider my={'0.5rem'} /> */}
+                    <Image
+                      src={`/works/${packageItem.thumbnail}`}
+                      alt={`${packageItem.title} thumbnail`}
+                      borderRadius={'lg'}
+                      boxShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}
+                    />
+                    <Text fontSize={'1.5rem'}>{packageItem.title}</Text>
+                    {packageItem.package.map(
+                      (item, _index) =>
+                        // Only show the first price in the list of packages
+                        _index === 0 && (
+                          <Box mt={'1rem'} position={'relative'}>
+                            <Box
+                              position={'absolute'}
                               bg={
                                 'linear-gradient(90deg, #FFAF36 0%, #fd6450 35%)'
                               }
-                              bgClip={'text'}
+                              w={'15rem'}
+                              left={'-1rem'}
+                              h={'50px'}
+                              zIndex={0}
+                              borderTopRightRadius={'lg'}
+                              borderBottomRightRadius={'lg'}
+                              className={styles['price-card']}
+                            />
+                            <Text
+                              position={'relative'}
                               fontSize={'1.25rem'}
                               fontWeight={'bold'}
                               textAlign={'left'}
                               py={'0.5rem'}
+                              zIndex={100}
                             >
                               Starting from &euro;{item.price}
                             </Text>
-                          )
-                      )}
-                      <Text textAlign={'justify'}>
-                        {packageItem.description}
-                      </Text>
-
-                      <Button
-                        variant={'ghost'}
-                        mt={'1rem'}
-                        _hover={{
-                          bg: 'yellow.500',
-                          color: 'white',
-                        }}
-                      >
-                        Read more &rarr;
-                      </Button>
-                    </Box>
+                          </Box>
+                        )
+                    )}
                   </Box>
-                </Link>
+                </Box>
               ))}
             </SimpleGrid>
           </Container>
