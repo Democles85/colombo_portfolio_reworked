@@ -61,9 +61,10 @@ const data = {
       paragraph: (
         <>
           <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>In 2018</span>,
-          I spent 4 months on Iceland, where I tapped into high divine energies
-          and I was no longer the same. I dove into a sea of consciousness,
-          where my heart opened and made me more sensitive to this reality.
+          I spent 4 months on Iceland, where I tapped into higher divine
+          energies and I was no longer the same. I dove into a sea of
+          consciousness, where my heart opened and made me more sensitive to
+          this reality.
         </>
       ),
     },
@@ -75,7 +76,7 @@ const data = {
           </span>
           , I moved to Spain and reflected on what happened to me. After a long
           series of meditations and spiritual journeys, I started experimenting
-          on energy works.
+          on energy work.
         </>
       ),
     },
@@ -113,7 +114,7 @@ const data = {
             In February of 2020
           </span>
           , I started supporting people professionally. To all who want to work
-          on yourself through me, this is transformable work. After many
+          on themselves through me, this is transformable work. After many
           experiences and gifts from the universe, I am equipped to support
           people on every level and dimension, such as various psychic needs,
           blocks, traumas, etc., as well as support higher energies that want to

@@ -42,8 +42,8 @@ const data = {
                 begin holding memory of our traumas and create muscular
                 rigidities that soon design our personal &lsquo;suit of
                 armour&lsquo;. This suit of armor interrupts our pulsation /
-                energetic flow reducing our true expression of Self and blocking
-                or hindering our creative and (life-force).”{' '}
+                energetic flow, reducing our true expression of Self and
+                blocking or hindering our creative and (life-force).”{' '}
               </Text>
             </Box>
           ),
@@ -56,7 +56,7 @@ const data = {
                 fontWeight={'bold'}
                 fontSize={{ base: '1.25rem', md: '1.5rem' }}
               >
-                A brief explanation of how de-armouring came to life.
+                A brief explanation of how de armouring came to life.
               </Text>
             </>
           ),
@@ -67,7 +67,7 @@ const data = {
         },
         {
           paragraph:
-            'Reich then observed that this character armour corresponded to a somatic (physical body) ‘armour,’ which consisted of the hardening of the body’s soft tissues, such as muscles. Over time, the armour hardened, causing the physical body to become less sensitized and feel less of both pain and pleasure.',
+            'Then Reich observed that this character armour corresponded to a somatic (physical body) ‘armour,’ which consisted of the hardening of the body’s soft tissues, such as muscles. Over time, the armour hardened, causing the physical body to become less sensitized and feel less of both pain and pleasure.',
         },
         {
           paragraph:
@@ -142,15 +142,15 @@ const data = {
         },
         {
           paragraph:
-            'Detoxifying our bodies of negative emotions, is one of the kindest things that we can do for ourselves.',
+            'Detoxifying our bodies from negative emotions, is one of the kindest things that we can do for ourselves.',
         },
         {
           paragraph:
-            'Before birth are bodies are in bliss and pleasure. This is our natural state. As fear and trauma happens, our cellular vibration moves from bliss, into emotion, into pain, and into numbness (non-feeling).',
+            'Before birth our bodies are in bliss and pleasure. This is our natural state. As fear and trauma happens, our cellular vibration moves from bliss, into emotional pain and numbness (non-feeling).',
         },
         {
           paragraph:
-            "Physical, mental, and emotional trauma's, are all stored in the bodies tissue. When the body is unable to release trauma it can effects us in a number of ways.",
+            "Physical, mental, and emotional traumas, are all stored in the body's tissues. When the body is unable to release trauma it can effect us in a number of ways.",
         },
         {
           paragraph:
@@ -158,7 +158,7 @@ const data = {
         },
         {
           paragraph:
-            'Prevention is always better than cure, but if trauma in the body does start to manifest as physical, mental, or emotional problems, then conventional medicine, alternative medicine, and talking therapies are only part of the answer. You still need to get the trauma out of the body.',
+            'Prevention is always better than cure, but if trauma in the body does start to manifest as physical, mental, or emotional problems, then conventional medicine, alternative medicine, and talking therapies are only a part of the answer. You still need to get the trauma out of the body.',
         },
         {
           paragraph:
@@ -282,7 +282,7 @@ const data = {
         },
         {
           paragraph:
-            'Tantra massages is one if the mos refined and sensitive forms of art. It requires a high consciousness, as it requires the presence of soft and intensive energy, flowing within you, taking you deep within experiences and subconsciousness, in order to understand what your being is saying. Tantra is a vivid experience of our own energy, to help us evolve spiritually.',
+            'Tantra massage is one of the most refined and sensitive forms of art. It requires a high consciousness, as it requires the presence of soft and intensive energy, flowing within you, taking you deep within experiences and subconsciousness, in order to understand what your being is saying. Tantra is a vivid experience of our own energy, to help us evolve spiritually.',
         },
         {
           paragraph: (
@@ -316,7 +316,7 @@ const data = {
         },
         {
           paragraph:
-            "Tantrism is not a theory or a system of thought. It's a sound science of the body. Of course, the practice of the physical also includes a spiritual, cosmological context. Tantra is first and foremost an empirical science of the body. At the same time it is a consciousness teaching, it depends on the quality of consciousness in every aspect. It contains practices and methods by which one can get into very specific states. So it is a work with the energies of the body, with the life energy. The basis is a very fine, highly differentiated system that makes up the subtle currents in the human body and how they can be channeled.”",
+            "Tantrism is not a theory or a system of thought. It's a sound science of the body. Of course, the practice of the physical also includes a spiritual, cosmological context. Tantra is first and foremost an empirical science of the body. At the same time it is a consciousness teaching, it depends on the quality of consciousness in every aspect. It contains practices and methods by which one can get into very specific states. So it is a work with the energies of the body and the energy of life. The basis is a very fine, highly differentiated system that makes up the subtle currents in the human body and how they can be channeled.”",
         },
         {
           paragraph: (
@@ -333,7 +333,7 @@ const data = {
         },
         {
           paragraph:
-            'After my observations on history and a lot of teachers of tantric energy, as well as self exploration and bodywork on others, i have created an authentic model. It is rooted on tantric energy and life force, making it suitable for all who had a tantric session. This session is properly created for those who have had previous therapy sessions and for those retaking a session from me, so I may keep a proper vividness within your soul.',
+            'After my observations on history and a lot of teachers of tantric energy, as well as self exploration and bodywork on others, I have created an authentic model. It is rooted on tantric energy and life force, making it suitable for all who had a tantric session. This session is properly created for those who have had previous therapy sessions and for those retaking a session from me, so I may keep a proper vividness within your soul.',
         },
         {
           paragraph: (
@@ -350,7 +350,7 @@ const data = {
         },
         {
           paragraph:
-            'It remains quite amazing and helpful on how tantric work attracts all the senses, focusing on subconscious touch. It is an extension of the subconscious, by directly ans intensively connecting all our emotions with the invisible energy structures. In order to help heal tensions and traumas, we express ourselves through a direct and connected energy massage. It is both intimate and it touches our body ans soul, helping us connect on a deeper level with ourselves.',
+            'It remains quite amazing and helpful on how tantric work attracts all the senses, focusing on subconscious touch. It is an extension of the subconscious, by directly and intensively connecting all our emotions with the invisible energy structures. In order to help heal tensions and traumas, we express ourselves through a direct and connected energy massage. It is both intimate and it touches our body and soul, helping us connect on a deeper level with ourselves.',
         },
         {
           paragraph: (
@@ -370,35 +370,34 @@ const data = {
             <Box ml={'1rem'}>
               <OrderedList>
                 <ListItem>
-                  Reduction if mental and emotional stress, allowing for a
-                  clearer mind and getting rid of negative thinking patterns.
+                  Reduction of mental and emotional stress, allowing us to have
+                  a clearer mind and getting rid of negative thinking patterns.
                 </ListItem>
                 <ListItem>
                   It allows for greater sensitivity towards the delicate flow of
-                  energy, helping us to rid ourselves of energy blocks.
+                  energy, helping us to get rid of our energetic blocks.
                 </ListItem>
                 <ListItem>
                   It unblocks our energetic body, making it more sensitive,
                   helping you find things more vividly.
                 </ListItem>
                 <ListItem>
-                  It opens the gates to our subconsciousness, immersing you into
-                  who you are.
+                  It opens the gates to our subconscious, immersing you into who
+                  you are.
                 </ListItem>
                 <ListItem>
-                  Broadens your subconsciousness, letting more universal energy
-                  flow through.
+                  Broadens your subconscious, letting more universal energy flow
+                  through.
                 </ListItem>
                 <ListItem>
-                  Connects you more to the center of your heart.
+                  Connects you more with the center of your heart.
                 </ListItem>
                 <ListItem>
                   It serves as a trampoline into the spiritual tantric world,
-                  and it grows the our desire for more insight into the world
-                  deep within us. It creates a deep foundation to support your
-                  body and mind, but it also introduces you to new and
-                  unbelievable things. This is a different experience for
-                  everyone.
+                  and it grows our desire for more insight into the world deep
+                  within us. It creates a deep foundation to support your body
+                  and mind, but it also introduces us to new and unbelievable
+                  things. This is a different experience for everyone.
                 </ListItem>
               </OrderedList>
             </Box>
@@ -461,7 +460,7 @@ const data = {
         },
         {
           paragraph:
-            'Sound is made up of vibrations and frequencies. Sound can melt old frozen energy through the use of various tones, vowels and mantras via the vibration resonating with the exact frequency in the tissue of a blocked area. This resonance will create movement and will make the energy flow.',
+            'Sound is made up of vibrations and frequencies. Sound can melt old frozen energy through the use of various tones, vowels and mantras from the vibration resonating with the exact frequency in the tissue of a blocked area. This resonance will create movement and will make the energy flow.',
         },
         {
           paragraph: (
@@ -472,7 +471,7 @@ const data = {
                 textAlign={'center'}
                 className={styles['text-gradient']}
               >
-                "Sound can melt old frozen energy through the the vibrations."
+                "Sound can melt old frozen energy through the vibrations."
               </Text>
             </>
           ),
@@ -616,11 +615,11 @@ const data = {
         },
         {
           paragraph:
-            'In the first few sessions, more pain and trauma is released, and you will learn the basics of breathwork and other techniques. In later sessions, I teach and support you to develop your own energetic body, so that every cell can vibrate and orgasm. This creates new information in the body and allows the experience of self-love and happiness in, on the cellular level. Which in turn brings more energy, health, clarity and, success, into your life.',
+            'In the first few sessions, more pain and trauma is released, and you will learn the basics of breathwork and other techniques. In later sessions, I teach and support you to develop your own energetic body, so that every cell can vibrate and orgasm. This creates new information in the body and allows the experience, of self-love and happiness, on the cellular level. Which in turn brings more energy, health, clarity and, success, into your life.',
         },
         {
           paragraph:
-            'The sessions vary from person to person. You might want to focus on evolving and integrating your masculine and feminine polarities, learning Taoist energy techniques, or to focus more on emotional detoxing. Each session is tailored to the individual.',
+            'The sessions vary from person to person. You might want to focus on evolving and integrating your masculine and feminine polarities, learning Taoist energy techniques, or to focus more on emotional detoxing. Each session is adapted to the individual.',
         },
         {
           paragraph:
@@ -632,11 +631,11 @@ const data = {
         },
         {
           paragraph:
-            'There is no difference between spiritual energy, sexual energy, and healing energy. The difference is our intention and what we do with it. Heal ourselves, or others. Manifest our dreams, evolve our subtle light bodies or develop a clearer connection to the divine and our higher intelligence.',
+            'There is no difference between spiritual, sexual and healing energy. The difference is our intention and what we do with it. Heal ourselves, or others. Manifest our dreams, evolve our subtle light bodies or develop a clearer connection to the divine and our higher intelligence.',
         },
         {
           paragraph:
-            'Sexual energy is generally more powerful, tangible and readily available. It is best to work with, and develop, all of the channels that energy flows through, and by accepting our sexual energy: our spiritual energy and healing energy, can flow more freely.',
+            'Sexual energy is generally more powerful, tangible and readily available. It is best to work with, and develop, all of the channels that energy flows through, and by accepting our sexual energy: our spiritual and healing energy, can flow more freely.',
         },
       ],
     },
