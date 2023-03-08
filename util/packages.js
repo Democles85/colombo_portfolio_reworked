@@ -86,8 +86,8 @@ const data = {
       ],
     },
     {
-      title: 'Kudalini Energytic Bodywork',
-      slug: 'kudalini-energytic-bodywork',
+      title: 'Kudalini Energetic Bodywork',
+      slug: 'kudalini-energetic-bodywork',
       thumbnail: 'thumb_6.jpeg',
       description:
         'Kundalini Energetic Bodywork is a specialized approach that focuses on awakening the dormant energy at the base of the spine to promote healing, transformation, and spiritual evolution.',
