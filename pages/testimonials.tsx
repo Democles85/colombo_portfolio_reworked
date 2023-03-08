@@ -39,6 +39,7 @@ import toast, { Toaster } from 'react-hot-toast';
 
 // Carousel
 import Carousel from 'react-multi-carousel';
+import Slider from 'react-slick';
 
 // Types
 import TestimonialTypes from '../lib/types';
@@ -46,6 +47,8 @@ import TestimonialTypes from '../lib/types';
 // Styles
 import styles from '../styles/Home.module.css';
 import 'react-multi-carousel/lib/styles.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 // Country List
 import countryList from 'react-select-country-list';
@@ -55,31 +58,13 @@ import { getWindowSize } from '../lib/getWindowSize';
 import CircularBackground from '../components/CircularBackground';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import Layout from '../components/layouts/title';
+import Paragraph from '../components/Paragraph';
 
 interface SelectOptions extends OptionBase {
   [x: string]: any;
   label: string;
   value: string;
 }
-
-const responsive = {
-  superLargeDesktop: {
-    breakpoint: { max: 4000, min: 1024 },
-    items: 1,
-  },
-  desktop: {
-    breakpoint: { max: 1024, min: 768 },
-    items: 1,
-  },
-  tablet: {
-    breakpoint: { max: 768, min: 640 },
-    items: 1,
-  },
-  mobile: {
-    breakpoint: { max: 640, min: 0 },
-    items: 1,
-  },
-};
 
 const customLeftArrow = (
   // Create a simple arrow component
@@ -103,6 +88,58 @@ const customRightArrow = (
 );
 
 const Testimonials = ({ testimonials }: TestimonialTypes) => {
+  const settings = {
+    dots: true,
+    accessibility: true,
+    autoplay: false,
+    fade: false,
+    infinite: true,
+    touchThreshold: 15,
+    speed: 1000,
+    cssEase: 'ease-out',
+    useTransform: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          fade: true,
+          arrows: false,
+        },
+        // @ts-ignore
+        breakpoint: 600,
+        // @ts-ignore
+        settings: {
+          fade: true,
+          arrows: false,
+        },
+        // @ts-ignore
+        breakpoint: 480,
+        // @ts-ignore
+        settings: {
+          fade: true,
+          arrows: false,
+        },
+      },
+    ],
+    appendDots: (dots: any) => (
+      <Box display="flex" justifyContent="center">
+        <Box
+          position={'relative'}
+          bottom={0}
+          py={2}
+          borderRadius={'lg'}
+          color={'orange'}
+        >
+          <ul>{dots}</ul>
+        </Box>
+      </Box>
+    ),
+  };
+
   const size = getWindowSize();
   const countries = useMemo(() => countryList().getData(), []);
 
@@ -218,16 +255,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
               </Box>
 
               <Box>
-                <Carousel
-                  responsive={responsive}
-                  infinite={true}
-                  customLeftArrow={customLeftArrow}
-                  customRightArrow={customRightArrow}
-                  showDots
-                  // @ts-ignore
-                  itemClass={size.width > 768 ? 'px-20' : 'px-2'}
-                  keyBoardControl={true}
-                >
+                <Slider {...settings}>
                   {testimonials.map(testimonial => {
                     return (
                       <Box
@@ -288,24 +316,28 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                               </Badge>
                             </Heading>
                           </Box>
-                          <RichText
-                            content={testimonial.node.testimonial.raw.children}
-                            renderers={{
-                              p: ({ children }: any) => (
-                                <Text fontSize={'1rem'} textAlign={'justify'}>
-                                  {children}
-                                </Text>
-                              ),
-                              code_block: ({ children }: any) => (
-                                <Code colorScheme={'orange'}>{children}</Code>
-                              ),
-                            }}
-                          />
+                          <Box height={'fit-content'}>
+                            <RichText
+                              content={
+                                testimonial.node.testimonial.raw.children
+                              }
+                              renderers={{
+                                p: ({ children }: any) => (
+                                  <Text fontSize={'1rem'} textAlign={'justify'}>
+                                    {children}
+                                  </Text>
+                                ),
+                                code_block: ({ children }: any) => (
+                                  <Code colorScheme={'orange'}>{children}</Code>
+                                ),
+                              }}
+                            />
+                          </Box>
                         </Box>
                       </Box>
                     );
                   })}
-                </Carousel>
+                </Slider>
               </Box>
             </Container>
           </Box>

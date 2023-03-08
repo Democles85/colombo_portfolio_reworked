@@ -30,7 +30,9 @@
     "react-multi-carousel": "^2.8.2",
     "react-scroll-parallax": "^3.3.2",
     "react-select-country-list": "^2.2.3",
+    "react-slick": "^0.29.0",
     "react-viewport-height": "^1.2.1",
+    "slick-carousel": "^1.8.1",
     "typewriter-effect": "^2.19.0"
   },
   "devDependencies": {
@@ -39,6 +41,7 @@
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
     "@types/react-select-country-list": "^2.2.1",
+    "@types/react-slick": "^0.23.10",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.4",

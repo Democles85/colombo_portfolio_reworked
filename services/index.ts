@@ -17,6 +17,7 @@ export const getTestimonials = async () => {
             name
             publishedAt
             updatedAt
+            message
             testimonial {
               raw
             }

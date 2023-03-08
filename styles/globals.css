@@ -17,3 +17,30 @@ body {
   padding: 0;
   margin: 0;
 }
+
+.react-multi-carousel-list {
+  height: fit-content;
+}
+
+.react-multi-carousel-track {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 50%;
+}
+
+.react-multi-carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  max-height: fit-content;
+}
+
+.react-multi-carousel-dot-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}

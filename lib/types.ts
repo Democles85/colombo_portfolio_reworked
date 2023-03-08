@@ -14,6 +14,7 @@ type TestimonialTypes = {
         phoneNumber: number;
         publishedAt: string;
         updatedAt: string;
+        message: string;
         testimonial: {
           raw: {
             children: ElementNode[];
