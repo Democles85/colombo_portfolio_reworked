@@ -266,10 +266,11 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                         <Box
                           py={'2rem'}
                           px={{ base: '1rem', md: '2rem' }}
-                          // border={'1px solid rgba(255, 175, 58, 1)'}
-                          // border={'1px solid rgba(255, 255, 255, 0.5)'}
-                          // bg={useColorModeValue('white', '#202023')}
                           borderRadius={'10px'}
+                          display={'flex'}
+                          flexDir={'column'}
+                          justifyContent={'center'}
+                          alignItems={'center'}
                         >
                           <Avatar
                             name={testimonial.node.name}
@@ -284,14 +285,34 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                           />
                           <Box
                             display={'flex'}
-                            justifyContent={'space-between'}
+                            flexDir={'column'}
+                            alignItems={'center'}
                             py={'1rem'}
                           >
-                            <Heading as={'h3'} fontSize={'1.75rem'}>
-                              {testimonial.node.name}{' '}
-                              {size.width < 768 && <br />}
-                              <Badge colorScheme={'orange'} mt={'0.1rem'}>
-                                {/* Make it responsive for long one liner */}
+                            <Box>
+                              <Text fontSize={'1.5rem'} fontWeight={'bold'}>
+                                {testimonial.node.name}
+                              </Text>
+                            </Box>
+                            <Box
+                              display={'flex'}
+                              alignItems={'center'}
+                              width={'100%'}
+                              justifyContent={'center'}
+                              flexDir={{ base: 'column', md: 'row' }}
+                            >
+                              <Badge
+                                colorScheme={'green'}
+                                my={'0.25rem'}
+                                mx={{ base: '0', md: '0.25rem' }}
+                              >
+                                {testimonial.node.country}
+                              </Badge>
+                              <Badge
+                                colorScheme={'orange'}
+                                my={'0.25rem'}
+                                mx={{ base: '0', md: '0.25rem' }}
+                              >
                                 {testimonial.node.experience.length > 30 ? (
                                   <Tooltip
                                     label={testimonial.node.experience}
@@ -306,17 +327,9 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                                   testimonial.node.experience
                                 )}
                               </Badge>
-                              {size.width < 768 && <br />}
-                              <Badge
-                                ml={size.width > 768 ? 1 : 0}
-                                colorScheme={'green'}
-                                mt={'0.1rem'}
-                              >
-                                {testimonial.node.country}
-                              </Badge>
-                            </Heading>
+                            </Box>
                           </Box>
-                          <Box height={'fit-content'}>
+                          <Box>
                             <RichText
                               content={
                                 testimonial.node.testimonial.raw.children
