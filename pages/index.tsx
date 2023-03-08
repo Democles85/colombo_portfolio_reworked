@@ -180,7 +180,9 @@ const Home: NextPage = () => {
                     style={{
                       textDecoration: 'underline',
                       textDecorationColor: 'rgba(250, 175, 58, 1)',
+                      color: 'rgba(250, 175, 58, 1)',
                       textUnderlineOffset: '0.2rem',
+                      fontWeight: 'bold',
                     }}
                   >
                     modalities
