@@ -239,7 +239,9 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
         {/* <CircularBackground /> */}
         <Toaster position={'bottom-right'} reverseOrder={false} />
         <Section>
-          <Box bg={'rgba(255, 175, 54, 0.2)'}>
+          <Box
+          // bg={'rgba(255, 175, 54, 0.2)'}
+          >
             <Container
               maxW={'container.xl'}
               display={'flex'}
@@ -267,8 +269,8 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                           py={'2rem'}
                           px={{ base: '1rem', md: '2rem' }}
                           // border={'1px solid rgba(255, 175, 58, 1)'}
-                          // border={'1px solid rgba(255, 255, 255, 0.5)'}
-                          // bg={useColorModeValue('white', '#202023')}
+                          border={'1px solid rgba(255, 255, 255, 0.5)'}
+                          bg={useColorModeValue('white', '#202023')}
                           borderRadius={'10px'}
                         >
                           <Avatar
