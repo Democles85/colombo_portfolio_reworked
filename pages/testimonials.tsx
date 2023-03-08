@@ -267,7 +267,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                           py={'2rem'}
                           px={{ base: '1rem', md: '2rem' }}
                           // border={'1px solid rgba(255, 175, 58, 1)'}
-                          // border={'1px solid rgba(255, 255, 255, 0.5)'}
+                          border={'1px solid rgba(255, 255, 255, 0.5)'}
                           // bg={useColorModeValue('white', '#202023')}
                           borderRadius={'10px'}
                         >
