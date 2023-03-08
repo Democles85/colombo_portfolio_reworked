@@ -735,7 +735,7 @@ const Contact = () => {
                         colorScheme="orange"
                         leftIcon={<Icon as={MdMail} />}
                       >
-                        @ResonateWithYourself
+                        resonatewithyourself@gmail.com
                       </Button>
                     </Link>
                   </ListItem>

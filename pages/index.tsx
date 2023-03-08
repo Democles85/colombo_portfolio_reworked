@@ -131,7 +131,7 @@ const Home: NextPage = () => {
             >
               <Box maxW={'540px'}>
                 <Text
-                  textAlign={'justify'}
+                  textAlign={'center'}
                   textIndent={'1em'}
                   fontSize={{ base: '1rem', md: '1.2rem' }}
                 >
@@ -148,9 +148,10 @@ const Home: NextPage = () => {
                   where everything is connected as a single body.
                 </Text>
                 <Text
-                  textAlign={'justify'}
+                  textAlign={'center'}
                   textIndent={'1em'}
                   fontSize={{ base: '1rem', md: '1.2rem' }}
+                  pt={'1rem'}
                 >
                   The base is{' '}
                   <span
@@ -168,11 +169,11 @@ const Home: NextPage = () => {
                   naturally.
                 </Text>
               </Box>
-              <Divider
+              {/* <Divider
                 my={'2rem'}
                 width={{ base: '100%', md: '110%', lg: '120%' }}
-              />
-              <Box>
+              /> */}
+              <Box pt={'3rem'}>
                 <Paragraph>
                   The{' '}
                   <span
@@ -189,16 +190,18 @@ const Home: NextPage = () => {
 
                 <Box py={'1rem'}>
                   {modalities.map((modality, index) => (
-                    <Box key={index} className={styles.hidden} display={'flex'}>
+                    <Box
+                      key={index}
+                      className={styles.hidden}
+                      display={'flex'}
+                      textAlign={'center'}
+                      justifyContent={'center'}
+                    >
                       <List>
                         <ListItem
                           fontSize={{ base: '1rem', md: '1.2rem' }}
                           textIndent={'1rem'}
                         >
-                          <ListIcon
-                            as={VscCircleFilled}
-                            color={'rgba(250, 175, 58, 1)'}
-                          />
                           {modality.name}
                         </ListItem>
                       </List>
