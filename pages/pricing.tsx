@@ -53,9 +53,11 @@ const Pricing = () => {
                   maxW={'lg'}
                   rounded={'lg'}
                   overflow={'hidden'}
-                  border={'1px solid rgba(253, 173, 58, 1)'}
-                  boxShadow={'0 0 10px 0 rgba(0, 0, 0, 0.1)'}
-                  bg={useColorModeValue('white', '#202023')}
+                  // border={'1px solid rgba(253, 173, 58, 0.5)'}
+                  // boxShadow={'0 0 10px 0 rgba(0, 0, 0, 0.1)'}
+                  // bg={useColorModeValue('white', '#202023')}
+                  bg={'transparent'}
+                  boxShadow={'none'}
                 >
                   <Box px={6} py={3}>
                     <Text
@@ -108,22 +110,21 @@ const Pricing = () => {
                           </Text>
                         </Box>
                       ))}
-
-                      <Box
-                        display={'flex'}
-                        alignItems={'center'}
-                        justifyContent={'center'}
-                        py={'1rem'}
-                      >
-                        <Link href={'/contact'}>
-                          <Button label={'Contact me'} />
-                        </Link>
-                      </Box>
                     </Box>
                   </Box>
                 </Card>
               ))}
             </SimpleGrid>
+            <Box
+              display={'flex'}
+              alignItems={'center'}
+              justifyContent={'center'}
+              py={'1rem'}
+            >
+              <Link href={'/contact'}>
+                <Button label={'Contact me'} />
+              </Link>
+            </Box>
           </Container>
         </Section>
       </Box>
