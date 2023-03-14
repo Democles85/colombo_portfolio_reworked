@@ -130,8 +130,8 @@ const Navbar = (props: any) => {
           <LinkItem href="/services" path={path} _target={''}>
             Services
           </LinkItem>
-          <LinkItem href="/packages" path={path} _target={''}>
-            Packages
+          <LinkItem href="/pricing" path={path} _target={''}>
+            Pricing
           </LinkItem>
           <LinkItem href="/testimonials" path={path} _target={''}>
             Testimonials
@@ -190,13 +190,13 @@ const Navbar = (props: any) => {
                     Services
                   </MenuItem>
                 </NextLink>
-                <NextLink href={'/packages'} passHref>
+                <NextLink href={'/pricing'} passHref>
                   <MenuItem
                     style={{
                       background: useColorModeValue('#ffffff', '#111111'),
                     }}
                   >
-                    Packages
+                    Pricing
                   </MenuItem>
                 </NextLink>
                 <NextLink href={'/testimonials'} passHref>

@@ -19,8 +19,8 @@
   top: 100%;
   width: 100%;
   left: 0;
-  height: 2px;
-  border-radius: 2px;
+  height: 3px;
+  border-radius: 5px;
   background: linear-gradient(
       111.3deg,
       rgba(255, 175, 58, 1) 25%,

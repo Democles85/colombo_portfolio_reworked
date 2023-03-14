@@ -24,16 +24,3 @@
     }
   }
 }
-
-.card > .card-content > button {
-  align-content: flex-end;
-}
-
-.card > .card-content > img {
-  margin: 1rem 0;
-  transition: 0.2s ease-in-out;
-}
-
-.card:hover > .card-content > img {
-  transform: translateY(-10px);
-}
