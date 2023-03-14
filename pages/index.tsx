@@ -1,6 +1,5 @@
 import {
   Box,
-  Button,
   Container,
   Divider,
   Heading,
@@ -25,6 +24,7 @@ import Typewriter from 'typewriter-effect';
 // Components
 import Paragraph from '../components/Paragraph';
 import Section from '../components/Section';
+import { Button } from '../components/Button';
 
 // Data
 import data from '../util/modalities.json';
@@ -214,13 +214,7 @@ const Home: NextPage = () => {
 
               <Box py={'2rem'}>
                 <Link href={'/about'} _hover={{ textDecoration: 'none' }}>
-                  <Button
-                    variant={'outline'}
-                    minW={'240px'}
-                    borderColor={'rgba(250, 175, 58, 1)'}
-                  >
-                    Connect with me
-                  </Button>
+                  <Button label="Connect with me" />
                 </Link>
               </Box>
             </Box>

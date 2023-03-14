@@ -4,7 +4,7 @@ import React from 'react';
 import Layout from '../../components/layouts/title';
 
 // Data
-import data from '../../util/packages';
+import data from '../../util/pricing';
 
 const PackagePage = () => {
   const router = useRouter();
