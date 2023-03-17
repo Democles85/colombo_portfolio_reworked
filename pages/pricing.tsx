@@ -60,6 +60,7 @@ const Pricing = () => {
                   <Box px={6} py={3}>
                     <Text
                       fontSize={{ base: '2xl', lg: '3xl' }}
+                      pt={'1rem'}
                       textAlign={'center'}
                       fontWeight={500}
                       color={useColorModeValue('#000', '#fff')}
@@ -68,62 +69,71 @@ const Pricing = () => {
                       {packageItem.title}
                     </Text>
 
-                    {packageItem.attributes.map((attribute, _index) => (
-                      <Text
-                        key={_index}
-                        py={'1rem'}
-                        fontSize={{ base: '3xl', lg: '4xl' }}
-                        textAlign={'center'}
-                        fontWeight={700}
-                        color={useColorModeValue('gray.800', 'white')}
-                      >
-                        € {attribute.price}{' '}
-                        <span
-                          style={{
-                            fontSize: '1.25rem',
-                            fontWeight: 400,
-                            opacity: 0.5,
-                          }}
-                        >
-                          / {attribute.duration} {attribute.durationType}
-                        </span>{' '}
-                      </Text>
-                    ))}
-                    <Box>
-                      {packageItem.services.map((service, _index) => (
-                        <Box
+                    <Box py={'2rem'}>
+                      {packageItem.attributes.map((attribute, _index) => (
+                        <Text
                           key={_index}
-                          display={'flex'}
-                          alignItems={'center'}
-                          justifyContent={'center'}
-                          py={'1rem'}
+                          fontSize={{ base: '3xl', lg: '4xl' }}
+                          textAlign={'center'}
+                          fontWeight={700}
+                          color={useColorModeValue('gray.800', 'white')}
                         >
-                          <Text
-                            fontSize={'1.25rem'}
-                            fontWeight={500}
-                            opacity={0.5}
-                            color={useColorModeValue('gray.800', 'white')}
+                          € {attribute.price}{' '}
+                          <span
+                            style={{
+                              fontSize: '1.25rem',
+                              fontWeight: 400,
+                              opacity: 0.5,
+                            }}
                           >
-                            {service}
-                          </Text>
-                        </Box>
+                            / {attribute.duration} {attribute.durationType}{' '}
+                            <span
+                              style={{
+                                fontSize: '1rem',
+                                fontWeight: 400,
+                              }}
+                            >
+                              (per person)
+                            </span>
+                          </span>{' '}
+                        </Text>
                       ))}
-
-                      <Box
-                        display={'flex'}
-                        alignItems={'center'}
-                        justifyContent={'center'}
-                        py={'1rem'}
-                      >
-                        <Link href={'/contact'}>
-                          <Button label={'Contact me'} />
-                        </Link>
+                      <Divider my={'1rem'} opacity={'0.2'} />
+                      <Box>
+                        {packageItem.services.map((service, _index) => (
+                          <Box
+                            key={_index}
+                            display={'flex'}
+                            alignItems={'center'}
+                            justifyContent={'center'}
+                            py={'1rem'}
+                          >
+                            <Text
+                              fontSize={'1.25rem'}
+                              fontWeight={500}
+                              opacity={0.5}
+                              color={useColorModeValue('gray.800', 'white')}
+                            >
+                              {service}
+                            </Text>
+                          </Box>
+                        ))}
                       </Box>
                     </Box>
                   </Box>
                 </Card>
               ))}
             </SimpleGrid>
+            <Box
+              display={'flex'}
+              alignItems={'center'}
+              justifyContent={'center'}
+              py={'3rem'}
+            >
+              <Link href={'/contact'}>
+                <Button label={'Contact me'} />
+              </Link>
+            </Box>
           </Container>
         </Section>
       </Box>

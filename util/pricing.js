@@ -8,7 +8,7 @@ const data = {
     {
       title: 'Authentic',
       services: [
-        'Authentic Massage',
+        'Authentic Bodywork',
         'ASMR Face Massage',
         'Aromatherapy',
         'Tuning Fork',
@@ -25,7 +25,7 @@ const data = {
     {
       title: 'Prana',
       services: [
-        'Prana Massage',
+        'Prana Healing',
         'ASMR Face Massage',
         'Aromatherapy',
         'Tuning Fork',
@@ -42,8 +42,8 @@ const data = {
     {
       title: 'Spiritual',
       services: [
-        'Spiritual Massage',
-        'Aromatic Oil Massage',
+        'Spiritual Bodywork',
+        'Aromatic Oil',
         'Tuning Fork',
         'ASMR Face Massage',
         'Aromatherapy',
@@ -53,15 +53,15 @@ const data = {
         {
           duration: ['80 - 100'],
           durationType: ['min'],
-          price: ['70'],
+          price: ['100'],
         },
       ],
     },
     {
       title: 'Advanced',
       services: [
-        'Advanced Massage',
-        'Aromatic Oil Massage',
+        'Advanced Bodywork',
+        'Aromatic Oil',
         'Tuning Fork',
         'ASMR Face Massage',
         'Aromatherapy',
@@ -78,9 +78,9 @@ const data = {
     {
       title: 'Tantra',
       services: [
-        'Tantra Massage',
+        'Tantra Healing',
         'Energetic Bodywork',
-        'Aromatic Oil Massage',
+        'Aromatic Oil',
         'ASMR Face Massage',
         'Aromatherapy',
         'Tuning Fork',
@@ -91,6 +91,17 @@ const data = {
           duration: ['120 - 150'],
           durationType: ['min'],
           price: ['160'],
+        },
+      ],
+    },
+    {
+      title: 'Sound Healing',
+      services: ['Sound Healing'],
+      attributes: [
+        {
+          duration: ['45 - 60'],
+          durationType: ['min'],
+          price: ['80'],
         },
       ],
     },
