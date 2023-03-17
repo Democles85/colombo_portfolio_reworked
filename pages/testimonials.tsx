@@ -107,37 +107,24 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
         breakpoint: 1024,
         settings: {
           fade: true,
-          arrows: false,
+          arrows: true,
         },
         // @ts-ignore
         breakpoint: 600,
         // @ts-ignore
         settings: {
           fade: true,
-          arrows: false,
+          arrows: true,
         },
         // @ts-ignore
         breakpoint: 480,
         // @ts-ignore
         settings: {
           fade: true,
-          arrows: false,
+          arrows: true,
         },
       },
     ],
-    appendDots: (dots: any) => (
-      <Box display="flex" justifyContent="center">
-        <Box
-          position={'relative'}
-          bottom={0}
-          py={2}
-          borderRadius={'lg'}
-          color={'orange'}
-        >
-          <ul>{dots}</ul>
-        </Box>
-      </Box>
-    ),
   };
 
   const size = getWindowSize();
@@ -336,7 +323,11 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                               }
                               renderers={{
                                 p: ({ children }: any) => (
-                                  <Text fontSize={'1rem'} textAlign={'justify'}>
+                                  <Text
+                                    fontSize={'1rem'}
+                                    px={{ base: '0.5rem' }}
+                                    textAlign={'justify'}
+                                  >
                                     {children}
                                   </Text>
                                 ),
