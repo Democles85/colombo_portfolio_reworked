@@ -96,7 +96,11 @@ const data = {
     },
     {
       title: 'Sound Healing',
-      services: ['Sound Healing'],
+      services: [
+        'One Person - 80€',
+        'Two People - 120€',
+        'Three People - 160€',
+      ],
       attributes: [
         {
           duration: ['45 - 60'],
