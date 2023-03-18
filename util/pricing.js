@@ -98,8 +98,8 @@ const data = {
       title: 'Sound Healing',
       services: [
         'One Person - 80€',
-        'Two People - 120€',
-        'Three People - 160€',
+        'Two People - 150€',
+        'Three People - 180€',
       ],
       attributes: [
         {
