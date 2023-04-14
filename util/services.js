@@ -405,111 +405,7 @@ const data = {
         },
       ],
     },
-    {
-      title: 'Sound Healing',
-      slug: 'sound-healing',
-      thumbnail: 'works/thumb_6.jpeg',
-      description:
-        'Sound has the ability to activate parts of the subconscious brain, which can give access to unconscious memories...',
-      content: [
-        {
-          paragraph: (
-            <Box
-              textStyle="h1"
-              borderRadius="lg"
-              p={5}
-              // bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-              background="rgba(245,166,35,0.25)"
-              boxShadow="0 8px 32px 0 rgba(245,166,35, 0.15)"
-              border="1px solid rgba(255,255,255, 0.18)"
-            >
-              <Text
-                fontWeight={['medium', null, 'bold']}
-                fontSize={[18, null, 24]}
-                letterSpacing="tight"
-              >
-                “Sound is the medicine of the future.”{' '}
-                <Text
-                  fontSize="lg"
-                  fontFamily="M PLUS Rounded 1c, sans-serif"
-                  fontWeight="light"
-                  textAlign="right"
-                >
-                  – Edgar Cayce
-                </Text>
-              </Text>
-            </Box>
-          ),
-        },
-        {
-          paragraph: (
-            <>
-              <Text
-                color={'#FFAF36'}
-                fontWeight={'bold'}
-                fontSize={{ base: '1.25rem', md: '1.5rem' }}
-              >
-                Sound is more than vibrations.
-              </Text>
-            </>
-          ),
-        },
-        {
-          paragraph:
-            'The physical body is fully penetrated by an energy body – which is a body of frequencies and vibrations, a bit bigger than the physical body itself. Every time we get a shock, which we do not react actively to, energy gets stuck and freezes in tissues and cells.',
-        },
-        {
-          paragraph:
-            'Sound is made up of vibrations and frequencies. Sound can melt old frozen energy through the use of various tones, vowels and mantras from the vibration resonating with the exact frequency in the tissue of a blocked area. This resonance will create movement and will make the energy flow.',
-        },
-        {
-          paragraph: (
-            <>
-              <Text
-                color={'#FFAF36'}
-                fontStyle={'italic'}
-                textAlign={'center'}
-                className={styles['text-gradient']}
-              >
-                "Sound can melt old frozen energy through the vibrations."
-              </Text>
-            </>
-          ),
-        },
-        {
-          paragraph: (
-            <>
-              <Text
-                color={'#FFAF36'}
-                fontWeight={'bold'}
-                fontSize={{ base: '1.25rem', md: '1.5rem' }}
-              >
-                The power of sound
-              </Text>
-            </>
-          ),
-        },
-        {
-          paragraph:
-            'Sound has the ability to activate parts of the subconscious brain, which can give access to unconscious memories.',
-        },
-        {
-          paragraph: (
-            <>
-              <Text
-                color={'#FFAF36'}
-                fontStyle={'italic'}
-                textAlign={'center'}
-                className={styles['text-gradient']}
-              >
-                “Sound has the ability to activate parts of the subconscious
-                brain”
-              </Text>
-            </>
-          ),
-        },
-      ],
-    },
+
     {
       title: 'Advanced Energetic Bodywork',
       slug: 'advanced-energetic-bodywork',
@@ -636,6 +532,111 @@ const data = {
         {
           paragraph:
             'Sexual energy is generally more powerful, tangible and readily available. It is best to work with, and develop, all of the channels that energy flows through, and by accepting our sexual energy: our spiritual and healing energy, can flow more freely.',
+        },
+      ],
+    },
+    {
+      title: 'Sound Healing',
+      slug: 'sound-healing',
+      thumbnail: 'works/gong_sound_healing_thumbnail.jpg',
+      description:
+        'Sound has the ability to activate parts of the subconscious brain, which can give access to unconscious memories...',
+      content: [
+        {
+          paragraph: (
+            <Box
+              textStyle="h1"
+              borderRadius="lg"
+              p={5}
+              // bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              background="rgba(245,166,35,0.25)"
+              boxShadow="0 8px 32px 0 rgba(245,166,35, 0.15)"
+              border="1px solid rgba(255,255,255, 0.18)"
+            >
+              <Text
+                fontWeight={['medium', null, 'bold']}
+                fontSize={[18, null, 24]}
+                letterSpacing="tight"
+              >
+                “Sound is the medicine of the future.”{' '}
+                <Text
+                  fontSize="lg"
+                  fontFamily="M PLUS Rounded 1c, sans-serif"
+                  fontWeight="light"
+                  textAlign="right"
+                >
+                  – Edgar Cayce
+                </Text>
+              </Text>
+            </Box>
+          ),
+        },
+        {
+          paragraph: (
+            <>
+              <Text
+                color={'#FFAF36'}
+                fontWeight={'bold'}
+                fontSize={{ base: '1.25rem', md: '1.5rem' }}
+              >
+                Sound is more than vibrations.
+              </Text>
+            </>
+          ),
+        },
+        {
+          paragraph:
+            'The physical body is fully penetrated by an energy body – which is a body of frequencies and vibrations, a bit bigger than the physical body itself. Every time we get a shock, which we do not react actively to, energy gets stuck and freezes in tissues and cells.',
+        },
+        {
+          paragraph:
+            'Sound is made up of vibrations and frequencies. Sound can melt old frozen energy through the use of various tones, vowels and mantras from the vibration resonating with the exact frequency in the tissue of a blocked area. This resonance will create movement and will make the energy flow.',
+        },
+        {
+          paragraph: (
+            <>
+              <Text
+                color={'#FFAF36'}
+                fontStyle={'italic'}
+                textAlign={'center'}
+                className={styles['text-gradient']}
+              >
+                "Sound can melt old frozen energy through the vibrations."
+              </Text>
+            </>
+          ),
+        },
+        {
+          paragraph: (
+            <>
+              <Text
+                color={'#FFAF36'}
+                fontWeight={'bold'}
+                fontSize={{ base: '1.25rem', md: '1.5rem' }}
+              >
+                The power of sound
+              </Text>
+            </>
+          ),
+        },
+        {
+          paragraph:
+            'Sound has the ability to activate parts of the subconscious brain, which can give access to unconscious memories.',
+        },
+        {
+          paragraph: (
+            <>
+              <Text
+                color={'#FFAF36'}
+                fontStyle={'italic'}
+                textAlign={'center'}
+                className={styles['text-gradient']}
+              >
+                “Sound has the ability to activate parts of the subconscious
+                brain”
+              </Text>
+            </>
+          ),
         },
       ],
     },
