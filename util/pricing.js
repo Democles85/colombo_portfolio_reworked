@@ -109,6 +109,17 @@ const data = {
         },
       ],
     },
+    {
+      title: 'Energetic Bodywork & Advanced Sound Healing',
+      services: ['Advanced Sound Healing', 'Energetic Bodywork'],
+      attributes: [
+        {
+          duration: ['120 - 160'],
+          durationType: ['min'],
+          price: ['199'],
+        },
+      ],
+    },
   ],
 };
 

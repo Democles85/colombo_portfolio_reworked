@@ -102,11 +102,11 @@
 
 .hidden {
   opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s ease-in-out;
+  transform: translateX(150px);
+  transition: all 500ms ease-in-out;
 }
 
 .show {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
 }

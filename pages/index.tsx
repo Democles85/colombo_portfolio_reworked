@@ -131,7 +131,7 @@ const Home: NextPage = () => {
             >
               <Box maxW={'540px'}>
                 <Text
-                  textAlign={'center'}
+                  textAlign={'justify'}
                   textIndent={'1em'}
                   fontSize={{ base: '1rem', md: '1.2rem' }}
                 >
@@ -148,7 +148,7 @@ const Home: NextPage = () => {
                   where everything is connected as a single body.
                 </Text>
                 <Text
-                  textAlign={'center'}
+                  textAlign={'justify'}
                   textIndent={'1em'}
                   fontSize={{ base: '1rem', md: '1.2rem' }}
                   pt={'1rem'}
@@ -196,14 +196,19 @@ const Home: NextPage = () => {
                       key={index}
                       className={styles.hidden}
                       display={'flex'}
-                      textAlign={'center'}
-                      justifyContent={'center'}
+                      alignItems={'center'}
+                      justifyContent={'flex-start'}
+                      pl={'1rem'}
                     >
                       <List>
                         <ListItem
                           fontSize={{ base: '1rem', md: '1.2rem' }}
                           textIndent={'1rem'}
                         >
+                          <ListIcon
+                            as={VscCircleFilled}
+                            color={'rgba(250, 175, 58, 1)'}
+                          />
                           {modality.name}
                         </ListItem>
                       </List>
