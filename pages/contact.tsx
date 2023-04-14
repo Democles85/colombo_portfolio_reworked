@@ -53,7 +53,7 @@ const Contact = () => {
   const phoneFormat = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
 
   const [firstName, setFirstName] = React.useState('');
-  const [lastName, setLastName] = React.useState('');
+  // const [lastName, setLastName] = React.useState('');
   const [subject, setSubject] = React.useState('');
   const [email, setEmail] = React.useState('');
   // const [phone, setPhone] = React.useState('');
@@ -90,13 +90,13 @@ const Contact = () => {
       errors['firstNameLength'] = true;
     }
 
-    if (lastName.length <= 0) {
-      isValid = false;
-      errors['lastName'] = true;
-    } else if (lastName.length >= 20) {
-      isValid = false;
-      errors['lastNameLength'] = true;
-    }
+    // if (lastName.length <= 0) {
+    //   isValid = false;
+    //   errors['lastName'] = true;
+    // } else if (lastName.length >= 20) {
+    //   isValid = false;
+    //   errors['lastNameLength'] = true;
+    // }
 
     if (subject.length <= 0) {
       isValid = false;
@@ -161,7 +161,7 @@ const Contact = () => {
 
       const data = {
         firstName,
-        lastName,
+        // lastName,
         subject,
         email,
         // phone
@@ -185,7 +185,7 @@ const Contact = () => {
 
       // Reset Form
       setFirstName('');
-      setLastName('');
+      // setLastName('');
       setEmail('');
       // setPhone('');
       setCountry({ value: '', label: '' });
@@ -281,44 +281,6 @@ const Contact = () => {
                       </FormHelperText>
                     ) : null}
                   </Box>
-                  <Box w={'inherit'} px={5} py={{ base: 2, md: 3, lg: 3 }}>
-                    <FormLabel htmlFor={'lastName'} fontSize={'1.25rem'}>
-                      Surname: <span style={{ color: 'red' }}>*</span>
-                    </FormLabel>
-                    <Input
-                      borderColor={useColorModeValue(
-                        'gray.700',
-                        'whiteAlpha.500'
-                      )}
-                      _hover={{ borderColor: '#FFAF36' }}
-                      focusBorderColor={'#FFAF36'}
-                      placeholder={'Your Surname'}
-                      value={lastName}
-                      onChange={e => setLastName(e.target.value)}
-                      isInvalid={errors['lastName'] || errors['longLastName']}
-                    />
-                    {errors['lastName'] ? (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Please enter your surname.
-                      </FormHelperText>
-                    ) : errors['longLastName'] ? (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Your surname is too long.
-                      </FormHelperText>
-                    ) : null}
-                  </Box>
-                </Box>
-                <Box w={'100%'} display={'flex'} flexDir={'column'}>
                   <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
                     <FormLabel htmlFor={'subject'} fontSize={'1.25rem'}>
                       Subject: <span style={{ color: 'red' }}>*</span>
@@ -355,7 +317,44 @@ const Contact = () => {
                       </FormHelperText>
                     ) : null}
                   </Box>
-
+                  {/* <Box w={'inherit'} px={5} py={{ base: 2, md: 3, lg: 3 }}>
+                    <FormLabel htmlFor={'lastName'} fontSize={'1.25rem'}>
+                      Surname: <span style={{ color: 'red' }}>*</span>
+                    </FormLabel>
+                    <Input
+                      borderColor={useColorModeValue(
+                        'gray.700',
+                        'whiteAlpha.500'
+                      )}
+                      _hover={{ borderColor: '#FFAF36' }}
+                      focusBorderColor={'#FFAF36'}
+                      placeholder={'Your Surname'}
+                      value={lastName}
+                      onChange={e => setLastName(e.target.value)}
+                      isInvalid={errors['lastName'] || errors['longLastName']}
+                    />
+                    {errors['lastName'] ? (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Please enter your surname.
+                      </FormHelperText>
+                    ) : errors['longLastName'] ? (
+                      <FormHelperText
+                        color={useColorModeValue(
+                          'rgba(0,0,0,0.5)',
+                          'rgba(255, 255, 255, 0.5)'
+                        )}
+                      >
+                        Your surname is too long.
+                      </FormHelperText>
+                    ) : null}
+                  </Box> */}
+                </Box>
+                <Box w={'100%'} display={'flex'} flexDir={'column'}>
                   <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
                     <FormLabel htmlFor={'email'} fontSize={'1.25rem'}>
                       Email: <span style={{ color: 'red' }}>*</span>
