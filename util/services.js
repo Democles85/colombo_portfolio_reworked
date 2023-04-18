@@ -6,6 +6,7 @@ import {
   ListIcon,
   List,
   useColorModeValue,
+  Image,
 } from '@chakra-ui/react';
 import { BsFillCircleFill } from 'react-icons/bs';
 
@@ -16,7 +17,7 @@ const data = {
     {
       title: 'Bodywork',
       slug: 'bodywork',
-      thumbnail: 'works/thumb_1.jpeg',
+      thumbnail: 'works/bodywork_header.jpg',
       description:
         'Bodywork is a collective term that refers to alternative medical practices involving hands-on manipulation of the body...',
       content: [
@@ -538,7 +539,7 @@ const data = {
     {
       title: 'Sound Healing',
       slug: 'sound-healing',
-      thumbnail: 'works/gong_sound_healing_thumbnail.jpg',
+      thumbnail: 'works/sound_healing_header.jpg',
       description:
         'Sound has the ability to activate parts of the subconscious brain, which can give access to unconscious memories...',
       content: [
@@ -603,6 +604,19 @@ const data = {
               >
                 "Sound can melt old frozen energy through the vibrations."
               </Text>
+            </>
+          ),
+        },
+        {
+          paragraph: (
+            <>
+              <Box paddingY={'1rem'}>
+                <Image
+                  borderRadius={'10px'}
+                  src={'/works/sound_1.jpg'}
+                  alt={'Sound Healing Singing Bowl'}
+                />
+              </Box>
             </>
           ),
         },

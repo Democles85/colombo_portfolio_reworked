@@ -233,11 +233,12 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
               flexDir={'column'}
             >
               <Box textAlign={'center'} py={'4rem'}>
-                <Heading as={'h1'}>
-                  What people feel about{' '}
+                <Heading as={'h1'} color={'#ffaf36'}>
+                  {/* What people feel about{' '}
                   <span className={styles['text-gradient']}>
                     Resonate with Yourself.
-                  </span>
+                  </span> */}
+                  Testimonials
                 </Heading>
               </Box>
 
