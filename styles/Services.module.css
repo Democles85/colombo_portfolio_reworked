@@ -33,3 +33,8 @@
 .card:hover > .card-content > div > img {
   transform: translateY(-10px);
 }
+
+.card-image {
+  overflow: hidden;
+  border-radius: 5px;
+}

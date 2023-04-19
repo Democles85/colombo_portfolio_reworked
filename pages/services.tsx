@@ -4,13 +4,16 @@ import {
   Container,
   Divider,
   Heading,
-  Image,
+  // Image,
   SimpleGrid,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
 import React from 'react';
 import Link from 'next/link';
+
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 // Components
 import Layout from '../components/layouts/title';
@@ -72,12 +75,11 @@ const Services = () => {
                       <Text fontSize={'1.5rem'}>{service.title}</Text>
                       {/* <Divider my={'0.5rem'} /> */}
                       <Box>
-                        <Image
-                          src={`/${service.thumbnail}`}
-                          alt={`${service.title} thumbnail`}
-                          loading={'lazy'}
-                          borderRadius={'lg'}
-                          boxShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}
+                        <LazyLoadImage
+                          src={service.thumbnail}
+                          alt={service.title}
+                          effect={'blur'}
+                          className={styles['card-image']}
                         />
                       </Box>
                       <Text textAlign={'justify'} py={'1rem'}>

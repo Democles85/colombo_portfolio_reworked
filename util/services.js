@@ -17,7 +17,7 @@ const data = {
     {
       title: 'Bodywork',
       slug: 'bodywork',
-      thumbnail: 'works/bodywork_header.jpg',
+      thumbnail: 'works/bodywork_header_compressed.jpg',
       description:
         'Bodywork is a collective term that refers to alternative medical practices involving hands-on manipulation of the body...',
       content: [
@@ -550,7 +550,7 @@ const data = {
     {
       title: 'Sound Healing',
       slug: 'sound-healing',
-      thumbnail: 'works/sound_healing_header.jpg',
+      thumbnail: 'works/sound_healing_header_compressed.jpg',
       description:
         'Sound has the ability to activate parts of the subconscious brain, which can give access to unconscious memories...',
       content: [
