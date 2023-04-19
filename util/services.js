@@ -6,11 +6,12 @@ import {
   ListIcon,
   List,
   useColorModeValue,
-  Image,
 } from '@chakra-ui/react';
 import { BsFillCircleFill } from 'react-icons/bs';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-import styles from '../styles/Service.module.css';
+import styles from '../styles/Services.module.css';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 const data = {
   services: [
@@ -407,8 +408,9 @@ const data = {
         {
           paragraph: (
             <>
-              <Image
-                borderRadius={'10px'}
+              <LazyLoadImage
+                className={styles['card-image']}
+                effect={'blur'}
                 src={'/works/tantra_2.jpg'}
                 alt={'Sound Healing Singing Bowl'}
               />
@@ -622,8 +624,9 @@ const data = {
           paragraph: (
             <>
               <Box paddingY={'1rem'}>
-                <Image
-                  borderRadius={'10px'}
+                <LazyLoadImage
+                  className={styles['card-image']}
+                  effect={'blur'}
                   src={'/works/sound_1.jpg'}
                   alt={'Sound Healing Singing Bowl'}
                 />
