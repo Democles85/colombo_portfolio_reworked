@@ -110,6 +110,28 @@ const Home: NextPage = () => {
             justifyContent={'center'}
             minH={'100vh'}
           >
+            <Box
+              textStyle="h1"
+              borderRadius="lg"
+              p={5}
+              // bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+              background="rgba(245,166,35,0.25)"
+              boxShadow="0 8px 32px 0 rgba(245,166,35, 0.15)"
+              border="1px solid rgba(255,255,255, 0.18)"
+              maxW="container.md"
+              marginBottom={'1rem'}
+            >
+              <Text
+                fontWeight={'medium'}
+                fontSize={[18, null, 20]}
+                letterSpacing="tight"
+              >
+                “All this is a journey that is expanding our consciousness. A
+                great Sea of Energy where we have to bathe without stopping to
+                understand who we are, because always on this journey we will
+                change who we are.”
+              </Text>
+            </Box>
             <Box py={'1rem'}>
               <Heading
                 as={'h2'}

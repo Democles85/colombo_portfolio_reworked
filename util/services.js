@@ -79,7 +79,7 @@ const data = {
     {
       title: 'De Armoring',
       slug: 'de-armoring',
-      thumbnail: 'works/thumb_2.jpeg',
+      thumbnail: 'works/de_armouring_thumbnail.jpg',
       description:
         'De armouring is a way to release jams, stagnant energy, emotions and tension from the body...',
       content: [
@@ -242,7 +242,7 @@ const data = {
     {
       title: 'Authentic Tantra',
       slug: 'authentic-tantra',
-      thumbnail: 'works/thumb_3.jpeg',
+      thumbnail: 'works/tantra_thumbnail.jpg',
       description: '',
       content: [
         {
@@ -404,13 +404,24 @@ const data = {
             </Box>
           ),
         },
+        {
+          paragraph: (
+            <>
+              <Image
+                borderRadius={'10px'}
+                src={'/works/tantra_2.jpg'}
+                alt={'Sound Healing Singing Bowl'}
+              />
+            </>
+          ),
+        },
       ],
     },
 
     {
       title: 'Advanced Energetic Bodywork',
       slug: 'advanced-energetic-bodywork',
-      thumbnail: 'works/thumb_5.jpeg',
+      thumbnail: 'works/advanced_energetic_bodywork_thumbnail.jpg',
       description: '',
       content: [
         {

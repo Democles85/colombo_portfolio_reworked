@@ -30,7 +30,13 @@ const Services = () => {
     <Layout title="Services">
       <Box pt={'4rem'}>
         <Section>
-          <Container maxW={'container.lg'}>
+          <Container
+            maxW={'container.lg'}
+            display={'flex'}
+            flexDir={'column'}
+            justifyContent={'center'}
+            alignItems={'center'}
+          >
             <Box textAlign={'center'} py={'4rem'}>
               <Heading as={'h1'}>
                 Learn about{' '}
@@ -40,7 +46,7 @@ const Services = () => {
               </Heading>
             </Box>
 
-            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+            <Box display={'flex'} flexDir={'column'} maxW={'container.sm'}>
               {services.map((service, _index) => (
                 <Link href={`/services/${service.slug}`}>
                   <Box
@@ -54,6 +60,7 @@ const Services = () => {
                       boxShadow: '0px 0px 10px #FFAF36',
                       cursor: 'pointer',
                     }}
+                    marginY={'1rem'}
                     className={styles.card}
                   >
                     <Box
@@ -68,6 +75,7 @@ const Services = () => {
                         <Image
                           src={`/${service.thumbnail}`}
                           alt={`${service.title} thumbnail`}
+                          loading={'eager'}
                           borderRadius={'lg'}
                           boxShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}
                         />
@@ -79,7 +87,7 @@ const Services = () => {
                   </Box>
                 </Link>
               ))}
-            </SimpleGrid>
+            </Box>
           </Container>
         </Section>
       </Box>
