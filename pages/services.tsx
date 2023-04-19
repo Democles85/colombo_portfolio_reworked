@@ -75,7 +75,7 @@ const Services = () => {
                         <Image
                           src={`/${service.thumbnail}`}
                           alt={`${service.title} thumbnail`}
-                          loading={'eager'}
+                          loading={'lazy'}
                           borderRadius={'lg'}
                           boxShadow={'0px 0px 10px rgba(0, 0, 0, 0.5)'}
                         />
