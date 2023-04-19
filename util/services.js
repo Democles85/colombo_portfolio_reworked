@@ -79,7 +79,7 @@ const data = {
     {
       title: 'De Armoring',
       slug: 'de-armoring',
-      thumbnail: 'works/de_armouring_thumbnail.jpg',
+      thumbnail: 'works/de_armouring_thumbnail_compressed.jpg',
       description:
         'De armouring is a way to release jams, stagnant energy, emotions and tension from the body...',
       content: [
@@ -242,7 +242,7 @@ const data = {
     {
       title: 'Authentic Tantra',
       slug: 'authentic-tantra',
-      thumbnail: 'works/tantra_thumbnail.jpg',
+      thumbnail: 'works/tantra_thumbnail_compressed.jpg',
       description: '',
       content: [
         {
@@ -421,7 +421,7 @@ const data = {
     {
       title: 'Advanced Energetic Bodywork',
       slug: 'advanced-energetic-bodywork',
-      thumbnail: 'works/advanced_energetic_bodywork_thumbnail.jpg',
+      thumbnail: 'works/advanced_energetic_bodywork_thumbnail_compressed.jpg',
       description: '',
       content: [
         {
