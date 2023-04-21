@@ -113,12 +113,21 @@ const data = {
           <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>
             In February of 2020
           </span>
-          , I started supporting people professionally. To all who want to work
-          on themselves through me, this is transformable work. After many
-          experiences and gifts from the universe, I am equipped to support
-          people on every level and dimension, such as various psychic needs,
-          blocks, traumas, etc., as well as support higher energies that want to
-          awaken. Every session is lively, deep, and full of energy.
+          , I started supporting people professionally.
+        </>
+      ),
+    },
+    {
+      paragraph: (
+        <>
+          <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>
+            To all who want to work on themselves through me,{' '}
+          </span>
+          this is transformable work. After many experiences and gifts from the
+          universe, I am equipped to support people on every level and
+          dimension, such as various psychic needs, blocks, traumas, etc., as
+          well as support higher energies that want to awaken. Every session is
+          lively, deep, and full of energy.
         </>
       ),
     },
