@@ -3,19 +3,30 @@ import React from 'react';
 import ThemeToggleSwitch from './ThemeToggleSwitch';
 import Logo from './Logo';
 import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
   Box,
+  Button,
   Container,
+  Drawer,
+  DrawerBody,
+  DrawerCloseButton,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerOverlay,
   Flex,
   Heading,
-  IconButton,
   Link,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
   Stack,
+  StackDivider,
   Text,
+  VStack,
   useColorModeValue,
+  useDisclosure,
 } from '@chakra-ui/react';
 import { HamburgerIcon } from '@chakra-ui/icons';
 
@@ -88,6 +99,8 @@ const LinkItem = ({
 
 const Navbar = (props: any) => {
   const { path } = props;
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const firstField = React.useRef();
 
   return (
     <Box
@@ -153,72 +166,194 @@ const Navbar = (props: any) => {
             ml={2}
             display={{ base: 'inline-block', md: 'inline-block', lg: 'none' }}
           >
-            <Menu>
-              <MenuButton
-                as={IconButton}
-                icon={<HamburgerIcon />}
-                variant={'outline'}
-                aria-label={'Menu'}
-              />
-              <MenuList
-                style={{ background: useColorModeValue('#ffffff', '#111111') }}
+            <Button rightIcon={<HamburgerIcon />} onClick={onOpen} />
+
+            <Drawer
+              isOpen={isOpen}
+              size="full"
+              onClose={onClose}
+              // @ts-ignore
+              initialFocusRef={firstField}
+            >
+              <DrawerOverlay height="100% !important" />
+              <DrawerContent
+                bg={useColorModeValue(
+                  'rgb(240, 231, 219, 0.95)',
+                  'rgb(32, 32, 35, 0.95)'
+                )}
+                height="100% !important"
               >
-                <NextLink href={'/'} passHref>
-                  <MenuItem
-                    style={{
-                      background: useColorModeValue('#ffffff', '#111111'),
-                    }}
+                <DrawerHeader>
+                  <Text textAlign="center" color="#fcb03b">
+                    Resonate With Yourself
+                  </Text>
+                  <DrawerCloseButton />
+                </DrawerHeader>
+
+                {/* Drawer Body */}
+                <DrawerBody>
+                  <VStack
+                    divider={
+                      <StackDivider
+                        borderColor={useColorModeValue('#202023', '#fcb03b')}
+                      />
+                    }
+                    spacing={5}
+                    align="center"
+                    fontSize="lg"
+                    alignItems="center"
+                    justifyContent="center"
+                    height="100%"
                   >
-                    Home
-                  </MenuItem>
-                </NextLink>
-                <NextLink href={'/about'} passHref>
-                  <MenuItem
-                    style={{
-                      background: useColorModeValue('#ffffff', '#111111'),
-                    }}
-                  >
-                    About
-                  </MenuItem>
-                </NextLink>
-                <NextLink href={'/services'} passHref>
-                  <MenuItem
-                    style={{
-                      background: useColorModeValue('#ffffff', '#111111'),
-                    }}
-                  >
-                    Services
-                  </MenuItem>
-                </NextLink>
-                <NextLink href={'/pricing'} passHref>
-                  <MenuItem
-                    style={{
-                      background: useColorModeValue('#ffffff', '#111111'),
-                    }}
-                  >
-                    Pricing
-                  </MenuItem>
-                </NextLink>
-                <NextLink href={'/testimonials'} passHref>
-                  <MenuItem
-                    style={{
-                      background: useColorModeValue('#ffffff', '#111111'),
-                    }}
-                  >
-                    Testimonials
-                  </MenuItem>
-                </NextLink>
-                <NextLink href={'/contact'} passHref>
-                  <MenuItem
-                    style={{
-                      background: useColorModeValue('#ffffff', '#111111'),
-                    }}
-                  >
-                    Contact
-                  </MenuItem>
-                </NextLink>
-              </MenuList>
-            </Menu>
+                    <NextLink href="/" passHref>
+                      <Button onClick={onClose} variant="link" width="100%">
+                        Home
+                      </Button>
+                    </NextLink>
+                    <NextLink href="/about" passHref>
+                      <Button onClick={onClose} variant="link" width="100%">
+                        About Me
+                      </Button>
+                    </NextLink>
+
+                    <Accordion allowToggle border="transparent" width="100%">
+                      <AccordionItem>
+                        <AccordionButton
+                          padding="0"
+                          display="flex"
+                          justifyContent="center"
+                          alignItems="center"
+                        >
+                          <Box
+                            textAlign="center"
+                            color={useColorModeValue('#718096', '#e2e8f0')}
+                          >
+                            <Text fontWeight="600">Services</Text>
+                          </Box>
+                          <Box>
+                            <AccordionIcon
+                              color={useColorModeValue('#718096', '#e2e8f0')}
+                            />
+                          </Box>
+                        </AccordionButton>
+
+                        <AccordionPanel
+                          display="flex"
+                          flexDir="column"
+                          alignItems="center"
+                          justifyContent="center"
+                          textAlign="center"
+                        >
+                          <NextLink passHref href="/services/bodywork">
+                            <Button
+                              variant="link"
+                              onClick={onClose}
+                              width="100%"
+                              py="2"
+                              fontWeight="light"
+                              fontSize="18px"
+                            >
+                              Bodywork
+                            </Button>
+                          </NextLink>
+                          <NextLink passHref href="/services/de-armoring">
+                            <Button
+                              variant="link"
+                              onClick={onClose}
+                              width="100%"
+                              py="2"
+                              fontWeight="light"
+                              fontSize="18px"
+                            >
+                              De-armouring
+                            </Button>
+                          </NextLink>
+                          <NextLink passHref href="/services/authentic-tantra">
+                            <Button
+                              variant="link"
+                              onClick={onClose}
+                              width="100%"
+                              py="2"
+                              fontWeight="light"
+                              fontSize="18px"
+                            >
+                              Authentic Tantra
+                            </Button>
+                          </NextLink>
+                          <NextLink
+                            passHref
+                            href="/services/advanced-energetic-bodywork"
+                          >
+                            <Button
+                              variant="link"
+                              onClick={onClose}
+                              width="100%"
+                              py="2"
+                              fontWeight="light"
+                              fontSize="18px"
+                            >
+                              Advanced Energetic Bodywork
+                            </Button>
+                          </NextLink>
+                          <NextLink passHref href="/services/sound-healing">
+                            <Button
+                              variant="link"
+                              onClick={onClose}
+                              width="100%"
+                              py="2"
+                              fontWeight="light"
+                              fontSize="18px"
+                            >
+                              Sound Healing
+                            </Button>
+                          </NextLink>
+                          <NextLink
+                            passHref
+                            href="/services/advanced-energetic-bodywork"
+                          >
+                            <Button
+                              variant="link"
+                              onClick={onClose}
+                              width="100%"
+                              py="2"
+                              fontWeight="light"
+                              fontSize="18px"
+                            >
+                              Advanced Energetic Bodywork
+                            </Button>
+                          </NextLink>
+                        </AccordionPanel>
+                      </AccordionItem>
+                    </Accordion>
+
+                    <NextLink href="/pricing" passHref>
+                      <Button onClick={onClose} variant="link" width="100%">
+                        Pricing
+                      </Button>
+                    </NextLink>
+                    <NextLink href="/testimonials" passHref>
+                      <Button onClick={onClose} variant="link" width="100%">
+                        Testimonials
+                      </Button>
+                    </NextLink>
+                    <NextLink href="/contact" passHref>
+                      <Button onClick={onClose} variant="link" width="100%">
+                        Contact
+                      </Button>
+                    </NextLink>
+                  </VStack>
+                </DrawerBody>
+
+                <DrawerFooter
+                  width="100%"
+                  textAlign="center"
+                  alignItems="center"
+                  justifyContent="center"
+                >
+                  <Button onClick={onClose}>Close</Button>
+                </DrawerFooter>
+              </DrawerContent>
+            </Drawer>
           </Box>
         </Box>
       </Container>
