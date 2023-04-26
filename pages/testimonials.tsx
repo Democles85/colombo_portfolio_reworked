@@ -38,14 +38,12 @@ import { FormProvider, useForm } from 'react-hook-form';
 import toast, { Toaster } from 'react-hot-toast';
 
 // Carousel
-import Carousel from 'react-multi-carousel';
 import Slider from 'react-slick';
 
 // Types
 import TestimonialTypes from '../lib/types';
 
 // Styles
-import styles from '../styles/Home.module.css';
 import 'react-multi-carousel/lib/styles.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -55,10 +53,8 @@ import countryList from 'react-select-country-list';
 
 // Functions
 import { getWindowSize } from '../lib/getWindowSize';
-import CircularBackground from '../components/CircularBackground';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import Layout from '../components/layouts/title';
-import Paragraph from '../components/Paragraph';
 
 interface SelectOptions extends OptionBase {
   [x: string]: any;
