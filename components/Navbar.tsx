@@ -307,21 +307,6 @@ const Navbar = (props: any) => {
                               Sound Healing
                             </Button>
                           </NextLink>
-                          <NextLink
-                            passHref
-                            href="/services/advanced-energetic-bodywork"
-                          >
-                            <Button
-                              variant="link"
-                              onClick={onClose}
-                              width="100%"
-                              py="2"
-                              fontWeight="light"
-                              fontSize="18px"
-                            >
-                              Advanced Energetic Bodywork
-                            </Button>
-                          </NextLink>
                         </AccordionPanel>
                       </AccordionItem>
                     </Accordion>
