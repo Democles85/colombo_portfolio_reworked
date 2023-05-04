@@ -6,6 +6,7 @@ import {
   ListIcon,
   List,
   useColorModeValue,
+  UnorderedList,
 } from '@chakra-ui/react';
 import { BsFillCircleFill } from 'react-icons/bs';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
@@ -69,7 +70,7 @@ const data = {
               <LazyLoadImage
                 className={styles['card-image']}
                 effect={'blur'}
-                src={'/works/bodywork_header.jpg'}
+                src={'/works/bodywork_header_compressed.jpg'}
                 alt={'Sound Healing Singing Bowl'}
               />
             </>
@@ -160,7 +161,7 @@ const data = {
               <LazyLoadImage
                 className={styles['card-image']}
                 effect={'blur'}
-                src={'/works/de_armouring_thumbnail.jpg'}
+                src={'/works/de_armouring_thumbnail_compressed.jpg'}
                 alt={'Sound Healing Singing Bowl'}
               />
             </>
@@ -435,7 +436,7 @@ const data = {
               <LazyLoadImage
                 className={styles['card-image']}
                 effect={'blur'}
-                src={'/works/tantra_2.jpg'}
+                src={'/works/tantra_2_min.jpg'}
                 alt={'Sound Healing Singing Bowl'}
               />
             </>
@@ -612,6 +613,20 @@ const data = {
         {
           paragraph: (
             <>
+              <Box paddingY={'1rem'}>
+                <LazyLoadImage
+                  className={styles['card-image']}
+                  effect={'blur'}
+                  src={'/works/sound_healing_header_compressed.jpg'}
+                  alt={'Sound Healing Singing Bowl'}
+                />
+              </Box>
+            </>
+          ),
+        },
+        {
+          paragraph: (
+            <>
               <Text
                 color={'#FFAF36'}
                 fontWeight={'bold'}
@@ -624,11 +639,7 @@ const data = {
         },
         {
           paragraph:
-            'The physical body is fully penetrated by an energy body – which is a body of frequencies and vibrations, a bit bigger than the physical body itself. Every time we get a shock, which we do not react actively to, energy gets stuck and freezes in tissues and cells.',
-        },
-        {
-          paragraph:
-            'Sound is made up of vibrations and frequencies. Sound can melt old frozen energy through the use of various tones, vowels and mantras from the vibration resonating with the exact frequency in the tissue of a blocked area. This resonance will create movement and will make the energy flow.',
+            'Sound healing therapy is an alternative healing practice that targets the soul, the mind, and the body. This practice includes a series of instrumental sounds that vibrate, thus influencing the physical and non-physical electromagnetic field. The instruments used, vibrate and interact with the body’s external and internal energy, known as “Biofield”. By interacting with this field, dormant energy chambers throughout all the system are opened.  Often, our system saves traumas that are carried over in deep chambers, which need to be emptied in order for Chi to flow properly. The feeling of the sound is cosmic, and your body is often bathed in those sounds, taking you to a spiritual journey. The sounds are used to take the brain to a theta state, letting it meet with it’s deep subconcious. ',
         },
         {
           paragraph: (
@@ -641,20 +652,6 @@ const data = {
               >
                 "Sound can melt old frozen energy through the vibrations."
               </Text>
-            </>
-          ),
-        },
-        {
-          paragraph: (
-            <>
-              <Box paddingY={'1rem'}>
-                <LazyLoadImage
-                  className={styles['card-image']}
-                  effect={'blur'}
-                  src={'/works/sound_1.jpg'}
-                  alt={'Sound Healing Singing Bowl'}
-                />
-              </Box>
             </>
           ),
         },
@@ -688,6 +685,82 @@ const data = {
                 brain”
               </Text>
             </>
+          ),
+        },
+        {
+          paragraph: (
+            <>
+              <Text
+                color={'#FFAF36'}
+                fontWeight={'bold'}
+                fontSize={{ base: '1.25rem', md: '1.5rem' }}
+              >
+                The benefits of sound healing
+              </Text>
+            </>
+          ),
+        },
+        {
+          paragraph: (
+            <Box
+              display={'flex'}
+              justifyContent={'space-between'}
+              textAlign={'left'}
+            >
+              <Box>
+                <Text fontWeight={'bold'}>Physical Benefits</Text>
+                <UnorderedList>
+                  <ListItem>Harmonizes the physical and psychic</ListItem>
+                  <ListItem>
+                    Harmonizes the physical and the mental body
+                  </ListItem>
+                  <ListItem>
+                    Develops a quality of harmonious well-being
+                  </ListItem>
+                  <ListItem>Relaxes ,calms and clears the mind</ListItem>
+                  <ListItem>Improves concentration and creativity</ListItem>
+                  <ListItem>
+                    Improves stress-related disorders and anxiety
+                  </ListItem>
+                  <ListItem>Improves personal development</ListItem>
+                  <ListItem>Makes you more self-confident</ListItem>
+                  <ListItem>
+                    Prepares you mentally (e.g. for exams, contests,
+                    competitions etc.)
+                  </ListItem>
+                  <ListItem>Balances the immune system</ListItem>
+                  <ListItem>
+                    Stimulates hormonal production of endorphin,
+                    dopamine,serotonin
+                  </ListItem>
+                  <ListItem>Stimulates energy</ListItem>
+                  <ListItem>Improves sleep</ListItem>
+                  <ListItem>Improves the sense of hearing</ListItem>
+                  <ListItem>Normalizes the blood pressure</ListItem>
+                </UnorderedList>
+              </Box>
+              <Box>
+                <Text fontWeight={'bold'}>Spiritual Benefits</Text>
+                <UnorderedList>
+                  <ListItem>Connects you with your Higher Self</ListItem>
+                  <ListItem>
+                    Helps you find where you need to be working on yourself
+                  </ListItem>
+                  <ListItem>Gives you visions</ListItem>
+                  <ListItem>
+                    Opens the doors where the trauma is stored
+                  </ListItem>
+                  <ListItem>Connects you with your subconscious mind</ListItem>
+                  <ListItem>Transmutes the old energies</ListItem>
+                  <ListItem>Clears the energetic/auric field</ListItem>
+                  <ListItem>Let’s the new information to come in</ListItem>
+                  <ListItem>Opens layers of your heart</ListItem>
+                  <ListItem>Makes you more sensitive</ListItem>
+                  <ListItem>Awakens your third eye</ListItem>
+                  <ListItem>Develops your clairvoyance</ListItem>
+                </UnorderedList>
+              </Box>
+            </Box>
           ),
         },
       ],

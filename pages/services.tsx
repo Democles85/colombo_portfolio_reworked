@@ -25,6 +25,8 @@ import data from '../util/services';
 // Styles
 import styles from '../styles/Services.module.css';
 import CircularBackground from '../components/CircularBackground';
+// import Image from 'next/image';
+import { Image } from '@chakra-ui/image';
 
 const Services = () => {
   const services = data.services;
@@ -91,11 +93,21 @@ const Services = () => {
                         overflow={'hidden'}
                       /> */}
                       <Box maxH={'100%'}>
-                        <LazyLoadImage
+                        {/* <LazyLoadImage
                           src={service.thumbnail}
                           alt={service.title}
                           effect={'blur'}
                           className={styles['card-image']}
+                          objectFit={'cover'}
+                        /> */}
+                        <Image
+                          src={`/${service.thumbnail}`}
+                          alt={service.title}
+                          width={1000}
+                          height={400}
+                          objectFit={'cover'}
+                          objectPosition={'center'}
+                          loading={'lazy'}
                         />
                       </Box>
                       <Text textAlign={'justify'} py={'1rem'}>
