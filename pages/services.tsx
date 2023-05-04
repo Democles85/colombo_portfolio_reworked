@@ -75,9 +75,9 @@ const Services = () => {
                     >
                       <Text fontSize={'1.5rem'}>{service.title}</Text>
                       {/* <Divider my={'0.5rem'} /> */}
-                      <Box
+                      {/* <Box
                         backgroundImage={`${service.thumbnail}`}
-                        height={'500px'}
+                        height={'400px'}
                         maxHeight={'100%'}
                         backgroundClip={'content-box'}
                         backgroundSize={'cover'}
@@ -85,14 +85,14 @@ const Services = () => {
                         backgroundRepeat={'no-repeat'}
                         borderRadius={'lg'}
                         overflow={'hidden'}
-                        backgroundBlendMode={'luminosity'}
-                      >
-                        {/* <LazyLoadImage
+                      /> */}
+                      <Box maxH={'100%'}>
+                        <LazyLoadImage
                           src={service.thumbnail}
                           alt={service.title}
                           effect={'blur'}
                           className={styles['card-image']}
-                        /> */}
+                        />
                       </Box>
                       <Text textAlign={'justify'} py={'1rem'}>
                         {service.description}
