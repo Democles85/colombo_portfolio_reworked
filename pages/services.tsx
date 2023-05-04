@@ -50,7 +50,7 @@ const Services = () => {
             </Box>
 
             {/* <Box display={'flex'} flexDir={'column'} maxW={'container.sm'}> */}
-            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
+            <SimpleGrid columns={1} spacing={10} width={'container.sm'}>
               {services.map((service, _index) => (
                 <Link href={`/services/${service.slug}`}>
                   <Box
