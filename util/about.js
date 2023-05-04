@@ -1,3 +1,5 @@
+import { Box, UnorderedList } from '@chakra-ui/react';
+
 const data = {
   about: [
     {
@@ -113,7 +115,16 @@ const data = {
           <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>
             In February of 2020
           </span>
-          , I started supporting people professionally.
+          , I started supporting people professionally in a Holistic way, while
+          applying: <br />
+          <Box paddingLeft={'1rem'}>
+            Self Awareness, Authentic Massage, Authentic Bodywork, Kundalini
+            Bodywork, Advance Energetic Bodywork, Authentic Tantra Healing,
+            Spiritual Bodywork, De-Armouring, Breathwork, Emotional Release,
+            Trauma Release, Shadows, Prana Healing, Reiki, Duality &
+            Non-Duality, Feminine & Masculine, Polarity, Sound Healing,
+            P.T.S.D., Medium.
+          </Box>
         </>
       ),
     },

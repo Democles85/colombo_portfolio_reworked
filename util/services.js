@@ -78,8 +78,8 @@ const data = {
       ],
     },
     {
-      title: 'De Armoring',
-      slug: 'de-armoring',
+      title: 'De armouring',
+      slug: 'de-armouring',
       thumbnail: 'works/de_armouring_thumbnail_compressed.jpg',
       description:
         'De armouring is a way to release jams, stagnant energy, emotions and tension from the body...',
@@ -120,14 +120,14 @@ const data = {
                 fontWeight={'bold'}
                 fontSize={{ base: '1.25rem', md: '1.5rem' }}
               >
-                What does De Armoring accomplish?
+                What does De armouring accomplish?
               </Text>
             </>
           ),
         },
         {
           paragraph:
-            'De armoring opens up the energy flow and the connection between mind and body. This way, blockages and stuck trauma in the tissues of the body can be released. It decreases and even removes pain.',
+            'De armouring opens up the energy flow and the connection between mind and body. This way, blockages and stuck trauma in the tissues of the body can be released. It decreases and even removes pain.',
         },
         {
           paragraph: (
@@ -156,7 +156,7 @@ const data = {
         },
         {
           paragraph:
-            'An emotional detox and de armoring session, is about reversing this process. Taking our cellular memory back to a place of love and joy, and vibrating on this level again.',
+            'An emotional detox and de armouring session, is about reversing this process. Taking our cellular memory back to a place of love and joy, and vibrating on this level again.',
         },
         {
           paragraph:
@@ -204,7 +204,7 @@ const data = {
                     color={'#FFAF36'}
                     width={'7px'}
                   />
-                  De Armoring
+                  De armouring
                 </ListItem>
                 <ListItem>
                   <ListIcon
@@ -481,7 +481,7 @@ const data = {
                     color={'#FFAF36'}
                     width={'7px'}
                   />
-                  De Armoring
+                  De armouring
                 </ListItem>
                 <ListItem>
                   <ListIcon

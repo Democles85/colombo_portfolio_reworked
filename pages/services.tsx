@@ -49,7 +49,8 @@ const Services = () => {
               </Heading>
             </Box>
 
-            <Box display={'flex'} flexDir={'column'} maxW={'container.sm'}>
+            {/* <Box display={'flex'} flexDir={'column'} maxW={'container.sm'}> */}
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10}>
               {services.map((service, _index) => (
                 <Link href={`/services/${service.slug}`}>
                   <Box
@@ -74,13 +75,24 @@ const Services = () => {
                     >
                       <Text fontSize={'1.5rem'}>{service.title}</Text>
                       {/* <Divider my={'0.5rem'} /> */}
-                      <Box>
-                        <LazyLoadImage
+                      <Box
+                        backgroundImage={`${service.thumbnail}`}
+                        height={'500px'}
+                        maxHeight={'100%'}
+                        backgroundClip={'content-box'}
+                        backgroundSize={'cover'}
+                        backgroundPosition={'center'}
+                        backgroundRepeat={'no-repeat'}
+                        borderRadius={'lg'}
+                        overflow={'hidden'}
+                        backgroundBlendMode={'luminosity'}
+                      >
+                        {/* <LazyLoadImage
                           src={service.thumbnail}
                           alt={service.title}
                           effect={'blur'}
                           className={styles['card-image']}
-                        />
+                        /> */}
                       </Box>
                       <Text textAlign={'justify'} py={'1rem'}>
                         {service.description}
@@ -89,7 +101,8 @@ const Services = () => {
                   </Box>
                 </Link>
               ))}
-            </Box>
+            </SimpleGrid>
+            {/* </Box> */}
           </Container>
         </Section>
       </Box>
