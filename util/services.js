@@ -64,6 +64,18 @@ const data = {
           ),
         },
         {
+          paragraph: (
+            <>
+              <LazyLoadImage
+                className={styles['card-image']}
+                effect={'blur'}
+                src={'/works/bodywork_header.jpg'}
+                alt={'Sound Healing Singing Bowl'}
+              />
+            </>
+          ),
+        },
+        {
           paragraph:
             'The modern term ‘de-armouring’ evolved from the work of the psychoanalyst Wilhelm Reich in the 1930s. He noticed that when his patients carried emotions or ideas which had been repressed over time, they formed a ‘character armour.’ This consisted of certain traits which were present to defend themselves from feeling the unwanted emotions.',
         },
@@ -139,6 +151,18 @@ const data = {
               >
                 A brief explanation of de armouring.
               </Text>
+            </>
+          ),
+        },
+        {
+          paragraph: (
+            <>
+              <LazyLoadImage
+                className={styles['card-image']}
+                effect={'blur'}
+                src={'/works/de_armouring_thumbnail.jpg'}
+                alt={'Sound Healing Singing Bowl'}
+              />
             </>
           ),
         },
