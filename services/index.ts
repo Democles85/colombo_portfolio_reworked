@@ -6,7 +6,7 @@ const graphqlAPI = process.env.NEXT_PUBLIC_COLOMBO_API_ENDPOINT;
 export const getTestimonials = async () => {
   const testimonials = gql`
     query GetTestimonials {
-      testimonialsConnection(orderBy: createdAt_DESC, first: 100) {
+      testimonialsConnection(orderBy: createdAt_ASC, first: 100) {
         edges {
           cursor
           node {
