@@ -610,20 +610,7 @@ const data = {
             </Box>
           ),
         },
-        {
-          paragraph: (
-            <>
-              <Box paddingY={'1rem'}>
-                <LazyLoadImage
-                  className={styles['card-image']}
-                  effect={'blur'}
-                  src={'/works/sound_healing_header_compressed.jpg'}
-                  alt={'Sound Healing Singing Bowl'}
-                />
-              </Box>
-            </>
-          ),
-        },
+
         {
           paragraph: (
             <>
@@ -690,6 +677,20 @@ const data = {
         {
           paragraph: (
             <>
+              <Box paddingY={'1rem'}>
+                <LazyLoadImage
+                  className={styles['card-image']}
+                  effect={'blur'}
+                  src={'/works/sound_healing_header_compressed.jpg'}
+                  alt={'Sound Healing Singing Bowl'}
+                />
+              </Box>
+            </>
+          ),
+        },
+        {
+          paragraph: (
+            <>
               <Text
                 color={'#FFAF36'}
                 fontWeight={'bold'}
@@ -708,57 +709,246 @@ const data = {
               textAlign={'left'}
             >
               <Box>
-                <Text fontWeight={'bold'}>Physical Benefits</Text>
-                <UnorderedList>
-                  <ListItem>Harmonizes the physical and psychic</ListItem>
+                <Text
+                  fontWeight={'bold'}
+                  pb={'1rem'}
+                  textAlign={'center'}
+                  textDecoration={'underline'}
+                >
+                  Physical Benefits
+                </Text>
+                <List spacing={'0.5rem'}>
                   <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Harmonizes the physical and psychic
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
                     Harmonizes the physical and the mental body
                   </ListItem>
                   <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
                     Develops a quality of harmonious well-being
                   </ListItem>
-                  <ListItem>Relaxes ,calms and clears the mind</ListItem>
-                  <ListItem>Improves concentration and creativity</ListItem>
                   <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Relaxes ,calms and clears the mind
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Improves concentration and creativity
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
                     Improves stress-related disorders and anxiety
                   </ListItem>
-                  <ListItem>Improves personal development</ListItem>
-                  <ListItem>Makes you more self-confident</ListItem>
                   <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Improves personal development
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Makes you more self-confident
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
                     Prepares you mentally (e.g. for exams, contests,
                     competitions etc.)
                   </ListItem>
-                  <ListItem>Balances the immune system</ListItem>
                   <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Balances the immune system
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
                     Stimulates hormonal production of endorphin,
                     dopamine,serotonin
                   </ListItem>
-                  <ListItem>Stimulates energy</ListItem>
-                  <ListItem>Improves sleep</ListItem>
-                  <ListItem>Improves the sense of hearing</ListItem>
-                  <ListItem>Normalizes the blood pressure</ListItem>
-                </UnorderedList>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Stimulates energy
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Improves sleep
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Improves the sense of hearing
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Normalizes the blood pressure
+                  </ListItem>
+                </List>
               </Box>
               <Box>
-                <Text fontWeight={'bold'}>Spiritual Benefits</Text>
-                <UnorderedList>
-                  <ListItem>Connects you with your Higher Self</ListItem>
+                <Text
+                  fontWeight={'bold'}
+                  pb={'1rem'}
+                  textAlign={'center'}
+                  textDecoration={'underline'}
+                >
+                  Spiritual Benefits
+                </Text>
+                <List spacing={'0.5rem'}>
                   <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Connects you with your Higher Self
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
                     Helps you find where you need to be working on yourself
                   </ListItem>
-                  <ListItem>Gives you visions</ListItem>
                   <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Gives you visions
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
                     Opens the doors where the trauma is stored
                   </ListItem>
-                  <ListItem>Connects you with your subconscious mind</ListItem>
-                  <ListItem>Transmutes the old energies</ListItem>
-                  <ListItem>Clears the energetic/auric field</ListItem>
-                  <ListItem>Let’s the new information to come in</ListItem>
-                  <ListItem>Opens layers of your heart</ListItem>
-                  <ListItem>Makes you more sensitive</ListItem>
-                  <ListItem>Awakens your third eye</ListItem>
-                  <ListItem>Develops your clairvoyance</ListItem>
-                </UnorderedList>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Connects you with your subconscious mind
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Transmutes the old energies
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Clears the energetic/auric field
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Let’s the new information to come in
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Opens layers of your heart
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Makes you more sensitive
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Awakens your third eye
+                  </ListItem>
+                  <ListItem>
+                    <ListIcon
+                      as={BsFillCircleFill}
+                      color={'#FFAF36'}
+                      width={'7px'}
+                    />
+                    Develops your clairvoyance
+                  </ListItem>
+                </List>
               </Box>
             </Box>
           ),
