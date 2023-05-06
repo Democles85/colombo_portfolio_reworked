@@ -256,7 +256,7 @@ const Navbar = (props: any) => {
                               Bodywork
                             </Button>
                           </NextLink>
-                          <NextLink passHref href="/services/de-armoring">
+                          <NextLink passHref href="/services/de-armouring">
                             <Button
                               variant="link"
                               onClick={onClose}
