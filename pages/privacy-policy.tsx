@@ -14,7 +14,6 @@ const PrivacyPolicy: NextPage = () => {
               md: 'container.md',
               lg: 'container.md',
             }}
-            textAlign={'justify'}
           >
             <Heading>
               <Box as={'span'} color={'primary.500'} textAlign={'left'}>
