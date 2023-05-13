@@ -17,7 +17,7 @@ const PrivacyPolicy: NextPage = () => {
             textAlign={'justify'}
           >
             <Heading>
-              <Box as={'span'} color={'primary.500'}>
+              <Box as={'span'} color={'primary.500'} textAlign={'left'}>
                 Privacy Policy
               </Box>
               <Divider />
@@ -47,7 +47,7 @@ const PrivacyPolicy: NextPage = () => {
             </Box>
 
             <Heading mt={5}>
-              <Box as={'span'} color={'primary.500'}>
+              <Box as={'span'} color={'primary.500'} textAlign={'left'}>
                 Interpretation and Definitions
               </Box>
               <Divider />
@@ -168,7 +168,7 @@ const PrivacyPolicy: NextPage = () => {
 
             <Box mt={5}>
               <Heading>
-                <Box as={'span'} color={'primary.500'}>
+                <Box as={'span'} color={'primary.500'} textAlign={'left'}>
                   Collecting and Using Your Personal Data
                 </Box>
                 <Divider />
@@ -596,7 +596,7 @@ const PrivacyPolicy: NextPage = () => {
 
             <Box mt={5}>
               <Heading>
-                <Box as={'span'} color={'primary.500'}>
+                <Box as={'span'} color={'primary.500'} textAlign={'left'}>
                   Children's Privacy
                 </Box>
                 <Divider />
@@ -627,7 +627,7 @@ const PrivacyPolicy: NextPage = () => {
 
             <Box mt={5}>
               <Heading>
-                <Box as={'span'} color={'primary.500'}>
+                <Box as={'span'} color={'primary.500'} textAlign={'left'}>
                   Links to Other Websites
                 </Box>
                 <Divider />
@@ -653,7 +653,7 @@ const PrivacyPolicy: NextPage = () => {
 
             <Box mt={5}>
               <Heading>
-                <Box as={'span'} color={'primary.500'}>
+                <Box as={'span'} color={'primary.500'} textAlign={'left'}>
                   Changes to this Privacy Policy
                 </Box>
                 <Divider />
@@ -680,7 +680,7 @@ const PrivacyPolicy: NextPage = () => {
 
             <Box mt={5}>
               <Heading>
-                <Box as={'span'} color={'primary.500'}>
+                <Box as={'span'} color={'primary.500'} textAlign={'left'}>
                   Contact Us
                 </Box>
                 <Divider />
@@ -727,7 +727,7 @@ const PrivacyPolicy: NextPage = () => {
 
             <Box mt={5}>
               <Heading>
-                <Box as={'span'} color={'primary.500'}>
+                <Box as={'span'} color={'primary.500'} textAlign={'left'}>
                   Download Privacy Policy
                 </Box>
                 <Divider />
