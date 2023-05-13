@@ -14,6 +14,7 @@ import {
   Textarea,
   useColorModeValue,
   Icon,
+  Checkbox,
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { OptionBase, Select } from 'chakra-react-select';
@@ -66,6 +67,8 @@ const Contact = () => {
     label: '',
   });
   const [message, setMessage] = React.useState('');
+
+  const [accept, setAccept] = React.useState(false);
 
   const [errors, setErrors] = React.useState({}) as any;
   const [buttonText, setButtonText] = React.useState('Send Message');
@@ -691,6 +694,34 @@ const Contact = () => {
                   <Box
                     w={'inherit'}
                     px={5}
+                    py={{ base: 2, md: 3 }}
+                    textAlign={'center'}
+                  >
+                    <Checkbox
+                      colorScheme="orange"
+                      isChecked={accept}
+                      onChange={e => {
+                        setAccept(e.target.checked);
+                      }}
+                    >
+                      <Text fontSize={'1.25rem'}>
+                        I accept the{' '}
+                        <Link
+                          href="/privacy-policy"
+                          style={{
+                            color: '#FFAF3A',
+                            textDecoration: 'underline',
+                          }}
+                        >
+                          Privacy Policy
+                        </Link>
+                      </Text>
+                    </Checkbox>
+                  </Box>
+
+                  <Box
+                    w={'inherit'}
+                    px={5}
                     pt={'1.5rem'}
                     display={'flex'}
                     justifyContent={'center'}
@@ -708,6 +739,8 @@ const Contact = () => {
                       }}
                       w={{ base: '60%', md: '50%', lg: '40%' }}
                       type={'submit'}
+                      isLoading={buttonText === 'Sending...'}
+                      isDisabled={!accept}
                     >
                       {buttonText}
                     </Button>
