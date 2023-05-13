@@ -691,12 +691,7 @@ const Contact = () => {
                     ) : null}
                   </Box>
 
-                  <Box
-                    w={'inherit'}
-                    px={5}
-                    py={{ base: 2, md: 3 }}
-                    textAlign={'center'}
-                  >
+                  <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
                     <Checkbox
                       colorScheme="orange"
                       isChecked={accept}
@@ -704,7 +699,7 @@ const Contact = () => {
                         setAccept(e.target.checked);
                       }}
                     >
-                      <Text fontSize={'1.25rem'}>
+                      <Text fontSize={'1rem'}>
                         I accept the{' '}
                         <Link
                           href="/privacy-policy"
@@ -714,7 +709,8 @@ const Contact = () => {
                           }}
                         >
                           Privacy Policy
-                        </Link>
+                        </Link>{' '}
+                        <span style={{ color: 'red' }}>*</span>
                       </Text>
                     </Checkbox>
                   </Box>
