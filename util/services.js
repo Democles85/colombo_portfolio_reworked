@@ -19,7 +19,7 @@ const data = {
     {
       title: 'Bodywork',
       slug: 'bodywork',
-      thumbnail: 'works/bodywork_header_compressed.jpg',
+      thumbnail: 'colombo_resize/DSC_7190.jpg',
       description:
         'Bodywork is a collective term that refers to alternative medical practices involving hands-on manipulation of the body...',
       content: [
@@ -93,7 +93,7 @@ const data = {
     {
       title: 'De armouring',
       slug: 'de-armouring',
-      thumbnail: 'works/de_armouring_thumbnail_compressed.jpg',
+      thumbnail: 'colombo_resize/DSC_7183.jpg',
       description:
         'De armouring is a way to release jams, stagnant energy, emotions and tension from the body...',
       content: [
@@ -266,9 +266,9 @@ const data = {
       ],
     },
     {
-      title: 'Authentic Tantra',
+      title: 'Authentic Energetic Bodywork',
       slug: 'authentic-tantra',
-      thumbnail: 'works/tantra_thumbnail_compressed.jpg',
+      thumbnail: 'colombo_resize/DSC_7218.jpg',
       description: '',
       content: [
         {
@@ -287,9 +287,10 @@ const data = {
                 fontSize={[18, null, 20]}
                 letterSpacing="tight"
               >
-                “Tantra Massage is an energy form of massage first and foremost.
-                Key energy channels are purified, energy centers are activated
-                and innate energy sources are channeled in a specific way.”
+                “Authentic Energetic Bodywork is an energy form of massage first
+                and foremost. Key energy channels are purified, energy centers
+                are activated and innate energy sources are channeled in a
+                specific way.”
               </Text>
             </Box>
           ),
@@ -302,14 +303,14 @@ const data = {
                 fontWeight={'bold'}
                 fontSize={{ base: '1.25rem', md: '1.5rem' }}
               >
-                What is tantra, in simpler terms?
+                What is Authentic Energetic Bodywork, in simpler terms?
               </Text>
             </>
           ),
         },
         {
           paragraph:
-            'Tantra massage is one of the most refined and sensitive forms of art. It requires a high consciousness, as it requires the presence of soft and intensive energy, flowing within you, taking you deep within experiences and subconsciousness, in order to understand what your being is saying. Tantra is a vivid experience of our own energy, to help us evolve spiritually.',
+            'It is one of the most refined and sensitive forms of art. It requires a high consciousness, as it requires the presence of soft and intensive energy, flowing within you, taking you deep within experiences and subconsciousness, in order to understand what your being is saying. Authentic Energetic Bodywork is a vivid experience of our own energy, to help us evolve spiritually.',
         },
         {
           paragraph: (
@@ -319,7 +320,8 @@ const data = {
                 fontWeight={'bold'}
                 fontSize={{ base: '1.25rem', md: '1.5rem' }}
               >
-                What is tantra today, and how many tantra models are there?
+                What is Authentic Energetic Bodywork today, and how many models
+                are there?
               </Text>
             </>
           ),
@@ -343,7 +345,7 @@ const data = {
         },
         {
           paragraph:
-            "Tantrism is not a theory or a system of thought. It's a sound science of the body. Of course, the practice of the physical also includes a spiritual, cosmological context. Tantra is first and foremost an empirical science of the body. At the same time it is a consciousness teaching, it depends on the quality of consciousness in every aspect. It contains practices and methods by which one can get into very specific states. So it is a work with the energies of the body and the energy of life. The basis is a very fine, highly differentiated system that makes up the subtle currents in the human body and how they can be channeled.”",
+            "It not a theory or a system of thought. It's a sound science of the body. Of course, the practice of the physical also includes a spiritual, cosmological context. Authentic Energetic Bodywork is first and foremost an empirical science of the body. At the same time it is a consciousness teaching, it depends on the quality of consciousness in every aspect. It contains practices and methods by which one can get into very specific states. So it is a work with the energies of the body and the energy of life. The basis is a very fine, highly differentiated system that makes up the subtle currents in the human body and how they can be channeled.”",
         },
         {
           paragraph: (
@@ -448,7 +450,7 @@ const data = {
     {
       title: 'Advanced Energetic Bodywork',
       slug: 'advanced-energetic-bodywork',
-      thumbnail: 'works/advanced_energetic_bodywork_thumbnail_compressed.jpg',
+      thumbnail: 'colombo_resize/DSC_7202.jpg',
       description: '',
       content: [
         {
@@ -577,7 +579,7 @@ const data = {
     {
       title: 'Sound Healing',
       slug: 'sound-healing',
-      thumbnail: 'works/sound_healing_header_compressed.jpg',
+      thumbnail: 'colombo_resize/DSC_7157.jpg',
       description:
         'Sound has the ability to activate parts of the subconscious brain, which can give access to unconscious memories...',
       content: [

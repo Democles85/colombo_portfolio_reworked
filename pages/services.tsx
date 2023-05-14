@@ -108,6 +108,7 @@ const Services = () => {
                           objectFit={'cover'}
                           objectPosition={'center'}
                           loading={'lazy'}
+                          borderRadius={'lg'}
                         />
                       </Box>
                       <Text textAlign={'justify'} py={'1rem'}>
