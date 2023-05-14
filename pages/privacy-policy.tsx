@@ -23,7 +23,7 @@ const PrivacyPolicy: NextPage = () => {
             </Heading>
 
             <Box mt={5}>
-              <Text>Last updated: May 13, 2023</Text>
+              <Text>Last updated: May 14, 2023</Text>
             </Box>
 
             <Box mt={5}>
@@ -40,8 +40,8 @@ const PrivacyPolicy: NextPage = () => {
                 We use Your Personal data to provide and improve the Service. By
                 using the Service, You agree to the collection and use of
                 information in accordance with this Privacy Policy. This Privacy
-                Policy has been created with the help of the Privacy Policy
-                Generator.
+                Policy has been created with the help of specialists from
+                TermsFeed.
               </Text>
             </Box>
 
