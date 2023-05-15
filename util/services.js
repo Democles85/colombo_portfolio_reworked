@@ -328,7 +328,7 @@ const data = {
         },
         {
           paragraph:
-            'You will find many tantric models, created from various therapists, heavily involved in the tantric arts. After all of their work with themselves and many lessons, they keep all of their wisdom in the models they created. Naturally, another part of it integrate other types of body work, creating an authentic model in their own way.',
+            'You will find many models, created from various therapists, heavily involved in the authentic arts. After all of their work with themselves and many lessons, they keep all of their wisdom in the models they created. Naturally, another part of it integrate other types of body work, creating an authentic model in their own way.',
         },
         {
           paragraph: (
@@ -355,14 +355,14 @@ const data = {
                 fontWeight={'bold'}
                 fontSize={{ base: '1.25rem', md: '1.5rem' }}
               >
-                Where is tantric bodywork based on for me?
+                Where is authentic bodywork based on for me?
               </Text>
             </>
           ),
         },
         {
           paragraph:
-            'After my observations on history and a lot of teachers of tantric energy, as well as self exploration and bodywork on others, I have created an authentic model. It is rooted on tantric energy and life force, making it suitable for all who had a tantric session. This session is properly created for those who have had previous therapy sessions and for those retaking a session from me, so I may keep a proper vividness within your soul.',
+            'After my observations on history and a lot of teachers of this energy, as well as self exploration and bodywork on others, I have created an authentic model. It is rooted on authentic energy and life force, making it suitable for all who had a similar session. This session is properly created for those who have had previous therapy sessions and for those retaking a session from me, so I may keep a proper vividness within your soul.',
         },
         {
           paragraph: (
@@ -379,7 +379,7 @@ const data = {
         },
         {
           paragraph:
-            'It remains quite amazing and helpful on how tantric work attracts all the senses, focusing on subconscious touch. It is an extension of the subconscious, by directly and intensively connecting all our emotions with the invisible energy structures. In order to help heal tensions and traumas, we express ourselves through a direct and connected energy massage. It is both intimate and it touches our body and soul, helping us connect on a deeper level with ourselves.',
+            'It remains quite amazing and helpful on how authentic bodywork attracts all the senses, focusing on subconscious touch. It is an extension of the subconscious, by directly and intensively connecting all our emotions with the invisible energy structures. In order to help heal tensions and traumas, we express ourselves through a direct and connected energy massage. It is both intimate and it touches our body and soul, helping us connect on a deeper level with ourselves.',
         },
         {
           paragraph: (
@@ -389,7 +389,7 @@ const data = {
                 fontWeight={'bold'}
                 fontSize={{ base: '1.25rem', md: '1.5rem' }}
               >
-                The benefits of tantric therapy.
+                The benefits of therapy.
               </Text>
             </>
           ),
@@ -422,10 +422,10 @@ const data = {
                   Connects you more with the center of your heart.
                 </ListItem>
                 <ListItem>
-                  It serves as a trampoline into the spiritual tantric world,
-                  and it grows our desire for more insight into the world deep
-                  within us. It creates a deep foundation to support your body
-                  and mind, but it also introduces us to new and unbelievable
+                  It serves as a trampoline into the spiritual world, and it
+                  grows our desire for more insight into the world deep within
+                  us. It creates a deep foundation to support your body and
+                  mind, but it also introduces us to new and unbelievable
                   things. This is a different experience for everyone.
                 </ListItem>
               </OrderedList>

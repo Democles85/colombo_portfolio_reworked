@@ -117,11 +117,10 @@ const data = {
           </span>
           , I started supporting people professionally in a Holistic way, while
           applying: Self Awareness, Authentic Massage, Authentic Bodywork,
-          Kundalini Bodywork, Advance Energetic Bodywork, Authentic Tantra
-          Healing, Spiritual Bodywork, De-Armouring, Breathwork, Emotional
-          Release, Trauma Release, Shadows, Prana Healing, Reiki, Duality &
-          Non-Duality, Feminine & Masculine, Polarity, Sound Healing, P.T.S.D.,
-          Medium.
+          Kundalini Bodywork, Advance Energetic Bodywork, Authentic Healing,
+          Spiritual Bodywork, De-Armouring, Breathwork, Emotional Release,
+          Trauma Release, Shadows, Prana Healing, Reiki, Duality & Non-Duality,
+          Feminine & Masculine, Polarity, Sound Healing, P.T.S.D., Medium.
         </>
       ),
     },

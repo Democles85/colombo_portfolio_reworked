@@ -16,6 +16,8 @@ import {
   useColorModeValue,
   Icon,
   Image,
+  Checkbox,
+  Link,
 } from '@chakra-ui/react';
 import React, { useState, useMemo, useEffect } from 'react';
 import Section from '../components/Section';
@@ -135,6 +137,8 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
     label: '',
     value: '',
   });
+
+  const [privacyAccepted, setPrivacyAccepted] = useState(false);
 
   const methods = useForm({ mode: 'onBlur' });
   const {
@@ -558,6 +562,30 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                         )}
                       </Box>
 
+                      <Box py={'1rem'}>
+                        <Checkbox
+                          colorScheme="orange"
+                          isChecked={privacyAccepted}
+                          onChange={e => {
+                            setPrivacyAccepted(e.target.checked);
+                          }}
+                        >
+                          <Text fontSize={'1rem'}>
+                            I accept the{' '}
+                            <Link
+                              href="/privacy-policy"
+                              style={{
+                                color: '#FFAF3A',
+                                textDecoration: 'underline',
+                              }}
+                            >
+                              Privacy Policy
+                            </Link>{' '}
+                            <span style={{ color: 'red' }}>*</span>
+                          </Text>
+                        </Checkbox>
+                      </Box>
+
                       <Box
                         py={'1rem'}
                         display={'flex'}
@@ -577,6 +605,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                             color: '#202023',
                           }}
                           w={{ base: '60%', md: '50%', lg: '40%' }}
+                          isDisabled={!privacyAccepted}
                         >
                           Submit
                         </Button>

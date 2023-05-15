@@ -36,7 +36,11 @@ const Services = () => {
       <Box pt={'4rem'}>
         <Section>
           <Container
-            maxW={'container.lg'}
+            maxW={{
+              base: 'container.sm',
+              md: 'container.md',
+              lg: '80%',
+            }}
             display={'flex'}
             flexDir={'column'}
             justifyContent={'center'}
@@ -52,11 +56,7 @@ const Services = () => {
             </Box>
 
             {/* <Box display={'flex'} flexDir={'column'} maxW={'container.sm'}> */}
-            <SimpleGrid
-              columns={1}
-              spacing={2}
-              width={{ base: '100%', md: '560px' }}
-            >
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={2}>
               {services.map((service, _index) => (
                 <Link href={`/services/${service.slug}`}>
                   <Box
