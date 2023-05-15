@@ -277,7 +277,7 @@ const Navbar = (props: any) => {
                               fontWeight="light"
                               fontSize="18px"
                             >
-                              Authentic Tantra
+                              Authentic Energetic Bodywork
                             </Button>
                           </NextLink>
                           <NextLink
