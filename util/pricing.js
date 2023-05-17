@@ -76,9 +76,9 @@ const data = {
       ],
     },
     {
-      title: 'Tantra',
+      title: 'Authentic Energetic Bodywork',
       services: [
-        'Tantra Healing',
+        'Authentic Healing',
         'Energetic Bodywork',
         'Aromatic Oil',
         'ASMR Face Massage',

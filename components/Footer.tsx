@@ -14,21 +14,7 @@ export default function Footer() {
       <Text>
         &copy; 2021 - {new Date().getFullYear()} Resonate with Yourself.
       </Text>
-      <Text>
-        All Rights Reserved.{' '}
-        <span
-          style={{
-            color: '#FFAF36',
-            fontWeight: 'bold',
-            textDecoration: 'underline',
-          }}
-        >
-          Created by{' '}
-          <a href="https://sixhei-tartari.vercel.app/" target="_blank">
-            Sixhei Tartari
-          </a>
-        </span>
-      </Text>
+      <Text>All Rights Reserved. </Text>
     </Box>
   );
 }
