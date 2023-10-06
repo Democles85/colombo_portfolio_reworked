@@ -1,7 +1,4 @@
-import NextLink from 'next/link';
-import React from 'react';
-import ThemeToggleSwitch from './ThemeToggleSwitch';
-import Logo from './Logo';
+import { HamburgerIcon } from '@chakra-ui/icons';
 import {
   Accordion,
   AccordionButton,
@@ -24,11 +21,14 @@ import {
   Stack,
   StackDivider,
   Text,
-  VStack,
   useColorModeValue,
   useDisclosure,
+  VStack,
 } from '@chakra-ui/react';
-import { HamburgerIcon } from '@chakra-ui/icons';
+import NextLink from 'next/link';
+import React from 'react';
+import Logo from './Logo';
+import ThemeToggleSwitch from './ThemeToggleSwitch';
 
 // Custom Styles
 import styles from '../styles/TextGradient.module.css';
@@ -166,7 +166,9 @@ const Navbar = (props: any) => {
             ml={2}
             display={{ base: 'inline-block', md: 'inline-block', lg: 'none' }}
           >
-            <Button rightIcon={<HamburgerIcon />} onClick={onOpen} />
+            <Button onClick={onOpen}>
+              <HamburgerIcon />
+            </Button>
 
             <Drawer
               isOpen={isOpen}

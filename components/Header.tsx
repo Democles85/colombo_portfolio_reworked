@@ -24,7 +24,6 @@ export default function Header({ children, thumbnail }: HeaderProps) {
       backgroundRepeat={'no-repeat'}
       position={'relative'}
     >
-      {/* Make it responsive for mobile browsers knowing the navigation bar */}
       <Box
         height={{
           base: `calc(${height}px - 4rem)`,

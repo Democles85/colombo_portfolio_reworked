@@ -1,6 +1,6 @@
-import Link from 'next/link';
+import { Divider, Image, Text, useColorModeValue } from '@chakra-ui/react';
 import styled from '@emotion/styled';
-import { Divider, Text, useColorModeValue, Image } from '@chakra-ui/react';
+import Link from 'next/link';
 
 // Font
 import { Roboto } from '@next/font/google';
@@ -42,12 +42,14 @@ const Logo = () => {
           ml={2}
           height={'35px'}
           color={useColorModeValue('#202023', '#ffffff')}
+          display={{ base: 'none', md: 'flex' }}
         />
         <Text
           ml={2}
           color={'rgba(250, 175, 58, 1)'}
           className={roboto.className}
           fontWeight={'400'}
+          display={{ base: 'none', md: 'flex' }}
         >
           Resonate with Yourself
         </Text>
