@@ -11,8 +11,8 @@ import {
 export default function Footer() {
   return (
     <Box opacity={0.6} borderTop={'1px solid rgba(255, 255, 255, 0.3)'}>
-      <Box className="grid grid-cols-3 items-center justify-center text-justify mt-6">
-        <Box className="col-span-1 items-center max-w-sm mx-auto">
+      <Box className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center justify-center text-justify mt-6">
+        <Box className="col-span-1 items-center w-[24rem] max-w-sm mx-auto">
           <Text as="h2" className="text-lg font-semibold">
             What is{' '}
             <span style={{ color: 'rgba(255, 175, 58, 1)' }}>
@@ -26,7 +26,7 @@ export default function Footer() {
           </Text>
         </Box>
 
-        <Box className="col-span-1 items-center max-w-sm mx-auto">
+        <Box className="col-span-1 items-center w-[24rem] max-w-sm mx-auto my-4 mb:my-0">
           <Text as="h2" className="text-lg font-semibold">
             Navigate through{' '}
             <span style={{ color: 'rgba(255, 175, 58, 1)' }}>
@@ -52,14 +52,18 @@ export default function Footer() {
           </UnorderedList>
         </Box>
 
-        <Box className="col-span-1 justify-center items-center max-w-sm mx-auto">
+        <Box className="col-span-1 justify-center items-center w-[24rem] max-w-sm mx-auto">
           <Text as="h2" className="text-lg font-semibold">
             Contact with me
           </Text>
           <Link href={'mailto:resonatewithyourself@gmail.com'}>
             resonatewithyourself@gmail.com
           </Link>
-          <Image src={'/works/home_thumbnail.jpg'} h={'140px'} />
+          <Image
+            src={'/works/home_thumbnail.jpg'}
+            h={'140px'}
+            className="hidden md:flex"
+          />
         </Box>
       </Box>
       <Box
