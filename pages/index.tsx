@@ -186,9 +186,9 @@ const Home: NextPage = () => {
                     Emotional Release, Breathwork and Sound Healing{' '}
                   </span>
                   are techniques used to unlock the body's potential. Sessions
-                  vary from person to person. Each session is adapted to the
-                  individual. We work with your rhythm, allowing you to selfheal
-                  naturally.
+                  vary from person to person. Sessions vary from person to
+                  person. Each session is adapted to the individual. We work
+                  with your rhythm, allowing you to selfheal naturally.
                 </Text>
               </Box>
               {/* <Divider
