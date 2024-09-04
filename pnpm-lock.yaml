@@ -11,6 +11,9 @@ importers:
       '@chakra-ui/icons':
         specifier: ^2.0.17
         version: 2.0.17(@chakra-ui/system@2.4.0(@emotion/react@11.10.5(@babel/core@7.20.12)(@types/react@18.0.21)(react@18.2.0))(@emotion/styled@11.10.5(@babel/core@7.20.12)(@emotion/react@11.10.5(@babel/core@7.20.12)(@types/react@18.0.21)(react@18.2.0))(@types/react@18.0.21)(react@18.2.0))(react@18.2.0))(react@18.2.0)
+      '@chakra-ui/image':
+        specifier: ^2.1.0
+        version: 2.1.0(@chakra-ui/system@2.4.0(@emotion/react@11.10.5(@babel/core@7.20.12)(@types/react@18.0.21)(react@18.2.0))(@emotion/styled@11.10.5(@babel/core@7.20.12)(@emotion/react@11.10.5(@babel/core@7.20.12)(@types/react@18.0.21)(react@18.2.0))(@types/react@18.0.21)(react@18.2.0))(react@18.2.0))(react@18.2.0)
       '@chakra-ui/react':
         specifier: ^2.4.9
         version: 2.4.9(@emotion/react@11.10.5(@babel/core@7.20.12)(@types/react@18.0.21)(react@18.2.0))(@emotion/styled@11.10.5(@babel/core@7.20.12)(@emotion/react@11.10.5(@babel/core@7.20.12)(@types/react@18.0.21)(react@18.2.0))(@types/react@18.0.21)(react@18.2.0))(@types/react@18.0.21)(framer-motion@8.5.4(react-dom@18.2.0(react@18.2.0))(react@18.2.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -382,6 +385,12 @@ packages:
       '@chakra-ui/system': '>=2.0.0'
       react: '>=18'
 
+  '@chakra-ui/image@2.1.0':
+    resolution: {integrity: sha512-bskumBYKLiLMySIWDGcz0+D9Th0jPvmX6xnRMs4o92tT3Od/bW26lahmV2a2Op2ItXeCmRMY+XxJH5Gy1i46VA==}
+    peerDependencies:
+      '@chakra-ui/system': '>=2.0.0'
+      react: '>=18'
+
   '@chakra-ui/input@2.0.19':
     resolution: {integrity: sha512-wV+EG6+F9GngMPpLHBCuxXTNttHihFTT3DpbJnmID9LuAPg7YkWcTNTvpAzC0/Sz9KrcTR9RhSu9a5cvxkkXpw==}
     peerDependencies:
@@ -566,6 +575,11 @@ packages:
 
   '@chakra-ui/react-use-safe-layout-effect@2.0.5':
     resolution: {integrity: sha512-MwAQBz3VxoeFLaesaSEN87reVNVbjcQBDex2WGexAg6hUB6n4gc1OWYH/iXp4tzp4kuggBNhEHkk9BMYXWfhJQ==}
+    peerDependencies:
+      react: '>=18'
+
+  '@chakra-ui/react-use-safe-layout-effect@2.1.0':
+    resolution: {integrity: sha512-Knbrrx/bcPwVS1TorFdzrK/zWA8yuU/eaXDkNj24IrKoRlQrSBFarcgAEzlCHtzuhufP3OULPkELTzz91b0tCw==}
     peerDependencies:
       react: '>=18'
 
@@ -2252,6 +2266,13 @@ snapshots:
       '@chakra-ui/system': 2.4.0(@emotion/react@11.10.5(@babel/core@7.20.12)(@types/react@18.0.21)(react@18.2.0))(@emotion/styled@11.10.5(@babel/core@7.20.12)(@emotion/react@11.10.5(@babel/core@7.20.12)(@types/react@18.0.21)(react@18.2.0))(@types/react@18.0.21)(react@18.2.0))(react@18.2.0)
       react: 18.2.0
 
+  '@chakra-ui/image@2.1.0(@chakra-ui/system@2.4.0(@emotion/react@11.10.5(@babel/core@7.20.12)(@types/react@18.0.21)(react@18.2.0))(@emotion/styled@11.10.5(@babel/core@7.20.12)(@emotion/react@11.10.5(@babel/core@7.20.12)(@types/react@18.0.21)(react@18.2.0))(@types/react@18.0.21)(react@18.2.0))(react@18.2.0))(react@18.2.0)':
+    dependencies:
+      '@chakra-ui/react-use-safe-layout-effect': 2.1.0(react@18.2.0)
+      '@chakra-ui/shared-utils': 2.0.5
+      '@chakra-ui/system': 2.4.0(@emotion/react@11.10.5(@babel/core@7.20.12)(@types/react@18.0.21)(react@18.2.0))(@emotion/styled@11.10.5(@babel/core@7.20.12)(@emotion/react@11.10.5(@babel/core@7.20.12)(@types/react@18.0.21)(react@18.2.0))(@types/react@18.0.21)(react@18.2.0))(react@18.2.0)
+      react: 18.2.0
+
   '@chakra-ui/input@2.0.19(@chakra-ui/system@2.4.0(@emotion/react@11.10.5(@babel/core@7.20.12)(@types/react@18.0.21)(react@18.2.0))(@emotion/styled@11.10.5(@babel/core@7.20.12)(@emotion/react@11.10.5(@babel/core@7.20.12)(@types/react@18.0.21)(react@18.2.0))(@types/react@18.0.21)(react@18.2.0))(react@18.2.0))(react@18.2.0)':
     dependencies:
       '@chakra-ui/form-control': 2.0.17(@chakra-ui/system@2.4.0(@emotion/react@11.10.5(@babel/core@7.20.12)(@types/react@18.0.21)(react@18.2.0))(@emotion/styled@11.10.5(@babel/core@7.20.12)(@emotion/react@11.10.5(@babel/core@7.20.12)(@types/react@18.0.21)(react@18.2.0))(@types/react@18.0.21)(react@18.2.0))(react@18.2.0))(react@18.2.0)
@@ -2504,6 +2525,10 @@ snapshots:
       react: 18.2.0
 
   '@chakra-ui/react-use-safe-layout-effect@2.0.5(react@18.2.0)':
+    dependencies:
+      react: 18.2.0
+
+  '@chakra-ui/react-use-safe-layout-effect@2.1.0(react@18.2.0)':
     dependencies:
       react: 18.2.0
 

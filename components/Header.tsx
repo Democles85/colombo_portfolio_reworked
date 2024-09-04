@@ -2,7 +2,7 @@
 import { Box } from '@chakra-ui/react';
 
 // React Imports
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { getWindowSize } from '../lib/getWindowSize';
 
 // Styles

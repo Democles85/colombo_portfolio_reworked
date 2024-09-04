@@ -1,18 +1,13 @@
 import {
   Box,
-  Button,
   Container,
-  Divider,
   Heading,
-  // Image,
   SimpleGrid,
   Text,
-  useColorModeValue,
+  useColorModeValue
 } from '@chakra-ui/react';
-import React from 'react';
 import Link from 'next/link';
 
-import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 
 // Components
@@ -24,7 +19,6 @@ import data from '../util/services';
 
 // Styles
 import styles from '../styles/Services.module.css';
-import CircularBackground from '../components/CircularBackground';
 // import Image from 'next/image';
 import { Image } from '@chakra-ui/image';
 

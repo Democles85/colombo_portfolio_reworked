@@ -1,10 +1,7 @@
 import {
-  Heading,
   Box,
   Image,
-  Link,
   Badge,
-  useColorModeValue,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
@@ -30,22 +27,6 @@ interface MetaProps {
 
 export const Title = ({ children }: TitleProps) => (
   <Box>
-    {/* <Link href={'/services'} fontSize={{ base: '1rem', md: '1.25rem' }}>
-      Services
-    </Link>
-    <span>
-      {' '}
-      <ChevronRightIcon />{' '}
-    </span>
-    <Heading
-      display="inline-block"
-      as="h3"
-      fontSize={{ base: '1.25rem', md: '1.5rem' }}
-      mb={4}
-      color={useColorModeValue('#202020', '#FFAF36')}
-    >
-      {children}
-    </Heading> */}
     <Breadcrumb
       spacing={{ base: '0.5rem', md: '1rem' }}
       py={'1rem'}
