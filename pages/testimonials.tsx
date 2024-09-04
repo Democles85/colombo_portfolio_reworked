@@ -186,8 +186,6 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
       return;
     }
 
-    console.log(images[0]);
-
     const form = new FormData();
     form.append('file_1', images[0]);
     form.append('country', countryLabel);
@@ -204,7 +202,6 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
           return 'Testimonial Submitted';
         },
         error: err => {
-          console.log(err);
           return 'Error Submitting Testimonial';
         },
       },

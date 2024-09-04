@@ -49,8 +49,6 @@ export default async function handler(req: any, res: any) {
     id,
   };
 
-  console.log(testimonialObject + file_1);
-
   const query = gql`
     mutation CreateTestimonial(
       $name: String!
