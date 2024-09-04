@@ -36,11 +36,6 @@ export const getTestimonials = async () => {
 };
 
 export const submitTestimonial = async (object: any) => {
-  // const result = await fetch('/api/upload', {
-  //   method: 'POST',
-  //   body: object,
-  // });
-
   const result = await axios.post('/api/upload', object);
 
   return result;

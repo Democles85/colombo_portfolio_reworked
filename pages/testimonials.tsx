@@ -87,7 +87,7 @@ const customRightArrow = (
 
 const Testimonials = ({ testimonials }: TestimonialTypes) => {
   const settings = {
-    dots: true,
+    dots: false,
     accessibility: true,
     autoplay: false,
     fade: false,
@@ -223,7 +223,6 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
   return (
     <Layout title={'Testimonials'}>
       <Box pt={'4rem'}>
-        {/* <CircularBackground /> */}
         <Toaster position={'bottom-right'} reverseOrder={false} />
         <Section>
           <Box bg={'rgba(255, 175, 54, 0.2)'}>
@@ -234,10 +233,6 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
             >
               <Box textAlign={'center'} py={'4rem'}>
                 <Heading as={'h1'} color={'#ffaf36'}>
-                  {/* What people feel about{' '}
-                  <span className={styles['text-gradient']}>
-                    Resonate with Yourself.
-                  </span> */}
                   Testimonials
                 </Heading>
               </Box>
@@ -626,8 +621,6 @@ export default Testimonials;
 
 export async function getServerSideProps() {
   const testimonials = (await getTestimonials()) || [];
-
-  // console.log('testimonials', testimonials);
 
   return {
     props: {
