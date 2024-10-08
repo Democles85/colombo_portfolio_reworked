@@ -68,17 +68,17 @@ const Pricing = () => {
                   </span>
                   are techniques used to unlock the body's potential. Sessions
                   vary from person to person. Sessions vary from person to
-                  person. Each session is adapted to the individual which starts
-                  from{' '}
+                  person. Each session is advanced and adapted to the individual
+                  which lasts from{' '}
                   <span
                     style={{
                       color: 'rgba(250, 175, 58, 1)',
                       fontWeight: 'bold',
                     }}
                   >
-                    120&euro;
+                    2 - 3 hours
                   </span>{' '}
-                  and goes up to{' '}
+                  costs{' '}
                   <span
                     style={{
                       color: 'rgba(250, 175, 58, 1)',
