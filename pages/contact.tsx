@@ -798,7 +798,7 @@ const Contact = () => {
                 <AspectRatio ratio={16 / 9}>
                   <Box as={AspectRatio} borderRadius={'lg'}>
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d799.4254200459854!2d-4.436424718613307!3d36.72972525886803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f7a7adc6ca69%3A0x29aee32c1667603b!2sPl.%20Eduardo%20Dato%2C%20Bail%C3%A9n-Miraflores%2C%2029011%20M%C3%A1laga%2C%20Spain!5e0!3m2!1sen!2s!4v1729880318212!5m2!1sen!2s"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.6985467743184!2d-4.4363294999999985!3d36.729800499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f7b4ccf393b3%3A0xa9e360b394f1ff4d!2sResonate%20With%20Yourself%20-%20Malaga%20Holistic%20Wellness%3A%20Advanced%20Bodywork%20Massage%2C%20Spiritual%20Therapy%20%26%20Sound%20Healing!5e0!3m2!1sen!2s!4v1730282967066!5m2!1sen!2s"
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
