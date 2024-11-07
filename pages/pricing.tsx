@@ -38,17 +38,19 @@ const Pricing = () => {
                   textIndent={'1em'}
                   fontSize={{ base: '1rem', md: '1.2rem' }}
                 >
-                  Resonate with Yourself is based on a{' '}
+                  I offer advanced sessions for those who seek a deep experience
+                  and honor that money holds less importance. My fixed rate is{' '}
                   <span
                     style={{
                       color: 'rgba(250, 175, 58, 1)',
                       fontWeight: 'bold',
                     }}
                   >
-                    Holistic Therapy
+                    200 euros (€)
                   </span>{' '}
-                  including physical, emotional, mental, and spiritual level,
-                  where everything is connected as a single body.
+                  though donations are welcomed as a sign of gratitude. If
+                  finances are a concern, please reach out so we can explore a
+                  suitable solution.
                 </Text>
                 <Text
                   textAlign={'justify'}
@@ -56,39 +58,30 @@ const Pricing = () => {
                   fontSize={{ base: '1rem', md: '1.2rem' }}
                   pt={'1rem'}
                 >
-                  The base is{' '}
+                  Due to the focused nature of this work, I offer only two
+                  sessions per day. For this reason, it is strongly recommended
+                  to secure your session and avoid last-minute cancellations.
+                </Text>
+
+                <Text
+                  textAlign={'justify'}
+                  fontSize={{ base: '1rem', md: '1.2rem' }}
+                  pt={'1rem'}
+                >
+                  With lots of love,
+                </Text>
+                <Text
+                  textAlign={'justify'}
+                  fontSize={{ base: '1rem', md: '1.2rem' }}
+                >
                   <span
                     style={{
                       color: 'rgba(250, 175, 58, 1)',
                       fontWeight: 'bold',
                     }}
                   >
-                    Bodywork De Armoring, Authentic Massage, Trauma Release,
-                    Emotional Release, Breathwork and Sound Healing{' '}
+                    - Colombo
                   </span>
-                  are techniques used to unlock the body's potential. Sessions
-                  vary from person to person. Sessions vary from person to
-                  person. Each session is advanced and adapted to the individual
-                  which lasts from{' '}
-                  <span
-                    style={{
-                      color: 'rgba(250, 175, 58, 1)',
-                      fontWeight: 'bold',
-                    }}
-                  >
-                    2 - 3 hours
-                  </span>{' '}
-                  costs{' '}
-                  <span
-                    style={{
-                      color: 'rgba(250, 175, 58, 1)',
-                      fontWeight: 'bold',
-                    }}
-                  >
-                    360&euro;
-                  </span>
-                  . We work with your rhythm, allowing you to selfheal
-                  naturally.
                 </Text>
               </Box>
             </Box>
