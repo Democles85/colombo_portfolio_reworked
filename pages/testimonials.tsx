@@ -27,7 +27,11 @@ import FileInput from '../components/Dropzone';
 import { Select, OptionBase } from 'chakra-react-select';
 
 // GraphQL Imports
-import { getTestimonials, submitTestimonial } from '../services';
+import {
+  getTestimonials,
+  submitTestimonial,
+  TestimonialsResponse,
+} from '../services';
 
 // GraphCMS Rich Text Renderer
 import { RichText } from '@graphcms/rich-text-react-renderer';
@@ -57,6 +61,7 @@ import countryList from 'react-select-country-list';
 import { getWindowSize } from '../lib/getWindowSize';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import Layout from '../components/layouts/title';
+import NodeCache from 'node-cache';
 
 interface SelectOptions extends OptionBase {
   [x: string]: any;
@@ -455,7 +460,7 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                         </FormLabel>
                         <Select
                           options={countries}
-                          name={'country'}
+                          instanceId={'country'}
                           placeholder={'Select Country'}
                           focusBorderColor={'#FFAF3A'}
                           isInvalid={errors.country ? true : false}
@@ -616,8 +621,16 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
 
 export default Testimonials;
 
+const cache = new NodeCache({ stdTTL: 600 }); // Cache for 10 minutes
+
 export async function getServerSideProps() {
-  const testimonials = (await getTestimonials()) || [];
+  let testimonials = cache.get('testimonials');
+  console.log(testimonials);
+
+  if (!testimonials) {
+    testimonials = (await getTestimonials()) || [];
+    cache.set('testimonials', testimonials);
+  }
 
   return {
     props: {

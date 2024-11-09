@@ -30,9 +30,12 @@ export const getTestimonials = async () => {
     }
   `;
 
-  const result = await request(graphqlAPI!, testimonials);
+  const result = await request<TestimonialsResponse | undefined>(
+    graphqlAPI!,
+    testimonials
+  );
 
-  return result.testimonialsConnection.edges;
+  return result?.testimonialsConnection?.edges || [];
 };
 
 export const submitTestimonial = async (object: any) => {
@@ -40,3 +43,29 @@ export const submitTestimonial = async (object: any) => {
 
   return result;
 };
+
+export interface TestimonialsResponse {
+  testimonialsConnection: {
+    edges: {
+      cursor: string;
+      node: Testimonial;
+    }[];
+  };
+}
+
+export interface Testimonial {
+  country: string;
+  createdAt: string;
+  experience: string;
+  id: string;
+  name: string;
+  publishedAt: string;
+  updatedAt: string;
+  message: string;
+  testimonial: {
+    raw: any;
+  };
+  profilePicture: {
+    url: string;
+  };
+}

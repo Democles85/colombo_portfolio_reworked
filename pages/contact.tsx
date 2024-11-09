@@ -320,42 +320,6 @@ const Contact = () => {
                       </FormHelperText>
                     ) : null}
                   </Box>
-                  {/* <Box w={'inherit'} px={5} py={{ base: 2, md: 3, lg: 3 }}>
-                    <FormLabel htmlFor={'lastName'} fontSize={'1.25rem'}>
-                      Surname: <span style={{ color: 'red' }}>*</span>
-                    </FormLabel>
-                    <Input
-                      borderColor={useColorModeValue(
-                        'gray.700',
-                        'whiteAlpha.500'
-                      )}
-                      _hover={{ borderColor: '#FFAF36' }}
-                      focusBorderColor={'#FFAF36'}
-                      placeholder={'Your Surname'}
-                      value={lastName}
-                      onChange={e => setLastName(e.target.value)}
-                      isInvalid={errors['lastName'] || errors['longLastName']}
-                    />
-                    {errors['lastName'] ? (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Please enter your surname.
-                      </FormHelperText>
-                    ) : errors['longLastName'] ? (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Your surname is too long.
-                      </FormHelperText>
-                    ) : null}
-                  </Box> */}
                 </Box>
                 <Box w={'100%'} display={'flex'} flexDir={'column'}>
                   <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
@@ -408,56 +372,6 @@ const Contact = () => {
                     ) : null}
                   </Box>
 
-                  {/* <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
-                    <FormLabel htmlFor={'phone'} fontSize={'1.25rem'}>
-                      Phone: <span style={{ color: 'red' }}>*</span>
-                    </FormLabel>
-                    <Input
-                      borderColor={useColorModeValue(
-                        'gray.700',
-                        'whiteAlpha.500'
-                      )}
-                      _hover={{ borderColor: '#FFAF36' }}
-                      focusBorderColor={'#FFAF36'}
-                      placeholder={'+(123)-456-7890'}
-                      value={phone}
-                      onChange={e => setPhone(e.target.value)}
-                      isInvalid={
-                        errors['phone'] ||
-                        errors['phoneFormat'] ||
-                        errors['phoneLength']
-                      }
-                    />
-                    {errors['phone'] ? (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Please enter your phone number.
-                      </FormHelperText>
-                    ) : errors['phoneFormat'] ? (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Please enter a valid phone number.
-                      </FormHelperText>
-                    ) : errors['phoneLength'] ? (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Your phone number is too long.
-                      </FormHelperText>
-                    ) : null}
-                  </Box> */}
-
                   <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
                     <FormLabel htmlFor="country">
                       Country <span style={{ color: 'red' }}>*</span>
@@ -466,11 +380,11 @@ const Contact = () => {
                       options={countries}
                       isInvalid={errors['country']}
                       focusBorderColor={useColorModeValue('#fcb03b', '#fcb03b')}
-                      id={'country'}
+                      instanceId={'country'}
                       placeholder={'Select Your Country'}
                       isSearchable={true}
                       isClearable={true}
-                      selectedOptionColor={'orange'}
+                      selectedOptionColorScheme={'orange'}
                       onChange={countryHandler}
                       chakraStyles={{
                         control: (prev, { isFocused }) => ({
@@ -561,11 +475,11 @@ const Contact = () => {
                       options={genders}
                       isInvalid={errors['gender']}
                       focusBorderColor={useColorModeValue('#fcb03b', '#fcb03b')}
-                      id={'gender'}
+                      instanceId={'gender'}
                       placeholder={'Select Your Gender'}
                       isSearchable={true}
                       isClearable={true}
-                      selectedOptionColor={'orange'}
+                      selectedOptionColorScheme={'orange'}
                       onChange={genderHandler}
                       chakraStyles={{
                         control: (prev, { isFocused }) => ({
