@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { Box } from '@chakra-ui/react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import { FloatingWhatsApp } from 'react-floating-whatsapp';
 
 type MainProps = {
   children: React.ReactNode;
@@ -51,13 +52,18 @@ const Main = ({ children, router }: MainProps) => {
           name="twitter:description"
           content="A website for the services of Colombo, a full time therapist based in the city of Vlora."
         />
-
-        <title>Resonate With Yourself</title>
       </Head>
       <Navbar path={router.asPath} />
       <Box maxWidth="full" minH={'100vh'}>
         {children}
       </Box>
+      <FloatingWhatsApp
+        phoneNumber="355695795601"
+        accountName="Resonate with Yourself"
+        avatar="default_avatar.png"
+        className="text-black"
+        placeholder="Type your message here..."
+      />
       <Footer />
     </Box>
   );
