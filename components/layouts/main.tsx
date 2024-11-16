@@ -58,7 +58,7 @@ const Main = ({ children, router }: MainProps) => {
         {children}
       </Box>
       <FloatingWhatsApp
-        phoneNumber="355695795601"
+        phoneNumber="34624468501"
         accountName="Resonate with Yourself"
         avatar="default_avatar.png"
         className="text-black"
