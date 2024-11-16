@@ -15,53 +15,29 @@ import {
   Tooltip,
   useColorModeValue,
   Icon,
-  Image,
   Checkbox,
   Link,
 } from '@chakra-ui/react';
-import React, { useState, useMemo, useEffect } from 'react';
+import { useState, useMemo } from 'react';
 import Section from '../components/Section';
 import FileInput from '../components/Dropzone';
-
-// Chakra React Select
 import { Select, OptionBase } from 'chakra-react-select';
-
-// GraphQL Imports
-import {
-  getTestimonials,
-  submitTestimonial,
-  TestimonialsResponse,
-} from '../services';
-
-// GraphCMS Rich Text Renderer
+import { getTestimonials, submitTestimonial } from '../services';
 import { RichText } from '@graphcms/rich-text-react-renderer';
-
-// FormData
 import FormData from 'form-data';
 import { FormProvider, useForm } from 'react-hook-form';
-
-// React Hot Toast
 import toast, { Toaster } from 'react-hot-toast';
-
-// Carousel
-import Slider from 'react-slick';
-
-// Types
+import Slider, { Settings } from 'react-slick';
 import TestimonialTypes from '../lib/types';
-
-// Styles
-import 'react-multi-carousel/lib/styles.css';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
-// Country List
 import countryList from 'react-select-country-list';
-
-// Functions
 import { getWindowSize } from '../lib/getWindowSize';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import Layout from '../components/layouts/title';
 import NodeCache from 'node-cache';
+
+import 'react-multi-carousel/lib/styles.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 interface SelectOptions extends OptionBase {
   [x: string]: any;
@@ -69,29 +45,8 @@ interface SelectOptions extends OptionBase {
   value: string;
 }
 
-const customLeftArrow = (
-  // Create a simple arrow component
-  <Box
-    position={'absolute'}
-    left={{ base: '-0.2rem', md: '0.5rem' }}
-    cursor={'pointer'}
-  >
-    <Icon as={ChevronLeftIcon} w={6} h={6} />
-  </Box>
-);
-
-const customRightArrow = (
-  <Box
-    position={'absolute'}
-    right={{ base: '-0.2rem', md: '0.5rem' }}
-    cursor={'pointer'}
-  >
-    <Icon as={ChevronRightIcon} w={6} h={6} />
-  </Box>
-);
-
 const Testimonials = ({ testimonials }: TestimonialTypes) => {
-  const settings = {
+  const settings: Settings = {
     dots: false,
     accessibility: true,
     autoplay: false,
@@ -112,16 +67,23 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
           fade: true,
           arrows: true,
         },
-        // @ts-ignore
-        breakpoint: 600,
-        // @ts-ignore
+      },
+      {
+        breakpoint: 768,
         settings: {
           fade: true,
           arrows: true,
         },
-        // @ts-ignore
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          fade: true,
+          arrows: true,
+        },
+      },
+      {
         breakpoint: 480,
-        // @ts-ignore
         settings: {
           fade: true,
           arrows: true,
@@ -130,15 +92,9 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
     ],
   };
 
-  const size = getWindowSize();
   const countries = useMemo(() => countryList().getData(), []);
 
   const [country, setCountry] = useState<SelectOptions>({
-    label: '',
-    value: '',
-  });
-
-  const [service, setService] = useState<SelectOptions>({
     label: '',
     value: '',
   });
@@ -150,14 +106,9 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
     formState: { errors },
   } = methods;
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
 
   const handleCountryChange = (value: any) => {
     setCountry(value);
-  };
-
-  const handlePackageChange = (value: any) => {
-    setService(value);
   };
 
   const emailFormat: RegExp = /^[a-zA-Z0-9._:$!%-]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/;
@@ -455,13 +406,13 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                       {/* Country */}
                       <Box py={'0.5rem'}>
                         <FormLabel htmlFor={'country'}>
-                          Country of Residence{' '}
+                          Nationality{' '}
                           <span style={{ color: 'rgb(215, 112, 112)' }}>*</span>
                         </FormLabel>
                         <Select
                           options={countries}
                           instanceId={'country'}
-                          placeholder={'Select Country'}
+                          placeholder={'Select Nationality'}
                           focusBorderColor={'#FFAF3A'}
                           isInvalid={errors.country ? true : false}
                           isClearable
@@ -573,7 +524,6 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
                               href="/privacy-policy"
                               style={{
                                 color: '#FFAF3A',
-                                textDecoration: 'underline',
                               }}
                             >
                               Privacy Policy

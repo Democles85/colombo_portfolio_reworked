@@ -17,12 +17,7 @@ const Pricing = () => {
         <Section>
           <Container maxW={'container.lg'}>
             <Box textAlign={'center'} py={'4rem'}>
-              <Heading as={'h1'}>
-                What we offer at{' '}
-                <span className={styles['text-gradient']}>
-                  Resonate with Yourself.
-                </span>
-              </Heading>
+              <Heading as={'h1'}>Book your session</Heading>
             </Box>
 
             <Box
@@ -48,9 +43,9 @@ const Pricing = () => {
                   >
                     200 euros (€)
                   </span>{' '}
-                  though donations are welcomed as a sign of gratitude. If
-                  finances are a concern, please reach out so we can explore a
-                  suitable solution.
+                  for 120 to 180 minutes though donations are welcomed as a sign
+                  of gratitude. If finances are a concern, please reach out so
+                  we can explore a suitable solution.
                 </Text>
                 <Text
                   textAlign={'justify'}
@@ -61,6 +56,15 @@ const Pricing = () => {
                   Due to the focused nature of this work, I offer only two
                   sessions per day. For this reason, it is strongly recommended
                   to secure your session and avoid last-minute cancellations.
+                  <span className="italic">
+                    Please only contact if you are really serious to work with
+                    me and can commit to it.
+                  </span>
+                </Text>
+
+                <Text className="text-justify italic pt-4 indent-[1em] text-base md:text-lg lg:text-xl">
+                  Please only contact if you are really serious to work with me
+                  and can commit to it.
                 </Text>
 
                 <Text

@@ -39,7 +39,7 @@ export const Title = ({ children }: TitleProps) => (
           className={styles['text-gradient']}
           fontSize={{ base: '1.25rem', md: '1.5rem' }}
         >
-          Services
+          Therapies
         </BreadcrumbLink>
       </BreadcrumbItem>
 

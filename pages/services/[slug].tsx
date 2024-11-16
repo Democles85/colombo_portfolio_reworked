@@ -19,7 +19,7 @@ const Service = () => {
 
   if (!services)
     return (
-      <Layout title={'Services'}>
+      <Layout title={'Therapies'}>
         <Box pt={'4rem'}>
           <Box
             minH={'calc(100vh - 4rem)'}

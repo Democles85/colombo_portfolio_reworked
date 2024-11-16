@@ -1,5 +1,3 @@
-import { Box, UnorderedList } from '@chakra-ui/react';
-
 const data = {
   about: [
     {

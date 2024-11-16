@@ -138,10 +138,10 @@ const Navbar = (props: any) => {
             Home
           </LinkItem>
           <LinkItem href="/about" path={path} _target={''}>
-            About
+            Meet Me
           </LinkItem>
           <LinkItem href="/services" path={path} _target={''}>
-            Services
+            Therapies
           </LinkItem>
           <LinkItem href="/pricing" path={path} _target={''}>
             Pricing
@@ -230,7 +230,7 @@ const Navbar = (props: any) => {
                             textAlign="center"
                             color={useColorModeValue('#718096', '#e2e8f0')}
                           >
-                            <Text fontWeight="600">Services</Text>
+                            <Text fontWeight="600">Therapies</Text>
                           </Box>
                           <Box>
                             <AccordionIcon

@@ -4,7 +4,7 @@ import {
   Heading,
   SimpleGrid,
   Text,
-  useColorModeValue
+  useColorModeValue,
 } from '@chakra-ui/react';
 import Link from 'next/link';
 
@@ -26,7 +26,7 @@ const Services = () => {
   const services = data.services;
 
   return (
-    <Layout title="Services">
+    <Layout title="Therapies">
       <Box pt={'4rem'}>
         <Section>
           <Container
@@ -50,12 +50,13 @@ const Services = () => {
             </Box>
 
             {/* <Box display={'flex'} flexDir={'column'} maxW={'container.sm'}> */}
-            <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={2}>
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 2, xl: 3 }} spacing={2}>
               {services.map((service, _index) => (
                 <Link href={`/services/${service.slug}`}>
                   <Box
                     bg={useColorModeValue('white', '#202023')}
                     border={'1px solid #FFAF36'}
+                    height={'95%'}
                     borderRadius={'lg'}
                     display={'flex'}
                     flexDir={'column'}
@@ -74,26 +75,7 @@ const Services = () => {
                       className={styles['card-content']}
                     >
                       <Text fontSize={'1.5rem'}>{service.title}</Text>
-                      {/* <Divider my={'0.5rem'} /> */}
-                      {/* <Box
-                        backgroundImage={`${service.thumbnail}`}
-                        height={'400px'}
-                        maxHeight={'100%'}
-                        backgroundClip={'content-box'}
-                        backgroundSize={'cover'}
-                        backgroundPosition={'center'}
-                        backgroundRepeat={'no-repeat'}
-                        borderRadius={'lg'}
-                        overflow={'hidden'}
-                      /> */}
                       <Box maxH={'100%'}>
-                        {/* <LazyLoadImage
-                          src={service.thumbnail}
-                          alt={service.title}
-                          effect={'blur'}
-                          className={styles['card-image']}
-                          objectFit={'cover'}
-                        /> */}
                         <Image
                           src={`/${service.thumbnail}`}
                           alt={service.title}

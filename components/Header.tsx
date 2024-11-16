@@ -1,5 +1,5 @@
 // Chakra Imports
-import { Box } from '@chakra-ui/react';
+import { Box, Text } from '@chakra-ui/react';
 
 // React Imports
 import React from 'react';

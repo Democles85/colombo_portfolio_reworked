@@ -1,44 +1,21 @@
-import {
-  Box,
-  Container,
-  Divider,
-  Heading,
-  Link,
-  List,
-  ListIcon,
-  ListItem,
-  Text,
-} from '@chakra-ui/react';
+import { Box, Container, Heading, Link, Text } from '@chakra-ui/react';
 import type { NextPage } from 'next';
-import React, { useEffect, useState } from 'react';
-
-// React Icons
-import { VscCircleFilled } from 'react-icons/vsc';
-
-// Parallax
+import { useEffect } from 'react';
 import { useParallax } from 'react-scroll-parallax';
-
-// Typewriter
-import Typewriter from 'typewriter-effect';
-
-// Components
-import Paragraph from '../components/Paragraph';
 import Section from '../components/Section';
 import { Button } from '../components/Button';
-
-// Data
 import data from '../util/modalities.json';
-
-// Styles
 import styles from '../styles/Home.module.css';
 import Layout from '../components/layouts/title';
-import { getWindowSize, getWindowSizeStatic } from '../lib/getWindowSize';
-import Header from '../components/Header';
+import { getWindowSize } from '../lib/getWindowSize';
+import { bookQuotes } from '../util/book-quotes';
+import { QuoteSlider } from '../components/ui/quote-slider';
+import { homeData } from '../util/home-data';
 
 const Home: NextPage = () => {
-  const { ref } = useParallax<HTMLDivElement>({
-    speed: 30,
-  });
+  // const { ref } = useParallax<HTMLDivElement>({
+  //   speed: 30,
+  // });
 
   const windowWidth = getWindowSize().width;
 
@@ -71,7 +48,6 @@ const Home: NextPage = () => {
             backgroundRepeat={'no-repeat'}
             position={'relative'}
           >
-            {/* Make it responsive for mobile browsers knowing the navigation bar */}
             <Box
               height={{
                 base: `calc(${height}px - 4rem)`,
@@ -82,7 +58,22 @@ const Home: NextPage = () => {
               justifyContent={'center'}
               alignItems={'center'}
               flexDir={'column'}
-            />
+            >
+              <Section delay={0.5}>
+                <Heading
+                  color={'#fff'}
+                  textAlign={'center'}
+                  letterSpacing={'narrow'}
+                  width={'full'}
+                  paddingX={'3rem'}
+                  maxWidth={'container.lg'}
+                  fontSize={{ base: '1.5rem', md: '2rem' }}
+                  textShadow={'0 4px 4px rgba(0, 0, 0, 0.25)'}
+                >
+                  ACCEPT THE WHOLE UNIVERSE
+                </Heading>
+              </Section>
+            </Box>
             <Box
               className={styles['scroll-element']}
               position={'absolute'}
@@ -95,26 +86,23 @@ const Home: NextPage = () => {
         </Section>
 
         <Container
-          maxW={{
-            base: 'container.sm',
-            md: 'container.md',
-            lg: 'container.xl',
-          }}
-          overflow={'hidden'}
+          maxW={'container.lg'}
+          textAlign={'justify'}
+          fontSize={'1.15rem'}
         >
           <Box
-            ref={ref}
+            // ref={ref}
             display={'flex'}
             flexDir={'column'}
             alignItems={'center'}
             justifyContent={'center'}
             minH={'100vh'}
+            paddingTop={'4rem'}
           >
             <Box
               textStyle="h1"
               borderRadius="lg"
               p={5}
-              // bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
               background="rgba(245,166,35,0.25)"
               boxShadow="0 8px 32px 0 rgba(245,166,35, 0.15)"
               border="1px solid rgba(255,255,255, 0.18)"
@@ -126,10 +114,10 @@ const Home: NextPage = () => {
                 fontSize={[18, null, 20]}
                 letterSpacing="tight"
               >
-                “All this is a journey that is expanding our consciousness. A
-                great Sea of Energy where we have to bathe without stopping to
-                understand who we are, because always on this journey we will
-                change who we are.”
+                ”This entire journey is about expanding our consciousness. It's
+                a vast ocean of energy in which we must continuously immerse
+                ourselves to understand who we truly are, because along this
+                path, we will constantly evolve and redefine who we are.”
               </Text>
             </Box>
             <Box py={'1rem'}>
@@ -151,142 +139,63 @@ const Home: NextPage = () => {
               justifyContent={'center'}
               flexDir={'column'}
             >
-              <Box maxW={'540px'}>
-                <Text
-                  textAlign={'justify'}
-                  textIndent={'1em'}
-                  fontSize={{ base: '1rem', md: '1.2rem' }}
+              {homeData.map(item => (
+                <Box
+                  key={item.id}
+                  position={'relative'}
+                  display={'flex'}
+                  borderLeft={'2px rgba(200, 200, 200, 0.2) solid'}
                 >
-                  Resonate with Yourself is a{' '}
-                  <span
-                    style={{
-                      color: 'rgba(250, 175, 58, 1)',
-                      fontWeight: 'bold',
-                    }}
-                  >
-                    sacred sanctuary
-                  </span>{' '}
-                  —a temple where I guide each person to reconnect with their
-                  inner essence, helping them to resonate with their true self
-                  and activate their own healing, for the cure lies within.
-                  Rooted in a holistic therapy, I engage the physical,
-                  emotional, mental, and spiritual layers, treating them as one
-                  interconnected system.
+                  <Box mb={10} ml={4}>
+                    <Box
+                      position={'absolute'}
+                      w={2}
+                      h={2}
+                      bg={'#FFAF36'}
+                      borderRadius={'full'}
+                      mt={'1.15rem'}
+                      left={'-0.3rem'}
+                    />
+                  </Box>
+                  <Text py={'0.5rem'} fontSize={{ base: '1rem', md: '1.2rem' }}>
+                    {item.paragraph}
+                  </Text>
+                </Box>
+              ))}
+
+              <Box className="self-start pt-4">
+                <Text fontSize={{ base: '1rem', md: '1.2rem' }} pt={'1rem'}>
+                  With lots of love,
                 </Text>
-                <Text
-                  textAlign={'justify'}
-                  textIndent={'1em'}
-                  fontSize={{ base: '1rem', md: '1.2rem' }}
-                  pt={'1rem'}
-                >
-                  Core techniques include{' '}
+                <Text fontSize={{ base: '1rem', md: '1.2rem' }}>
                   <span
                     style={{
                       color: 'rgba(250, 175, 58, 1)',
                       fontWeight: 'bold',
                     }}
                   >
-                    Advanced Bodywork Massage, De-Armoring, Authentic Massage,
-                    Trauma Clearing, Emotional Release, Breathwork, and Sound
-                    Healing{' '}
+                    - Colombo
                   </span>
-                  —advanced practices designed to unlock your body’s deepest
-                  potential.
-                </Text>
-                <Text
-                  textAlign={'justify'}
-                  textIndent={'1em'}
-                  fontSize={{ base: '1rem', md: '1.2rem' }}
-                  pt={'1rem'}
-                >
-                  Each session is a unique journey, crafted with heart and
-                  intention to honor your individuality. I am here with true
-                  care and dedication, using only the techniques that resonate
-                  deeply with your body and spirit in a way that is entirely
-                  yours, gifting pure, not-alike sessions despite having offered
-                  more than 1500sessions.
-                </Text>
-                <Text
-                  textAlign={'justify'}
-                  textIndent={'1em'}
-                  fontSize={{ base: '1rem', md: '1.2rem' }}
-                  pt={'1rem'}
-                >
-                  I believe that our body holds the full story of our life .
-                  It's our most intimate memory keeper. Everything that has ever
-                  happened to and around us is encoded in our physical being,
-                  shaping us in response to life's journey. If your life has
-                  flowed with joy and ease, that joy is woven into the very
-                  fabric of your being; but if it's been marked by pain or
-                  struggle, those energies are held within you, waiting to be
-                  seen, heard, and released.
-                </Text>
-                <Text
-                  textAlign={'justify'}
-                  textIndent={'1em'}
-                  fontSize={{ base: '1rem', md: '1.2rem' }}
-                  pt={'1rem'}
-                >
-                  The most effective way to approach your body is to cleanse,
-                  liberate, expand, and bring more joy and love into it. I
-                  intuitively integrate energy, awareness, massage, de-armoring,
-                  breathwork, and sound healing through my energy field,
-                  alchemically unify all these elements to offer you a
-                  profoundly deep & advanced session. Depending on the energy
-                  level and needs of your body, I intuitively design each
-                  session for you. Some bodies are already in balance, with
-                  little to unlock, release, or clear, and for them, our focus
-                  is on uplifting the energy, allowing the vibration of the body
-                  to create a deeply unique experience.
-                </Text>
-                <Text
-                  textAlign={'justify'}
-                  textIndent={'1em'}
-                  fontSize={{ base: '1rem', md: '1.2rem' }}
-                  pt={'1rem'}
-                >
-                  In the initial sessions, when the body is on an energetic
-                  density, it may release deeply held pain or trauma. As we move
-                  forward in the subsequent sessions, I guide you in cultivating
-                  your energetic body, allowing every cell to vibrate freely,
-                  embracing its natural state of liberation. This transformation
-                  infuses your being with new energy, fostering a profound
-                  cellular experience of self-love, joy, and growth, which then
-                  radiates outward, bringing greater vitality, clarity, and
-                  success into your life.
-                </Text>
-                <Text
-                  textAlign={'justify'}
-                  textIndent={'1em'}
-                  fontSize={{ base: '1rem', md: '1.2rem' }}
-                  pt={'1rem'}
-                >
-                  The work is designed to help you release the weight of past
-                  energies, guiding you towards falling in love with yourself,
-                  your heart, and your sensuality, while gently clearing any
-                  lingering shame or guilt. Through this process, you are
-                  invited to experience life more fully, becoming more alive,
-                  present, and productive. After years of dedicated practice,
-                  study, and deep self-work, I’ve developed highly authentic,
-                  advanced, and enlivening sessions. These sessions go deep,
-                  engaging the body’s energetic and biological rhythms and
-                  typically lasting between 2 to 3 hours, sometimes extending up
-                  to 4 if energy calls for it. This is an in-depth and conscious
-                  energetic surgery infused with love, responsibility, and
-                  seriousness, designed for anyone ready to resonate with
-                  themselves through Resonate with Yourself.
                 </Text>
               </Box>
-              {/* <Divider
-                my={'2rem'}
-                width={{ base: '100%', md: '110%', lg: '120%' }}
-              /> */}
-              <Box pt={'3rem'}>
+
+              <Heading
+                as={'h2'}
+                fontSize={'1.25rem'}
+                pt={'2rem'}
+                alignSelf={'flex-start'}
+              >
+                "Explore the Essence" - Uncover handpicked excerpts that reflect
+                the heart of my book's message:
+              </Heading>
+
+              <QuoteSlider bookQuotes={bookQuotes} />
+
+              {/* <Box pt={'3rem'}>
                 <Paragraph>
                   The{' '}
                   <span
                     style={{
-                      textDecoration: 'underline',
                       textDecorationColor: 'rgba(250, 175, 58, 1)',
                       color: 'rgba(250, 175, 58, 1)',
                       textUnderlineOffset: '0.2rem',
@@ -323,7 +232,7 @@ const Home: NextPage = () => {
                     </Box>
                   ))}
                 </Box>
-              </Box>
+              </Box> */}
 
               <Box py={'2rem'}>
                 <Link href={'/about'} _hover={{ textDecoration: 'none' }}>

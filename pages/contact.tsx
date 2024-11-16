@@ -71,7 +71,7 @@ const Contact = () => {
   const [accept, setAccept] = React.useState(false);
 
   const [errors, setErrors] = React.useState({}) as any;
-  const [buttonText, setButtonText] = React.useState('Send Message');
+  const [buttonText, setButtonText] = React.useState('Book Your Session');
 
   const countryHandler = (value: any) => {
     setCountry(value);
@@ -93,14 +93,6 @@ const Contact = () => {
       errors['firstNameLength'] = true;
     }
 
-    // if (lastName.length <= 0) {
-    //   isValid = false;
-    //   errors['lastName'] = true;
-    // } else if (lastName.length >= 20) {
-    //   isValid = false;
-    //   errors['lastNameLength'] = true;
-    // }
-
     if (subject.length <= 0) {
       isValid = false;
       errors['subject'] = true;
@@ -119,17 +111,6 @@ const Contact = () => {
       isValid = false;
       errors['emailLength'] = true;
     }
-
-    // if (phone.length <= 0) {
-    //   isValid = false;
-    //   errors['phone'] = true;
-    // } else if (!phone.match(phoneFormat)) {
-    //   isValid = false;
-    //   errors['phoneFormat'] = true;
-    // } else if (phone.length >= 20) {
-    //   isValid = false;
-    //   errors['phoneLength'] = true;
-    // }
 
     if (country.value.length <= 0) {
       isValid = false;
@@ -160,14 +141,12 @@ const Contact = () => {
     let isValidForm = validate();
 
     if (isValidForm) {
-      setButtonText('Sending...');
+      setButtonText('Booking Your Session...');
 
       const data = {
         firstName,
-        // lastName,
         subject,
         email,
-        // phone
         country: country.label,
         message,
       };
@@ -178,19 +157,17 @@ const Contact = () => {
 
       if (error) {
         toast.error(error);
-        setButtonText('Send Message');
+        setButtonText('Book Your Session');
 
         return;
       }
 
       toast.success('Message Sent Successfully');
-      setButtonText('Send Message');
+      setButtonText('Book Your Session');
 
       // Reset Form
       setFirstName('');
-      // setLastName('');
       setEmail('');
-      // setPhone('');
       setCountry({ value: '', label: '' });
       setGender({ value: '', label: '' });
       setMessage('');
@@ -198,7 +175,7 @@ const Contact = () => {
       return;
     } else {
       toast.error('Please fill all the fields');
-      setButtonText('Send Message');
+      setButtonText('Book Your Session');
 
       return;
     }
@@ -236,7 +213,7 @@ const Contact = () => {
             fontWeight={'bold'}
             textAlign={'center'}
           >
-            Write Your <span className={styles['text-gradient']}>Message</span>
+            Book Your <span className={styles['text-gradient']}>Session</span>
           </Text>
           <Section>
             <form onSubmit={submitHandler}>
@@ -374,14 +351,14 @@ const Contact = () => {
 
                   <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
                     <FormLabel htmlFor="country">
-                      Country <span style={{ color: 'red' }}>*</span>
+                      Nationality <span style={{ color: 'red' }}>*</span>
                     </FormLabel>
                     <Select
                       options={countries}
                       isInvalid={errors['country']}
                       focusBorderColor={useColorModeValue('#fcb03b', '#fcb03b')}
                       instanceId={'country'}
-                      placeholder={'Select Your Country'}
+                      placeholder={'Select Your Nationality'}
                       isSearchable={true}
                       isClearable={true}
                       selectedOptionColorScheme={'orange'}
@@ -619,7 +596,6 @@ const Contact = () => {
                           href="/privacy-policy"
                           style={{
                             color: '#FFAF3A',
-                            textDecoration: 'underline',
                           }}
                         >
                           Privacy Policy
@@ -691,13 +667,13 @@ const Contact = () => {
                 </Heading>
                 <List>
                   <ListItem>
-                    <Link href="https://wa.me/34671145400" target="_blank">
+                    <Link href="https://wa.me/34624468501" target="_blank">
                       <Button
                         variant="ghost"
                         colorScheme="orange"
                         leftIcon={<Icon as={AiOutlineWhatsApp} />}
                       >
-                        +34 671 145 400
+                        +34 624 46 85 01
                       </Button>
                     </Link>
                   </ListItem>

@@ -711,12 +711,7 @@ const data = {
               textAlign={'left'}
             >
               <Box>
-                <Text
-                  fontWeight={'bold'}
-                  pb={'1rem'}
-                  textAlign={'center'}
-                  textDecoration={'underline'}
-                >
+                <Text fontWeight={'bold'} pb={'1rem'} textAlign={'center'}>
                   Physical Benefits
                 </Text>
                 <List spacing={'0.5rem'}>
@@ -845,12 +840,7 @@ const data = {
                 </List>
               </Box>
               <Box>
-                <Text
-                  fontWeight={'bold'}
-                  pb={'1rem'}
-                  textAlign={'center'}
-                  textDecoration={'underline'}
-                >
+                <Text fontWeight={'bold'} pb={'1rem'} textAlign={'center'}>
                   Spiritual Benefits
                 </Text>
                 <List spacing={'0.5rem'}>
@@ -954,6 +944,19 @@ const data = {
               </Box>
             </Box>
           ),
+        },
+      ],
+    },
+    {
+      title: 'Breathwork',
+      slug: 'breathwork',
+      thumbnail: 'works/breathwork_thumbnail.jpg',
+      description:
+        'Breathwork is a powerful tool for self-exploration and healing...',
+      content: [
+        {
+          paragraph:
+            '"Breathwork" refers to any type of breathing exercises or techniques. People often perform them to improve mental, physical, and spiritual well-being. During breathwork one intentionally changes their breathing pattern. Many people find that breathwork promotes deep relaxation or leaves them feeling energized. People practice breathwork for a variety of reasons. Overall, it brings about improvements in emotional state and to decrease levels of stress. People have practiced breathwork to aid in positive selfdevelopment and enrich creativity. Others use it to boost their immunity and improve their physical and emotional health, by helping to process emotions and trauma, as well as to help overcome addictions. Breathwork is used to treat issues such as, anxiety, chronic pain, depression, PTSD, etc.',
         },
       ],
     },

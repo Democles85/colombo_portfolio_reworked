@@ -52,9 +52,15 @@ const About = () => {
                 <Heading
                   color={'#fff'}
                   textAlign={'center'}
-                  fontSize={{ base: '2rem', md: '3rem', lg: '4rem' }}
+                  letterSpacing={'narrow'}
+                  width={'full'}
+                  paddingX={'3rem'}
+                  maxWidth={'container.lg'}
+                  fontSize={{ base: '1.5rem', md: '2rem' }}
                 >
-                  About <span className={styles['text-gradient']}>Me</span>
+                  After all my travels across the entire Universe, I found
+                  nothing more beautiful that this reality, and that is why I
+                  descended once again here.
                 </Heading>
               </Section>
             </Box>
@@ -96,8 +102,10 @@ const About = () => {
                     fontSize={[18, null, 20]}
                     letterSpacing="tight"
                   >
-                    "It is a sea of consciousness to be experienced with an open
-                    heart, and for this we need to inform everyone."
+                    “All of this is a journey that expands our consciousness—a
+                    vast sea of energy in which we must continually immerse
+                    ourselves to truly understand who we are, for on this path,
+                    we are forever transforming our very essence.”
                   </Text>
                 </Box>
               </Box>
