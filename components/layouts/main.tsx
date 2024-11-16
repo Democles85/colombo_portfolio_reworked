@@ -63,6 +63,8 @@ const Main = ({ children, router }: MainProps) => {
         avatar="default_avatar.png"
         className="text-black"
         placeholder="Type your message here..."
+        chatMessage={`Hola 🌠\nIt's great to connect! Let me know your questions or book a session. I'll respond as soon as I can.`}
+        chatboxHeight={380}
       />
       <Footer />
     </Box>
