@@ -21,6 +21,7 @@ import data from '../util/services';
 import styles from '../styles/Services.module.css';
 // import Image from 'next/image';
 import { Image } from '@chakra-ui/image';
+import { Button } from '../components/Button';
 
 const Services = () => {
   const services = data.services;
@@ -42,11 +43,18 @@ const Services = () => {
           >
             <Box textAlign={'center'} py={'4rem'}>
               <Heading as={'h1'}>
-                Learn about{' '}
-                <span className={styles['text-gradient']}>
-                  Resonating with Yourself.
-                </span>
+                One Session,{' '}
+                <span className="text-amber-500">All Services</span>
               </Heading>
+
+              <div className="max-w-[640px] pt-4">
+                <Text className="text-lg">
+                  Each session includes all of the services listed below. Rather
+                  than separate treatments, these techniques come together as
+                  part of a complete, personalized experience, designed to
+                  decode all your body blocks.
+                </Text>
+              </div>
             </Box>
 
             {/* <Box display={'flex'} flexDir={'column'} maxW={'container.sm'}> */}
@@ -95,6 +103,12 @@ const Services = () => {
                 </Link>
               ))}
             </SimpleGrid>
+
+            <Box textAlign={'center'} py={'4rem'}>
+              <Link href={'/pricing'} className="no-underline">
+                <Button label="Book Your Session" />
+              </Link>
+            </Box>
             {/* </Box> */}
           </Container>
         </Section>

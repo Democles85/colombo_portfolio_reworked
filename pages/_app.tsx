@@ -8,6 +8,7 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 
 import theme from '../lib/theme';
 import { AnimatePresence } from 'framer-motion';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   return (
@@ -16,6 +17,9 @@ function MyApp({ Component, pageProps, router }: AppProps) {
         <Layout router={router}>
           <AnimatePresence mode={'wait'} initial={true}>
             <Component {...pageProps} key={router.route} />
+            <GoogleAnalytics
+              gaId={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS || ''}
+            />
           </AnimatePresence>
         </Layout>
       </ParallaxProvider>

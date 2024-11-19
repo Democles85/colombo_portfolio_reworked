@@ -60,7 +60,7 @@ const Main = ({ children, router }: MainProps) => {
       <FloatingWhatsApp
         phoneNumber="34624468501"
         accountName="Resonate with Yourself"
-        avatar="default_avatar.png"
+        avatar="rwy-whatsapp-logo.png"
         className="text-black"
         placeholder="Type your message here..."
         chatMessage={`Hola 🌠\nIt's great to connect! Let me know your questions or book a session. I'll respond as soon as I can.`}

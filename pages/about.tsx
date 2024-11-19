@@ -26,7 +26,7 @@ const About = () => {
   const height = getWindowSize().height;
 
   return (
-    <Layout title={'About Me'}>
+    <Layout title={'Meet Me'}>
       <Box pt={'4rem'}>
         <Section>
           <Box
@@ -104,8 +104,8 @@ const About = () => {
                   >
                     “All of this is a journey that expands our consciousness—a
                     vast sea of energy in which we must continually immerse
-                    ourselves to truly understand who we are, for on this path,
-                    we are forever transforming our very essence.”
+                    ourselves to truly understand who we are, because always on
+                    this journey we will change who we are.”
                   </Text>
                 </Box>
               </Box>

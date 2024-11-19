@@ -18,13 +18,13 @@ const settings: Settings = {
   infinite: true,
   touchThreshold: 15,
   speed: 1000,
-  autoplaySpeed: 15000,
+  autoplaySpeed: 5000,
   cssEase: 'ease-out',
   useTransform: false,
   slidesToShow: 1,
   slidesToScroll: 1,
-  adaptiveHeight: false,
-  arrows: false,
+  adaptiveHeight: true,
+  arrows: true,
   responsive: [
     {
       breakpoint: 1024,

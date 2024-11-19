@@ -1,4 +1,4 @@
-import { Box, Container, Heading, Link, Text } from '@chakra-ui/react';
+import { Box, Container, Divider, Heading, Link, Text } from '@chakra-ui/react';
 import type { NextPage } from 'next';
 import { useEffect } from 'react';
 import { useParallax } from 'react-scroll-parallax';
@@ -179,10 +179,11 @@ const Home: NextPage = () => {
                 </Text>
               </Box>
 
+              <Box className="border-b-2 border-[rgba(200, 200, 200, 0.2)] w-full pt-16" />
               <Heading
                 as={'h2'}
                 fontSize={'1.25rem'}
-                pt={'2rem'}
+                pt={'4rem'}
                 alignSelf={'flex-start'}
               >
                 "Explore the Essence" - Uncover handpicked excerpts that reflect
@@ -235,8 +236,8 @@ const Home: NextPage = () => {
               </Box> */}
 
               <Box py={'2rem'}>
-                <Link href={'/about'} _hover={{ textDecoration: 'none' }}>
-                  <Button label="Connect with me" />
+                <Link href={'/about'} className="no-underline">
+                  <Button label="Connect With Me" />
                 </Link>
               </Box>
             </Box>

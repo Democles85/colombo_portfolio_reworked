@@ -15,11 +15,11 @@ export function Button({
       _hover={{
         boxShadow: '0 0 20px 3px #FFAF36',
       }}
-      color={'white'}
+      color={'black'}
       paddingX={'2rem'}
       paddingY={'1.5rem'}
       fontSize={'xl'}
-      fontWeight={'medium'}
+      fontWeight={'semibold'}
       style={style}
     >
       {label}

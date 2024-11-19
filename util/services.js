@@ -269,7 +269,8 @@ const data = {
       title: 'Authentic Energetic Bodywork',
       slug: 'authentic-tantra',
       thumbnail: 'colombo_resize/DSC_7218.jpg',
-      description: '',
+      description:
+        'Authentic Energetic Bodywork is an energy form of massage first and foremost. Key energy channels are purified...',
       content: [
         {
           paragraph: (
@@ -451,7 +452,8 @@ const data = {
       title: 'Advanced Energetic Bodywork',
       slug: 'advanced-energetic-bodywork',
       thumbnail: 'colombo_resize/DSC_7202.jpg',
-      description: '',
+      description:
+        'Advanced Energetic Bodywork is an advanced session that requires preparation with several bodywork sessions...',
       content: [
         {
           paragraph: (

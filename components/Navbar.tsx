@@ -214,7 +214,7 @@ const Navbar = (props: any) => {
                     </NextLink>
                     <NextLink href="/about" passHref>
                       <Button onClick={onClose} variant="link" width="100%">
-                        About Me
+                        Meet Me
                       </Button>
                     </NextLink>
 

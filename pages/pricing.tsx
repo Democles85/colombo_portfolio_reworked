@@ -97,7 +97,7 @@ const Pricing = () => {
               py={'3rem'}
             >
               <Link href={'/contact'}>
-                <Button label={'Contact me'} />
+                <Button label={'Contact Me'} />
               </Link>
             </Box>
           </Container>

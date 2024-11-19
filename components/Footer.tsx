@@ -1,3 +1,4 @@
+import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { Box, Link } from '@chakra-ui/react';
 import React from 'react';
 import {
@@ -23,10 +24,10 @@ export default function Footer() {
 
   return (
     <Box borderTop={'1px solid rgba(255, 255, 255, 0.3)'}>
-      <div className="grid mx-auto max-w-[1080px] place-items-center p-4 grid-cols-1 md:grid-cols-3 gap-y-4 md:p-8 md:gap-x-4">
+      <div className="grid mx-auto max-w-[1080px] place-items-center p-4 grid-cols-1 md:grid-cols-3 gap-y-8 md:p-8 md:gap-x-4 md:gap-y-4">
         <div className="text-md text-justify max-w-80">
-          Resonating with yourself is an energetic surgery to help you remove
-          all your body's blocks through advanced massage alternated with sound
+          Resonate with yourself is an energetic surgery to help you remove all
+          your body's blocks through advanced massage alternated with sound
           therapy.
         </div>
         <div className="text-md text-justify max-w-80">
@@ -47,7 +48,14 @@ export default function Footer() {
           <h2 className="flex place-items-center text-lg font-bold text-amber-400">
             <MdLocationPin className="size-5 pr-1" /> Location
           </h2>
-          <div>Pl. Eduardo Dato, Bailén-Miraflores, 29011 Málaga, Spain</div>
+          <Link
+            href="https://maps.app.goo.gl/GnwKoqgz3ireMdEw8"
+            target="_blank"
+            className="text-amber-600"
+          >
+            Pl. Eduardo Dato, Bailén-Miraflores, 29011 Málaga, Spain{' '}
+            <ExternalLinkIcon className="pb-1" />
+          </Link>
 
           <h2 className="flex place-items-center text-lg font-bold text-amber-400 pt-2">
             <MdWeb className="size-5 pr-1" />
