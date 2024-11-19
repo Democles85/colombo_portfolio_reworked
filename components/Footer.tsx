@@ -108,18 +108,3 @@ export default function Footer() {
     </Box>
   );
 }
-
-/*
-footer: to be added back
-text: Resonating with yourself is an energetic surgery to help you remove all your body's blocks through advanced massage alternated with sound therapy.
-working hours: 10:30AM - 11:30PM
-lOCATION
- ´contact me` BUTTON
- socials:
-https://x.com/ColomboRWY
-https://www.instagram.com/resonate_with_yourself
-https://youtube.com/@resonatewithyourself
-https://www.tiktok.com/@resonatewithyourself
-https://www.linkedin.com/in/resonatewithyourself/
-https://www.facebook.com/profile.php?id=61568206042728
-*/

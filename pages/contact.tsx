@@ -215,7 +215,66 @@ const Contact = () => {
           >
             Book Your <span className={styles['text-gradient']}>Session</span>
           </Text>
+
+          <Box py={'3rem'}>
+            <Section delay={0.4}>
+              <Box className="grid grid-cols-2 grid-rows-1 place-items-center">
+                <Box className="place-items-center justify-center">
+                  <Heading
+                    as="h3"
+                    variant="section-title"
+                    className="text-center"
+                  >
+                    Contact Me Via Email:
+                  </Heading>
+                  <List>
+                    <ListItem>
+                      <Link
+                        href="mailto:resonatewithyourself@gmail.com"
+                        target="_blank"
+                      >
+                        <Button
+                          variant="outline"
+                          colorScheme="orange"
+                          leftIcon={<Icon as={MdMail} />}
+                        >
+                          resonatewithyourself@gmail.com
+                        </Button>
+                      </Link>
+                    </ListItem>
+                  </List>
+                </Box>
+
+                <Box>
+                  <Heading
+                    as="h3"
+                    variant="section-title"
+                    className="text-center"
+                  >
+                    Contact Me Via WhatsApp:
+                  </Heading>
+                  <List>
+                    <ListItem className="flex place-items-center justify-center">
+                      <Link href="https://wa.me/34624468501" target="_blank">
+                        <Button
+                          variant="outline"
+                          colorScheme="orange"
+                          leftIcon={<Icon as={AiOutlineWhatsApp} />}
+                        >
+                          +34 624 46 85 01
+                        </Button>
+                      </Link>
+                    </ListItem>
+                  </List>
+                </Box>
+              </Box>
+            </Section>
+          </Box>
+
           <Section>
+            <Text className="italic pl-5">
+              * or complete the form to get in touch automatically
+            </Text>
             <form onSubmit={submitHandler}>
               <FormControl>
                 <Box
@@ -637,49 +696,6 @@ const Contact = () => {
           </Section>
 
           <Box py={'3rem'}>
-            <Section delay={0.4}>
-              <Box>
-                <Heading as="h3" variant="section-title">
-                  Contact Me Via Email:
-                </Heading>
-                <List>
-                  <ListItem>
-                    <Link
-                      href="mailto:resonatewithyourself@gmail.com"
-                      target="_blank"
-                    >
-                      <Button
-                        variant="ghost"
-                        colorScheme="orange"
-                        leftIcon={<Icon as={MdMail} />}
-                      >
-                        resonatewithyourself@gmail.com
-                      </Button>
-                    </Link>
-                  </ListItem>
-                </List>
-              </Box>
-            </Section>
-            <Section delay={0.6}>
-              <Box>
-                <Heading as="h3" variant="section-title">
-                  Contact Me Via WhatsApp:
-                </Heading>
-                <List>
-                  <ListItem>
-                    <Link href="https://wa.me/34624468501" target="_blank">
-                      <Button
-                        variant="ghost"
-                        colorScheme="orange"
-                        leftIcon={<Icon as={AiOutlineWhatsApp} />}
-                      >
-                        +34 624 46 85 01
-                      </Button>
-                    </Link>
-                  </ListItem>
-                </List>
-              </Box>
-            </Section>
             <Section delay={0.8}>
               <Box>
                 <Heading as="h3" variant="section-title" pb={4}>
