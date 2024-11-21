@@ -15,6 +15,7 @@ import {
   useColorModeValue,
   Icon,
   Checkbox,
+  Divider,
 } from '@chakra-ui/react';
 import axios from 'axios';
 import { OptionBase, Select } from 'chakra-react-select';
@@ -35,6 +36,7 @@ import Section from '../components/Section';
 
 // Styles
 import styles from '../styles/Contact.module.css';
+import { useMediaQuery } from '../hooks/useMediaQuery';
 
 // Interface
 interface SelectOptions extends OptionBase {
@@ -49,6 +51,8 @@ const Contact = () => {
     { value: 'female', label: 'Female' },
     { value: 'male', label: 'Male' },
   ];
+
+  const isDesktop = useMediaQuery('(min-width: 1024px)');
 
   const emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   const phoneFormat = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
@@ -218,12 +222,12 @@ const Contact = () => {
 
           <Box py={'3rem'}>
             <Section delay={0.4}>
-              <Box className="grid grid-cols-2 grid-rows-1 place-items-center">
+              <Box className="grid grid-cols-1 gap-y-4 md:place-items-center md:grid-cols-2 md:gap-y-0">
                 <Box className="place-items-center justify-center">
                   <Heading
                     as="h3"
                     variant="section-title"
-                    className="text-center"
+                    className="md:text-center"
                   >
                     Contact Me Via Email:
                   </Heading>
@@ -245,16 +249,20 @@ const Contact = () => {
                   </List>
                 </Box>
 
+                {!isDesktop && (
+                  <Divider orientation="horizontal" className="mt-4" />
+                )}
+
                 <Box>
                   <Heading
                     as="h3"
                     variant="section-title"
-                    className="text-center"
+                    className="md:text-center"
                   >
                     Contact Me Via WhatsApp:
                   </Heading>
                   <List>
-                    <ListItem className="flex place-items-center justify-center">
+                    <ListItem className="flex md:place-items-center md:justify-center">
                       <Link href="https://wa.me/34624468501" target="_blank">
                         <Button
                           variant="outline"
@@ -267,6 +275,10 @@ const Contact = () => {
                     </ListItem>
                   </List>
                 </Box>
+
+                {!isDesktop && (
+                  <Divider orientation="horizontal" className="mt-4" />
+                )}
               </Box>
             </Section>
           </Box>

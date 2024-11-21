@@ -30,7 +30,7 @@ export default function Footer() {
           your body's blocks through advanced massage alternated with sound
           therapy.
         </div>
-        <div className="text-md text-justify max-w-80">
+        <div className="text-md text-justify max-w-80 w-80">
           <h2 className="flex place-items-center text-lg font-bold text-amber-400">
             <MdCalendarMonth className="size-5 pr-1" />
             Working Hours
@@ -57,7 +57,7 @@ export default function Footer() {
             <ExternalLinkIcon className="pb-1" />
           </Link>
 
-          <h2 className="flex place-items-center text-lg font-bold text-amber-400 pt-2">
+          <h2 className="flex place-items-center text-lg font-bold text-amber-400 pt-8 md:pt-2">
             <MdWeb className="size-5 pr-1" />
             Socials
           </h2>
