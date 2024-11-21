@@ -1,21 +1,21 @@
 import { Divider, Image, Text, useColorModeValue } from '@chakra-ui/react';
 import styled from '@emotion/styled';
+import { DM_Serif_Text } from '@next/font/google';
 import Link from 'next/link';
 
-// Font
-import { Roboto } from '@next/font/google';
-import localFont from '@next/font/local';
-
-const sought = localFont({ src: '../fonts/sought.otf' });
-const roboto = Roboto({ weight: ['300', '400'], subsets: ['latin'] });
+const dmSerifText = DM_Serif_Text({
+  weight: ['400'],
+  subsets: ['latin-ext'],
+  style: 'normal',
+});
 
 const LogoBox = styled.div`
   display: inline-flex;
   align-items: center;
   height: 50px;
-  font-size: 18px;
+  font-size: 24px;
   font-smooth: always;
-  letter-spacing: 0.1px;
+  letter-spacing: 0.2px;
   padding: 0 0 0 40px;
   @media (max-width: 768px) {
     font-size: 22px;
@@ -44,7 +44,7 @@ const Logo = () => {
         <Text
           ml={2}
           color={'rgba(250, 175, 58, 1)'}
-          className={sought.className}
+          className={dmSerifText.className}
           display={{ base: 'none', md: 'flex' }}
         >
           Resonate with Yourself

@@ -53,7 +53,7 @@ const Home: NextPage = () => {
                 base: `calc(${height}px - 4rem)`,
                 md: 'calc(100vh - 4rem)',
               }}
-              className={styles['intro-image']}
+              className="relative"
               display={'flex'}
               justifyContent={'center'}
               alignItems={'center'}

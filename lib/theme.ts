@@ -15,6 +15,10 @@ const styles = {
   }),
 };
 
+const fonts = {
+  heading: 'DM Serif Text',
+};
+
 const components = {
   Heading: {
     variants: {
@@ -65,5 +69,5 @@ const config = {
   useSystemColorMode: true,
 };
 
-const theme = extendTheme({ config, styles, components, colors });
+const theme = extendTheme({ config, styles, components, colors, fonts });
 export default theme;

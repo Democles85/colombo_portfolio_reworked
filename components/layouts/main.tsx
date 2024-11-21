@@ -2,7 +2,10 @@ import Head from 'next/head';
 import { Box } from '@chakra-ui/react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
+import { DM_Serif_Text } from '@next/font/google';
 import { FloatingWhatsApp } from 'react-floating-whatsapp';
+
+const dmSerifText = DM_Serif_Text({ weight: ['400'], subsets: ['latin'] });
 
 type MainProps = {
   children: React.ReactNode;
@@ -11,7 +14,7 @@ type MainProps = {
 
 const Main = ({ children, router }: MainProps) => {
   return (
-    <Box as={'main'}>
+    <Box as={'main'} className={dmSerifText.className}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
