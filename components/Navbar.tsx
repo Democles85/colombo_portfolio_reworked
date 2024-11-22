@@ -133,6 +133,7 @@ const Navbar = (props: any) => {
           alignItems={'center'}
           justifyContent={'left'}
           flexGrow={1}
+          fontSize={'lg'}
         >
           <LinkItem href="/" path={path} _target={''}>
             Home
@@ -246,6 +247,18 @@ const Navbar = (props: any) => {
                           justifyContent="center"
                           textAlign="center"
                         >
+                          <NextLink passHref href="/services">
+                            <Button
+                              variant="link"
+                              onClick={onClose}
+                              width="100%"
+                              py="2"
+                              fontWeight="light"
+                              fontSize="18px"
+                            >
+                              All Therapies
+                            </Button>
+                          </NextLink>
                           <NextLink passHref href="/services/bodywork">
                             <Button
                               variant="link"
@@ -307,6 +320,18 @@ const Navbar = (props: any) => {
                               fontSize="18px"
                             >
                               Sound Healing
+                            </Button>
+                          </NextLink>
+                          <NextLink passHref href="/services/breathwork">
+                            <Button
+                              variant="link"
+                              onClick={onClose}
+                              width="100%"
+                              py="2"
+                              fontWeight="light"
+                              fontSize="18px"
+                            >
+                              Breathwork
                             </Button>
                           </NextLink>
                         </AccordionPanel>

@@ -55,20 +55,16 @@ const Home: NextPage = () => {
               }}
               className="relative"
               display={'flex'}
-              justifyContent={'center'}
+              justifyContent={'flex-start'}
               alignItems={'center'}
               flexDir={'column'}
             >
               <Section delay={0.5}>
                 <Heading
-                  color={'#fff'}
-                  textAlign={'center'}
-                  letterSpacing={'narrow'}
-                  width={'full'}
-                  paddingX={'3rem'}
                   maxWidth={'container.lg'}
                   fontSize={{ base: '1.5rem', md: '2rem' }}
-                  textShadow={'0 4px 4px rgba(0, 0, 0, 0.25)'}
+                  textShadow={'0 6px 2px rgba(0, 0, 0, 0.25)'}
+                  className="bg-amber-500/5 text-[#ffbd5b] text-center tracking-tight w-full p-12 backdrop-blur-sm rounded-md border border-amber-500/20"
                 >
                   ACCEPT THE WHOLE UNIVERSE
                 </Heading>
@@ -235,7 +231,7 @@ const Home: NextPage = () => {
                 </Box>
               </Box> */}
 
-              <Box py={'2rem'}>
+              <Box className="py-2 mb-24 md:mb-24">
                 <Link href={'/about'} className="no-underline">
                   <Button label="Connect With Me" />
                 </Link>

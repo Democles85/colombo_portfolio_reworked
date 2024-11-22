@@ -2,10 +2,10 @@ import Head from 'next/head';
 import { Box } from '@chakra-ui/react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
-import { DM_Serif_Text } from '@next/font/google';
 import { FloatingWhatsApp } from 'react-floating-whatsapp';
-
-const dmSerifText = DM_Serif_Text({ weight: ['400'], subsets: ['latin'] });
+import { BsWhatsapp } from 'react-icons/bs';
+import Link from 'next/link';
+import WhatsAppPulseButton from '../ui/whatsapp-button';
 
 type MainProps = {
   children: React.ReactNode;
@@ -14,7 +14,7 @@ type MainProps = {
 
 const Main = ({ children, router }: MainProps) => {
   return (
-    <Box as={'main'} className={dmSerifText.className}>
+    <Box as={'main'}>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
@@ -60,15 +60,7 @@ const Main = ({ children, router }: MainProps) => {
       <Box maxWidth="full" minH={'100vh'}>
         {children}
       </Box>
-      <FloatingWhatsApp
-        phoneNumber="34624468501"
-        accountName="Resonate with Yourself"
-        avatar="rwy-whatsapp-logo.png"
-        className="text-black"
-        placeholder="Type your message here..."
-        chatMessage={`Hola 🌠\nIt's great to connect! Let me know your questions or book a session. I'll respond as soon as I can.`}
-        chatboxHeight={380}
-      />
+      <WhatsAppPulseButton phoneNumber={34624468501} />
       <Footer />
     </Box>
   );

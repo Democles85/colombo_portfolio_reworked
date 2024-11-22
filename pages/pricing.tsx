@@ -56,10 +56,6 @@ const Pricing = () => {
                   Due to the focused nature of this work, I offer only two
                   sessions per day. For this reason, it is strongly recommended
                   to secure your session and avoid last-minute cancellations.
-                  <span className="italic">
-                    Please only contact if you are really serious to work with
-                    me and can commit to it.
-                  </span>
                 </Text>
 
                 <Text className="text-justify italic pt-4 indent-[1em] text-base md:text-lg lg:text-xl">
@@ -96,7 +92,7 @@ const Pricing = () => {
               justifyContent={'center'}
               py={'3rem'}
             >
-              <Link href={'/contact'}>
+              <Link href={'/contact'} className="py-2 mb-24 md:mb-24">
                 <Button label={'Contact Me'} />
               </Link>
             </Box>

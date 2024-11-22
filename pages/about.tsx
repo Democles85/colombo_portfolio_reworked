@@ -50,13 +50,10 @@ const About = () => {
             >
               <Section delay={0.5}>
                 <Heading
-                  color={'#fff'}
-                  textAlign={'center'}
-                  letterSpacing={'narrow'}
-                  width={'full'}
-                  paddingX={'3rem'}
                   maxWidth={'container.lg'}
                   fontSize={{ base: '1.5rem', md: '2rem' }}
+                  textShadow={'0 6px 2px rgba(0, 0, 0, 0.25)'}
+                  className="text-[#ffbd5b] text-center tracking-tight w-full px-12"
                 >
                   After all my travels across the entire Universe, I found
                   nothing more beautiful that this reality, and that is why I
@@ -158,6 +155,19 @@ const About = () => {
                 </span>{' '}
                 you simply experience what the universe is. It is not you, but
                 it is the universe itself that will flow through you.
+              </Box>
+
+              <Box className="flex w-full justify-center mt-8 mb-24 md:mb-24">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/D8y6v2v6H74?si=QDhc6NMgimZ6vp0m"
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                  className="self-center rounded-md border border-amber-500"
+                />
               </Box>
             </Box>
           </Container>

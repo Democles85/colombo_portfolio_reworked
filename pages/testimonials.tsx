@@ -33,7 +33,6 @@ import countryList from 'react-select-country-list';
 import { getWindowSize } from '../lib/getWindowSize';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import Layout from '../components/layouts/title';
-import NodeCache from 'node-cache';
 
 import 'react-multi-carousel/lib/styles.css';
 import 'slick-carousel/slick/slick.css';
@@ -571,20 +570,13 @@ const Testimonials = ({ testimonials }: TestimonialTypes) => {
 
 export default Testimonials;
 
-const cache = new NodeCache({ stdTTL: 600 }); // Cache for 10 minutes
-
-export async function getServerSideProps() {
-  let testimonials = cache.get('testimonials');
-  console.log(testimonials);
-
-  if (!testimonials) {
-    testimonials = (await getTestimonials()) || [];
-    cache.set('testimonials', testimonials);
-  }
+export async function getStaticProps() {
+  let testimonials = await getTestimonials();
 
   return {
     props: {
       testimonials,
     },
+    revalidate: 60,
   };
 }

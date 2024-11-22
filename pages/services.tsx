@@ -104,7 +104,7 @@ const Services = () => {
               ))}
             </SimpleGrid>
 
-            <Box textAlign={'center'} py={'4rem'}>
+            <Box textAlign={'center'} py={'4rem'} className="mb-24 md:mb-24">
               <Link href={'/pricing'} className="no-underline">
                 <Button label="Book Your Session" />
               </Link>

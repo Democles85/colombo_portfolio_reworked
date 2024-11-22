@@ -13,7 +13,7 @@ const LogoBox = styled.div`
   display: inline-flex;
   align-items: center;
   height: 50px;
-  font-size: 24px;
+  font-size: 28px;
   font-smooth: always;
   letter-spacing: 0.2px;
   padding: 0 0 0 40px;
