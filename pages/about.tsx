@@ -1,24 +1,10 @@
-import {
-  Box,
-  Container,
-  Heading,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react';
 import React from 'react';
-
-// Components
-import Section from '../components/Section';
-
-// Styles
-import styles from '../styles/About.module.css';
-
-// Layout
-import Layout from '../components/layouts/title';
-
-// Data
-import data from '../util/about';
+import { Box, Container, Heading, Text } from '@chakra-ui/react';
 import { getWindowSize } from '../lib/getWindowSize';
+import Section from '../components/Section';
+import styles from '../styles/About.module.css';
+import Layout from '../components/layouts/title';
+import data from '../util/about';
 
 const About = () => {
   const about = data.about;

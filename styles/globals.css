@@ -42,3 +42,39 @@ body {
   animation-timing-function: ease-out;
   animation-iteration-count: infinite;
 }
+
+.scroll-element::before,
+.scroll-element::after {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 2px;
+  border-top: transparent;
+  border-left: transparent;
+  animation: scroll 4s ease-in-out infinite;
+}
+
+.scroll-element::after {
+  top: 80%;
+  animation-delay: 2s;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.5);
+  }
+}
