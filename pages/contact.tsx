@@ -52,7 +52,7 @@ const Contact = () => {
     { value: 'male', label: 'Male' },
   ];
 
-  const isDesktop = useMediaQuery('(min-width: 1024px)');
+  const isMobile = useMediaQuery('(max-width: 767px)');
 
   const emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   const phoneFormat = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/;
@@ -249,7 +249,7 @@ const Contact = () => {
                   </List>
                 </Box>
 
-                {!isDesktop && (
+                {isMobile && (
                   <Divider orientation="horizontal" className="mt-4" />
                 )}
 
@@ -276,7 +276,7 @@ const Contact = () => {
                   </List>
                 </Box>
 
-                {!isDesktop && (
+                {isMobile && (
                   <Divider orientation="horizontal" className="mt-4" />
                 )}
               </Box>
