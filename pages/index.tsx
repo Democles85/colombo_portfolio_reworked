@@ -64,7 +64,7 @@ const Home: NextPage = () => {
                   maxWidth={'container.lg'}
                   fontSize={{ base: '1.5rem', md: '2rem' }}
                   textShadow={'0 6px 2px rgba(0, 0, 0, 0.25)'}
-                  className="bg-amber-500/5 text-[#ffbd5b] text-center tracking-tight w-full p-12 backdrop-blur-sm rounded-md border border-amber-500/20"
+                  className="text-[#ffbd5b] text-center tracking-tight w-full p-12"
                 >
                   ACCEPT THE WHOLE UNIVERSE
                 </Heading>
@@ -95,27 +95,6 @@ const Home: NextPage = () => {
             minH={'100vh'}
             paddingTop={'4rem'}
           >
-            <Box
-              textStyle="h1"
-              borderRadius="lg"
-              p={5}
-              background="rgba(245,166,35,0.25)"
-              boxShadow="0 8px 32px 0 rgba(245,166,35, 0.15)"
-              border="1px solid rgba(255,255,255, 0.18)"
-              maxW="container.md"
-              marginBottom={'1rem'}
-            >
-              <Text
-                fontWeight={'medium'}
-                fontSize={[18, null, 20]}
-                letterSpacing="tight"
-              >
-                ”This entire journey is about expanding our consciousness. It's
-                a vast ocean of energy in which we must continuously immerse
-                ourselves to understand who we truly are, because along this
-                path, we will constantly evolve and redefine who we are.”
-              </Text>
-            </Box>
             <Box py={'1rem'}>
               <Heading
                 as={'h2'}
@@ -187,49 +166,6 @@ const Home: NextPage = () => {
               </Heading>
 
               <QuoteSlider bookQuotes={bookQuotes} />
-
-              {/* <Box pt={'3rem'}>
-                <Paragraph>
-                  The{' '}
-                  <span
-                    style={{
-                      textDecorationColor: 'rgba(250, 175, 58, 1)',
-                      color: 'rgba(250, 175, 58, 1)',
-                      textUnderlineOffset: '0.2rem',
-                      fontWeight: 'bold',
-                    }}
-                  >
-                    modalities
-                  </span>{' '}
-                  of reaching the state of resonating with yourself are:{' '}
-                </Paragraph>
-
-                <Box py={'1rem'}>
-                  {modalities.map((modality, index) => (
-                    <Box
-                      key={index}
-                      className={styles.hidden}
-                      display={'flex'}
-                      alignItems={'center'}
-                      justifyContent={'flex-start'}
-                      pl={'1rem'}
-                    >
-                      <List>
-                        <ListItem
-                          fontSize={{ base: '1rem', md: '1.2rem' }}
-                          textIndent={'1rem'}
-                        >
-                          <ListIcon
-                            as={VscCircleFilled}
-                            color={'rgba(250, 175, 58, 1)'}
-                          />
-                          {modality.name}
-                        </ListItem>
-                      </List>
-                    </Box>
-                  ))}
-                </Box>
-              </Box> */}
 
               <Box className="py-2 mb-24 md:mb-24">
                 <Link href={'/about'} className="no-underline">

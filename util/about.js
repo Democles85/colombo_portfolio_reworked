@@ -4,14 +4,15 @@ const data = {
       paragraph: (
         <>
           <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>
-            In my path of healing
+            In my journey of self-healing and as a seeker of silent knowledge
           </span>
-          , as a seeker of knowledge, I found nothing more sacred than
-          consciously touching the body in a divine way, full of energy and
-          love. I understood that healing comes through the body, as our entire
-          story is within our bodies. The world is tired of healing
-          philosophies, so there is a great need for something alive to shake
-          us, make us feel and give us life.
+          , I found nothing more sacred than consciously touching the body in a
+          divine way with energy and love. I realized that our healing comes
+          through the connection of body, mind, and spirit, as our entire
+          history is embedded within our physical, emotional, and spiritual
+          bodies. I was tired of all the salvation philosophies, sensing that
+          the world is more in need of something sensible that makes us feel
+          alive and gives us life.
         </>
       ),
     },
@@ -19,13 +20,29 @@ const data = {
       paragraph: (
         <>
           <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>
-            Ever since I was a child
+            My life has been an alchemy of emotions
           </span>
-          , I have been quite intuitive. This was further amplified when I
-          started determining people&apos;s characters without knowing anything
-          about them. Something spiritual burned inside me and I spent a large
-          amount of time believing I should chase this gift within me. The scent
-          of a fresh and spiritual person has always been alive within my eyes.
+          , in which I feel I was blessed for that which came my way. From
+          childhood, I would dive into silence within myself, feeling a
+          spiritual calling that I kept hidden for many years.
+        </>
+      ),
+    },
+    {
+      paragraph: (
+        <>
+          <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>At 25</span>,
+          after a colorful and eventful life, I moved to Iceland. There,
+          everything I had accumulated since childhood erupted in a divine
+          manner amidst the volcanic mountains of Akureyri. From that day on, I
+          was not the same. I experienced four blessed months, slipping into
+          divine dimensions and exploring various states of consciousness. It
+          was an expansion of consciousness, a psychic shock, and a divine
+          blessing that burst my heart open with ecstasy. I spent a long time
+          processing and understanding everything that had unfolded within me.
+          Everything became transparent to me, and I became highly sensitive to
+          reality. I can say that divine, high-frequency energies remained for a
+          long time, healing me.
         </>
       ),
     },
@@ -33,13 +50,11 @@ const data = {
       paragraph: (
         <>
           <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>
-            After a very colorful life
+            A full inner belief that what was happening to me was a blessing
           </span>
-          , my affinity for fine energies was enriched, as I had managed to
-          connect with my higher self. Not long after, living like that became
-          the new normal, and I started to understand myself, reality, and
-          everything that surrounded me. The more I familiarized myself with
-          this gift, the more wonders I saw.
+          , was a fine thread that reassured me I was not losing my mind.
+          Humbleness and conciousness became my pillars, making me allow and
+          comprehend all that was happening.
         </>
       ),
     },
@@ -47,36 +62,22 @@ const data = {
       paragraph: (
         <>
           <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>
-            In my spiritual development
+            After four months in Iceland
           </span>
-          , this feeling deepened, making me able to sense even finer energies,
-          such as hidden traumas or shadows, understanding them on a spiritual
-          level. I created portfolios of a kind, which I dubbed “energy
-          passports” for everyone I met; who that person was, what their divine
-          gifts were, and what aspects of themselves should they work on.
-        </>
-      ),
-    },
-    {
-      paragraph: (
-        <>
-          <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>In 2018</span>,
-          I spent 4 months on Iceland, where I tapped into higher divine
-          energies and I was no longer the same. I dove into a sea of
-          consciousness, where my heart opened and made me more sensitive to
-          this reality.
-        </>
-      ),
-    },
-    {
-      paragraph: (
-        <>
-          <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>
-            4 months later
-          </span>
-          , I moved to Spain and reflected on what happened to me. After a long
-          series of meditations and spiritual journeys, I started experimenting
-          on energy work.
+          , , I moved to Spain, still reflecting on what had happened. Through
+          meditation and deep inner journeys, I began experimenting with energy
+          work on myself at a multidimensional level. Seeking understanding, I
+          looked for similar spiritual people online and connected with many who
+          had experienced mystical and spiritual phenomena. I delved deeply into
+          studying quantum physics, shamanic wisdom, Hinduism, Buddhism, and
+          other traditions and their approach to energy work. Following numerous
+          teachers, including Elliot Saxby and Chris Bale, I enriched myself. In
+          September 2024, I attended a three-week training with Elliot Saxby,
+          observing, learning, and navigating what resonated with me. The
+          greatest gift I received from this course was learning to love even
+          more what I myself had created as something compatible and authentic
+          to me. For this, I am deeply grateful to Elliot Saxby as an authentic
+          teacher.
         </>
       ),
     },
@@ -84,14 +85,18 @@ const data = {
       paragraph: (
         <>
           <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>
-            Later, I moved to Italy{' '}
+            After two years in Spain
           </span>
-          where I experienced an intimate encounter with the universe. As a
-          divine experience that requires dedication, humility, and respect, I
-          will dedicate a book to my entire spiritual experience. What does this
-          all mean to my heart, you may ask me? It's nothing more than me
-          following my heart in an authentic way, while letting the universe
-          flow.
+          , I temporarily moved to Italy. For months, I lived a nocturnal
+          lifestyle, staying awake at night and sleeping during the day. I
+          continued meditated for hours, purging myself deeply. During this
+          time, I experienced an intimate encounter with the universe—a divine
+          experience requiring devotion, humility, and respect. I have dedicated
+          a book to this spiritual journey, titled{' '}
+          <span className="italic">
+            “I Tore My Soul Apart to Become Divine”
+          </span>
+          .
         </>
       ),
     },
@@ -99,11 +104,26 @@ const data = {
       paragraph: (
         <>
           <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>
-            After everything that happened to me
+            Through everything that happened to me
           </span>
-          , I felt and understood what it means to understand energy. I realized
-          that in all Bodywork sessions, everyone is prone for transformation,
-          there is only a need for someone with a supporting consciousness.
+          , I finally understood what it means to comprehend energy. In 2021, I
+          returned to my homeland, seeking like-minded individuals. I spoke with
+          many wonderful people but sensed that some were in delusion,
+          discussing spirituality without having had genuine mystical
+          experiences. To avoid judgment, for them and from them, I distanced
+          myself. I began experimenting with close friends, realizing that
+          everyone is capable of transformation; they only need someone who
+          approaches them with love and understand humans in their dimensions.
+        </>
+      ),
+    },
+    {
+      paragraph: (
+        <>
+          <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>In 2021</span>,
+          I opened my first studio, supporting over 1,500 people over four
+          years. In November 2024, I relocated to Málaga, Spain to continue
+          supporting others through my work with lots of love.
         </>
       ),
     },
@@ -111,14 +131,11 @@ const data = {
       paragraph: (
         <>
           <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>
-            In February of 2020
+            I have created an advanced session that is intuitively crafted with
+            great care
           </span>
-          , I started supporting people professionally in a Holistic way, while
-          applying: Self Awareness, Authentic Massage, Authentic Bodywork,
-          Kundalini Bodywork, Advance Energetic Bodywork, Authentic Healing,
-          Spiritual Bodywork, De-Armouring, Breathwork, Emotional Release,
-          Trauma Release, Shadows, Prana Healing, Reiki, Duality & Non-Duality,
-          Feminine & Masculine, Polarity, Sound Healing, P.T.S.D., Medium.
+          , lasting between two and four hours. It is a deeply transformative
+          experience for those seeking something authentic and profound.
         </>
       ),
     },
@@ -126,13 +143,14 @@ const data = {
       paragraph: (
         <>
           <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>
-            To all who want to work on themselves through me,{' '}
+            For all who wish to work on themselves with my guidance
           </span>
-          this is transformable work. After many experiences and gifts from the
-          universe, I am equipped to support people on every level and
-          dimension, such as various psychic needs, blocks, traumas, etc., as
-          well as support higher energies that want to awaken. Every session is
-          lively, deep, and full of energy.
+          , this is a pure, authentic energetic surgery. With the wealth of
+          experiences and blessings the universe has gifted me, I am equipped to
+          support people at every level and dimension, addressing psychic needs,
+          blockages, traumas, and beyond, while nurturing higher energies
+          seeking awakening. Each session is alive, profound, and full of
+          energy.
         </>
       ),
     },

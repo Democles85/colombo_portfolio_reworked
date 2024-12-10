@@ -54,7 +54,7 @@ export const homeData: GeneralData[] = [
     paragraph: (
       <>
         <Link
-          href="/services"
+          href="/about"
           style={{
             color: '#ffaf36',
             fontWeight: 'bold',

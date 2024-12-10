@@ -25,7 +25,7 @@ export default function Footer() {
   return (
     <>
       <Box borderTop={'1px solid rgba(255, 255, 255, 0.3)'} className="py-6">
-        <div className="grid mx-auto max-w-[1080px] place-items-center p-4 grid-cols-1 md:grid-cols-3 gap-y-8 md:p-8 md:gap-x-4 md:gap-y-4">
+        <div className="grid mx-auto max-w-[1280px] place-items-center p-4 grid-cols-1 md:grid-cols-3 gap-y-8 md:p-8 md:gap-x-4 md:gap-y-4">
           <div className="text-md text-justify max-w-80">
             Resonate with yourself is an energetic surgery to help you remove
             all your body's blocks through advanced massage alternated with

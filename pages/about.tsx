@@ -51,7 +51,7 @@ const About = () => {
               <Section delay={0.5}>
                 <Heading
                   maxWidth={'container.lg'}
-                  fontSize={{ base: '1.5rem', md: '2rem' }}
+                  fontSize={{ base: '1.5rem', md: '1.75rem' }}
                   textShadow={'0 6px 2px rgba(0, 0, 0, 0.25)'}
                   className="text-[#ffbd5b] text-center tracking-tight w-full px-12"
                 >
@@ -144,6 +144,7 @@ const About = () => {
                 ))}
               </Container>
               <Box py={'2rem'}>
+                What you are looking for is looking for you,{' '}
                 <span
                   style={{
                     fontStyle: 'italic',
@@ -151,10 +152,8 @@ const About = () => {
                     color: '#FFAF36',
                   }}
                 >
-                  The definition is that there is no definition,
-                </span>{' '}
-                you simply experience what the universe is. It is not you, but
-                it is the universe itself that will flow through you.
+                  resonate with yourself.
+                </span>
               </Box>
 
               <Box className="flex w-full justify-center mt-8 mb-24 md:mb-24">
