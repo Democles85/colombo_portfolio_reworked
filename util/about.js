@@ -64,7 +64,7 @@ const data = {
           <span style={{ color: '#FFAF36', fontWeight: 'bold' }}>
             After four months in Iceland
           </span>
-          , , I moved to Spain, still reflecting on what had happened. Through
+          , I moved to Spain, still reflecting on what had happened. Through
           meditation and deep inner journeys, I began experimenting with energy
           work on myself at a multidimensional level. Seeking understanding, I
           looked for similar spiritual people online and connected with many who
