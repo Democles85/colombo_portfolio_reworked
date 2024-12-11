@@ -142,7 +142,7 @@ const About = () => {
                 </span>
               </Box>
 
-              <Box className="flex w-full justify-center mt-8 mb-24 md:mb-24">
+              {/* <Box className="flex w-full justify-center mt-8 mb-24 md:mb-24">
                 <iframe
                   width="560"
                   height="315"
@@ -153,7 +153,7 @@ const About = () => {
                   allowFullScreen
                   className="self-center rounded-md border border-amber-500"
                 />
-              </Box>
+              </Box> */}
             </Box>
           </Container>
         </Section>

@@ -32,10 +32,7 @@ const Pricing = () => {
         <Section>
           <Box
             background={`url(/works/pricing_thumbnail.jpg)`}
-            backgroundSize={'cover'}
-            backgroundPosition={'center'}
-            backgroundRepeat={'no-repeat'}
-            position={'relative'}
+            className="relative !bg-no-repeat !bg-center !bg-cover md:!bg-[center_calc(100%_+_20rem)]"
           >
             <Box
               minHeight={{
@@ -151,10 +148,10 @@ const Pricing = () => {
 
                 <Box className="py-2 my-16 border-l border-gray-100 pl-4">
                   <Text className="text-lg">
-                    <span className="text-[#ffbd5b] font-bold inline-flex items-center">
-                      <MdArrowRightAlt />
-                      For individuals
-                    </span>{' '}
+                    <span className="text-[#ffbd5b] font-bold md:text-2xl">
+                      &#x2192; For individuals
+                    </span>
+                    <br />
                     committed to deep, ongoing transformation, I offer packages
                     that bring greater alignment and resonance to your life:
                   </Text>
@@ -194,12 +191,12 @@ const Pricing = () => {
 
                 <Box className="py-2 my-16 border-l border-gray-100 pl-4">
                   <Text className="text-lg">
-                    <span className="text-[#ffbd5b] font-bold inline-flex items-center">
-                      <MdArrowRightAlt />
-                      For couples{' '}
+                    <span className="text-[#ffbd5b] font-bold md:text-2xl">
+                      &#x2192; For couples{' '}
                     </span>{' '}
+                    <br />
                     <span className="text-white font-bold">
-                      in Shared Journeys{' '}
+                      in Shared Journeys
                     </span>
                     , deepening their connection and exploring the profound
                     resonance of shared healing with their partners:
@@ -234,13 +231,12 @@ const Pricing = () => {
 
                 <Box className="py-2 my-16 border-l border-gray-100 pl-4">
                   <Text className="text-lg">
-                    <span className="text-[#ffbd5b] font-bold inline-flex items-center">
-                      <MdArrowRightAlt />
-                      Dimensional Surgery{' '}
-                    </span>{' '}
+                    <span className="text-[#ffbd5b] font-bold md:text-2xl">
+                      &#x2192; Dimensional Surgery
+                    </span>
                   </Text>
 
-                  <Text className="text-base md:text-lg lg:text-xl indent-[1em] pb-4">
+                  <Text className="text-base md:text-lg lg:text-xl pb-4">
                     Dimensional surgery directly addresses individuals who are
                     unable to process various psychological states, are
                     experiencing{' '}
@@ -251,7 +247,7 @@ const Pricing = () => {
                     currently navigating through them.
                   </Text>
 
-                  <Text className="text-base md:text-lg lg:text-xl indent-[1em] pb-4">
+                  <Text className="text-base md:text-lg lg:text-xl pb-4">
                     It is also designed for those who have undergone{' '}
                     <span className="font-bold">psychedelic</span>
                     experiences and are struggling to process the new{' '}
@@ -260,13 +256,13 @@ const Pricing = () => {
                     cannot find a way forward.
                   </Text>
 
-                  <Text className="text-base md:text-lg lg:text-xl indent-[1em] pb-4">
+                  <Text className="text-base md:text-lg lg:text-xl pb-4">
                     What I do first is an assessment of your dimension—to
                     understand where you are, what has happened to you, and
                     whether this involves expansion or a lack of processing.
                   </Text>
 
-                  <Text className="text-base md:text-lg lg:text-xl indent-[1em] pb-4">
+                  <Text className="text-base md:text-lg lg:text-xl pb-4">
                     As a psychic surgeon, I integrate my own energetic
                     dimensions to unblock or expand your psyche. Based on the
                     depth and nature of the process, we proceed through sessions
@@ -274,14 +270,14 @@ const Pricing = () => {
                     majority of the work takes place on the physical body.
                   </Text>
 
-                  <Text className="text-base md:text-lg lg:text-xl indent-[1em] pb-4">
+                  <Text className="text-base md:text-lg lg:text-xl pb-4">
                     The integration of psychic surgery, energetic field surgery,
                     and advanced sound healing and bodywork creates an alchemy
                     to assist you in unblocking, cleansing, and balancing your
                     energy.
                   </Text>
 
-                  <Text className="text-base md:text-lg lg:text-xl indent-[1em]">
+                  <Text className="text-base md:text-lg lg:text-xl">
                     This is a session for those courageous souls who are
                     exploring the depths of their spirit. Monetary value is less
                     important to me than your state, so we will put a fee
