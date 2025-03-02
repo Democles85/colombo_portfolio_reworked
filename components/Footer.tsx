@@ -50,11 +50,11 @@ export default function Footer() {
               <MdLocationPin className="size-5 pr-1" /> Location
             </h2>
             <Link
-              href="https://maps.app.goo.gl/GnwKoqgz3ireMdEw8"
+              href="https://maps.app.goo.gl/iFhXUErahdNrtKZp8"
               target="_blank"
               className="text-amber-600"
             >
-              Pl. Eduardo Dato, Bailén-Miraflores, 29011 Málaga, Spain{' '}
+              Valencia Russafa, 46004 València, Spain{' '}
               <ExternalLinkIcon className="pb-1" />
             </Link>
 
