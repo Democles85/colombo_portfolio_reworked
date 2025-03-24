@@ -5,6 +5,7 @@ import {
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
+  Badge,
   Box,
   Button,
   Container,
@@ -40,26 +41,13 @@ interface LinkItemProps {
   children: React.ReactNode;
 }
 
-const LinkItem = ({
-  href,
-  path,
-  _target,
-  children,
-  ...props
-}: LinkItemProps) => {
+const LinkItem = ({ href, path, _target, children, ...props }: LinkItemProps) => {
   const active = path === href || path.includes(href + '/');
   const inactiveColor = useColorModeValue('gray.800', 'whiteAlpha.900');
 
   return (
-    <Link
-      fontWeight={active ? 'bold' : 'normal'}
-      p={2}
-      color={inactiveColor}
-      _hover={{ textDecoration: 'none', cursor: 'default' }}
-      target={_target}
-      href={href}
-    >
-      <Text
+    <Link fontWeight={active ? 'bold' : 'normal'} p={2} color={inactiveColor} _hover={{ textDecoration: 'none', cursor: 'default' }} target={_target} href={href}>
+      <Box
         position={'relative'}
         className={active ? styles['text-gradient'] : undefined}
         _after={{
@@ -71,8 +59,7 @@ const LinkItem = ({
           height: '2px',
           bottom: 0,
           left: '-10%',
-          background:
-            'linear-gradient(90deg,rgba(255, 175, 58, 1) 25%,rgba(204, 101, 0, 1) 50%,rgba(255, 165, 0, 1) 75%) 0 0 / 400% 100%',
+          background: 'linear-gradient(90deg,rgba(255, 175, 58, 1) 25%,rgba(204, 101, 0, 1) 50%,rgba(255, 165, 0, 1) 75%) 0 0 / 400% 100%',
           transformOrigin: 'left center',
           animation: 'gradient 4s linear infinite',
           transition: 'transform 0.25s ease-out',
@@ -92,7 +79,7 @@ const LinkItem = ({
         }}
       >
         {children}
-      </Text>
+      </Box>
     </Link>
   );
 };
@@ -103,23 +90,8 @@ const Navbar = (props: any) => {
   const firstField = React.useRef();
 
   return (
-    <Box
-      as={'nav'}
-      position={'fixed'}
-      w={'100%'}
-      zIndex={1}
-      bg={useColorModeValue('#ffffff40', '#11111180')}
-      style={{ backdropFilter: 'blur(10px)' }}
-      {...props}
-    >
-      <Container
-        display={'flex'}
-        p={2}
-        maxW={'100%'}
-        flexWrap={'wrap'}
-        alignItems={'center'}
-        justifyContent={'space-between'}
-      >
+    <Box as={'nav'} position={'fixed'} w={'100%'} zIndex={1} bg={useColorModeValue('#ffffff40', '#11111180')} style={{ backdropFilter: 'blur(10px)' }} {...props}>
+      <Container display={'flex'} p={2} maxW={'100%'} flexWrap={'wrap'} alignItems={'center'} justifyContent={'space-between'}>
         <Flex align={'center'} mr={5}>
           <Heading as={'h1'} fontSize={'lg'} fontWeight={'normal'}>
             <Logo />
@@ -147,6 +119,14 @@ const Navbar = (props: any) => {
           <LinkItem href="/pricing" path={path} _target={''}>
             Pricing
           </LinkItem>
+          <LinkItem href="/online-healing" path={path} _target={''}>
+            <div className="relative inline-block">
+              Online Healing{' '}
+              <Badge colorScheme="orange" className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2">
+                New
+              </Badge>
+            </div>
+          </LinkItem>
           <LinkItem href="/testimonials" path={path} _target={''}>
             Testimonials
           </LinkItem>
@@ -155,18 +135,10 @@ const Navbar = (props: any) => {
           </LinkItem>
         </Stack>
 
-        <Box
-          flex={1}
-          display={'flex'}
-          justifyContent={'right'}
-          alignItems={'center'}
-        >
+        <Box flex={1} display={'flex'} justifyContent={'right'} alignItems={'center'}>
           <ThemeToggleSwitch />
 
-          <Box
-            ml={2}
-            display={{ base: 'inline-block', md: 'inline-block', lg: 'none' }}
-          >
+          <Box ml={2} display={{ base: 'inline-block', md: 'inline-block', lg: 'none' }}>
             <Button onClick={onOpen}>
               <HamburgerIcon />
             </Button>
@@ -179,13 +151,7 @@ const Navbar = (props: any) => {
               initialFocusRef={firstField}
             >
               <DrawerOverlay height="100% !important" />
-              <DrawerContent
-                bg={useColorModeValue(
-                  'rgb(240, 231, 219, 0.95)',
-                  'rgb(32, 32, 35, 0.95)'
-                )}
-                height="100% !important"
-              >
+              <DrawerContent bg={useColorModeValue('rgb(240, 231, 219, 0.95)', 'rgb(32, 32, 35, 0.95)')} height="100% !important">
                 <DrawerHeader>
                   <Text textAlign="center" color="#fcb03b">
                     Resonate With Yourself
@@ -196,11 +162,7 @@ const Navbar = (props: any) => {
                 {/* Drawer Body */}
                 <DrawerBody>
                   <VStack
-                    divider={
-                      <StackDivider
-                        borderColor={useColorModeValue('#202023', '#fcb03b')}
-                      />
-                    }
+                    divider={<StackDivider borderColor={useColorModeValue('#202023', '#fcb03b')} />}
                     spacing={5}
                     align="center"
                     fontSize="lg"
@@ -221,116 +183,48 @@ const Navbar = (props: any) => {
 
                     <Accordion allowToggle border="transparent" width="100%">
                       <AccordionItem>
-                        <AccordionButton
-                          padding="0"
-                          display="flex"
-                          justifyContent="center"
-                          alignItems="center"
-                        >
-                          <Box
-                            textAlign="center"
-                            color={useColorModeValue('#718096', '#e2e8f0')}
-                          >
+                        <AccordionButton padding="0" display="flex" justifyContent="center" alignItems="center">
+                          <Box textAlign="center" color={useColorModeValue('#718096', '#e2e8f0')}>
                             <Text fontWeight="600">Therapies</Text>
                           </Box>
                           <Box>
-                            <AccordionIcon
-                              color={useColorModeValue('#718096', '#e2e8f0')}
-                            />
+                            <AccordionIcon color={useColorModeValue('#718096', '#e2e8f0')} />
                           </Box>
                         </AccordionButton>
 
-                        <AccordionPanel
-                          display="flex"
-                          flexDir="column"
-                          alignItems="center"
-                          justifyContent="center"
-                          textAlign="center"
-                        >
+                        <AccordionPanel display="flex" flexDir="column" alignItems="center" justifyContent="center" textAlign="center">
                           <NextLink passHref href="/services">
-                            <Button
-                              variant="link"
-                              onClick={onClose}
-                              width="100%"
-                              py="2"
-                              fontWeight="light"
-                              fontSize="18px"
-                            >
+                            <Button variant="link" onClick={onClose} width="100%" py="2" fontWeight="light" fontSize="18px">
                               All Therapies
                             </Button>
                           </NextLink>
                           <NextLink passHref href="/services/bodywork">
-                            <Button
-                              variant="link"
-                              onClick={onClose}
-                              width="100%"
-                              py="2"
-                              fontWeight="light"
-                              fontSize="18px"
-                            >
+                            <Button variant="link" onClick={onClose} width="100%" py="2" fontWeight="light" fontSize="18px">
                               Bodywork
                             </Button>
                           </NextLink>
                           <NextLink passHref href="/services/de-armouring">
-                            <Button
-                              variant="link"
-                              onClick={onClose}
-                              width="100%"
-                              py="2"
-                              fontWeight="light"
-                              fontSize="18px"
-                            >
+                            <Button variant="link" onClick={onClose} width="100%" py="2" fontWeight="light" fontSize="18px">
                               De-armouring
                             </Button>
                           </NextLink>
                           <NextLink passHref href="/services/authentic-tantra">
-                            <Button
-                              variant="link"
-                              onClick={onClose}
-                              width="100%"
-                              py="2"
-                              fontWeight="light"
-                              fontSize="18px"
-                            >
+                            <Button variant="link" onClick={onClose} width="100%" py="2" fontWeight="light" fontSize="18px">
                               Authentic Energetic Bodywork
                             </Button>
                           </NextLink>
-                          <NextLink
-                            passHref
-                            href="/services/advanced-energetic-bodywork"
-                          >
-                            <Button
-                              variant="link"
-                              onClick={onClose}
-                              width="100%"
-                              py="2"
-                              fontWeight="light"
-                              fontSize="18px"
-                            >
+                          <NextLink passHref href="/services/advanced-energetic-bodywork">
+                            <Button variant="link" onClick={onClose} width="100%" py="2" fontWeight="light" fontSize="18px">
                               Advanced Energetic Bodywork
                             </Button>
                           </NextLink>
                           <NextLink passHref href="/services/sound-healing">
-                            <Button
-                              variant="link"
-                              onClick={onClose}
-                              width="100%"
-                              py="2"
-                              fontWeight="light"
-                              fontSize="18px"
-                            >
+                            <Button variant="link" onClick={onClose} width="100%" py="2" fontWeight="light" fontSize="18px">
                               Sound Healing
                             </Button>
                           </NextLink>
                           <NextLink passHref href="/services/breathwork">
-                            <Button
-                              variant="link"
-                              onClick={onClose}
-                              width="100%"
-                              py="2"
-                              fontWeight="light"
-                              fontSize="18px"
-                            >
+                            <Button variant="link" onClick={onClose} width="100%" py="2" fontWeight="light" fontSize="18px">
                               Breathwork
                             </Button>
                           </NextLink>
@@ -341,6 +235,16 @@ const Navbar = (props: any) => {
                     <NextLink href="/pricing" passHref>
                       <Button onClick={onClose} variant="link" width="100%">
                         Pricing
+                      </Button>
+                    </NextLink>
+                    <NextLink href="/online-healing" passHref>
+                      <Button onClick={onClose} variant="link" width="100%">
+                        <div className="relative inline-block">
+                          Online Healing{' '}
+                          <Badge colorScheme="orange" className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2">
+                            New
+                          </Badge>
+                        </div>
                       </Button>
                     </NextLink>
                     <NextLink href="/testimonials" passHref>
@@ -356,12 +260,7 @@ const Navbar = (props: any) => {
                   </VStack>
                 </DrawerBody>
 
-                <DrawerFooter
-                  width="100%"
-                  textAlign="center"
-                  alignItems="center"
-                  justifyContent="center"
-                >
+                <DrawerFooter width="100%" textAlign="center" alignItems="center" justifyContent="center">
                   <Button onClick={onClose}>Close</Button>
                 </DrawerFooter>
               </DrawerContent>

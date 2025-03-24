@@ -1,13 +1,4 @@
-import {
-  ListItem,
-  Text,
-  OrderedList,
-  Box,
-  ListIcon,
-  List,
-  useColorModeValue,
-  UnorderedList,
-} from '@chakra-ui/react';
+import { ListItem, Text, OrderedList, Box, ListIcon, List, useColorModeValue, UnorderedList } from '@chakra-ui/react';
 import { BsFillCircleFill } from 'react-icons/bs';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
@@ -20,8 +11,7 @@ const data = {
       title: 'Bodywork',
       slug: 'bodywork',
       thumbnail: 'colombo_resize/DSC_7190.jpg',
-      description:
-        'Bodywork is a collective term that refers to alternative medical practices involving hands-on manipulation of the body...',
+      description: 'Bodywork is a collective term that refers to alternative medical practices involving hands-on manipulation of the body...',
       content: [
         {
           paragraph: (
@@ -34,19 +24,10 @@ const data = {
               boxShadow="0 8px 32px 0 rgba(245,166,35, 0.15)"
               border="1px solid rgba(255,255,255, 0.18)"
             >
-              <Text
-                fontWeight={'medium'}
-                fontSize={[18, null, 20]}
-                letterSpacing="tight"
-              >
-                “If we are simply an extension of the universe then surely we
-                also pulsate, contract and expand. Not long after our birth /
-                contraction (or expansion depending how you see it) our muscles
-                begin holding memory of our traumas and create muscular
-                rigidities that soon design our personal &lsquo;suit of
-                armour&lsquo;. This suit of armor interrupts our pulsation /
-                energetic flow, reducing our true expression of Self and
-                blocking or hindering our creative and (life-force).”{' '}
+              <Text fontWeight={'medium'} fontSize={[18, null, 20]} letterSpacing="tight">
+                “If we are simply an extension of the universe then surely we also pulsate, contract and expand. Not long after our birth / contraction (or expansion depending how
+                you see it) our muscles begin holding memory of our traumas and create muscular rigidities that soon design our personal &lsquo;suit of armour&lsquo;. This suit of
+                armor interrupts our pulsation / energetic flow, reducing our true expression of Self and blocking or hindering our creative and (life-force).”{' '}
               </Text>
             </Box>
           ),
@@ -54,11 +35,7 @@ const data = {
         {
           paragraph: (
             <>
-              <Text
-                color={'#FFAF36'}
-                fontWeight={'bold'}
-                fontSize={{ base: '1.25rem', md: '1.5rem' }}
-              >
+              <Text color={'#FFAF36'} fontWeight={'bold'} fontSize={{ base: '1.25rem', md: '1.5rem' }}>
                 A brief explanation of how de armouring came to life.
               </Text>
             </>
@@ -67,12 +44,7 @@ const data = {
         {
           paragraph: (
             <>
-              <LazyLoadImage
-                className={styles['card-image']}
-                effect={'blur'}
-                src={'/works/bodywork_header_compressed.jpg'}
-                alt={'Sound Healing Singing Bowl'}
-              />
+              <LazyLoadImage className={styles['card-image']} effect={'blur'} src={'/works/bodywork_header_compressed.jpg'} alt={'Sound Healing Singing Bowl'} />
             </>
           ),
         },
@@ -85,8 +57,7 @@ const data = {
             'Then Reich observed that this character armour corresponded to a somatic (physical body) ‘armour,’ which consisted of the hardening of the body’s soft tissues, such as muscles. Over time, the armour hardened, causing the physical body to become less sensitized and feel less of both pain and pleasure.',
         },
         {
-          paragraph:
-            'Lastly he found that the armour could be softened by applying certain bodywork techniques. Today, his work overlaps with body-based therapies.',
+          paragraph: 'Lastly he found that the armour could be softened by applying certain bodywork techniques. Today, his work overlaps with body-based therapies.',
         },
       ],
     },
@@ -94,8 +65,7 @@ const data = {
       title: 'De armouring',
       slug: 'de-armouring',
       thumbnail: 'colombo_resize/DSC_7183.jpg',
-      description:
-        'De armouring is a way to release jams, stagnant energy, emotions and tension from the body...',
+      description: 'De armouring is a way to release jams, stagnant energy, emotions and tension from the body...',
       content: [
         {
           paragraph: (
@@ -108,19 +78,10 @@ const data = {
               boxShadow="0 8px 32px 0 rgba(245,166,35, 0.15)"
               border="1px solid rgba(255,255,255, 0.18)"
             >
-              <Text
-                fontWeight={'medium'}
-                fontSize={[18, null, 20]}
-                letterSpacing="tight"
-              >
-                “If we are simply an extension of the universe then surely we
-                also pulsate, contract and expand. Not long after our birth /
-                contraction (or expansion depending how you see it) our muscles
-                begin holding memory of our traumas and create muscular
-                rigidities that soon design our personal &lsquo;suit of
-                armour&lsquo;. This suit of armor interrupts our pulsation /
-                energetic flow reducing our true expression of Self and blocking
-                or hindering our creative and (life-force).”{' '}
+              <Text fontWeight={'medium'} fontSize={[18, null, 20]} letterSpacing="tight">
+                “If we are simply an extension of the universe then surely we also pulsate, contract and expand. Not long after our birth / contraction (or expansion depending how
+                you see it) our muscles begin holding memory of our traumas and create muscular rigidities that soon design our personal &lsquo;suit of armour&lsquo;. This suit of
+                armor interrupts our pulsation / energetic flow reducing our true expression of Self and blocking or hindering our creative and (life-force).”{' '}
               </Text>
             </Box>
           ),
@@ -128,11 +89,7 @@ const data = {
         {
           paragraph: (
             <>
-              <Text
-                color={'#FFAF36'}
-                fontWeight={'bold'}
-                fontSize={{ base: '1.25rem', md: '1.5rem' }}
-              >
+              <Text color={'#FFAF36'} fontWeight={'bold'} fontSize={{ base: '1.25rem', md: '1.5rem' }}>
                 What does De armouring accomplish?
               </Text>
             </>
@@ -145,11 +102,7 @@ const data = {
         {
           paragraph: (
             <>
-              <Text
-                color={'#FFAF36'}
-                fontWeight={'bold'}
-                fontSize={{ base: '1.25rem', md: '1.5rem' }}
-              >
+              <Text color={'#FFAF36'} fontWeight={'bold'} fontSize={{ base: '1.25rem', md: '1.5rem' }}>
                 A brief explanation of de armouring.
               </Text>
             </>
@@ -158,18 +111,12 @@ const data = {
         {
           paragraph: (
             <>
-              <LazyLoadImage
-                className={styles['card-image']}
-                effect={'blur'}
-                src={'/works/de_armouring_thumbnail_compressed.jpg'}
-                alt={'Sound Healing Singing Bowl'}
-              />
+              <LazyLoadImage className={styles['card-image']} effect={'blur'} src={'/works/de_armouring_thumbnail_compressed.jpg'} alt={'Sound Healing Singing Bowl'} />
             </>
           ),
         },
         {
-          paragraph:
-            'Detoxifying our bodies from negative emotions, is one of the kindest things that we can do for ourselves.',
+          paragraph: 'Detoxifying our bodies from negative emotions, is one of the kindest things that we can do for ourselves.',
         },
         {
           paragraph:
@@ -188,71 +135,41 @@ const data = {
             'Prevention is always better than cure, but if trauma in the body does start to manifest as physical, mental, or emotional problems, then conventional medicine, alternative medicine, and talking therapies are only a part of the answer. You still need to get the trauma out of the body.',
         },
         {
-          paragraph:
-            'Many people can achieve in several sessions of de-armouring, what it can take several years to accomplish in talking therapy.',
+          paragraph: 'Many people can achieve in several sessions of de-armouring, what it can take several years to accomplish in talking therapy.',
         },
         {
-          paragraph:
-            'In a session, I help you access this trauma, or pain, by using a range of techniques, including:',
+          paragraph: 'In a session, I help you access this trauma, or pain, by using a range of techniques, including:',
         },
         {
           paragraph: (
             <Box ml={'1rem'}>
               <List>
                 <ListItem>
-                  <ListIcon
-                    as={BsFillCircleFill}
-                    color={'#FFAF36'}
-                    width={'7px'}
-                  />
+                  <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                   Breathwork
                 </ListItem>
                 <ListItem>
-                  <ListIcon
-                    as={BsFillCircleFill}
-                    color={'#FFAF36'}
-                    width={'7px'}
-                  />
+                  <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                   Trauma Release
                 </ListItem>
                 <ListItem>
-                  <ListIcon
-                    as={BsFillCircleFill}
-                    color={'#FFAF36'}
-                    width={'7px'}
-                  />
+                  <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                   Emotional Release
                 </ListItem>
                 <ListItem>
-                  <ListIcon
-                    as={BsFillCircleFill}
-                    color={'#FFAF36'}
-                    width={'7px'}
-                  />
+                  <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                   De armouring
                 </ListItem>
                 <ListItem>
-                  <ListIcon
-                    as={BsFillCircleFill}
-                    color={'#FFAF36'}
-                    width={'7px'}
-                  />
+                  <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                   Pressure points for different energy systems
                 </ListItem>
                 <ListItem>
-                  <ListIcon
-                    as={BsFillCircleFill}
-                    color={'#FFAF36'}
-                    width={'7px'}
-                  />
+                  <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                   Chakra Cleansing
                 </ListItem>
                 <ListItem>
-                  <ListIcon
-                    as={BsFillCircleFill}
-                    color={'#FFAF36'}
-                    width={'7px'}
-                  />
+                  <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                   Aura Cleansing
                 </ListItem>
               </List>
@@ -260,8 +177,7 @@ const data = {
           ),
         },
         {
-          paragraph:
-            'and other tools, to help you access and release old emotional pain, and stuckness.',
+          paragraph: 'and other tools, to help you access and release old emotional pain, and stuckness.',
         },
       ],
     },
@@ -269,8 +185,7 @@ const data = {
       title: 'Authentic Energetic Bodywork',
       slug: 'authentic-tantra',
       thumbnail: 'colombo_resize/DSC_7218.jpg',
-      description:
-        'Authentic Energetic Bodywork is an energy form of massage first and foremost. Key energy channels are purified...',
+      description: 'Authentic Energetic Bodywork is an energy form of massage first and foremost. Key energy channels are purified...',
       content: [
         {
           paragraph: (
@@ -283,15 +198,9 @@ const data = {
               boxShadow="0 8px 32px 0 rgba(245,166,35, 0.15)"
               border="1px solid rgba(255,255,255, 0.18)"
             >
-              <Text
-                fontWeight={'medium'}
-                fontSize={[18, null, 20]}
-                letterSpacing="tight"
-              >
-                “Authentic Energetic Bodywork is an energy form of massage first
-                and foremost. Key energy channels are purified, energy centers
-                are activated and innate energy sources are channeled in a
-                specific way.”
+              <Text fontWeight={'medium'} fontSize={[18, null, 20]} letterSpacing="tight">
+                “Authentic Energetic Bodywork is an energy form of massage first and foremost. Key energy channels are purified, energy centers are activated and innate energy
+                sources are channeled in a specific way.”
               </Text>
             </Box>
           ),
@@ -299,11 +208,7 @@ const data = {
         {
           paragraph: (
             <>
-              <Text
-                color={'#FFAF36'}
-                fontWeight={'bold'}
-                fontSize={{ base: '1.25rem', md: '1.5rem' }}
-              >
+              <Text color={'#FFAF36'} fontWeight={'bold'} fontSize={{ base: '1.25rem', md: '1.5rem' }}>
                 What is Authentic Energetic Bodywork, in simpler terms?
               </Text>
             </>
@@ -316,13 +221,8 @@ const data = {
         {
           paragraph: (
             <>
-              <Text
-                color={'#FFAF36'}
-                fontWeight={'bold'}
-                fontSize={{ base: '1.25rem', md: '1.5rem' }}
-              >
-                What is Authentic Energetic Bodywork today, and how many models
-                are there?
+              <Text color={'#FFAF36'} fontWeight={'bold'} fontSize={{ base: '1.25rem', md: '1.5rem' }}>
+                What is Authentic Energetic Bodywork today, and how many models are there?
               </Text>
             </>
           ),
@@ -334,11 +234,7 @@ const data = {
         {
           paragraph: (
             <>
-              <Text
-                color={'#FFAF36'}
-                fontWeight={'bold'}
-                fontSize={{ base: '1.25rem', md: '1.5rem' }}
-              >
+              <Text color={'#FFAF36'} fontWeight={'bold'} fontSize={{ base: '1.25rem', md: '1.5rem' }}>
                 On another aspect:
               </Text>
             </>
@@ -351,11 +247,7 @@ const data = {
         {
           paragraph: (
             <>
-              <Text
-                color={'#FFAF36'}
-                fontWeight={'bold'}
-                fontSize={{ base: '1.25rem', md: '1.5rem' }}
-              >
+              <Text color={'#FFAF36'} fontWeight={'bold'} fontSize={{ base: '1.25rem', md: '1.5rem' }}>
                 Where is authentic bodywork based on for me?
               </Text>
             </>
@@ -368,11 +260,7 @@ const data = {
         {
           paragraph: (
             <>
-              <Text
-                color={'#FFAF36'}
-                fontWeight={'bold'}
-                fontSize={{ base: '1.25rem', md: '1.5rem' }}
-              >
+              <Text color={'#FFAF36'} fontWeight={'bold'} fontSize={{ base: '1.25rem', md: '1.5rem' }}>
                 How does it work?
               </Text>
             </>
@@ -385,11 +273,7 @@ const data = {
         {
           paragraph: (
             <>
-              <Text
-                color={'#FFAF36'}
-                fontWeight={'bold'}
-                fontSize={{ base: '1.25rem', md: '1.5rem' }}
-              >
+              <Text color={'#FFAF36'} fontWeight={'bold'} fontSize={{ base: '1.25rem', md: '1.5rem' }}>
                 The benefits of therapy.
               </Text>
             </>
@@ -399,35 +283,15 @@ const data = {
           paragraph: (
             <Box ml={'1rem'}>
               <OrderedList>
+                <ListItem>Reduction of mental and emotional stress, allowing us to have a clearer mind and getting rid of negative thinking patterns.</ListItem>
+                <ListItem>It allows for greater sensitivity towards the delicate flow of energy, helping us to get rid of our energetic blocks.</ListItem>
+                <ListItem>It unblocks our energetic body, making it more sensitive, helping you find things more vividly.</ListItem>
+                <ListItem>It opens the gates to our subconscious, immersing you into who you are.</ListItem>
+                <ListItem>Broadens your subconscious, letting more universal energy flow through.</ListItem>
+                <ListItem>Connects you more with the center of your heart.</ListItem>
                 <ListItem>
-                  Reduction of mental and emotional stress, allowing us to have
-                  a clearer mind and getting rid of negative thinking patterns.
-                </ListItem>
-                <ListItem>
-                  It allows for greater sensitivity towards the delicate flow of
-                  energy, helping us to get rid of our energetic blocks.
-                </ListItem>
-                <ListItem>
-                  It unblocks our energetic body, making it more sensitive,
-                  helping you find things more vividly.
-                </ListItem>
-                <ListItem>
-                  It opens the gates to our subconscious, immersing you into who
-                  you are.
-                </ListItem>
-                <ListItem>
-                  Broadens your subconscious, letting more universal energy flow
-                  through.
-                </ListItem>
-                <ListItem>
-                  Connects you more with the center of your heart.
-                </ListItem>
-                <ListItem>
-                  It serves as a trampoline into the spiritual world, and it
-                  grows our desire for more insight into the world deep within
-                  us. It creates a deep foundation to support your body and
-                  mind, but it also introduces us to new and unbelievable
-                  things. This is a different experience for everyone.
+                  It serves as a trampoline into the spiritual world, and it grows our desire for more insight into the world deep within us. It creates a deep foundation to
+                  support your body and mind, but it also introduces us to new and unbelievable things. This is a different experience for everyone.
                 </ListItem>
               </OrderedList>
             </Box>
@@ -436,33 +300,22 @@ const data = {
         {
           paragraph: (
             <>
-              <LazyLoadImage
-                className={styles['card-image']}
-                effect={'blur'}
-                src={'/works/tantra_2_min.jpg'}
-                alt={'Sound Healing Singing Bowl'}
-              />
+              <LazyLoadImage className={styles['card-image']} effect={'blur'} src={'/works/tantra_2_min.jpg'} alt={'Sound Healing Singing Bowl'} />
             </>
           ),
         },
       ],
     },
-
     {
       title: 'Advanced Energetic Bodywork',
       slug: 'advanced-energetic-bodywork',
       thumbnail: 'colombo_resize/DSC_7202.jpg',
-      description:
-        'Advanced Energetic Bodywork is an advanced session that requires preparation with several bodywork sessions...',
+      description: 'Advanced Energetic Bodywork is an advanced session that requires preparation with several bodywork sessions...',
       content: [
         {
           paragraph: (
             <>
-              <Text
-                color={'#FFAF36'}
-                fontWeight={'bold'}
-                fontSize={{ base: '1.25rem', md: '1.5rem' }}
-              >
+              <Text color={'#FFAF36'} fontWeight={'bold'} fontSize={{ base: '1.25rem', md: '1.5rem' }}>
                 How I developed my Advanced Energetic Bodywork.
               </Text>
             </>
@@ -473,75 +326,42 @@ const data = {
             'Advanced Energetic Bodywork is an advanced session that requires preparation with several bodywork sessions. This is not a requirement but a help to prepare the body before working with more advanced energy. Generally, the body needs 5 to 7 sessions, some bodies need more while some are naturally open and slip into it in the first or second session, depending on your energy.',
         },
         {
-          paragraph:
-            'In a session I work with a variety of techniques, from different modalities including:',
+          paragraph: 'In a session I work with a variety of techniques, from different modalities including:',
         },
         {
           paragraph: (
             <Box ml={'1rem'}>
               <List>
                 <ListItem>
-                  <ListIcon
-                    as={BsFillCircleFill}
-                    color={'#FFAF36'}
-                    width={'7px'}
-                  />
+                  <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                   Breathwork
                 </ListItem>
                 <ListItem>
-                  <ListIcon
-                    as={BsFillCircleFill}
-                    color={'#FFAF36'}
-                    width={'7px'}
-                  />
+                  <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                   Trauma release
                 </ListItem>
                 <ListItem>
-                  <ListIcon
-                    as={BsFillCircleFill}
-                    color={'#FFAF36'}
-                    width={'7px'}
-                  />
+                  <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                   Emotional release
                 </ListItem>
                 <ListItem>
-                  <ListIcon
-                    as={BsFillCircleFill}
-                    color={'#FFAF36'}
-                    width={'7px'}
-                  />
+                  <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                   De armouring
                 </ListItem>
                 <ListItem>
-                  <ListIcon
-                    as={BsFillCircleFill}
-                    color={'#FFAF36'}
-                    width={'7px'}
-                  />
+                  <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                   Masculine and feminine polarity work
                 </ListItem>
                 <ListItem>
-                  <ListIcon
-                    as={BsFillCircleFill}
-                    color={'#FFAF36'}
-                    width={'7px'}
-                  />
+                  <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                   Pressure points for different energy systems
                 </ListItem>
                 <ListItem>
-                  <ListIcon
-                    as={BsFillCircleFill}
-                    color={'#FFAF36'}
-                    width={'7px'}
-                  />
+                  <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                   Chakra cleansing
                 </ListItem>
                 <ListItem>
-                  <ListIcon
-                    as={BsFillCircleFill}
-                    color={'#FFAF36'}
-                    width={'7px'}
-                  />
+                  <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                   Aura cleansing
                 </ListItem>
               </List>
@@ -582,8 +402,7 @@ const data = {
       title: 'Sound Healing',
       slug: 'sound-healing',
       thumbnail: 'colombo_resize/DSC_7157.jpg',
-      description:
-        'Sound has the ability to activate parts of the subconscious brain, which can give access to unconscious memories...',
+      description: 'Sound has the ability to activate parts of the subconscious brain, which can give access to unconscious memories...',
       content: [
         {
           paragraph: (
@@ -596,18 +415,9 @@ const data = {
               boxShadow="0 8px 32px 0 rgba(245,166,35, 0.15)"
               border="1px solid rgba(255,255,255, 0.18)"
             >
-              <Text
-                fontWeight={['medium', null, 'bold']}
-                fontSize={[18, null, 24]}
-                letterSpacing="tight"
-              >
+              <Text fontWeight={['medium', null, 'bold']} fontSize={[18, null, 24]} letterSpacing="tight">
                 “Sound is the medicine of the future.”{' '}
-                <Text
-                  fontSize="lg"
-                  fontFamily="M PLUS Rounded 1c, sans-serif"
-                  fontWeight="light"
-                  textAlign="right"
-                >
+                <Text fontSize="lg" fontFamily="M PLUS Rounded 1c, sans-serif" fontWeight="light" textAlign="right">
                   – Edgar Cayce
                 </Text>
               </Text>
@@ -618,11 +428,7 @@ const data = {
         {
           paragraph: (
             <>
-              <Text
-                color={'#FFAF36'}
-                fontWeight={'bold'}
-                fontSize={{ base: '1.25rem', md: '1.5rem' }}
-              >
+              <Text color={'#FFAF36'} fontWeight={'bold'} fontSize={{ base: '1.25rem', md: '1.5rem' }}>
                 Sound is more than vibrations.
               </Text>
             </>
@@ -635,12 +441,7 @@ const data = {
         {
           paragraph: (
             <>
-              <Text
-                color={'#FFAF36'}
-                fontStyle={'italic'}
-                textAlign={'center'}
-                className={styles['text-gradient']}
-              >
+              <Text color={'#FFAF36'} fontStyle={'italic'} textAlign={'center'} className={styles['text-gradient']}>
                 "Sound can melt old frozen energy through the vibrations."
               </Text>
             </>
@@ -649,31 +450,20 @@ const data = {
         {
           paragraph: (
             <>
-              <Text
-                color={'#FFAF36'}
-                fontWeight={'bold'}
-                fontSize={{ base: '1.25rem', md: '1.5rem' }}
-              >
+              <Text color={'#FFAF36'} fontWeight={'bold'} fontSize={{ base: '1.25rem', md: '1.5rem' }}>
                 The power of sound
               </Text>
             </>
           ),
         },
         {
-          paragraph:
-            'Sound has the ability to activate parts of the subconscious brain, which can give access to unconscious memories.',
+          paragraph: 'Sound has the ability to activate parts of the subconscious brain, which can give access to unconscious memories.',
         },
         {
           paragraph: (
             <>
-              <Text
-                color={'#FFAF36'}
-                fontStyle={'italic'}
-                textAlign={'center'}
-                className={styles['text-gradient']}
-              >
-                “Sound has the ability to activate parts of the subconscious
-                brain”
+              <Text color={'#FFAF36'} fontStyle={'italic'} textAlign={'center'} className={styles['text-gradient']}>
+                “Sound has the ability to activate parts of the subconscious brain”
               </Text>
             </>
           ),
@@ -682,12 +472,7 @@ const data = {
           paragraph: (
             <>
               <Box paddingY={'1rem'}>
-                <LazyLoadImage
-                  className={styles['card-image']}
-                  effect={'blur'}
-                  src={'/works/sound_healing_header_compressed.jpg'}
-                  alt={'Sound Healing Singing Bowl'}
-                />
+                <LazyLoadImage className={styles['card-image']} effect={'blur'} src={'/works/sound_healing_header_compressed.jpg'} alt={'Sound Healing Singing Bowl'} />
               </Box>
             </>
           ),
@@ -695,11 +480,7 @@ const data = {
         {
           paragraph: (
             <>
-              <Text
-                color={'#FFAF36'}
-                fontWeight={'bold'}
-                fontSize={{ base: '1.25rem', md: '1.5rem' }}
-              >
+              <Text color={'#FFAF36'} fontWeight={'bold'} fontSize={{ base: '1.25rem', md: '1.5rem' }}>
                 The benefits of sound healing
               </Text>
             </>
@@ -707,136 +488,70 @@ const data = {
         },
         {
           paragraph: (
-            <Box
-              display={'flex'}
-              justifyContent={'space-between'}
-              textAlign={'left'}
-            >
+            <Box display={'flex'} justifyContent={'space-between'} textAlign={'left'}>
               <Box>
                 <Text fontWeight={'bold'} pb={'1rem'} textAlign={'center'}>
                   Physical Benefits
                 </Text>
                 <List spacing={'0.5rem'}>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Harmonizes the physical and psychic
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Harmonizes the physical and the mental body
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Develops a quality of harmonious well-being
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Relaxes ,calms and clears the mind
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Improves concentration and creativity
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Improves stress-related disorders and anxiety
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Improves personal development
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Makes you more self-confident
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
-                    Prepares you mentally (e.g. for exams, contests,
-                    competitions etc.)
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
+                    Prepares you mentally (e.g. for exams, contests, competitions etc.)
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Balances the immune system
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
-                    Stimulates hormonal production of endorphin,
-                    dopamine,serotonin
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
+                    Stimulates hormonal production of endorphin, dopamine,serotonin
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Stimulates energy
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Improves sleep
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Improves the sense of hearing
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Normalizes the blood pressure
                   </ListItem>
                 </List>
@@ -847,99 +562,51 @@ const data = {
                 </Text>
                 <List spacing={'0.5rem'}>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Connects you with your Higher Self
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Helps you find where you need to be working on yourself
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Gives you visions
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Opens the doors where the trauma is stored
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Connects you with your subconscious mind
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Transmutes the old energies
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Clears the energetic/auric field
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Let’s the new information to come in
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Opens layers of your heart
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Makes you more sensitive
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Awakens your third eye
                   </ListItem>
                   <ListItem>
-                    <ListIcon
-                      as={BsFillCircleFill}
-                      color={'#FFAF36'}
-                      width={'7px'}
-                    />
+                    <ListIcon as={BsFillCircleFill} color={'#FFAF36'} width={'7px'} />
                     Develops your clairvoyance
                   </ListItem>
                 </List>
@@ -953,14 +620,16 @@ const data = {
       title: 'Breathwork',
       slug: 'breathwork',
       thumbnail: 'works/breathwork_thumbnail.jpg',
-      description:
-        'Breathwork is a powerful tool for self-exploration and healing...',
+      description: 'Breathwork is a powerful tool for self-exploration and healing...',
       content: [
         {
           paragraph:
             '"Breathwork" refers to any type of breathing exercises or techniques. People often perform them to improve mental, physical, and spiritual well-being. During breathwork one intentionally changes their breathing pattern. Many people find that breathwork promotes deep relaxation or leaves them feeling energized. People practice breathwork for a variety of reasons. Overall, it brings about improvements in emotional state and to decrease levels of stress. People have practiced breathwork to aid in positive selfdevelopment and enrich creativity. Others use it to boost their immunity and improve their physical and emotional health, by helping to process emotions and trauma, as well as to help overcome addictions. Breathwork is used to treat issues such as, anxiety, chronic pain, depression, PTSD, etc.',
         },
       ],
+    },
+    {
+      title: '',
     },
   ],
 };

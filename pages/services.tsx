@@ -1,11 +1,4 @@
-import {
-  Box,
-  Container,
-  Heading,
-  SimpleGrid,
-  Text,
-  useColorModeValue,
-} from '@chakra-ui/react';
+import { Box, Container, Heading, SimpleGrid, Text, useColorModeValue } from '@chakra-ui/react';
 import Link from 'next/link';
 
 import 'react-lazy-load-image-component/src/effects/blur.css';
@@ -43,16 +36,13 @@ const Services = () => {
           >
             <Box textAlign={'center'} py={'4rem'}>
               <Heading as={'h1'}>
-                One Session,{' '}
-                <span className="text-amber-500">All Services</span>
+                One Session, <span className="text-amber-500">All Services</span>
               </Heading>
 
               <div className="max-w-[640px] pt-4">
                 <Text className="text-lg">
-                  Each session includes all of the services listed below. Rather
-                  than separate treatments, these techniques come together as
-                  part of a complete, personalized experience, designed to
-                  decode all your body blocks.
+                  Each session includes all of the services listed below. Rather than separate treatments, these techniques come together as part of a complete, personalized
+                  experience, designed to decode all your body blocks.
                 </Text>
               </div>
             </Box>
@@ -76,12 +66,7 @@ const Services = () => {
                     marginY={'1rem'}
                     className={styles.card}
                   >
-                    <Box
-                      key={_index}
-                      p={'1rem'}
-                      textAlign={'center'}
-                      className={styles['card-content']}
-                    >
+                    <Box key={_index} p={'1rem'} textAlign={'center'} className={styles['card-content']}>
                       <Text fontSize={'1.5rem'}>{service.title}</Text>
                       <Box maxH={'100%'}>
                         <Image

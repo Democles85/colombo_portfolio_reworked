@@ -19,7 +19,7 @@ module.exports = {
   useTabs: false,
   singleQuote: true,
   trailingComma: 'es5',
-  printWidth: 80,
+  printWidth: 180,
   arrowParens: 'avoid',
   bracketSpacing: true,
   quoteProps: 'as-needed',
