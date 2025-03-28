@@ -192,12 +192,7 @@ const Contact = () => {
         <Section>
           <Header thumbnail={'works/contact_thumbnail.jpg'}>
             <Section delay={0.5}>
-              <Text
-                fontSize={{ base: '2rem', md: '3rem', lg: '4rem' }}
-                color={'white'}
-                fontWeight={'bold'}
-                textAlign={'center'}
-              >
+              <Text fontSize={{ base: '2rem', md: '3rem', lg: '4rem' }} color={'white'} fontWeight={'bold'} textAlign={'center'}>
                 Contact <span className={styles['text-gradient']}>Me</span>
               </Text>
             </Section>
@@ -212,11 +207,7 @@ const Contact = () => {
           }}
           py={'4rem'}
         >
-          <Text
-            fontSize={{ base: '2rem', md: '3rem', lg: '4rem' }}
-            fontWeight={'bold'}
-            textAlign={'center'}
-          >
+          <Text fontSize={{ base: '2rem', md: '3rem', lg: '4rem' }} fontWeight={'bold'} textAlign={'center'}>
             Book Your <span className={styles['text-gradient']}>Session</span>
           </Text>
 
@@ -224,24 +215,13 @@ const Contact = () => {
             <Section delay={0.4}>
               <Box className="grid grid-cols-1 gap-y-4 md:place-items-center md:grid-cols-2 md:gap-y-0">
                 <Box className="place-items-center justify-center">
-                  <Heading
-                    as="h3"
-                    variant="section-title"
-                    className="md:text-center"
-                  >
+                  <Heading as="h3" variant="section-title" className="md:text-center">
                     Contact Me Via Email:
                   </Heading>
                   <List>
                     <ListItem>
-                      <Link
-                        href="mailto:resonatewithyourself@gmail.com"
-                        target="_blank"
-                      >
-                        <Button
-                          variant="outline"
-                          colorScheme="orange"
-                          leftIcon={<Icon as={MdMail} />}
-                        >
+                      <Link href="mailto:resonatewithyourself@gmail.com" target="_blank">
+                        <Button variant="outline" colorScheme="orange" leftIcon={<Icon as={MdMail} />}>
                           resonatewithyourself@gmail.com
                         </Button>
                       </Link>
@@ -249,26 +229,16 @@ const Contact = () => {
                   </List>
                 </Box>
 
-                {isMobile && (
-                  <Divider orientation="horizontal" className="mt-4" />
-                )}
+                {isMobile && <Divider orientation="horizontal" className="mt-4" />}
 
                 <Box>
-                  <Heading
-                    as="h3"
-                    variant="section-title"
-                    className="md:text-center"
-                  >
+                  <Heading as="h3" variant="section-title" className="md:text-center">
                     Contact Me Via WhatsApp:
                   </Heading>
                   <List>
                     <ListItem className="flex md:place-items-center md:justify-center">
                       <Link href="https://wa.me/34624468501" target="_blank">
-                        <Button
-                          variant="outline"
-                          colorScheme="orange"
-                          leftIcon={<Icon as={AiOutlineWhatsApp} />}
-                        >
+                        <Button variant="outline" colorScheme="orange" leftIcon={<Icon as={AiOutlineWhatsApp} />}>
                           +34 624 46 85 01
                         </Button>
                       </Link>
@@ -276,60 +246,33 @@ const Contact = () => {
                   </List>
                 </Box>
 
-                {isMobile && (
-                  <Divider orientation="horizontal" className="mt-4" />
-                )}
+                {isMobile && <Divider orientation="horizontal" className="mt-4" />}
               </Box>
             </Section>
           </Box>
 
           <Section>
-            <Text className="italic pl-5">
-              * or complete the form to get in touch automatically
-            </Text>
+            <Text className="italic pl-5">* or complete the form to get in touch automatically</Text>
             <form onSubmit={submitHandler}>
               <FormControl>
-                <Box
-                  display={'flex'}
-                  flexDir={{ base: 'column', md: 'row', lg: 'row' }}
-                  w={'100%'}
-                >
+                <Box display={'flex'} flexDir={{ base: 'column', md: 'row', lg: 'row' }} w={'100%'}>
                   <Box w={'inherit'} px={5} py={{ base: 2, md: 3, lg: 3 }}>
                     <FormLabel htmlFor={'firstName'} fontSize={'1.25rem'}>
                       Name: <span style={{ color: 'red' }}>*</span>
                     </FormLabel>
                     <Input
-                      borderColor={useColorModeValue(
-                        'gray.700',
-                        'whiteAlpha.500'
-                      )}
+                      borderColor={useColorModeValue('gray.700', 'whiteAlpha.500')}
                       _hover={{ borderColor: '#FFAF36' }}
                       focusBorderColor={'#FFAF36'}
                       placeholder={'Your Name'}
                       value={firstName}
                       onChange={e => setFirstName(e.target.value)}
-                      isInvalid={
-                        errors['firstName'] || errors['firstNameLength']
-                      }
+                      isInvalid={errors['firstName'] || errors['firstNameLength']}
                     />
                     {errors['firstName'] ? (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Please enter your name.
-                      </FormHelperText>
+                      <FormHelperText color={useColorModeValue('rgba(0,0,0,0.5)', 'rgba(255, 255, 255, 0.5)')}>Please enter your name.</FormHelperText>
                     ) : errors['firstNameLength'] ? (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Your name is too long.
-                      </FormHelperText>
+                      <FormHelperText color={useColorModeValue('rgba(0,0,0,0.5)', 'rgba(255, 255, 255, 0.5)')}>Your name is too long.</FormHelperText>
                     ) : null}
                   </Box>
                   <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
@@ -337,10 +280,7 @@ const Contact = () => {
                       Subject: <span style={{ color: 'red' }}>*</span>
                     </FormLabel>
                     <Input
-                      borderColor={useColorModeValue(
-                        'gray.700',
-                        'whiteAlpha.500'
-                      )}
+                      borderColor={useColorModeValue('gray.700', 'whiteAlpha.500')}
                       _hover={{ borderColor: '#FFAF36' }}
                       focusBorderColor={'#FFAF36'}
                       placeholder={'Subject you want to talk about'}
@@ -349,23 +289,9 @@ const Contact = () => {
                       isInvalid={errors['subject'] || errors['subjectLength']}
                     />
                     {errors['subject'] ? (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Please enter a subject.
-                      </FormHelperText>
+                      <FormHelperText color={useColorModeValue('rgba(0,0,0,0.5)', 'rgba(255, 255, 255, 0.5)')}>Please enter a subject.</FormHelperText>
                     ) : errors['subjectLength'] ? (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Your subject is too long.
-                      </FormHelperText>
+                      <FormHelperText color={useColorModeValue('rgba(0,0,0,0.5)', 'rgba(255, 255, 255, 0.5)')}>Your subject is too long.</FormHelperText>
                     ) : null}
                   </Box>
                 </Box>
@@ -375,48 +301,20 @@ const Contact = () => {
                       Email: <span style={{ color: 'red' }}>*</span>
                     </FormLabel>
                     <Input
-                      borderColor={useColorModeValue(
-                        'gray.700',
-                        'whiteAlpha.500'
-                      )}
+                      borderColor={useColorModeValue('gray.700', 'whiteAlpha.500')}
                       _hover={{ borderColor: '#FFAF36' }}
                       focusBorderColor={'#FFAF36'}
                       placeholder={'Your Email'}
                       value={email}
                       onChange={e => setEmail(e.target.value)}
-                      isInvalid={
-                        errors['email'] ||
-                        errors['emailFormat'] ||
-                        errors['emailLength']
-                      }
+                      isInvalid={errors['email'] || errors['emailFormat'] || errors['emailLength']}
                     />
                     {errors['email'] ? (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Please enter your email.
-                      </FormHelperText>
+                      <FormHelperText color={useColorModeValue('rgba(0,0,0,0.5)', 'rgba(255, 255, 255, 0.5)')}>Please enter your email.</FormHelperText>
                     ) : errors['emailFormat'] ? (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Please enter a valid email.
-                      </FormHelperText>
+                      <FormHelperText color={useColorModeValue('rgba(0,0,0,0.5)', 'rgba(255, 255, 255, 0.5)')}>Please enter a valid email.</FormHelperText>
                     ) : errors['emailLength'] ? (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Your email is too long.
-                      </FormHelperText>
+                      <FormHelperText color={useColorModeValue('rgba(0,0,0,0.5)', 'rgba(255, 255, 255, 0.5)')}>Your email is too long.</FormHelperText>
                     ) : null}
                   </Box>
 
@@ -437,22 +335,14 @@ const Contact = () => {
                       chakraStyles={{
                         control: (prev, { isFocused }) => ({
                           ...prev,
-                          borderColor: isFocused
-                            ? '#FFAF3A'
-                            : useColorModeValue('gray.700', 'whiteAlpha.500'),
+                          borderColor: isFocused ? '#FFAF3A' : useColorModeValue('gray.700', 'whiteAlpha.500'),
                           ':hover': {
                             borderColor: '#FFAF3A',
                           },
                         }),
-                        dropdownIndicator: (
-                          prev,
-                          { selectProps: { menuIsOpen } }
-                        ) => ({
+                        dropdownIndicator: (prev, { selectProps: { menuIsOpen } }) => ({
                           ...prev,
-                          backgroundColor: useColorModeValue(
-                            'whiteAlpha.800',
-                            'rgb(55, 55, 55)'
-                          ),
+                          backgroundColor: useColorModeValue('whiteAlpha.800', 'rgb(55, 55, 55)'),
                           '> svg': {
                             transitionDuration: 'normal',
                             transform: `rotate(${menuIsOpen ? 180 : 0}deg)`,
@@ -460,27 +350,15 @@ const Contact = () => {
                         }),
                         option: (prev, { isFocused, isSelected }) => ({
                           ...prev,
-                          backgroundColor: isFocused
-                            ? '#FFAF3A'
-                            : isSelected
-                            ? '#FFAF3A'
-                            : useColorModeValue(
-                                'whiteAlpha.800',
-                                'rgba(0,0,0,0.8)'
-                              ),
-                          color: isFocused
-                            ? useColorModeValue('#202023', '#FFF')
-                            : undefined,
+                          backgroundColor: isFocused ? '#FFAF3A' : isSelected ? '#FFAF3A' : useColorModeValue('whiteAlpha.800', 'rgba(0,0,0,0.8)'),
+                          color: isFocused ? useColorModeValue('#202023', '#FFF') : undefined,
                           ':active': {
                             backgroundColor: '#FFAF3A',
                           },
                         }),
                         menu: prev => ({
                           ...prev,
-                          backgroundColor: useColorModeValue(
-                            'whiteAlpha.800',
-                            'rgba(0,0,0,0.8)'
-                          ),
+                          backgroundColor: useColorModeValue('whiteAlpha.800', 'rgba(0,0,0,0.8)'),
                           borderRadius: 'lg',
                           border: '1px solid #FFAF3A',
                           boxShadow: 'none',
@@ -489,30 +367,15 @@ const Contact = () => {
                         menuList: prev => ({
                           ...prev,
                           padding: '0',
-                          backgroundColor: useColorModeValue(
-                            'whiteAlpha.800',
-                            'rgba(0,0,0,0.8)'
-                          ),
+                          backgroundColor: useColorModeValue('whiteAlpha.800', 'rgba(0,0,0,0.8)'),
                         }),
                         placeholder: prev => ({
                           ...prev,
-                          color: useColorModeValue(
-                            'gray.400',
-                            'whiteAlpha.700'
-                          ),
+                          color: useColorModeValue('gray.400', 'whiteAlpha.700'),
                         }),
                       }}
                     />
-                    {errors['country'] && (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Please select your country.
-                      </FormHelperText>
-                    )}
+                    {errors['country'] && <FormHelperText color={useColorModeValue('rgba(0,0,0,0.5)', 'rgba(255, 255, 255, 0.5)')}>Please select your country.</FormHelperText>}
                   </Box>
 
                   <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
@@ -532,22 +395,14 @@ const Contact = () => {
                       chakraStyles={{
                         control: (prev, { isFocused }) => ({
                           ...prev,
-                          borderColor: isFocused
-                            ? '#FFAF3A'
-                            : useColorModeValue('gray.700', 'whiteAlpha.500'),
+                          borderColor: isFocused ? '#FFAF3A' : useColorModeValue('gray.700', 'whiteAlpha.500'),
                           ':hover': {
                             borderColor: '#FFAF3A',
                           },
                         }),
-                        dropdownIndicator: (
-                          prev,
-                          { selectProps: { menuIsOpen } }
-                        ) => ({
+                        dropdownIndicator: (prev, { selectProps: { menuIsOpen } }) => ({
                           ...prev,
-                          backgroundColor: useColorModeValue(
-                            'whiteAlpha.800',
-                            'rgb(55, 55, 55)'
-                          ),
+                          backgroundColor: useColorModeValue('whiteAlpha.800', 'rgb(55, 55, 55)'),
                           '> svg': {
                             transitionDuration: 'normal',
                             transform: `rotate(${menuIsOpen ? 180 : 0}deg)`,
@@ -555,27 +410,15 @@ const Contact = () => {
                         }),
                         option: (prev, { isFocused, isSelected }) => ({
                           ...prev,
-                          backgroundColor: isFocused
-                            ? '#FFAF3A'
-                            : isSelected
-                            ? '#FFAF3A'
-                            : useColorModeValue(
-                                'whiteAlpha.800',
-                                'rgba(0,0,0,0.8)'
-                              ),
-                          color: isFocused
-                            ? useColorModeValue('#202023', '#FFF')
-                            : undefined,
+                          backgroundColor: isFocused ? '#FFAF3A' : isSelected ? '#FFAF3A' : useColorModeValue('whiteAlpha.800', 'rgba(0,0,0,0.8)'),
+                          color: isFocused ? useColorModeValue('#202023', '#FFF') : undefined,
                           ':active': {
                             backgroundColor: '#FFAF3A',
                           },
                         }),
                         menu: prev => ({
                           ...prev,
-                          backgroundColor: useColorModeValue(
-                            'whiteAlpha.800',
-                            'rgba(0,0,0,0.8)'
-                          ),
+                          backgroundColor: useColorModeValue('whiteAlpha.800', 'rgba(0,0,0,0.8)'),
                           borderRadius: 'lg',
                           border: '1px solid #FFAF3A',
                           boxShadow: 'none',
@@ -584,30 +427,15 @@ const Contact = () => {
                         menuList: prev => ({
                           ...prev,
                           padding: '0',
-                          backgroundColor: useColorModeValue(
-                            'whiteAlpha.800',
-                            'rgba(0,0,0,0.8)'
-                          ),
+                          backgroundColor: useColorModeValue('whiteAlpha.800', 'rgba(0,0,0,0.8)'),
                         }),
                         placeholder: prev => ({
                           ...prev,
-                          color: useColorModeValue(
-                            'gray.400',
-                            'whiteAlpha.700'
-                          ),
+                          color: useColorModeValue('gray.400', 'whiteAlpha.700'),
                         }),
                       }}
                     />
-                    {errors['gender'] && (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Please select a gender.
-                      </FormHelperText>
-                    )}
+                    {errors['gender'] && <FormHelperText color={useColorModeValue('rgba(0,0,0,0.5)', 'rgba(255, 255, 255, 0.5)')}>Please select a gender.</FormHelperText>}
                   </Box>
 
                   <Box w={'inherit'} px={5} py={{ base: 2, md: 3 }}>
@@ -615,10 +443,7 @@ const Contact = () => {
                       Message <span style={{ color: 'red' }}>*</span>
                     </FormLabel>
                     <Textarea
-                      borderColor={useColorModeValue(
-                        'gray.700',
-                        'whiteAlpha.500'
-                      )}
+                      borderColor={useColorModeValue('gray.700', 'whiteAlpha.500')}
                       id={'message'}
                       placeholder={'Enter your message here...'}
                       value={message}
@@ -633,23 +458,9 @@ const Contact = () => {
                       }}
                     />
                     {errors['message'] ? (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Please enter a message.
-                      </FormHelperText>
+                      <FormHelperText color={useColorModeValue('rgba(0,0,0,0.5)', 'rgba(255, 255, 255, 0.5)')}>Please enter a message.</FormHelperText>
                     ) : errors['messageLength'] ? (
-                      <FormHelperText
-                        color={useColorModeValue(
-                          'rgba(0,0,0,0.5)',
-                          'rgba(255, 255, 255, 0.5)'
-                        )}
-                      >
-                        Message must be less than 500 characters.
-                      </FormHelperText>
+                      <FormHelperText color={useColorModeValue('rgba(0,0,0,0.5)', 'rgba(255, 255, 255, 0.5)')}>Message must be less than 500 characters.</FormHelperText>
                     ) : null}
                   </Box>
 
@@ -676,13 +487,7 @@ const Contact = () => {
                     </Checkbox>
                   </Box>
 
-                  <Box
-                    w={'inherit'}
-                    px={5}
-                    pt={'1.5rem'}
-                    display={'flex'}
-                    justifyContent={'center'}
-                  >
+                  <Box w={'inherit'} px={5} pt={'1.5rem'} display={'flex'} justifyContent={'center'}>
                     <Button
                       bg={'#ffc46c'}
                       color={'#202023'}
@@ -716,7 +521,7 @@ const Contact = () => {
                 <AspectRatio ratio={16 / 9}>
                   <Box as={AspectRatio} borderRadius={'lg'}>
                     <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.6985467743184!2d-4.4363294999999985!3d36.729800499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72f7b4ccf393b3%3A0xa9e360b394f1ff4d!2sResonate%20With%20Yourself%20-%20Malaga%20Holistic%20Wellness%3A%20Advanced%20Bodywork%20Massage%2C%20Spiritual%20Therapy%20%26%20Sound%20Healing!5e0!3m2!1sen!2s!4v1730282967066!5m2!1sen!2s"
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d529.0375232363497!2d-0.3734074550343845!3d39.460726871979254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6049081b535af7%3A0x2489f07aa7d665db!2sResonate%20With%20Yourself!5e0!3m2!1sen!2s!4v1743161893115!5m2!1sen!2s"
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
